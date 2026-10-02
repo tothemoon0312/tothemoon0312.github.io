@@ -1,0 +1,3 @@
+# Keep the luma app source out of the published GitHub Pages site.
+exclude:
+  - luma
