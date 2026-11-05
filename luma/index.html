@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Luma</title>
+<meta name="description" content="Personalized money insights for Gen Z. Chat with Lu and swipe through investment matches built from what you say." />
+<style>
+@font-face { font-family: 'SF Pro Display'; src: local('SF Pro Display'), local('system-ui'), local('-apple-system'); font-weight: 400 700; font-display: swap; }
+@font-face { font-family: 'SF Pro Text'; src: local('SF Pro Text'), local('system-ui'), local('-apple-system'); font-weight: 400 700; font-display: swap; }
+
+:root {
+  --page: #efede8;
+  --bg: #ffffff;
+  --card: #f7f6f2;
+  --card-2: #efeee9;
+  --line: #e7e5de;
+  --text: #1b1a17;
+  --soft: #5f5c55;
+  --muted: #8d8a82;
+  --gold: #ad8b37;
+  --gold-ink: #1b1a17;
+  --gold-text: #9a7a2c;
+  --gold-soft: #f1ebdb;
+  --gold-bar: #cfb987;
+  --green: #3b8655;
+  --green-soft: #e6f3ea;
+  --red: #c4473f;
+  --red-soft: #f8e5e2;
+  --pending: #fcf1cf;
+  --pending-ink: #8a6a12;
+  --shadow: 0 30px 60px rgba(60, 50, 30, .12), 0 6px 16px rgba(60, 50, 30, .06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0f0e0c; --bg: #171613; --card: #201f1b; --card-2: #2a2924; --line: #33312b;
+    --text: #f3f1ea; --soft: #c2bfb6; --muted: #8f8b81; --gold: #c9a44c; --gold-ink: #1b1a17;
+    --gold-text: #d6b462; --gold-soft: #332c1b; --gold-bar: #6e5c33; --green: #6cc28a; --green-soft: #1d3326;
+    --red: #ef7c72; --red-soft: #3a201d; --pending: #3a321a; --pending-ink: #e9c766;
+    --shadow: 0 30px 60px rgba(0,0,0,.5), 0 6px 16px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0f0e0c; --bg: #171613; --card: #201f1b; --card-2: #2a2924; --line: #33312b;
+  --text: #f3f1ea; --soft: #c2bfb6; --muted: #8f8b81; --gold: #c9a44c; --gold-ink: #1b1a17;
+  --gold-text: #d6b462; --gold-soft: #332c1b; --gold-bar: #6e5c33; --green: #6cc28a; --green-soft: #1d3326;
+  --red: #ef7c72; --red-soft: #3a201d; --pending: #3a321a; --pending-ink: #e9c766;
+  --shadow: 0 30px 60px rgba(0,0,0,.5), 0 6px 16px rgba(0,0,0,.4);
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--page); color: var(--text);
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased; letter-spacing: .005em;
+  display: grid; place-items: center; overflow: hidden;
+}
+h1, h2, .display { font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, sans-serif; font-weight: 500; letter-spacing: -.01em; }
+button { font: inherit; color: inherit; cursor: pointer; background: none; border: 0; padding: 0; }
+button:focus-visible, textarea:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+/* ---------- Device ---------- */
+.device {
+  position: relative; width: 400px; height: min(860px, calc(100dvh - 40px));
+  background: var(--bg); border-radius: 46px; border: 1px solid var(--line); box-shadow: var(--shadow);
+  overflow: hidden; display: flex; flex-direction: column;
+}
+.status { display: flex; justify-content: space-between; align-items: center; padding: 14px 30px 0; font-size: 14px; color: var(--muted); height: 34px; flex: none; }
+.status .dots { letter-spacing: 2px; font-size: 18px; line-height: 0; }
+@media (max-width: 480px) {
+  body { display: block; }
+  .device { width: 100%; height: 100dvh; border-radius: 0; border: 0; box-shadow: none; }
+  .status { display: none; }
+}
+
+.appbar { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px 6px; flex: none; }
+.logo { display: flex; align-items: center; gap: 8px; font-size: 21px; font-weight: 500; }
+.ring { width: 26px; height: 26px; border-radius: 50%; border: 7px solid var(--gold); flex: none; }
+.avatar-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--card); display: grid; place-items: center; font-size: 15px; color: var(--soft); }
+.pill-open { background: var(--green-soft); color: var(--green); font-size: 14px; font-weight: 500; padding: 6px 14px; border-radius: 999px; }
+
+.screens { flex: 1; min-height: 0; position: relative; }
+.screen { position: absolute; inset: 0; overflow-y: auto; padding: 8px 24px 44px; scrollbar-width: none; animation: fade .25s ease; }
+.screen::-webkit-scrollbar { display: none; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.screen h1 { font-size: 28px; margin: 6px 0 6px; }
+.sub { color: var(--muted); font-size: 15px; line-height: 1.45; margin: 0 0 18px; }
+.eyebrow { color: var(--gold-text); font-size: 13.5px; letter-spacing: .14em; text-transform: uppercase; font-weight: 500; display: flex; align-items: center; gap: 8px; margin: 26px 0 12px; }
+.eyebrow svg.i { width: 18px; height: 18px; }
+
+/* ---------- Bottom nav ---------- */
+.bnav { flex: none; display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); background: var(--bg); padding: 10px 6px calc(14px + env(safe-area-inset-bottom)); position: relative; }
+.bnav button { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 13.5px; color: var(--muted); }
+.bnav .ic { width: 54px; height: 34px; border-radius: 999px; display: grid; place-items: center; transition: background .2s; }
+.bnav button.on { color: var(--text); font-weight: 500; }
+.bnav button.on .ic { background: var(--gold); color: #fff; }
+.bnav .fab .ic { width: 64px; height: 64px; border-radius: 50%; background: var(--card); border: 1px solid var(--line); margin-top: -34px; box-shadow: 0 8px 20px rgba(60,50,30,.12); color: var(--text); }
+.bnav .fab.on .ic { background: var(--gold-soft); border-color: var(--gold); color: var(--text); }
+
+/* ---------- Shared bits ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 58px; border-radius: 999px; font-size: 16.5px; font-weight: 500; width: 100%; letter-spacing: .02em; }
+.btn.primary { background: var(--gold); color: var(--gold-ink); }
+.btn.secondary { border: 1px solid var(--line); color: var(--soft); background: var(--bg); height: 54px; }
+.btn.sm { height: 44px; width: auto; padding: 0 18px; font-size: 15px; }
+.tile { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 20px 22px; }
+.link { color: var(--gold-text); font-weight: 500; font-size: 15.5px; display: inline-flex; gap: 6px; margin-top: 14px; }
+.toast { position: absolute; left: 50%; bottom: 120px; transform: translate(-50%, 16px); opacity: 0; background: var(--text); color: var(--bg); padding: 10px 16px; border-radius: 14px; font-size: 14px; transition: .25s; pointer-events: none; z-index: 30; width: max-content; max-width: calc(100% - 48px); text-align: center; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- Welcome ---------- */
+.welcome { position: absolute; inset: 0; background: var(--bg); z-index: 20; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 36px 60px; }
+.welcome .ring { width: 54px; height: 54px; border-width: 15px; margin-bottom: 12px; }
+.welcome .hi { color: var(--muted); font-size: 17px; letter-spacing: .03em; }
+.welcome h2 { font-size: 32px; margin: 14px 0 12px; }
+.welcome p { color: var(--soft); font-size: 17px; line-height: 1.55; margin: 0 0 30px; letter-spacing: .02em; }
+.welcome .btn + .btn { margin-top: 14px; }
+
+/* ---------- Overview ---------- */
+.stat { display: flex; gap: 18px; align-items: flex-start; margin-bottom: 18px; }
+.stat .badge { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--gold); background: var(--gold-soft); color: var(--gold-text); display: grid; place-items: center; flex: none; }
+.stat .badge svg.i { width: 22px; height: 22px; }
+.stat .k { color: var(--muted); font-size: 16px; }
+.stat .v { font-size: 31px; margin: 8px 0 6px; display: flex; align-items: baseline; gap: 10px; }
+.stat .v small { font-size: 15.5px; color: var(--green); }
+.stat .n { color: var(--muted); font-size: 16px; }
+.pfy { margin-bottom: 18px; }
+.pfy h3 { margin: 0 0 10px; font-size: 18px; font-weight: 500; }
+.pfy p { margin: 0; color: var(--soft); font-size: 15.5px; line-height: 1.55; }
+.rowlist { display: flex; flex-direction: column; gap: 10px; }
+.srow { display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; }
+.srow .tk { font-weight: 500; font-size: 16px; }
+.srow .nm { color: var(--muted); font-size: 14px; }
+.srow .grow { flex: 1; min-width: 0; }
+.srow .x { color: var(--muted); padding: 4px; }
+
+/* ---------- Explore / matches ---------- */
+.tuned { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin: -6px 0 14px; }
+.tag { font-size: 13px; padding: 5px 11px; border-radius: 999px; background: var(--gold-soft); color: var(--gold-text); font-weight: 500; }
+.tag.neg { background: var(--red-soft); color: var(--red); }
+.tuned .tune { font-size: 13.5px; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; margin-left: 2px; }
+.stack { position: relative; min-height: 420px; }
+.mcard {
+  position: absolute; inset: 0 0 auto 0; background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 24px;
+  touch-action: pan-y; user-select: none; transition: transform .35s cubic-bezier(.2,.8,.2,1), opacity .35s; will-change: transform;
+}
+.mcard.dragging { transition: none; }
+.mcard:not(.top) { pointer-events: none; }
+.mcard .head { display: flex; justify-content: space-between; align-items: flex-start; }
+.mcard .tk { font-size: 27px; font-family: 'SF Pro Display', -apple-system, system-ui, sans-serif; }
+.mcard .nm { color: var(--muted); font-size: 16px; margin-top: 6px; }
+.mpill { border: 1px solid var(--gold); background: var(--gold-soft); color: var(--gold-text); font-size: 15.5px; padding: 7px 14px; border-radius: 999px; white-space: nowrap; }
+.mcard .big { font-size: 28px; margin: 16px 0 14px; display: flex; align-items: baseline; gap: 10px; font-family: 'SF Pro Display', -apple-system, system-ui, sans-serif; }
+.mcard .big small { font-size: 15.5px; color: var(--green); font-family: 'SF Pro Text', -apple-system, system-ui, sans-serif; }
+.mcard .big small.g { color: var(--gold-text); }
+.bars { display: flex; align-items: flex-end; gap: 5px; height: 62px; }
+.bars i { flex: 1; background: var(--gold-bar); border-radius: 8px; min-height: 16px; }
+.bars i:last-child { background: var(--gold); }
+.why { background: var(--card-2); border-radius: 14px; padding: 14px 16px; margin: 14px 0 12px; }
+.why h4 { margin: 0 0 6px; font-size: 14.5px; font-weight: 500; letter-spacing: .12em; color: var(--gold-text); }
+.why p { margin: 0; color: var(--soft); font-size: 15.5px; line-height: 1.55; }
+.meta { color: var(--muted); font-size: 15px; display: flex; gap: 18px; flex-wrap: wrap; }
+.acts { display: flex; justify-content: center; gap: 24px; margin: 18px 0 10px; }
+.acts button { width: 62px; height: 62px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); display: grid; place-items: center; color: var(--muted); transition: transform .12s; }
+.acts button:active { transform: scale(.92); }
+.acts .yes { border-color: var(--gold); background: var(--gold-soft); color: var(--gold-text); }
+.hintline { text-align: center; color: var(--muted); font-size: 14.5px; letter-spacing: .04em; }
+.stamp { position: absolute; top: 76px; padding: 4px 12px; border: 2px solid; border-radius: 10px; font-weight: 600; font-size: 18px; letter-spacing: .1em; opacity: 0; background: var(--card); z-index: 2; }
+.stamp.save { right: 22px; color: var(--green); transform: rotate(10deg); }
+.stamp.pass { left: 22px; color: var(--red); transform: rotate(-10deg); }
+.under { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; font-size: 13px; color: var(--muted); }
+.under button { text-decoration: underline; text-underline-offset: 3px; }
+.empty { text-align: center; padding: 50px 10px 0; }
+.empty .ring { width: 46px; height: 46px; border-width: 12px; margin: 0 auto 18px; }
+.empty h3 { font-size: 21px; font-weight: 500; margin: 0 0 8px; }
+.empty p { color: var(--soft); line-height: 1.55; margin: 0 0 22px; font-size: 15.5px; }
+
+/* ---------- Ask Lu ---------- */
+#s-ask { display: flex; flex-direction: column; padding-bottom: 0; overflow: hidden; }
+.learned { display: flex; gap: 6px; flex-wrap: wrap; margin: -6px 0 10px; }
+.learned:empty { display: none; }
+.learned .tag { display: inline-flex; gap: 6px; align-items: center; }
+.learned .tag span.x { opacity: .55; }
+.learned .lbl { font-size: 12px; color: var(--muted); letter-spacing: .12em; text-transform: uppercase; align-self: center; margin-right: 4px; }
+.thread { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding: 6px 0 12px; scrollbar-width: none; }
+.thread::-webkit-scrollbar { display: none; }
+.thread > * { flex: none; }
+.msg { max-width: 84%; padding: 12px 15px; border-radius: 20px; font-size: 15.5px; line-height: 1.5; white-space: pre-wrap; animation: fade .2s ease; }
+.msg.lu { background: var(--card); border: 1px solid var(--line); border-bottom-left-radius: 6px; align-self: flex-start; color: var(--text); }
+.msg.me { background: var(--gold); color: var(--gold-ink); border-bottom-right-radius: 6px; align-self: flex-end; }
+.who { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--muted); margin-bottom: -6px; }
+.who .ring { width: 16px; height: 16px; border-width: 4.5px; }
+.typing { display: inline-flex; gap: 4px; padding: 4px 0; }
+.typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: blink 1s infinite; }
+.typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes blink { 0%,80%,100% { opacity: .25 } 40% { opacity: 1 } }
+.sparks { display: flex; gap: 8px; overflow-x: auto; padding: 4px 0 10px; scrollbar-width: none; flex: none; }
+.sparks::-webkit-scrollbar { display: none; }
+.spark { flex: none; border: 1px solid var(--line); background: var(--bg); border-radius: 999px; padding: 9px 14px; font-size: 14px; color: var(--soft); }
+.composer { flex: none; display: flex; gap: 10px; align-items: flex-end; padding: 0 0 14px; }
+.composer textarea { flex: 1; resize: none; border: 1px solid var(--line); background: var(--card); color: var(--text); border-radius: 24px; padding: 13px 18px; font: inherit; font-size: 16px; line-height: 1.35; max-height: 120px; }
+.composer textarea::placeholder { color: var(--muted); }
+.composer .send { width: 50px; height: 50px; border-radius: 50%; background: var(--gold); color: var(--gold-ink); display: grid; place-items: center; flex: none; }
+.composer .send:disabled { opacity: .4; cursor: default; }
+
+/* ---------- Wallet ---------- */
+.bal-k { color: var(--muted); font-size: 16px; margin-top: 18px; }
+.bal { font-size: 54px; margin: 10px 0 10px; letter-spacing: -.02em; }
+.bal-n { color: var(--muted); font-size: 15.5px; }
+.money-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 26px 0 30px; }
+.money-btns .btn { height: 62px; }
+.money-btns .btn.secondary { color: var(--text); }
+.divider { height: 12px; background: var(--card-2); margin: 0 -24px; }
+.mv { display: flex; align-items: center; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.mv:last-of-type { border-bottom: 0; }
+.mv .c { width: 54px; height: 54px; border-radius: 50%; background: var(--card); display: grid; place-items: center; color: var(--soft); flex: none; }
+.mv .grow { flex: 1; min-width: 0; }
+.mv b { font-weight: 500; font-size: 16.5px; display: flex; align-items: center; gap: 10px; }
+.mv span.d { color: var(--muted); font-size: 15px; display: block; margin-top: 4px; }
+.mv .amt { font-size: 16.5px; }
+.mv .amt.pos { color: var(--green); }
+.pend { background: var(--pending); color: var(--pending-ink); font-size: 11px; letter-spacing: .1em; padding: 3px 8px; border-radius: 999px; font-weight: 500; }
+.demo { width: 100%; background: var(--card); border-radius: 14px; padding: 16px; color: var(--soft); font-size: 15.5px; margin-top: 18px; }
+.demo u { text-underline-offset: 4px; text-decoration-color: var(--line); }
+
+/* ---------- Social ---------- */
+.seg { display: grid; grid-template-columns: 1fr 1fr; background: var(--card-2); border-radius: 999px; padding: 5px; margin: 4px 0 18px; }
+.seg button { height: 48px; border-radius: 999px; color: var(--muted); font-size: 16px; }
+.seg button.on { background: var(--bg); color: var(--text); font-weight: 500; box-shadow: 0 2px 6px rgba(0,0,0,.06); }
+.post { border: 1px solid var(--line); border-radius: 22px; padding: 22px 24px 16px; margin-bottom: 16px; }
+.post .top { display: flex; align-items: center; gap: 14px; }
+.post .av { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; font-weight: 500; font-size: 16px; color: #2a2a2a; flex: none; }
+.post .who2 { flex: 1; }
+.post .who2 b { font-weight: 500; font-size: 16.5px; display: block; }
+.post .who2 span { color: var(--muted); font-size: 15px; }
+.gain { background: var(--green-soft); color: var(--green); font-size: 15px; padding: 5px 12px; border-radius: 999px; font-weight: 500; }
+.post p { margin: 18px 0 16px; color: var(--soft); font-size: 16px; }
+.post .bar { border-top: 1px solid var(--line); padding-top: 14px; display: flex; gap: 28px; color: var(--muted); font-size: 15.5px; }
+.post .bar button { display: inline-flex; align-items: center; gap: 8px; }
+.post .bar svg.i { width: 19px; height: 19px; }
+.post .bar button.on { color: var(--red); }
+.post .bar button.on svg { fill: currentColor; }
+.lb { display: flex; align-items: center; gap: 14px; padding: 14px 4px; border-bottom: 1px solid var(--line); }
+.lb .rk { width: 24px; color: var(--muted); font-size: 15px; }
+.lb .av { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; color: #2a2a2a; }
+.lb .grow { flex: 1; font-size: 16px; }
+.lb.me { background: var(--gold-soft); border-radius: 14px; border: 0; padding: 14px 10px; }
+.foot { color: var(--muted); font-size: 12px; text-align: center; margin-top: 18px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="device" id="device">
+  <div class="status"><span>9:41</span><span class="dots">•••</span></div>
+
+  <!-- Welcome -->
+  <div class="welcome" id="welcome">
+    <div class="ring"></div>
+    <div class="hi">welcome back</div>
+    <h2>Sofia</h2>
+    <p>Your financial picture is ready. Let's see where you stand.</p>
+    <button class="btn primary" data-go="portfolio">see my overview</button>
+    <button class="btn secondary" data-go="ask">chat with Lu</button>
+  </div>
+
+  <header class="appbar">
+    <div class="logo"><span class="ring"></span>luma</div>
+    <div id="appbarRight"></div>
+  </header>
+
+  <div class="screens">
+    <!-- Explore -->
+    <section class="screen" id="s-explore" hidden>
+      <h1>Your matches</h1>
+      <p class="sub" id="exploreSub">Based on your chats with Lu · swipe to explore</p>
+      <div class="tuned" id="tuned"></div>
+      <div class="stack" id="stack"></div>
+    </section>
+
+    <!-- Ask Lu -->
+    <section class="screen" id="s-ask" hidden>
+      <h1>Ask Lu</h1>
+      <p class="sub">No survey. Just talk. Lu picks up what you're into and builds your matches.</p>
+      <div class="learned" id="learned"></div>
+      <div class="thread" id="thread" aria-live="polite"></div>
+      <div class="sparks" id="sparks"></div>
+      <form class="composer" id="composer">
+        <textarea id="input" rows="1" placeholder="Tell Lu what you're into…" aria-label="Message Lu"></textarea>
+        <button class="send" id="send" type="submit" aria-label="Send" disabled>
+          <svg class="i" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7M12 19V5"/></svg>
+        </button>
+      </form>
+    </section>
+
+    <!-- Wallet -->
+    <section class="screen" id="s-wallet" hidden>
+      <div class="bal-k">Available balance</div>
+      <div class="bal display">$250.00</div>
+      <div class="bal-n"><span id="withdrawable">$0.00</span> withdrawable &nbsp;•&nbsp; FDIC sweep eligible</div>
+      <div class="money-btns">
+        <button class="btn primary" data-toast="Deposits are a demo in this preview">
+          <svg class="i" viewBox="0 0 24 24" style="width:18px"><path d="M17 7 7 17M17 17H7V7"/></svg>Deposit</button>
+        <button class="btn secondary" data-toast="Withdrawals are a demo in this preview">
+          <svg class="i" viewBox="0 0 24 24" style="width:18px"><path d="M7 17 17 7M7 7h10v10"/></svg>Withdraw</button>
+      </div>
+      <div class="divider"></div>
+      <div class="eyebrow" style="margin-top:24px">Activity</div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <h2 style="margin:0;font-size:22px">Recent money moves</h2>
+        <button style="color:var(--muted);font-size:15.5px" data-toast="Full history coming soon">See all</button>
+      </div>
+      <div style="margin-top:8px">
+        <div class="mv">
+          <div class="c"><svg class="i" viewBox="0 0 24 24" style="width:18px"><path d="M17 7 7 17M17 17H7V7"/></svg></div>
+          <div class="grow"><b>Instant deposit <span class="pend" id="pend">PENDING</span></b><span class="d" id="pendNote">Chase ••4821 · Pending clearance</span></div>
+          <div class="amt pos">+$250.00</div>
+        </div>
+        <div class="mv">
+          <div class="c"><svg class="i" viewBox="0 0 24 24" style="width:18px"><path d="M7 17 17 7M7 7h10v10"/></svg></div>
+          <div class="grow"><b>Investment</b><span class="d">VTI · May 16</span></div>
+          <div class="amt">−$50.00</div>
+        </div>
+      </div>
+      <button class="demo" id="clearBtn"><u>Demo: mark bank transfers as cleared</u></button>
+    </section>
+
+    <!-- Portfolio / overview -->
+    <section class="screen" id="s-portfolio" hidden>
+      <h1>Your overview</h1>
+      <p class="sub">AI-powered insights from Plaid-linked accounts + your chats with Lu</p>
+      <div class="tile stat"><div class="badge"><svg class="i" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg></div>
+        <div><div class="k">Your spending trend</div><div class="v display">$2,341 <small>-12%</small></div><div class="n">vs. last month</div></div></div>
+      <div class="tile stat"><div class="badge"><svg class="i" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div><div class="k">Available to invest</div><div class="v display">$486 <small>+8%</small></div><div class="n">based on your goals</div></div></div>
+      <div class="tile stat"><div class="badge"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div>
+        <div><div class="k">Savings goal progress</div><div class="v display">67% <small>on track</small></div><div class="n">for 12-month target</div></div></div>
+      <div class="eyebrow"><svg class="i" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg>Personalized for you</div>
+      <div id="pfy"></div>
+      <div id="savedWrap"></div>
+    </section>
+
+    <!-- Social -->
+    <section class="screen" id="s-social" hidden>
+      <div class="eyebrow" style="margin-top:8px">Your circle</div>
+      <h1 style="font-size:30px">Money is better together.</h1>
+      <p class="sub">Share progress, not balances. Your dollar amounts stay private.</p>
+      <div class="seg" role="tablist">
+        <button class="on" data-seg="friends">Friends</button>
+        <button data-seg="board">Leaderboard</button>
+      </div>
+      <div id="friends"></div>
+      <div id="board" hidden></div>
+    </section>
+  </div>
+
+  <nav class="bnav" id="bnav">
+    <button data-go="explore"><span class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m15.8 8.2-1.9 5.7-5.7 1.9 1.9-5.7z"/></svg></span>Explore</button>
+    <button data-go="ask"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>Ask</button>
+    <button data-go="wallet" class="fab"><span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M3.5 13h5l1.5 2h4l1.5-2h5"/></svg></span>$250</button>
+    <button data-go="portfolio"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 20v-4M8 20v-7M12 20v-5M16 20v-9M20 20V8"/><path d="m4 11 5-4 4 3 7-6"/></svg></span>Portfolio</button>
+    <button data-go="social"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Social</button>
+  </nav>
+  <div class="toast" id="toast"></div>
+</div>
+
+<script src="lu-engine.js"></script>
+<script>
+(() => {
+'use strict';
+const $ = id => document.getElementById(id);
+const ICON = {
+  x: '<svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>',
+  info: '<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 16v-4.5M12 8h.01"/></svg>',
+  check: '<svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>',
+  heart: '<svg class="i" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>',
+  reply: '<svg class="i" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>',
+  addUser: '<svg class="i" viewBox="0 0 24 24" style="width:20px"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>'
+};
+const escHTML = s => String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+
+/* ---------- Toast ---------- */
+let tT;
+function toast(m) { const t = $('toast'); t.textContent = m; t.classList.add('show'); clearTimeout(tT); tT = setTimeout(() => t.classList.remove('show'), 2000); }
+document.addEventListener('click', e => { const b = e.target.closest('[data-toast]'); if (b) toast(b.dataset.toast); });
+
+/* ---------- Navigation ---------- */
+let current = null;
+function go(name) {
+  $('welcome').hidden = true;
+  current = name;
+  document.querySelectorAll('.screen').forEach(s => s.hidden = s.id !== 's-' + name);
+  document.querySelectorAll('#bnav button').forEach(b => b.classList.toggle('on', b.dataset.go === name));
+  const right = $('appbarRight');
+  right.innerHTML = name === 'wallet' ? '<span class="pill-open">Market open</span>'
+    : name === 'social' ? `<button class="avatar-btn" aria-label="Add friend" data-toast="Invites are a demo in this preview">${ICON.addUser}</button>`
+    : '<button class="avatar-btn" aria-label="Profile" data-toast="Signed in as Sofia">S</button>';
+  if (name === 'explore') renderExplore();
+  if (name === 'portfolio') renderPortfolio();
+  if (name === 'social') renderSocial();
+  if (name === 'ask') { const th = $('thread'); th.scrollTop = th.scrollHeight; }
+}
+document.addEventListener('click', e => { const b = e.target.closest('[data-go]'); if (b) go(b.dataset.go); });
+
+/* ---------- Profile summaries ---------- */
+function profileTags(limit) {
+  const out = [];
+  if (S.risk != null) out.push({ text: riskWord(S.risk), kind: 'risk', clear: () => { S.risk = null; } });
+  S.mentions.forEach(t => out.push({ text: t, clear: () => { S.mentions = S.mentions.filter(x => x !== t); } }));
+  Object.entries(S.weights).filter(([, v]) => v >= 1).sort((a, b) => b[1] - a[1])
+    .forEach(([k]) => out.push({ text: labelOf(k), clear: () => { delete S.weights[k]; } }));
+  S.excluded.forEach(k => out.push({ text: 'no ' + lc(labelOf(k)), neg: true, clear: () => { S.excluded = S.excluded.filter(x => x !== k); } }));
+  S.banned.forEach(t => out.push({ text: 'no ' + t, neg: true, clear: () => { S.banned = S.banned.filter(x => x !== t); } }));
+  return limit ? out.slice(0, limit) : out;
+}
+function renderLearned() {
+  const box = $('learned'); box.innerHTML = '';
+  const tags = profileTags();
+  if (!tags.length) return;
+  const l = document.createElement('span'); l.className = 'lbl'; l.textContent = 'Lu picked up'; box.appendChild(l);
+  tags.forEach(t => {
+    const b = document.createElement('button');
+    b.className = 'tag' + (t.neg ? ' neg' : ''); b.title = 'Tap to remove';
+    b.innerHTML = `<span>${escHTML(t.text)}</span><span class="x">×</span>`;
+    b.onclick = () => { t.clear(); save(); renderLearned(); };
+    box.appendChild(b);
+  });
+}
+
+/* ---------- Explore ---------- */
+let deck = [];
+function whySentence(s) {
+  const bits = [];
+  if (S.mentions.includes(s.t)) bits.push(`You brought up ${s.name.split(' ')[0]} with Lu.`);
+  const th = s.themes.filter(k => S.weights[k] > 0).sort((a, b) => S.weights[b] - S.weights[a]).slice(0, 2).map(k => lc(labelOf(k)));
+  if (th.length) bits.push(`${bits.length ? 'It also fits' : 'Fits'} your interest in ${list(th)}.`);
+  if (S.risk != null && Math.abs(s.risk - S.risk) < 1.2) bits.push(S.risk <= 2.4 ? 'Low volatility suits your steady style.' : S.risk >= 3.6 ? 'Bigger swings, in line with the risk you said you\'re okay with.' : 'Sits right in your comfort zone on risk.');
+  else if (S.risk != null && s.risk > S.risk) bits.push('Heads up: a bit more volatile than you said you like.');
+  if (S.income && s.div) bits.push('Pays a dividend, which you mentioned wanting.');
+  return bits.join(' ') || s.blurb;
+}
+function bars(s) {
+  let seed = hash(s.t); const rnd = () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296;
+  const vals = []; let v = 40;
+  for (let i = 0; i < 10; i++) { v += 3 + (rnd() - 0.42) * (4 + s.risk * 5); vals.push(Math.max(8, v)); }
+  const max = Math.max(...vals);
+  return vals.map(x => `<i style="height:${Math.round(18 + (x / max) * 82)}%"></i>`).join('');
+}
+function matchPctL(sc, top) { return Math.max(55, Math.min(98, Math.round(58 + 40 * (sc / Math.max(top, 1))))); }
+
+function renderTuned() {
+  const box = $('tuned'); box.innerHTML = '';
+  const tags = profileTags(4);
+  if (!tags.length) return;
+  tags.forEach(t => { const s = document.createElement('span'); s.className = 'tag' + (t.neg ? ' neg' : ''); s.textContent = t.text; box.appendChild(s); });
+  const b = document.createElement('button'); b.className = 'tune'; b.textContent = 'tune with Lu'; b.dataset.go = 'ask'; box.appendChild(b);
+}
+
+function renderExplore() {
+  renderTuned();
+  deck = buildDeck();
+  const stack = $('stack'); stack.innerHTML = ''; stack.style.height = '';
+  document.querySelectorAll('#s-explore .under').forEach(u => u.remove());
+  $('exploreSub').textContent = deck.length ? `Based on your chats with Lu · ${deck.length} to swipe` : 'Based on your chats with Lu · swipe to explore';
+  if (!deck.length) {
+    const swiped = Object.keys(S.swiped).length;
+    const hasSignal = Object.keys(S.weights).length || S.mentions.length || S.risk != null;
+    stack.innerHTML = `<div class="empty"><div class="ring"></div>
+      <h3>${swiped ? 'You\'re all caught up' : hasSignal ? 'Nothing fits those filters' : 'Let\'s find your matches'}</h3>
+      <p>${swiped ? 'Tell Lu what you liked or didn\'t, and you\'ll get a fresh set.' : hasSignal ? 'Loosen things up a little with Lu.' : 'No survey needed. Just tell Lu about the brands you love, what you\'re curious about and how you feel about risk.'}</p>
+      <button class="btn primary sm" data-go="ask">chat with Lu</button></div>`;
+    return;
+  }
+  const top = deck[0].sc;
+  deck.slice(0, 3).reverse().forEach((s, i, arr) => {
+    const depth = arr.length - 1 - i;
+    const el = document.createElement('article');
+    el.className = 'mcard' + (depth === 0 ? ' top' : '');
+    el.style.transform = `translateY(${depth * 12}px) scale(${1 - depth * 0.035})`;
+    el.style.opacity = depth > 1 ? 0 : 1;
+    const riskTxt = ['', 'Very low risk', 'Low risk', 'Medium risk', 'High risk', 'Very high risk'][s.risk];
+    const kind = s.cap === 'ETF' ? 'Index fund' : s.cap + ' cap';
+    const themes = s.themes.filter(k => k !== 'dividends').slice(0, 2).map(labelOf).join(', ');
+    el.innerHTML = `
+      <div class="stamp pass">PASS</div><div class="stamp save">SAVE</div>
+      <div class="head"><div><div class="tk">${s.t}</div><div class="nm">${escHTML(s.name)}</div></div>
+        <span class="mpill">${matchPctL(s.sc, top)}% match</span></div>
+      <div class="big">${riskTxt} ${s.div ? '<small>pays dividend</small>' : '<small class="g">growth</small>'}</div>
+      <div class="bars" aria-hidden="true">${bars(s)}</div>
+      <div class="why"><h4 data-label>WHY THIS MATCHES YOU</h4><p data-body>${escHTML(whySentence(s))}</p></div>
+      <div class="meta"><span>${kind}</span><span>${escHTML(themes)}</span></div>
+      <div class="acts">
+        <button data-act="pass" aria-label="Pass">${ICON.x}</button>
+        <button data-act="info" aria-label="About ${s.t}">${ICON.info}</button>
+        <button data-act="save" class="yes" aria-label="Save">${ICON.check}</button>
+      </div>
+      <div class="hintline">← pass &nbsp; save →</div>`;
+    stack.appendChild(el);
+    if (depth === 0) bindCard(el, s);
+  });
+  const topCard = stack.querySelector('.mcard.top');
+  stack.style.height = (topCard.offsetHeight + 28) + 'px';
+  stack.querySelector('.under')?.remove();
+  const under = document.createElement('div'); under.className = 'under';
+  under.innerHTML = `<span>Demo data · simulated trend · not advice</span>${S.history.length ? '<button id="undo">undo</button>' : ''}`;
+  stack.after(under);
+  if ($('undo')) $('undo').onclick = undoSwipe;
+}
+
+// Learn from swipes: saves strengthen a stock's themes and nudge risk toward it; passes soften them.
+function decideL(s, action) {
+  const like = action === 'save';
+  pinTop = null;
+  S.swiped[s.t] = like ? 'like' : 'nope';
+  S.history.push(s.t);
+  s.themes.forEach(k => { if (!S.excluded.includes(k)) S.weights[k] = Math.max(0, (S.weights[k] || 0) + (like ? 0.5 : -0.35)); });
+  if (like && S.risk != null) S.risk += (s.risk - S.risk) * 0.08;
+  if (!like) {
+    const recent = S.history.slice(-4).filter(t => S.swiped[t] === 'nope').map(t => BY_T[t].themes);
+    const common = s.themes.find(k => recent.length >= 3 && recent.every(th => th.includes(k)));
+    if (common) toast(`Passing on a lot of ${lc(labelOf(common))}. Tell Lu "no ${lc(labelOf(common))}" to drop it.`);
+  }
+  save(); renderLearned();
+}
+function fly(el, action, s) {
+  el.querySelector('.stamp.' + action).style.opacity = 1;
+  el.style.transition = 'transform .4s ease-in, opacity .4s';
+  el.style.transform = `translateX(${action === 'save' ? 140 : -140}%) rotate(${action === 'save' ? 20 : -20}deg)`;
+  el.style.opacity = 0;
+  decideL(s, action);
+  if (action === 'save') toast(`Saved ${s.t} · Lu will find more like it`);
+  setTimeout(renderExplore, 260);
+}
+function bindCard(el, s) {
+  let info = false;
+  el.querySelectorAll('[data-act]').forEach(b => b.addEventListener('click', e => {
+    e.stopPropagation();
+    const a = b.dataset.act;
+    if (a === 'info') {
+      info = !info;
+      el.querySelector('[data-label]').textContent = info ? 'ABOUT ' + s.t : 'WHY THIS MATCHES YOU';
+      el.querySelector('[data-body]').textContent = info ? s.blurb : whySentence(s);
+    } else fly(el, a, s);
+  }));
+  let sx = 0, sy = 0, dx = 0, drag = false, decided = false;
+  const save_ = el.querySelector('.stamp.save'), pass_ = el.querySelector('.stamp.pass');
+  el.addEventListener('pointerdown', e => {
+    if (e.target.closest('button')) return;
+    drag = true; decided = false; sx = e.clientX; sy = e.clientY; dx = 0;
+  });
+  el.addEventListener('pointermove', e => {
+    if (!drag) return;
+    dx = e.clientX - sx; const dy = e.clientY - sy;
+    if (!decided) { if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return; decided = true; if (Math.abs(dy) > Math.abs(dx)) { drag = false; return; } el.setPointerCapture(e.pointerId); el.classList.add('dragging'); }
+    el.style.transform = `translateX(${dx}px) rotate(${dx / 20}deg)`;
+    save_.style.opacity = Math.max(0, Math.min(1, dx / 80));
+    pass_.style.opacity = Math.max(0, Math.min(1, -dx / 80));
+  });
+  const end = () => {
+    if (!drag) return; drag = false; el.classList.remove('dragging');
+    if (dx > el.offsetWidth * 0.28) fly(el, 'save', s);
+    else if (dx < -el.offsetWidth * 0.28) fly(el, 'pass', s);
+    else { el.style.transform = ''; save_.style.opacity = pass_.style.opacity = 0; }
+  };
+  el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
+}
+function undoSwipe() {
+  const t = S.history.pop(); if (!t) return;
+  const action = S.swiped[t]; delete S.swiped[t];
+  const delta = action === 'like' ? 0.5 : -0.35;
+  BY_T[t].themes.forEach(k => { if (S.weights[k] != null) S.weights[k] = Math.max(0, S.weights[k] - delta); });
+  pinTop = t; save(); renderExplore(); toast('Brought back ' + t);
+}
+document.addEventListener('keydown', e => {
+  if (current !== 'explore' || e.target.tagName === 'TEXTAREA') return;
+  const el = document.querySelector('.mcard.top'); if (!el) return;
+  const s = deck[0];
+  if (e.key === 'ArrowRight') fly(el, 'save', s);
+  if (e.key === 'ArrowLeft') fly(el, 'pass', s);
+});
+
+/* ---------- Ask Lu ---------- */
+const thread = $('thread');
+function addMsg(who, text, opts = {}) {
+  if (who === 'ai') { const w = document.createElement('div'); w.className = 'who'; w.innerHTML = '<span class="ring"></span>Lu'; thread.appendChild(w); }
+  const el = document.createElement('div');
+  el.className = 'msg ' + (who === 'ai' ? 'lu' : 'me');
+  el.textContent = text;
+  thread.appendChild(el);
+  if (opts.cta) {
+    thread.querySelectorAll('.btn').forEach(x => x.remove());
+    const b = document.createElement('button');
+    b.className = 'btn primary sm'; b.style.alignSelf = 'flex-start'; b.textContent = 'see my matches →'; b.dataset.go = 'explore';
+    thread.appendChild(b);
+  }
+  thread.scrollTop = thread.scrollHeight;
+  if (!opts.noLog) { S.log.push({ who, text, cta: !!opts.cta }); save(); }
+}
+function renderSparks() {
+  const box = $('sparks'); box.innerHTML = '';
+  const used = new Set(S.log.filter(m => m.who === 'me').map(m => m.text));
+  SPARKS.filter(s => !used.has(s)).slice(0, 6).forEach(s => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'spark'; b.textContent = s;
+    b.onclick = () => send(s); box.appendChild(b);
+  });
+}
+let busy = false;
+function send(text) {
+  text = (text || '').trim(); if (!text || busy) return;
+  busy = true;
+  addMsg('me', text);
+  $('input').value = ''; autosize(); $('send').disabled = true;
+  renderSparks();
+  const f = understand(text); S.turns++;
+  const ch = apply(f); save(); renderLearned();
+  const w = document.createElement('div'); w.className = 'msg lu'; w.innerHTML = '<span class="typing"><i></i><i></i><i></i></span>';
+  thread.appendChild(w); thread.scrollTop = thread.scrollHeight;
+  setTimeout(() => {
+    w.remove();
+    if (f.wantsDeck && buildDeck().length && !ch.likes.length && !ch.up.length) {
+      addMsg('ai', 'Pulling up your matches now. Come back anytime to tell me more.'); busy = false; setTimeout(() => go('explore'), 500); return;
+    }
+    const r = reply(f, ch);
+    addMsg('ai', r.text, { cta: r.cta }); busy = false;
+  }, 450 + Math.min(900, text.length * 12));
+}
+function autosize() { const i = $('input'); i.style.height = 'auto'; i.style.height = Math.min(120, i.scrollHeight) + 'px'; }
+$('composer').addEventListener('submit', e => { e.preventDefault(); send($('input').value); });
+$('input').addEventListener('input', () => { autosize(); $('send').disabled = !$('input').value.trim(); });
+$('input').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send($('input').value); } });
+
+/* ---------- Portfolio ---------- */
+function renderPortfolio() {
+  const d = buildDeck();
+  const topThemes = Object.entries(S.weights).filter(([, v]) => v >= 1).sort((a, b) => b[1] - a[1]).slice(0, 2).map(([k]) => lc(labelOf(k)));
+  const cards = [];
+  if (d.length) cards.push({ h: 'Your matches are ready', p: `Lu found ${d.length} idea${d.length === 1 ? '' : 's'}${topThemes.length ? ' around ' + list(topThemes) : ''}, tuned to a ${riskWord(S.risk) || 'balanced'} style.`, l: 'Explore matches', go: 'explore' });
+  else cards.push({ h: 'Skip the risk survey', p: 'Just tell Lu what you\'re into, and your matches build themselves from the conversation.', l: 'Chat with Lu', go: 'ask' });
+  cards.push({ h: 'Start with index funds', p: 'VTI offers broad market exposure with low fees, perfect for beginners building long-term wealth.', l: 'Explore VTI', vti: true });
+  cards.push({ h: 'Automate your investing', p: 'Set a small weekly auto-invest into your saved picks so you never miss a week.', l: 'Set it up', toast: 'Auto-invest is a demo in this preview' });
+  const box = $('pfy'); box.innerHTML = '';
+  cards.forEach(c => {
+    const el = document.createElement('div'); el.className = 'tile pfy';
+    el.innerHTML = `<h3>${c.h}</h3><p>${escHTML(c.p)}</p>`;
+    const b = document.createElement('button'); b.className = 'link'; b.textContent = c.l + ' →';
+    if (c.go) b.dataset.go = c.go;
+    if (c.toast) b.dataset.toast = c.toast;
+    if (c.vti) b.onclick = () => { if (!S.mentions.includes('VTI')) S.mentions.push('VTI'); delete S.swiped.VTI; pinTop = 'VTI'; save(); go('explore'); };
+    el.appendChild(b); box.appendChild(el);
+  });
+  const saved = Object.entries(S.swiped).filter(([, v]) => v !== 'nope').map(([t]) => BY_T[t]).filter(Boolean);
+  const sw = $('savedWrap'); sw.innerHTML = '';
+  if (!saved.length) return;
+  sw.innerHTML = `<div class="eyebrow">Saved matches · ${saved.length}</div><div class="rowlist"></div>`;
+  const rl = sw.querySelector('.rowlist');
+  saved.forEach(s => {
+    const r = document.createElement('div'); r.className = 'srow';
+    r.innerHTML = `<div class="grow"><div class="tk">${s.t}</div><div class="nm">${escHTML(s.name)}</div></div><span class="tag">${['','very low','low','medium','high','very high'][s.risk]} risk</span><button class="x" aria-label="Remove ${s.t}">${ICON.x}</button>`;
+    r.querySelector('.x').onclick = () => { S.swiped[s.t] = 'nope'; save(); renderPortfolio(); };
+    rl.appendChild(r);
+  });
+}
+
+/* ---------- Wallet ---------- */
+$('clearBtn').onclick = () => { $('pend').hidden = true; $('pendNote').textContent = 'Chase ••4821 · Cleared'; $('withdrawable').textContent = '$200.00'; toast('Transfers marked as cleared'); };
+
+/* ---------- Social ---------- */
+const FRIENDS = [
+  { n: 'Maya Chen', i: 'MC', c: '#e2dcf7', t: '12m ago', g: '+8.4%', a: 'added VTI to her picks' },
+  { n: 'Noah Williams', i: 'NW', c: '#d9ece4', t: '1h ago', g: '+5.7%', a: 'hit a 12-week investing streak' },
+  { n: 'Camila Torres', i: 'CT', c: '#f9e3cf', t: '3h ago', g: '+12.1%', a: 'saved a new AI match: NVDA' }
+];
+const cheered = new Set();
+function renderSocial() {
+  const latest = [...S.history].reverse().find(t => S.swiped[t] === 'like');
+  const feed = (latest ? [{ n: 'You', i: 'S', c: '#f1ebdb', t: 'just now', g: null, a: `saved a new match from Lu: ${latest}` }] : []).concat(FRIENDS);
+  const box = $('friends'); box.innerHTML = '';
+  feed.forEach(f => {
+    const p = document.createElement('div'); p.className = 'post';
+    p.innerHTML = `<div class="top"><div class="av" style="background:${f.c}">${f.i}</div><div class="who2"><b>${f.n}</b><span>${f.t}</span></div>${f.g ? `<span class="gain">${f.g}</span>` : ''}</div>
+      <p>${escHTML(f.a)}</p>
+      <div class="bar"><button data-cheer="${f.n}" class="${cheered.has(f.n) ? 'on' : ''}">${ICON.heart}Cheer</button><button data-toast="Replies are a demo in this preview">${ICON.reply}Reply</button></div>`;
+    box.appendChild(p);
+  });
+  box.querySelectorAll('[data-cheer]').forEach(b => b.onclick = () => {
+    const n = b.dataset.cheer; cheered.has(n) ? cheered.delete(n) : cheered.add(n); b.classList.toggle('on');
+  });
+  const board = [['Camila Torres','CT','#f9e3cf','12-week streak'],['Maya Chen','MC','#e2dcf7','9-week streak'],['You','S','#f1ebdb', `${Object.values(S.swiped).filter(v => v === 'like').length} matches saved`],['Noah Williams','NW','#d9ece4','12-week streak']];
+  $('board').innerHTML = board.map((r, i) => `<div class="lb${r[0] === 'You' ? ' me' : ''}"><span class="rk">${i + 1}</span><div class="av" style="background:${r[2]}">${r[1]}</div><div class="grow">${r[0]}</div><span style="color:var(--muted);font-size:14px">${r[3]}</span></div>`).join('')
+    + '<p class="foot">Ranked by consistency, never by dollar amounts.</p>';
+}
+document.querySelectorAll('[data-seg]').forEach(b => b.onclick = () => {
+  document.querySelectorAll('[data-seg]').forEach(x => x.classList.toggle('on', x === b));
+  $('friends').hidden = b.dataset.seg !== 'friends'; $('board').hidden = b.dataset.seg !== 'board';
+});
+
+/* ---------- Boot ---------- */
+if (!S.log.length) addMsg('ai', GREETING);
+else S.log.forEach((m, i) => addMsg(m.who, m.text, { noLog: true, cta: m.cta && i === S.log.length - 1 }));
+renderLearned(); renderSparks();
+window.__luma = { understand, buildDeck, state: () => S, go };
+})();
+</script>
+</body>
+</html>
