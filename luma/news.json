@@ -1,15 +1,15 @@
 {
- "generatedAt": "2026-11-08T15:37:30.309Z",
+ "generatedAt": "2026-11-08T16:32:24.390Z",
  "source": "Yahoo Finance news search; explainers are rule-based",
  "items": {
   "NVDA": [
    {
-    "title": "Ben Thompson: NVIDIA Will “Almost Certainly Be a Short-Term Loser” From the Blue Wave",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/ben-thompson-nvidia-almost-certainly-142104128.html",
-    "time": 1794147664,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "title": "Why Nvidia at 13 Times Expected Earnings Still Isn’t Cheap",
+    "publisher": "24/7 Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/why-nvidia-13-times-expected-160800388.html",
+    "time": 1794154080,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
   ],
   "AMD": [
@@ -65,6 +65,14 @@
    }
   ],
   "AVGO": [
+   {
+    "title": "Broadcom Stock Has Lost Nearly 40% From Its Record. I'd Buy It Now.",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stock-lost-nearly-40-154302022.html",
+    "time": 1794152582,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
    {
     "title": "Broadcom Just Dropped 15% in a Week. Is It Time to Sell, or Load Up?",
     "publisher": "TIKR",
@@ -604,6 +612,14 @@
   ],
   "CVX": [
    {
+    "title": "Chevron’s Refineries Ran at 98%. Its January Report Must Absorb a $4 Billion Hess Charge",
+    "publisher": "TIKR",
+    "link": "https://finance.yahoo.com/energy/articles/chevron-refineries-ran-98-january-155014932.html",
+    "time": 1794153014,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
     "title": "ExxonMobil Is Up 38% in 2026 and Chevron Is Up 39%: Take Profits, or Hold On?",
     "publisher": "TIKR",
     "link": "https://finance.yahoo.com/markets/stocks/articles/exxonmobil-38-2026-chevron-39-234559956.html",
@@ -616,14 +632,6 @@
     "publisher": "Simply Wall St.",
     "link": "https://finance.yahoo.com/energy/articles/chevron-cvx-q3-earnings-spotlight-001411385.html",
     "time": 1794010451,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
-   },
-   {
-    "title": "Compared to Estimates, Chevron (CVX) Q3 Earnings: A Look at Key Metrics",
-    "publisher": "Zacks",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/compared-estimates-chevron-cvx-q3-223002474.html",
-    "time": 1794004202,
     "kind": "earnings",
     "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
@@ -682,6 +690,14 @@
   ],
   "SBUX": [
    {
+    "title": "Starbucks Is Up 28% in 2026 After a 7.2% Comp Quarter: Take Profits, or Buy More?",
+    "publisher": "TIKR",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/starbucks-28-2026-7-2-154624633.html",
+    "time": 1794152784,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+   },
+   {
     "title": "Jim Cramer: Starbucks Stock “Goes to 125” After a 54% Earnings Jump",
     "publisher": "TIKR",
     "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-starbucks-stock-goes-093143888.html",
@@ -696,14 +712,6 @@
     "time": 1794129145,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "UBS Adjusts Starbucks Price Target to $110 From $105, Maintains Neutral Rating",
-    "publisher": "MT Newswires",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/ubs-adjusts-starbucks-price-target-154254009.html",
-    "time": 1793979774,
-    "kind": "analyst",
-    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
    }
   ],
   "MCD": [
@@ -914,6 +922,32 @@
     "plain": "Layoffs and leadership changes cut costs or change direction. Sometimes that helps profits; sometimes it signals business is slowing."
    }
   ],
+  "NFLX": [
+   {
+    "title": "Investors Heavily Search Netflix, Inc. (NFLX): Here is What You Need to Know",
+    "publisher": "Zacks",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/investors-heavily-search-netflix-inc-130002848.html",
+    "time": 1793970002,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Netflix (NFLX) Stock Looks Cheap With 23% Upside To Fair Value",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-nflx-stock-looks-cheap-122022918.html",
+    "time": 1793967622,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Disney struggles as Netflix pulls away: Time to buy the dip?",
+    "publisher": "Investing.com",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/disney-struggles-netflix-pulls-away-103406881.html",
+    "time": 1793961246,
+    "kind": "deal",
+    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
+   }
+  ],
   "SPOT": [
    {
     "title": "Spotify Just Gained 7% in a Week. What Will It Take to Hit $700?",
@@ -985,6 +1019,14 @@
    }
   ],
   "JNJ": [
+   {
+    "title": "Johnson & Johnson reports 73% PSA response rate with investigational pasritamig-based immunotherapy combination in advanced prostate cancer",
+    "publisher": "PR Newswire",
+    "link": "https://finance.yahoo.com/healthcare/articles/johnson-johnson-reports-73-psa-160000196.html",
+    "time": 1794153600,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
    {
     "title": "Johnson & Johnson announces new Phase 2 nipocalimab study data in Sjögren's disease that reveal insights on importance of symptom improvements most valued by patients",
     "publisher": "PR Newswire",
@@ -1108,6 +1150,14 @@
   ],
   "ISRG": [
    {
+    "title": "Why Intuitive Surgical (ISRG) Just Cracked the Top 10 Best Healthcare Stocks List",
+    "publisher": "Insider Monkey",
+    "link": "https://finance.yahoo.com/healthcare/articles/why-intuitive-surgical-isrg-just-153854003.html",
+    "time": 1794152334,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
     "title": "Is Intuitive Surgical's Next Big Thing Already Here?",
     "publisher": "Trefis",
     "link": "https://finance.yahoo.com/healthcare/articles/intuitive-surgicals-next-big-thing-100900835.html",
@@ -1122,14 +1172,6 @@
     "time": 1794021902,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "How Earnings Upgrades At Intuitive Surgical Stock Have Changed Its Investment Story",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/healthcare/articles/earnings-upgrades-intuitive-surgical-stock-001140435.html",
-    "time": 1794010300,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
   ],
   "MRNA": [
@@ -1212,6 +1254,14 @@
   ],
   "GS": [
    {
+    "title": "Goldman Sachs revamps 2027 gold price target, but signals rebound",
+    "publisher": "TheStreet",
+    "link": "https://finance.yahoo.com/markets/commodities/articles/goldman-sachs-revamps-2027-gold-161700634.html",
+    "time": 1794154620,
+    "kind": "analyst",
+    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
+   },
+   {
     "title": "Musk “Would Never Lend Money” to Pure AI Clouds. Goldman Is Selling SpaceX’s $40 Billion GPU Debt",
     "publisher": "TIKR",
     "link": "https://finance.yahoo.com/markets/stocks/articles/musk-never-lend-money-pure-021812060.html",
@@ -1226,14 +1276,6 @@
     "time": 1794071504,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "Goldman raises global data center capacity forecast to 273 GW by 2030",
-    "publisher": "Investing.com",
-    "link": "https://finance.yahoo.com/technology/ai/articles/goldman-raises-global-data-center-004019419.html",
-    "time": 1794012019,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
   ],
   "V": [
@@ -1414,6 +1456,14 @@
   ],
   "UBER": [
    {
+    "title": "Billionaire Bill Ackman Has Been All-In on Uber. Is Now the Time to Buy the Stock?",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/billionaire-bill-ackman-uber-now-155000172.html",
+    "time": 1794153000,
+    "kind": "deal",
+    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
+   },
+   {
     "title": "Amazon Gives Prime Members Uber Eats, Opening a New Front Against DoorDash",
     "publisher": "TIKR",
     "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-gives-prime-members-uber-074955340.html",
@@ -1426,14 +1476,6 @@
     "publisher": "The Telegraph",
     "link": "https://finance.yahoo.com/economy/policy/articles/hmrc-demands-2-6bn-uber-060000016.html",
     "time": 1794031200,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "What Could Uber Technologies (UBER) Gain From Its New Delivery Partnerships?",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/could-uber-technologies-uber-gain-042520829.html",
-    "time": 1794025520,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
@@ -1566,32 +1608,6 @@
     "time": 1793976982,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   }
-  ],
-  "O": [
-   {
-    "title": "3 Reasons Why Ultra High Yield Realty Income Is a Buy After Its Latest Earnings Report",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/real-estate/articles/3-reasons-why-ultra-high-123500096.html",
-    "time": 1794141300,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
-   },
-   {
-    "title": "Realty Income Just Gained 9% in a Month: Take Profits, or Buy More?",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/realty-income-just-gained-9-235546556.html",
-    "time": 1794095746,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "Better Dividend Stock: Realty Income vs. NNN REIT",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/better-dividend-stock-realty-income-215225034.html",
-    "time": 1794001945,
-    "kind": "cash",
-    "plain": "The company is returning cash to shareholders (or splitting its shares). That usually signals management feels confident."
    }
   ],
   "DUK": [
