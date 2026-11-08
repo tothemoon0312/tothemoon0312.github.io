@@ -346,7 +346,7 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
   <div class="welcome" id="welcome">
     <div class="ring"></div>
     <div class="hi">welcome back</div>
-    <h2>Sofia</h2>
+    <h2>Charlotte</h2>
     <p>Your financial picture is ready. Let's see where you stand.</p>
     <button class="btn primary" data-go="portfolio">see my overview</button>
     <button class="btn secondary" data-go="ask">chat with Lu</button>
@@ -499,7 +499,7 @@ function go(name, fromHistory) {
   const right = $('appbarRight');
   right.innerHTML = name === 'wallet' ? (marketOpen() ? '<span class="pill-open">Market open</span>' : '<span class="pill-closed" title="US stocks trade 9:30am–4pm ET on weekdays. Crypto trades 24/7.">Market closed</span>')
     : name === 'social' ? `<button class="avatar-btn" aria-label="Add friend" data-toast="Invites are a demo in this preview">${ICON.addUser}</button>`
-    : '<button class="avatar-btn" aria-label="Profile" data-profile>S</button>';
+    : '<button class="avatar-btn" aria-label="Profile" data-profile>C</button>';
   if (name === 'explore') renderExplore();
   if (name === 'portfolio') renderPortfolio();
   if (name === 'social') renderSocial();
@@ -1230,7 +1230,7 @@ try {
 /* ---------- Profile sheet ---------- */
 function profileSheet() {
   const tags = profileTags();
-  openSheet(`<div style="display:flex;align-items:center;gap:14px"><div class="avatar-btn" style="width:56px;height:56px;font-size:20px">S</div><div><h2 style="font-size:22px">Sofia</h2><div class="nm">Plaid: Chase ••4821 linked</div></div></div>
+  openSheet(`<div style="display:flex;align-items:center;gap:14px"><div class="avatar-btn" style="width:56px;height:56px;font-size:20px">C</div><div><h2 style="font-size:22px">Charlotte</h2><div class="nm">Plaid: Chase ••4821 linked</div></div></div>
     <div class="eyebrow">What Lu knows about you</div>
     <div class="tuned" style="margin:0">${tags.length ? tags.map(t => `<span class="tag${t.neg ? ' neg' : ''}">${escHTML(t.text)}</span>`).join('') : '<span class="nm">Nothing yet. Chat with Lu to get started.</span>'}</div>
     <p class="nm" style="margin:12px 0 0">Lu learns this from your chats and swipes. No survey, and you can edit it anytime in Ask.</p>
@@ -1260,7 +1260,7 @@ const FRIENDS = [
 const cheered = new Set();
 function renderSocial() {
   const latest = [...S.history].reverse().find(t => S.swiped[t] === 'like');
-  const feed = (latest ? [{ n: 'You', i: 'S', c: '#f1ebdb', t: 'just now', g: null, a: `saved a new match from Lu: ${latest}` }] : []).concat(FRIENDS);
+  const feed = (latest ? [{ n: 'You', i: 'C', c: '#f1ebdb', t: 'just now', g: null, a: `saved a new match from Lu: ${latest}` }] : []).concat(FRIENDS);
   const box = $('friends'); box.innerHTML = '';
   feed.forEach(f => {
     const p = document.createElement('div'); p.className = 'post';
@@ -1272,7 +1272,7 @@ function renderSocial() {
   box.querySelectorAll('[data-cheer]').forEach(b => b.onclick = () => {
     const n = b.dataset.cheer; cheered.has(n) ? cheered.delete(n) : cheered.add(n); b.classList.toggle('on');
   });
-  const board = [['Camila Torres','CT','#f9e3cf','12-week streak'],['Maya Chen','MC','#e2dcf7','9-week streak'],['You','S','#f1ebdb', `${Object.values(S.swiped).filter(v => v === 'like').length} matches saved`],['Noah Williams','NW','#d9ece4','12-week streak']];
+  const board = [['Camila Torres','CT','#f9e3cf','12-week streak'],['Maya Chen','MC','#e2dcf7','9-week streak'],['You','C','#f1ebdb', `${Object.values(S.swiped).filter(v => v === 'like').length} matches saved`],['Noah Williams','NW','#d9ece4','12-week streak']];
   $('board').innerHTML = board.map((r, i) => `<div class="lb${r[0] === 'You' ? ' me' : ''}"><span class="rk">${i + 1}</span><div class="av" style="background:${r[2]}">${r[1]}</div><div class="grow">${r[0]}</div><span style="color:var(--muted);font-size:14px">${r[3]}</span></div>`).join('')
     + '<p class="foot">Ranked by consistency, never by dollar amounts.</p>';
 }
@@ -1307,6 +1307,8 @@ async function loadRiskData() {
 }
 
 /* ---------- Boot ---------- */
+// Chats saved before the rename still greet the old name; update them.
+S.log.forEach(m => { if (m.text) m.text = m.text.replace(/\bSofia\b/g, 'Charlotte'); });
 if (!S.log.length) addMsg('ai', GREETING);
 else S.log.forEach((m, i) => addMsg(m.who, m.text, { noLog: true, cta: m.cta && i === S.log.length - 1, ticker: m.ticker, term: m.term, dial: m.dial }));
 renderLearned(); renderSparks(); refreshMoney(); loadRiskData();
