@@ -447,7 +447,7 @@ function reply(f, ch) {
   return { text: parts.join(' ') + tail, cta: deck.length > 0 };
 }
 
-const GREETING = 'Hey Sofia, I\'m Lu 👋\n\nNo survey here. Just tell me about you: brands you love, what you\'re curious about, what you\'d never put money into, or how you\'d feel if the market dipped. I\'ll turn it into matches you can swipe, rated by how much each stock has really swung over the past year.';
+const GREETING = 'Hey Charlotte, I\'m Lu 👋\n\nNo survey here. Just tell me about you: brands you love, what you\'re curious about, what you\'d never put money into, or how you\'d feel if the market dipped. I\'ll turn it into matches you can swipe, rated by how much each stock has really swung over the past year.';
 const SPARKS = [
   'I use my iPhone and Netflix all day',
   'Into AI and chips, happy to take risks',
