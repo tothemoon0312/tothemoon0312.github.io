@@ -1,0 +1,41 @@
+name: Luma risk data
+
+# Rebuilds luma/risk-data.json from real daily prices after each US market close,
+# so Lu's matches and risk scores follow how stocks actually behave.
+on:
+  schedule:
+    - cron: "37 21 * * 1-5"   # 21:37 UTC on weekdays (after the 4pm ET close)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: luma-risk-data
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build risk data
+        run: node luma/scripts/build-risk-data.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- luma/risk-data.json; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add luma/risk-data.json
+          git commit -m "Update Luma risk data"
+          git push
