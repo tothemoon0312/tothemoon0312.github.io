@@ -1,6 +1,6 @@
 {
  "asOf": "2026-11-06",
- "generatedAt": "2026-11-08T15:08:53.725Z",
+ "generatedAt": "2026-11-08T15:15:19.738Z",
  "source": "Yahoo Finance daily closes (1y), metrics computed by luma/scripts/build-risk-data.mjs",
  "method": "risk 1-5 from annualized volatility (<18% / <26% / <36% / <52% / higher), +1 if max drawdown > 45% or beta > 1.7",
  "market": {
@@ -36,7 +36,7 @@
   "AMD": {
    "risk": 5,
    "vol": 0.7217,
-   "beta": 3.3692,
+   "beta": 3.3691,
    "maxDD": 0.3773,
    "ret1y": 0.9228,
    "price": 449.04,
@@ -1356,7 +1356,7 @@
   "MSTR": {
    "risk": 5,
    "vol": 0.8116,
-   "beta": 3.021,
+   "beta": 3.0209,
    "maxDD": 0.6598,
    "ret1y": -0.4671,
    "price": 128.93,
