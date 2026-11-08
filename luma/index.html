@@ -225,6 +225,32 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
 .demo { width: 100%; background: var(--card); border-radius: 14px; padding: 16px; color: var(--soft); font-size: 15.5px; margin-top: 18px; }
 .demo u { text-underline-offset: 4px; text-decoration-color: var(--line); }
 
+/* ---------- Sheet ---------- */
+.sheet-back { position: absolute; inset: 0; background: rgba(20, 16, 8, .32); z-index: 40; opacity: 0; transition: opacity .25s; }
+.sheet-back.show { opacity: 1; }
+.sheet { position: absolute; left: 0; right: 0; bottom: 0; z-index: 41; background: var(--bg); border-radius: 28px 28px 0 0; max-height: 88%; overflow-y: auto; padding: 10px 24px calc(24px + env(safe-area-inset-bottom)); transform: translateY(100%); transition: transform .3s cubic-bezier(.2,.8,.2,1); scrollbar-width: none; }
+.sheet.show { transform: none; }
+.grab { width: 44px; height: 5px; border-radius: 3px; background: var(--line); margin: 0 auto 16px; display: block; }
+.sheet h2 { font-size: 26px; margin: 0; }
+.sheet .nm { color: var(--muted); font-size: 15.5px; margin-top: 4px; }
+.sheet .about { color: var(--soft); font-size: 16px; line-height: 1.55; margin: 16px 0 0; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 16px 0; }
+.fact { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+.fact span { display: flex; align-items: center; gap: 4px; font-size: 12px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+.fact b { display: block; font-weight: 500; font-size: 15.5px; margin-top: 4px; }
+.meter { display: flex; gap: 3px; margin-top: 8px; }
+.meter i { flex: 1; height: 5px; border-radius: 3px; background: var(--line); }
+.meter i.on { background: var(--gold); }
+.q { width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--line); font-size: 11px; color: var(--muted); display: inline-grid; place-items: center; line-height: 1; vertical-align: middle; margin-left: 4px; flex: none; }
+.invest { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px; margin-top: 4px; }
+.invest .k { color: var(--muted); font-size: 14.5px; margin-bottom: 10px; }
+.amts { display: flex; gap: 8px; margin-bottom: 12px; }
+.amts button { flex: 1; height: 44px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); font-size: 15.5px; }
+.amts button.on { border-color: var(--gold); background: var(--gold-soft); color: var(--gold-text); font-weight: 500; }
+.fine { color: var(--muted); font-size: 12.5px; text-align: center; margin-top: 10px; }
+.held { background: var(--green-soft); color: var(--green); border-radius: 12px; padding: 10px 14px; font-size: 14.5px; margin-top: 14px; }
+.stockchip { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--gold); background: var(--gold-soft); color: var(--gold-text); border-radius: 999px; padding: 8px 14px; font-size: 14.5px; font-weight: 500; }
+
 /* ---------- Social ---------- */
 .seg { display: grid; grid-template-columns: 1fr 1fr; background: var(--card-2); border-radius: 999px; padding: 5px; margin: 4px 0 18px; }
 .seg button { height: 48px; border-radius: 999px; color: var(--muted); font-size: 16px; }
@@ -296,32 +322,21 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
     <!-- Wallet -->
     <section class="screen" id="s-wallet" hidden>
       <div class="bal-k">Available balance</div>
-      <div class="bal display">$250.00</div>
+      <div class="bal display" id="bal">$250.00</div>
       <div class="bal-n"><span id="withdrawable">$0.00</span> withdrawable &nbsp;•&nbsp; FDIC sweep eligible</div>
       <div class="money-btns">
-        <button class="btn primary" data-toast="Deposits are a demo in this preview">
+        <button class="btn primary" id="depositBtn">
           <svg class="i" viewBox="0 0 24 24" style="width:18px"><path d="M17 7 7 17M17 17H7V7"/></svg>Deposit</button>
-        <button class="btn secondary" data-toast="Withdrawals are a demo in this preview">
+        <button class="btn secondary" id="withdrawBtn">
           <svg class="i" viewBox="0 0 24 24" style="width:18px"><path d="M7 17 17 7M7 7h10v10"/></svg>Withdraw</button>
       </div>
       <div class="divider"></div>
       <div class="eyebrow" style="margin-top:24px">Activity</div>
       <div style="display:flex;justify-content:space-between;align-items:baseline">
         <h2 style="margin:0;font-size:22px">Recent money moves</h2>
-        <button style="color:var(--muted);font-size:15.5px" data-toast="Full history coming soon">See all</button>
+        <button style="color:var(--muted);font-size:15.5px" id="seeAll">See all</button>
       </div>
-      <div style="margin-top:8px">
-        <div class="mv">
-          <div class="c"><svg class="i" viewBox="0 0 24 24" style="width:18px"><path d="M17 7 7 17M17 17H7V7"/></svg></div>
-          <div class="grow"><b>Instant deposit <span class="pend" id="pend">PENDING</span></b><span class="d" id="pendNote">Chase ••4821 · Pending clearance</span></div>
-          <div class="amt pos">+$250.00</div>
-        </div>
-        <div class="mv">
-          <div class="c"><svg class="i" viewBox="0 0 24 24" style="width:18px"><path d="M7 17 17 7M7 7h10v10"/></svg></div>
-          <div class="grow"><b>Investment</b><span class="d">VTI · May 16</span></div>
-          <div class="amt">−$50.00</div>
-        </div>
-      </div>
+      <div style="margin-top:8px" id="activity"></div>
       <button class="demo" id="clearBtn"><u>Demo: mark bank transfers as cleared</u></button>
     </section>
 
@@ -361,6 +376,8 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
     <button data-go="portfolio"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 20v-4M8 20v-7M12 20v-5M16 20v-9M20 20V8"/><path d="m4 11 5-4 4 3 7-6"/></svg></span>Portfolio</button>
     <button data-go="social"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Social</button>
   </nav>
+  <div class="sheet-back" id="sheetBack" hidden></div>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" hidden><button class="grab" id="grab" aria-label="Close"></button><div id="sheetBody"></div></div>
   <div class="toast" id="toast"></div>
 </div>
 
@@ -394,10 +411,11 @@ function go(name) {
   const right = $('appbarRight');
   right.innerHTML = name === 'wallet' ? '<span class="pill-open">Market open</span>'
     : name === 'social' ? `<button class="avatar-btn" aria-label="Add friend" data-toast="Invites are a demo in this preview">${ICON.addUser}</button>`
-    : '<button class="avatar-btn" aria-label="Profile" data-toast="Signed in as Sofia">S</button>';
+    : '<button class="avatar-btn" aria-label="Profile" data-profile>S</button>';
   if (name === 'explore') renderExplore();
   if (name === 'portfolio') renderPortfolio();
   if (name === 'social') renderSocial();
+  if (name === 'wallet') renderWallet();
   if (name === 'ask') { const th = $('thread'); th.scrollTop = th.scrollHeight; }
 }
 document.addEventListener('click', e => { const b = e.target.closest('[data-go]'); if (b) go(b.dataset.go); });
@@ -429,16 +447,6 @@ function renderLearned() {
 
 /* ---------- Explore ---------- */
 let deck = [];
-function whySentence(s) {
-  const bits = [];
-  if (S.mentions.includes(s.t)) bits.push(`You brought up ${s.name.split(' ')[0]} with Lu.`);
-  const th = s.themes.filter(k => S.weights[k] > 0).sort((a, b) => S.weights[b] - S.weights[a]).slice(0, 2).map(k => lc(labelOf(k)));
-  if (th.length) bits.push(`${bits.length ? 'It also fits' : 'Fits'} your interest in ${list(th)}.`);
-  if (S.risk != null && Math.abs(s.risk - S.risk) < 1.2) bits.push(S.risk <= 2.4 ? 'Low volatility suits your steady style.' : S.risk >= 3.6 ? 'Bigger swings, in line with the risk you said you\'re okay with.' : 'Sits right in your comfort zone on risk.');
-  else if (S.risk != null && s.risk > S.risk) bits.push('Heads up: a bit more volatile than you said you like.');
-  if (S.income && s.div) bits.push('Pays a dividend, which you mentioned wanting.');
-  return bits.join(' ') || s.blurb;
-}
 function bars(s) {
   let seed = hash(s.t); const rnd = () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296;
   const vals = []; let v = 40;
@@ -488,7 +496,7 @@ function renderExplore() {
       <div class="big">${riskTxt} ${s.div ? '<small>pays dividend</small>' : '<small class="g">growth</small>'}</div>
       <div class="bars" aria-hidden="true">${bars(s)}</div>
       <div class="why"><h4 data-label>WHY THIS MATCHES YOU</h4><p data-body>${escHTML(whySentence(s))}</p></div>
-      <div class="meta"><span>${kind}</span><span>${escHTML(themes)}</span></div>
+      <div class="meta"><span>${kind}<button class="q" data-term="${s.cap === 'ETF' ? 'etf' : 'marketcap'}" aria-label="What does ${kind} mean?">?</button></span><span>${escHTML(themes)}</span></div>
       <div class="acts">
         <button data-act="pass" aria-label="Pass">${ICON.x}</button>
         <button data-act="info" aria-label="About ${s.t}">${ICON.info}</button>
@@ -536,11 +544,8 @@ function bindCard(el, s) {
   el.querySelectorAll('[data-act]').forEach(b => b.addEventListener('click', e => {
     e.stopPropagation();
     const a = b.dataset.act;
-    if (a === 'info') {
-      info = !info;
-      el.querySelector('[data-label]').textContent = info ? 'ABOUT ' + s.t : 'WHY THIS MATCHES YOU';
-      el.querySelector('[data-body]').textContent = info ? s.blurb : whySentence(s);
-    } else fly(el, a, s);
+    if (a === 'info') stockSheet(s.t);
+    else fly(el, a, s);
   }));
   let sx = 0, sy = 0, dx = 0, drag = false, decided = false;
   const save_ = el.querySelector('.stamp.save'), pass_ = el.querySelector('.stamp.pass');
@@ -587,6 +592,14 @@ function addMsg(who, text, opts = {}) {
   el.className = 'msg ' + (who === 'ai' ? 'lu' : 'me');
   el.textContent = text;
   thread.appendChild(el);
+  if (opts.ticker && BY_T[opts.ticker]) {
+    const c = document.createElement('button'); c.className = 'stockchip'; c.textContent = `View ${opts.ticker} →`;
+    c.onclick = () => stockSheet(opts.ticker); thread.appendChild(c);
+  }
+  if (opts.term) {
+    const c = document.createElement('button'); c.className = 'stockchip'; c.textContent = 'Open in Learn →';
+    c.onclick = () => termSheet(opts.term); thread.appendChild(c);
+  }
   if (opts.cta) {
     thread.querySelectorAll('.btn').forEach(x => x.remove());
     const b = document.createElement('button');
@@ -594,12 +607,14 @@ function addMsg(who, text, opts = {}) {
     thread.appendChild(b);
   }
   thread.scrollTop = thread.scrollHeight;
-  if (!opts.noLog) { S.log.push({ who, text, cta: !!opts.cta }); save(); }
+  if (!opts.noLog) { S.log.push({ who, text, cta: !!opts.cta, ticker: opts.ticker, term: opts.term }); save(); }
 }
-function renderSparks() {
+function renderSparks(list) {
+  if (list) { S.sug = list; save(); }
   const box = $('sparks'); box.innerHTML = '';
-  const used = new Set(S.log.filter(m => m.who === 'me').map(m => m.text));
-  SPARKS.filter(s => !used.has(s)).slice(0, 6).forEach(s => {
+  const used = new Set(S.log.filter(m => m.who === 'me').map(m => m.text.toLowerCase()));
+  const pool = (S.sug && S.sug.length ? S.sug : SPARKS).filter(x => x === 'show my matches' || !used.has(x.toLowerCase()));
+  pool.slice(0, 6).forEach(s => {
     const b = document.createElement('button'); b.type = 'button'; b.className = 'spark'; b.textContent = s;
     b.onclick = () => send(s); box.appendChild(b);
   });
@@ -610,18 +625,25 @@ function send(text) {
   busy = true;
   addMsg('me', text);
   $('input').value = ''; autosize(); $('send').disabled = true;
-  renderSparks();
-  const f = understand(text); S.turns++;
-  const ch = apply(f); save(); renderLearned();
+  S.turns++;
+  // Questions get a plain-English answer and don't change the profile; everything else is profile talk.
+  const ans = answerQuestion(text);
+  const f = ans ? null : understand(text);
+  const ch = ans ? null : apply(f);
+  save(); renderLearned();
   const w = document.createElement('div'); w.className = 'msg lu'; w.innerHTML = '<span class="typing"><i></i><i></i><i></i></span>';
   thread.appendChild(w); thread.scrollTop = thread.scrollHeight;
   setTimeout(() => {
     w.remove();
+    if (ans) {
+      addMsg('ai', ans.text, { ticker: ans.ticker, term: ans.term });
+      renderSparks(ans.suggestions); busy = false; return;
+    }
     if (f.wantsDeck && buildDeck().length && !ch.likes.length && !ch.up.length) {
       addMsg('ai', 'Pulling up your matches now. Come back anytime to tell me more.'); busy = false; setTimeout(() => go('explore'), 500); return;
     }
     const r = reply(f, ch);
-    addMsg('ai', r.text, { cta: r.cta }); busy = false;
+    addMsg('ai', r.text, { cta: r.cta }); renderSparks(nextSuggestions(ch)); busy = false;
   }, 450 + Math.min(900, text.length * 12));
 }
 function autosize() { const i = $('input'); i.style.height = 'auto'; i.style.height = Math.min(120, i.scrollHeight) + 'px'; }
@@ -630,11 +652,15 @@ $('input').addEventListener('input', () => { autosize(); $('send').disabled = !$
 $('input').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send($('input').value); } });
 
 /* ---------- Portfolio ---------- */
+function riskStyle(r) {
+  if (r == null) return 'a balanced style';
+  return r < 1.8 ? 'a very steady style' : r < 2.6 ? 'a safer style' : r < 3.4 ? 'a balanced style' : r < 4.2 ? 'a growth-focused style' : 'a high-risk, high-reward style';
+}
 function renderPortfolio() {
   const d = buildDeck();
   const topThemes = Object.entries(S.weights).filter(([, v]) => v >= 1).sort((a, b) => b[1] - a[1]).slice(0, 2).map(([k]) => lc(labelOf(k)));
   const cards = [];
-  if (d.length) cards.push({ h: 'Your matches are ready', p: `Lu found ${d.length} idea${d.length === 1 ? '' : 's'}${topThemes.length ? ' around ' + list(topThemes) : ''}, tuned to a ${riskWord(S.risk) || 'balanced'} style.`, l: 'Explore matches', go: 'explore' });
+  if (d.length) cards.push({ h: 'Your matches are ready', p: `Lu found ${d.length} idea${d.length === 1 ? '' : 's'}${topThemes.length ? ' around ' + list(topThemes) : ''}, tuned to ${riskStyle(S.risk)}.`, l: 'Explore matches', go: 'explore' });
   else cards.push({ h: 'Skip the risk survey', p: 'Just tell Lu what you\'re into, and your matches build themselves from the conversation.', l: 'Chat with Lu', go: 'ask' });
   cards.push({ h: 'Start with index funds', p: 'VTI offers broad market exposure with low fees, perfect for beginners building long-term wealth.', l: 'Explore VTI', vti: true });
   cards.push({ h: 'Automate your investing', p: 'Set a small weekly auto-invest into your saved picks so you never miss a week.', l: 'Set it up', toast: 'Auto-invest is a demo in this preview' });
@@ -648,21 +674,183 @@ function renderPortfolio() {
     if (c.vti) b.onclick = () => { if (!S.mentions.includes('VTI')) S.mentions.push('VTI'); delete S.swiped.VTI; pinTop = 'VTI'; save(); go('explore'); };
     el.appendChild(b); box.appendChild(el);
   });
-  const saved = Object.entries(S.swiped).filter(([, v]) => v !== 'nope').map(([t]) => BY_T[t]).filter(Boolean);
   const sw = $('savedWrap'); sw.innerHTML = '';
+  const holdings = Object.entries(S.holdings).filter(([t, v]) => v > 0 && BY_T[t]);
+  if (holdings.length) {
+    const total = holdings.reduce((x, [, v]) => x + v, 0);
+    sw.insertAdjacentHTML('beforeend', `<div class="eyebrow">Your picks · ${usd(total)} invested</div><div class="rowlist" id="holdList"></div>`);
+    holdings.sort((a, b) => b[1] - a[1]).forEach(([t, v]) => {
+      const s = BY_T[t];
+      const r = document.createElement('button'); r.className = 'srow'; r.style.textAlign = 'left'; r.style.width = '100%';
+      r.innerHTML = `<div class="grow"><div class="tk">${t}</div><div class="nm">${escHTML(s.name)}</div></div><span style="font-size:16px">${usd(v)}</span>`;
+      r.onclick = () => stockSheet(t);
+      $('holdList').appendChild(r);
+    });
+  }
+  const saved = Object.entries(S.swiped).filter(([t, v]) => v !== 'nope' && !S.holdings[t]).map(([t]) => BY_T[t]).filter(Boolean);
   if (!saved.length) return;
-  sw.innerHTML = `<div class="eyebrow">Saved matches · ${saved.length}</div><div class="rowlist"></div>`;
-  const rl = sw.querySelector('.rowlist');
+  sw.insertAdjacentHTML('beforeend', `<div class="eyebrow">Saved matches · ${saved.length}</div><div class="rowlist" id="savedList"></div>`);
   saved.forEach(s => {
-    const r = document.createElement('div'); r.className = 'srow';
-    r.innerHTML = `<div class="grow"><div class="tk">${s.t}</div><div class="nm">${escHTML(s.name)}</div></div><span class="tag">${['','very low','low','medium','high','very high'][s.risk]} risk</span><button class="x" aria-label="Remove ${s.t}">${ICON.x}</button>`;
+    const r = document.createElement('div'); r.className = 'srow'; r.style.cursor = 'pointer';
+    r.innerHTML = `<div class="grow"><div class="tk">${s.t}</div><div class="nm">${escHTML(s.name)}</div></div><span class="tag">invest</span><button class="x" aria-label="Remove ${s.t}">${ICON.x}</button>`;
+    r.onclick = e => { if (!e.target.closest('.x')) stockSheet(s.t); };
     r.querySelector('.x').onclick = () => { S.swiped[s.t] = 'nope'; save(); renderPortfolio(); };
-    rl.appendChild(r);
+    $('savedList').appendChild(r);
   });
 }
 
-/* ---------- Wallet ---------- */
-$('clearBtn').onclick = () => { $('pend').hidden = true; $('pendNote').textContent = 'Chase ••4821 · Cleared'; $('withdrawable').textContent = '$200.00'; toast('Transfers marked as cleared'); };
+/* ---------- Money (demo) ---------- */
+const today = () => new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+const usd = n => '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+if (S.cash == null) S.cash = 250;
+if (!S.holdings) S.holdings = { VTI: 50 };
+if (!S.activity) S.activity = [
+  { kind: 'deposit', amt: 250, note: 'Chase ••4821', pending: true, date: 'May 18' },
+  { kind: 'invest', t: 'VTI', amt: 50, date: 'May 16' }
+];
+function refreshMoney() {
+  const label = document.querySelector('#bnav .fab');
+  label.lastChild.textContent = '$' + Math.round(S.cash);
+  if (!$('s-wallet').hidden) renderWallet();
+}
+function renderWallet() {
+  $('bal').textContent = usd(S.cash);
+  const pending = S.activity.filter(a => a.kind === 'deposit' && a.pending).reduce((x, a) => x + a.amt, 0);
+  $('withdrawable').textContent = usd(Math.max(0, S.cash - pending));
+  const rows = S.activity.slice(0, showAll ? 50 : 4).map(a => {
+    const dep = a.kind === 'deposit', wd = a.kind === 'withdraw';
+    const icon = dep ? '<path d="M17 7 7 17M17 17H7V7"/>' : '<path d="M7 17 17 7M7 7h10v10"/>';
+    const title = dep ? 'Instant deposit' : wd ? 'Withdrawal' : 'Investment';
+    const sub = dep ? `${a.note} · ${a.pending ? 'Pending clearance' : a.date}` : wd ? `To Chase ••4821 · ${a.date}` : `${a.t} · ${a.date}`;
+    return `<div class="mv"><div class="c"><svg class="i" viewBox="0 0 24 24" style="width:18px">${icon}</svg></div>
+      <div class="grow"><b>${title}${dep && a.pending ? ' <span class="pend">PENDING</span>' : ''}</b><span class="d">${escHTML(sub)}</span></div>
+      <div class="amt${dep ? ' pos' : ''}">${dep ? '+' : '−'}${usd(a.amt)}</div></div>`;
+  }).join('');
+  $('activity').innerHTML = rows;
+  $('clearBtn').hidden = !pending;
+  $('seeAll').textContent = S.activity.length > 4 ? (showAll ? 'Show less' : 'See all') : '';
+}
+let showAll = false;
+$('seeAll').onclick = () => { showAll = !showAll; renderWallet(); };
+$('clearBtn').onclick = () => { S.activity.forEach(a => { if (a.pending) { a.pending = false; a.date = today(); } }); save(); renderWallet(); toast('Transfers marked as cleared'); };
+function amountSheet(title, note, amounts, cta, onGo) {
+  let amt = amounts[Math.min(1, amounts.length - 1)];
+  openSheet(`<h2>${title}</h2><p class="about" style="margin-top:8px">${note}</p>
+    <div class="invest" style="margin-top:16px"><div class="amts">${amounts.map(a => `<button data-amt="${a}" class="${a === amt ? 'on' : ''}">$${a}</button>`).join('')}</div>
+    <button class="btn primary" id="amtGo">${cta(amt)}</button><div class="fine">Demo only. No real money moves.</div></div>`, body => {
+    body.querySelectorAll('[data-amt]').forEach(b => b.onclick = () => {
+      amt = +b.dataset.amt; body.querySelectorAll('[data-amt]').forEach(x => x.classList.toggle('on', x === b)); $('amtGo').textContent = cta(amt);
+    });
+    $('amtGo').onclick = () => onGo(amt);
+  });
+}
+$('depositBtn').onclick = () => amountSheet('Deposit', 'Add money from Chase ••4821. Instant deposits are usable right away and clear in 1–3 business days.', [25, 50, 100], a => `Deposit $${a}`, a => {
+  S.cash += a; S.activity.unshift({ kind: 'deposit', amt: a, note: 'Chase ••4821', pending: true, date: today() });
+  save(); closeSheet(); refreshMoney(); toast(`Deposited $${a} (demo)`);
+});
+$('withdrawBtn').onclick = () => {
+  const pending = S.activity.filter(a => a.kind === 'deposit' && a.pending).reduce((x, a) => x + a.amt, 0);
+  const free = Math.max(0, S.cash - pending);
+  if (free < 10) { toast('Nothing withdrawable yet. Deposits need to clear first.'); return; }
+  const opts = [10, 25, 50].filter(a => a <= free);
+  amountSheet('Withdraw', `You can withdraw up to ${usd(free)} to Chase ••4821.`, opts, a => `Withdraw $${a}`, a => {
+    S.cash -= a; S.activity.unshift({ kind: 'withdraw', amt: a, date: today() }); save(); closeSheet(); refreshMoney(); toast(`Withdrew $${a} (demo)`);
+  });
+};
+function invest(t, amt) {
+  if (amt > S.cash) { toast('Not enough in your wallet. Deposit first.'); return false; }
+  S.cash -= amt; S.holdings[t] = (S.holdings[t] || 0) + amt;
+  S.activity.unshift({ kind: 'invest', t, amt, date: today() });
+  if (S.swiped[t] !== 'like') { S.swiped[t] = 'like'; S.history.push(t); }
+  save(); refreshMoney(); return true;
+}
+
+/* ---------- Sheet ---------- */
+let sheetOpen = false;
+function openSheet(html, bind) {
+  $('sheetBody').innerHTML = html;
+  $('sheetBack').hidden = false; $('sheet').hidden = false; $('sheet').scrollTop = 0;
+  requestAnimationFrame(() => { $('sheetBack').classList.add('show'); $('sheet').classList.add('show'); });
+  sheetOpen = true;
+  if (bind) bind($('sheetBody'));
+}
+function closeSheet() {
+  if (!sheetOpen) return; sheetOpen = false;
+  $('sheetBack').classList.remove('show'); $('sheet').classList.remove('show');
+  setTimeout(() => { if (!sheetOpen) { $('sheetBack').hidden = true; $('sheet').hidden = true; } }, 300);
+}
+$('sheetBack').onclick = closeSheet; $('grab').onclick = closeSheet;
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
+document.addEventListener('click', e => { const q = e.target.closest('[data-term]'); if (q) { e.stopPropagation(); termSheet(q.dataset.term); } }, true);
+
+function termSheet(key) {
+  const g = GLOSSARY[key]; if (!g) return;
+  openSheet(`<div class="eyebrow" style="margin-top:0">Learn</div><h2>${g.title}</h2><p class="about">${escHTML(g.text)}</p>
+    <div style="display:flex;gap:10px;margin-top:20px"><button class="btn secondary" id="askMore">Ask Lu more</button><button class="btn primary" id="gotIt">Got it</button></div>`, () => {
+    $('gotIt').onclick = closeSheet;
+    $('askMore').onclick = () => { closeSheet(); go('ask'); setTimeout(() => send(`what's ${g.ask}?`), 250); };
+  });
+}
+
+function stockSheet(t) {
+  const s = BY_T[t]; if (!s) return;
+  const inDeck = buildDeck().find(x => x.t === t);
+  const top = buildDeck()[0];
+  const meter = [1,2,3,4,5].map(i => `<i class="${i <= s.risk ? 'on' : ''}"></i>`).join('');
+  const why = whySentence(s);
+  const held = S.holdings[t];
+  let amt = 25;
+  openSheet(`
+    <div class="head" style="display:flex;justify-content:space-between;align-items:flex-start">
+      <div><h2>${s.t}</h2><div class="nm">${escHTML(s.name)}</div></div>
+      ${inDeck ? `<span class="mpill">${matchPctL(inDeck.sc, top.sc)}% match</span>` : S.swiped[t] === 'like' ? '<span class="mpill">saved</span>' : ''}
+    </div>
+    <div class="bars" style="height:80px;margin-top:20px" aria-hidden="true">${bars(s)}</div>
+    <div class="fine" style="text-align:right;margin-top:6px">simulated trend · not live prices</div>
+    <p class="about">${escHTML(s.blurb)}</p>
+    ${why !== s.blurb ? `<div class="why"><h4>WHY THIS MATCHES YOU</h4><p>${escHTML(why)}</p></div>` : ''}
+    <div class="facts">
+      <div class="fact"><span>Risk <button class="q" data-term="volatility" aria-label="What is risk?">?</button></span><b>${RISK_LABEL[s.risk][0].toUpperCase() + RISK_LABEL[s.risk].slice(1)}</b><div class="meter">${meter}</div></div>
+      <div class="fact"><span>Size <button class="q" data-term="${s.cap === 'ETF' ? 'etf' : 'marketcap'}" aria-label="What is this?">?</button></span><b>${s.cap === 'ETF' ? 'ETF' : s.cap + ' cap'}</b></div>
+      <div class="fact"><span>Dividend <button class="q" data-term="dividend" aria-label="What is a dividend?">?</button></span><b>${s.div ? 'Yes' : 'No'}</b></div>
+    </div>
+    <div class="invest">
+      <div class="k">Invest from your ${usd(S.cash)} wallet · fractional shares</div>
+      <div class="amts">${[10, 25, 50].map(a => `<button data-amt="${a}" class="${a === amt ? 'on' : ''}">$${a}</button>`).join('')}</div>
+      <button class="btn primary" id="investGo">Invest $${amt} in ${s.t}</button>
+      <div class="fine">Demo only. No real money moves. Not financial advice.</div>
+    </div>
+    ${held ? `<div class="held">You have ${usd(held)} in ${s.t}.</div>` : ''}
+    <button class="btn secondary" id="askLu" style="margin-top:14px">Ask Lu about ${s.t}</button>`, body => {
+    body.querySelectorAll('[data-amt]').forEach(b => b.onclick = () => {
+      amt = +b.dataset.amt; body.querySelectorAll('[data-amt]').forEach(x => x.classList.toggle('on', x === b));
+      $('investGo').textContent = `Invest $${amt} in ${s.t}`;
+    });
+    $('investGo').onclick = () => {
+      if (!invest(t, amt)) return;
+      closeSheet(); toast(`Invested $${amt} in ${t} (demo)`);
+      if (current === 'explore') renderExplore(); if (current === 'portfolio') renderPortfolio();
+    };
+    $('askLu').onclick = () => { closeSheet(); go('ask'); setTimeout(() => send(`tell me about ${t}`), 250); };
+  });
+}
+
+/* ---------- Profile sheet ---------- */
+function profileSheet() {
+  const tags = profileTags();
+  openSheet(`<div style="display:flex;align-items:center;gap:14px"><div class="avatar-btn" style="width:56px;height:56px;font-size:20px">S</div><div><h2 style="font-size:22px">Sofia</h2><div class="nm">Plaid: Chase ••4821 linked</div></div></div>
+    <div class="eyebrow">What Lu knows about you</div>
+    <div class="tuned" style="margin:0">${tags.length ? tags.map(t => `<span class="tag${t.neg ? ' neg' : ''}">${escHTML(t.text)}</span>`).join('') : '<span class="nm">Nothing yet. Chat with Lu to get started.</span>'}</div>
+    <p class="nm" style="margin:12px 0 0">Lu learns this from your chats and swipes. No survey, and you can edit it anytime in Ask.</p>
+    <button class="btn secondary" id="resetDemo" style="margin-top:22px">Reset demo</button>`, () => {
+    $('resetDemo').onclick = () => {
+      if (!confirm('Reset Luma? This clears your chat, matches and demo wallet.')) return;
+      try { localStorage.removeItem('luma.v2'); } catch (e) {}
+      location.reload();
+    };
+  });
+}
+document.addEventListener('click', e => { if (e.target.closest('[data-profile]')) profileSheet(); });
 
 /* ---------- Social ---------- */
 const FRIENDS = [
@@ -696,8 +884,8 @@ document.querySelectorAll('[data-seg]').forEach(b => b.onclick = () => {
 
 /* ---------- Boot ---------- */
 if (!S.log.length) addMsg('ai', GREETING);
-else S.log.forEach((m, i) => addMsg(m.who, m.text, { noLog: true, cta: m.cta && i === S.log.length - 1 }));
-renderLearned(); renderSparks();
+else S.log.forEach((m, i) => addMsg(m.who, m.text, { noLog: true, cta: m.cta && i === S.log.length - 1, ticker: m.ticker, term: m.term }));
+renderLearned(); renderSparks(); refreshMoney();
 window.__luma = { understand, buildDeck, state: () => S, go };
 })();
 </script>

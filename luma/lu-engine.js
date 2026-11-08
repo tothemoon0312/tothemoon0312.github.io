@@ -417,3 +417,123 @@ const SPARKS = [
   'More like NVDA but less risky'
 ];
 
+
+/* ================= Why this matches ================= */
+function whySentence(s) {
+  const bits = [];
+  if (S.mentions.includes(s.t)) bits.push(`You brought up ${s.name.split(' ')[0]} with Lu.`);
+  const th = s.themes.filter(k => S.weights[k] > 0).sort((a, b) => S.weights[b] - S.weights[a]).slice(0, 2).map(k => lc(labelOf(k)));
+  if (th.length) bits.push(`${bits.length ? 'It also fits' : 'Fits'} your interest in ${list(th)}.`);
+  if (S.risk != null && Math.abs(s.risk - S.risk) < 1.2) bits.push(S.risk <= 2.4 ? 'Low volatility suits your steady style.' : S.risk >= 3.6 ? 'Bigger swings, in line with the risk you said you\'re okay with.' : 'Sits right in your comfort zone on risk.');
+  else if (S.risk != null && s.risk > S.risk) bits.push('Heads up: a bit more volatile than you said you like.');
+  if (S.income && s.div) bits.push('Pays a dividend, which you mentioned wanting.');
+  return bits.join(' ') || s.blurb;
+}
+
+/* ================= Questions & learning ================= */
+// Lu is a financial *education* buddy: plain-English answers, never "buy this" advice.
+const GLOSSARY = {
+  stock:   { ask: 'a stock', terms: ['stock','stocks','share','shares','equity'], title: 'Stocks',
+    text: 'A stock (or share) is a tiny slice of ownership in a company. If the company grows and earns more, your slice can be worth more. If it struggles, it can lose value. You can usually buy fractional shares, so $5 works as well as $500.', rel: ['etf','diversification'] },
+  etf:     { ask: 'an ETF', terms: ['etf','etfs','exchange traded fund','exchange-traded fund'], title: 'ETFs',
+    text: 'An ETF is a basket of many investments you buy in one go, like a playlist instead of a single song. VTI, for example, holds thousands of US companies at once, so one bad company barely moves it. ETFs usually have low fees, which is why they\'re a popular first investment.', rel: ['indexfund','expense','diversification'] },
+  indexfund: { ask: 'an index fund', terms: ['index fund','index funds','index'], title: 'Index funds',
+    text: 'An index fund copies a market index (like the S&P 500) instead of trying to pick winners. You get the whole market\'s average return for a tiny fee. Over long periods, most professional stock pickers fail to beat it.', rel: ['etf','dca'] },
+  dividend: { ask: 'a dividend', terms: ['dividend','dividends','yield','dividend yield'], title: 'Dividends',
+    text: 'A dividend is cash a company pays shareholders, usually every quarter, out of its profits. A 3% yield means roughly $3 a year for every $100 invested. Dividend payers tend to be mature, steadier companies; fast growers usually reinvest instead.', rel: ['compound','stock'] },
+  pe:      { ask: 'P/E ratio', terms: ['p/e','pe ratio','p/e ratio','price to earnings','price-to-earnings','pe'], title: 'P/E ratio',
+    text: 'P/E (price-to-earnings) compares a stock\'s price to the profit per share. A P/E of 25 means investors pay $25 for every $1 of yearly profit. High P/E usually means people expect fast growth (and can mean "pricey"); low P/E can mean cheap, or that growth is slowing.', rel: ['marketcap','volatility'] },
+  marketcap: { ask: 'market cap', terms: ['market cap','market capitalization','mega cap','large cap','mid cap','small cap','cap'], title: 'Market cap',
+    text: 'Market cap is a company\'s total value: share price × number of shares. Mega and large caps (Apple, Microsoft) are giants that tend to move more calmly. Mid and small caps have more room to grow, and more room to fall.', rel: ['volatility','pe'] },
+  volatility: { ask: 'volatility', terms: ['volatility','volatile','beta','risk level','risky','risk'], title: 'Volatility & risk',
+    text: 'Volatility is how much a price swings. A high-risk stock might drop 30% in a month and bounce back; a low-risk one moves a few percent. Higher risk can mean higher long-term reward, but only if you can hold through the dips without panic-selling.', rel: ['diversification','dca'] },
+  diversification: { ask: 'diversification', terms: ['diversification','diversify','diversified'], title: 'Diversification',
+    text: 'Diversifying means not putting all your eggs in one basket: spreading money across companies, industries and fund types so one bad pick can\'t sink you. An index fund is instant diversification.', rel: ['etf','indexfund'] },
+  compound: { ask: 'compound interest', terms: ['compound interest','compounding','compound'], title: 'Compounding',
+    text: 'Compounding is earning returns on your returns. $100 a month at a 7% average return grows to about $52k in 20 years, even though you only put in $24k. Starting early matters more than starting big.', rel: ['dca','dividend'] },
+  dca:     { ask: 'dollar-cost averaging', terms: ['dollar cost averaging','dollar-cost averaging','dca','auto invest','auto-invest','recurring'], title: 'Dollar-cost averaging',
+    text: 'Dollar-cost averaging means investing a fixed amount on a schedule (say $25 every Friday) no matter what the market does. You automatically buy more when prices are low and less when high, and you skip the stress of timing the market.', rel: ['compound','indexfund'] },
+  expense: { ask: 'an expense ratio', terms: ['expense ratio','fees','fee','expense ratios'], title: 'Expense ratio',
+    text: 'An expense ratio is a fund\'s yearly fee as a percent of what you invest. 0.03% means 30 cents a year per $1,000. Small numbers add up over decades, so lower is better.', rel: ['etf','indexfund'] },
+  bullbear: { ask: 'a bear market', terms: ['bear market','bull market','bear','bull','crash','correction','recession'], title: 'Bull & bear markets',
+    text: 'A bull market is when prices rise for a long stretch; a bear market is a drop of 20% or more from the peak. Bear markets have always ended eventually, and people who keep investing through them usually come out ahead.', rel: ['volatility','dca'] },
+  emergency: { ask: 'an emergency fund', terms: ['emergency fund','rainy day fund','savings account'], title: 'Emergency fund',
+    text: 'An emergency fund is 3–6 months of expenses kept in cash so a surprise bill never forces you to sell investments at a bad time. Most people build this before investing heavily.', rel: ['compound','roth'] },
+  roth:    { ask: 'a Roth IRA', terms: ['roth ira','roth','ira','401k','401(k)','retirement account'], title: 'Retirement accounts',
+    text: 'A Roth IRA lets you invest money you\'ve already paid tax on, then withdraw it tax-free in retirement. A 401(k) is through your employer, often with a free match. Grab the match first; it\'s an instant 50–100% return.', rel: ['compound','indexfund'] },
+  crypto:  { ask: 'crypto', terms: ['crypto','bitcoin','cryptocurrency'], title: 'Crypto',
+    text: 'Crypto like bitcoin is a digital asset with no company or profits behind it, so its price is driven by demand alone. That makes it extremely volatile: 50%+ drops have happened several times. If you dabble, keep it a small slice you could afford to lose.', rel: ['volatility','diversification'] }
+};
+function findTerm(low) {
+  let best = null, bestLen = 0;
+  for (const [k, g] of Object.entries(GLOSSARY)) for (const t of g.terms) if (t.length > bestLen && hasPhrase(low, t)) { best = k; bestLen = t.length; }
+  return best;
+}
+const RISK_LABEL = ['', 'very low', 'low', 'medium', 'high', 'very high'];
+const QUESTION = /\?\s*$|^\s*(what|what'?s|whats|how|why|explain|define|meaning|tell me|who|is|are|should|can|could|does|do|which|wtf|eli5)\b/;
+const RECO = /\b(good|best|recommend|suggest|should i (buy|get|pick)|what (stock|stocks|etf|etfs) should|give me|find me|show me)\b/;
+
+function stockFacts(s) {
+  return `Risk: ${RISK_LABEL[s.risk]} (${s.risk}/5) · ${s.cap === 'ETF' ? 'index fund' : s.cap.toLowerCase() + ' cap'} · ${s.div ? 'pays a dividend' : 'no dividend'}`;
+}
+function answerQuestion(raw) {
+  const low = raw.toLowerCase().replace(/[’']/g, '\'').trim();
+  if (!QUESTION.test(low)) return null;
+  const tickers = findStocks(raw, low);
+  if (tickers.length >= 2 && /\b(vs|versus|or|compare|compared|better|difference)\b/.test(low)) {
+    const [a, b] = tickers.map(t => BY_T[t]);
+    const safer = a.risk === b.risk ? null : (a.risk < b.risk ? a : b);
+    return { ticker: a.t, text: `${a.t} vs ${b.t}:\n\n• ${a.name}: ${a.blurb} ${stockFacts(a)}.\n• ${b.name}: ${b.blurb} ${stockFacts(b)}.\n\n${safer ? `${safer.t} is the calmer of the two.` : 'They carry similar risk.'} Neither is "better". It depends on whether you want steadier or bigger swings.`,
+      suggestions: [`add ${a.t} to my matches`, `add ${b.t} to my matches`, 'what\'s volatility?'] };
+  }
+  if (tickers.length && !RECO.test(low)) {
+    const s = BY_T[tickers[0]];
+    let text;
+    if (/\b(risky|risk|safe|safer|volatile|scary)\b/.test(low)) {
+      text = `${s.name} is ${RISK_LABEL[s.risk]} risk (${s.risk}/5). ` + (s.risk >= 4 ? 'Expect big swings: drops of 30%+ in a rough year wouldn\'t be unusual.' : s.risk <= 2 ? 'It tends to move calmly compared with the overall market.' : 'It moves roughly in line with the market: some ups and downs, nothing wild.');
+      if (S.risk != null) text += Math.abs(s.risk - S.risk) < 1.2 ? ' That lines up with what you told me.' : s.risk > S.risk ? ' That\'s spicier than the comfort level you described.' : ' That\'s calmer than what you said you\'re okay with.';
+    } else if (/\bwhy\b/.test(low)) {
+      text = `Why ${s.t}? ${whySentence(s)}`;
+    } else if (/\b(dividend|pay)\b/.test(low)) {
+      text = s.div ? `Yes. ${s.name} pays a dividend, so you\'d get a little cash back regularly just for holding it.` : `${s.name} doesn\'t pay a dividend. It reinvests profits into growth instead.`;
+    } else {
+      text = `${s.name} (${s.t}): ${s.blurb}\n\n${stockFacts(s)}.`;
+      const w = whySentence(s);
+      if (w !== s.blurb) text += `\n\nFor you: ${w}`;
+    }
+    const askedRisk = /\b(risky|risk|safe|safer|volatile|scary)\b/.test(low);
+    const sug = [S.swiped[s.t] === 'like' ? null : `add ${s.t} to my matches`, `more like ${s.t}`, askedRisk ? `why ${s.t}?` : `is ${s.t} risky?`, askedRisk ? 'what\'s volatility?' : 'what\'s market cap?'];
+    return { ticker: s.t, text, suggestions: sug.filter(Boolean) };
+  }
+  if (/\bhow much\b.*\b(invest|start|put|need)\b|\bhow (do|should|can) i (start|begin)\b|\bwhere (do|should) i start\b/.test(low)) {
+    return { text: 'From your linked accounts, you have about $486 a month available to invest and $250 ready in your Luma wallet. A common starting move: keep your emergency fund intact, then auto-invest a small fixed amount (even $10–25 a week) into a broad index fund like VTI, and add individual picks you\'ve saved as a smaller slice.\n\nThis is education, not personal financial advice.',
+      suggestions: ['what\'s an emergency fund?', 'what\'s dollar-cost averaging?', 'tell me about VTI'] };
+  }
+  const key = findTerm(low);
+  if (key && !RECO.test(low)) {
+    const g = GLOSSARY[key];
+    return { term: key, text: `${g.title} 101\n\n${g.text}`, suggestions: g.rel.map(k => `what's ${GLOSSARY[k].ask}?`).concat(['show my matches']) };
+  }
+  if (/\b(who|what) are you\b|\bwhat can you do\b|\bhelp\b/.test(low)) {
+    return { text: 'I\'m Lu! Tell me what you\'re into and I\'ll build matches you can swipe. Ask me things like "what\'s an ETF?", "is Tesla risky?" or "AAPL vs MSFT" and I\'ll explain in plain English.',
+      suggestions: ['what\'s an ETF?', 'is Tesla risky?', 'AAPL vs MSFT?'] };
+  }
+  return null;
+}
+
+// Quick replies that follow the conversation instead of a fixed list.
+function nextSuggestions(ch) {
+  const out = [];
+  const d = buildDeck();
+  if (d.length) out.push('show my matches');
+  const lastUp = ch && ch.up && ch.up[ch.up.length - 1];
+  if (lastUp) out.push(`more like ${lastUp}`);
+  if (S.risk == null) out.push('I get nervous when stocks drop');
+  else if (S.risk >= 3.4) out.push('a bit less risky');
+  else out.push('I can handle more risk');
+  if (!Object.keys(S.weights).length) out.push('I love gaming and sneakers');
+  if (!S.excluded.length) out.push('no oil or tobacco');
+  const topTerm = Object.keys(S.weights).includes('index') ? 'etf' : S.risk != null ? 'volatility' : 'etf';
+  out.push(`what's ${GLOSSARY[topTerm].ask}?`);
+  return [...new Set(out)].slice(0, 5);
+}
