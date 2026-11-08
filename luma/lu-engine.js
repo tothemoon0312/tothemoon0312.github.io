@@ -67,7 +67,7 @@ const RAW = [
   ['XYZ','Block','#000000',5,false,'Mid',['payments','fintech','crypto'],['block','square','cash app','cashapp'],'Square for merchants and Cash App for consumers.'],
   ['SOFI','SoFi Technologies','#00a2c7',5,false,'Mid',['fintech','banks'],['sofi'],'Digital bank for student loans, investing and banking.'],
   ['HOOD','Robinhood','#00c805',5,false,'Mid',['fintech','crypto'],['robinhood'],'Commission-free trading app for stocks and crypto.'],
-  ['COIN','Coinbase','#0052ff',5,false,'Large',['crypto','fintech'],['coinbase','bitcoin','btc','ethereum','eth'],'The largest US crypto exchange.'],
+  ['COIN','Coinbase','#0052ff',5,false,'Large',['crypto','fintech'],['coinbase'],'The largest US crypto exchange.'],
   ['MSTR','Strategy (MicroStrategy)','#d9232e',5,false,'Mid',['crypto'],['microstrategy','saylor'],'Software firm holding a huge bitcoin treasury.'],
   ['UBER','Uber','#000000',3,false,'Large',['travel','gig'],['uber','uber eats'],'Rides, food delivery and freight, now profitable.'],
   ['ABNB','Airbnb','#ff5a5f',4,false,'Large',['travel'],['airbnb'],'Short-term rentals in nearly every country.'],
@@ -82,7 +82,13 @@ const RAW = [
   ['VTI','Vanguard Total Stock Market ETF','#96151d',2,true,'ETF',['index','beginner'],['vti','total market','total stock market'],'The entire US stock market in one low-fee fund. A classic first investment.'],
   ['VOO','Vanguard S&P 500 ETF','#96151d',2,true,'ETF',['index','beginner'],['s&p','s&p 500','sp500','index fund','vanguard'],'Owns all 500 S&P companies in one low-cost fund.'],
   ['QQQ','Invesco QQQ ETF','#2c3e8f',3,false,'ETF',['index','bigtech','beginner'],['nasdaq','nasdaq 100','qqq'],'Tracks the Nasdaq-100, heavy in big tech.'],
-  ['SCHD','Schwab US Dividend ETF','#00a0df',1,true,'ETF',['index','dividends','beginner'],['schd','dividend etf'],'A basket of quality US dividend payers.']
+  ['SCHD','Schwab US Dividend ETF','#00a0df',1,true,'ETF',['index','dividends','beginner'],['schd','dividend etf'],'A basket of quality US dividend payers.'],
+  // Crypto: priced 24/7 in USD. No company or profits behind these, so risk comes purely from price swings.
+  ['BTC','Bitcoin','#f7931a',5,false,'Crypto',['crypto'],['bitcoin','btc'],'The original cryptocurrency, often called digital gold. A fixed supply of 21 million coins.'],
+  ['ETH','Ethereum','#627eea',5,false,'Crypto',['crypto'],['ethereum','ether','eth'],'The blockchain that most crypto apps, NFTs and stablecoins run on.'],
+  ['SOL','Solana','#9945ff',5,false,'Crypto',['crypto'],['solana'],'A fast, low-fee blockchain popular for trading apps and memecoins.'],
+  ['XRP','XRP','#23292f',5,false,'Crypto',['crypto','payments'],['ripple','xrp'],'A token designed for moving money across borders quickly and cheaply.'],
+  ['DOGE','Dogecoin','#c2a633',5,false,'Crypto',['crypto','memes'],['dogecoin','doge'],'Started as a joke, now the biggest memecoin. Moves on hype and social media.']
 ];
 const STOCKS = RAW.map(r => ({ t:r[0], name:r[1], color:r[2], risk:r[3], div:r[4], cap:r[5], themes:r[6], aliases:r[7], blurb:r[8] }));
 const BY_T = Object.fromEntries(STOCKS.map(s => [s.t, s]));
@@ -136,7 +142,8 @@ const THEMES = {
   creative:  { label:'Creative tools', words:['design','designer','creative','photography','video editing'] },
   insurance: { label:'Insurance', words:['insurance'] },
   turnaround:{ label:'Comebacks', words:['turnaround','comeback','underdog','beaten down','undervalued','cheap stocks'] },
-  gig:       { label:'Gig economy', words:['gig','rideshare','delivery'] }
+  gig:       { label:'Gig economy', words:['gig','rideshare','delivery'] },
+  memes:     { label:'Memecoins', words:['meme','memes','memecoin','memecoins','meme coin','meme coins'] }
 };
 
 const RISK_LOW = ['safe','safer','safety','stable','steady','conservative','retire','retirement','retiring','sleep at night','low risk','low-risk','protect','careful','cautious','nervous','scared','afraid','worried','preserve','boring','blue chip','blue-chip','don\'t want to lose','dont want to lose','can\'t afford to lose','cant afford to lose','emergency fund','kids','college fund','reliable','defensive'];
@@ -500,9 +507,11 @@ const RISK_LABEL = ['', 'very low', 'low', 'medium', 'high', 'very high'];
 const QUESTION = /\?\s*$|^\s*(what|what'?s|whats|how|why|explain|define|meaning|tell me|who|is|are|should|can|could|does|do|which|wtf|eli5)\b/;
 const RECO = /\b(good|best|recommend|suggest|should i (buy|get|pick)|what (stock|stocks|etf|etfs) should|give me|find me|show me)\b/;
 
+const kindLabel = s => s.cap === 'ETF' ? 'Index fund' : s.cap === 'Crypto' ? 'Crypto' : s.cap + ' cap';
+const kindTerm = s => s.cap === 'ETF' ? 'etf' : s.cap === 'Crypto' ? 'crypto' : 'marketcap';
 function stockFacts(s) {
   if (s.live) return `Risk: ${RISK_LABEL[s.risk]} (${s.risk}/5) from real data · ${pct(s.live.vol)} yearly volatility · worst drop ${pct(s.live.maxDD)} · ${s.div ? 'pays a dividend' : 'no dividend'}`;
-  return `Risk: ${RISK_LABEL[s.risk]} (${s.risk}/5) · ${s.cap === 'ETF' ? 'index fund' : s.cap.toLowerCase() + ' cap'} · ${s.div ? 'pays a dividend' : 'no dividend'}`;
+  return `Risk: ${RISK_LABEL[s.risk]} (${s.risk}/5) · ${kindLabel(s).toLowerCase()} · ${s.div ? 'pays a dividend' : 'no dividend'}`;
 }
 function answerQuestion(raw) {
   const low = raw.toLowerCase().replace(/[’']/g, '\'').trim();
