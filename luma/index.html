@@ -251,6 +251,68 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
 .held { background: var(--green-soft); color: var(--green); border-radius: 12px; padding: 10px 14px; font-size: 14.5px; margin-top: 14px; }
 .stockchip { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--gold); background: var(--gold-soft); color: var(--gold-text); border-radius: 999px; padding: 8px 14px; font-size: 14.5px; font-weight: 500; }
 
+/* ---------- Money inputs, plans, feed ---------- */
+.amtrow { display: flex; align-items: center; gap: 6px; background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 0 16px; margin-bottom: 10px; }
+.amtrow span { font-size: 28px; color: var(--muted); }
+.amtrow input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--text); font: inherit; font-size: 30px; padding: 12px 0; outline: none; }
+.speed { display: grid; gap: 8px; margin: 6px 0 12px; }
+.speed label { display: flex; gap: 12px; align-items: center; border: 1px solid var(--line); background: var(--bg); border-radius: 16px; padding: 14px; cursor: pointer; }
+.speed label.on { border-color: var(--gold); background: var(--gold-soft); }
+.speed input { accent-color: var(--gold); width: 18px; height: 18px; margin: 0; }
+.speed b { display: block; font-weight: 500; font-size: 16px; }
+.speed small { color: var(--muted); font-size: 13.5px; }
+.speed .fee { margin-left: auto; font-size: 14px; color: var(--soft); white-space: nowrap; }
+.summary { border-top: 1px dashed var(--line); padding-top: 10px; margin: 4px 0 14px; font-size: 15px; }
+.summary div { display: flex; justify-content: space-between; padding: 3px 0; color: var(--soft); }
+.summary div.total { color: var(--text); font-weight: 500; }
+.err { color: var(--red); font-size: 13.5px; min-height: 18px; margin: -4px 0 8px; }
+.perks { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 10px; }
+.perks li { display: flex; gap: 10px; align-items: flex-start; font-size: 16px; color: var(--soft); }
+.perks li::before { content: '✓'; color: var(--gold-text); font-weight: 600; }
+.price { display: flex; align-items: baseline; gap: 6px; margin: 8px 0 16px; }
+.price b { font-size: 38px; font-weight: 500; font-family: 'SF Pro Display', -apple-system, system-ui, sans-serif; }
+.price span { color: var(--muted); }
+.planrow { display: flex; justify-content: space-between; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; margin-top: 10px; }
+.planrow b { font-weight: 500; display: block; }
+.planrow small { color: var(--muted); }
+.premium-badge { background: var(--gold); color: var(--gold-ink); font-size: 11px; font-weight: 600; letter-spacing: .08em; padding: 3px 8px; border-radius: 999px; }
+.left-pill { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; color: var(--soft); background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; margin-left: 4px; }
+.feed { display: grid; gap: 14px; }
+.fi { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 18px 20px; }
+.fi .top { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 13px; color: var(--muted); }
+.fi .tk { border: 1px solid var(--gold); color: var(--gold-text); background: var(--gold-soft); border-radius: 999px; padding: 3px 10px; font-weight: 500; font-size: 13px; }
+.fi .kind { text-transform: uppercase; letter-spacing: .1em; font-size: 11.5px; }
+.fi .when { margin-left: auto; }
+.fi h3 { margin: 0 0 8px; font-size: 17px; font-weight: 500; line-height: 1.35; }
+.fi p { margin: 0; color: var(--soft); font-size: 15px; line-height: 1.55; }
+.fi .means { margin-top: 10px; background: var(--card-2); border-radius: 12px; padding: 10px 12px; font-size: 14.5px; color: var(--soft); line-height: 1.5; }
+.fi .means b { color: var(--gold-text); font-weight: 500; }
+.fi .src { display: flex; justify-content: space-between; margin-top: 10px; font-size: 13.5px; color: var(--muted); }
+.fi .src a { color: var(--gold-text); text-decoration: none; font-weight: 500; }
+.chg-up { color: var(--green); } .chg-down { color: var(--red); }
+
+/* ---------- Risk dial ---------- */
+.dial { align-self: flex-start; width: 84%; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 14px 14px 10px; }
+.dial .segs { display: flex; gap: 6px; align-items: flex-end; height: 54px; }
+.dial .segs button { flex: 1; border-radius: 8px; background: var(--line); transition: background .15s, transform .1s; }
+.dial .segs button:nth-child(1) { height: 30%; } .dial .segs button:nth-child(2) { height: 47%; } .dial .segs button:nth-child(3) { height: 64%; } .dial .segs button:nth-child(4) { height: 82%; } .dial .segs button:nth-child(5) { height: 100%; }
+.dial .segs button.fill { background: var(--gold-bar); }
+.dial .segs button.cur { background: var(--gold); }
+.dial .segs button:active { transform: scale(.94); }
+.dial .ends { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-top: 8px; }
+.dial .cap { font-size: 13.5px; color: var(--soft); margin-top: 6px; }
+.lvl { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--bg); border-radius: 16px; padding: 14px 16px; margin-bottom: 8px; }
+.lvl.on { border-color: var(--gold); background: var(--gold-soft); }
+.lvl b { font-weight: 500; font-size: 16px; display: flex; align-items: center; gap: 10px; }
+.lvl b i { font-style: normal; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--card-2); font-size: 13px; }
+.lvl.on b i { background: var(--gold); color: var(--gold-ink); }
+.lvl p { margin: 6px 0 0; color: var(--soft); font-size: 14px; line-height: 1.45; }
+.lvl small { display: block; margin-top: 6px; color: var(--muted); font-size: 12.5px; }
+.bnav .dot { position: absolute; top: -2px; right: 8px; width: 10px; height: 10px; border-radius: 50%; background: var(--red); border: 2px solid var(--bg); }
+.bnav button { position: relative; }
+.pill-closed { background: var(--card-2); color: var(--muted); font-size: 14px; font-weight: 500; padding: 6px 14px; border-radius: 999px; }
+.tag.risk { background: var(--card-2); color: var(--text); border: 1px solid var(--gold); }
+
 /* ---------- Social ---------- */
 .seg { display: grid; grid-template-columns: 1fr 1fr; background: var(--card-2); border-radius: 999px; padding: 5px; margin: 4px 0 18px; }
 .seg button { height: 48px; border-radius: 999px; color: var(--muted); font-size: 16px; }
@@ -371,7 +433,7 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
 
   <nav class="bnav" id="bnav">
     <button data-go="explore"><span class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m15.8 8.2-1.9 5.7-5.7 1.9 1.9-5.7z"/></svg></span>Explore</button>
-    <button data-go="ask"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>Ask</button>
+    <button data-go="ask"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>Ask<span class="dot" id="askDot" hidden></span></button>
     <button data-go="wallet" class="fab"><span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M3.5 13h5l1.5 2h4l1.5-2h5"/></svg></span>$250</button>
     <button data-go="portfolio"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 20v-4M8 20v-7M12 20v-5M16 20v-9M20 20V8"/><path d="m4 11 5-4 4 3 7-6"/></svg></span>Portfolio</button>
     <button data-go="social"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Social</button>
@@ -386,6 +448,21 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
 (() => {
 'use strict';
 const $ = id => document.getElementById(id);
+/* ---------- Business settings ---------- */
+// Pricing lives here so it's easy to change.
+const CONFIG = {
+  freeRightSwipesPerDay: 10,        // free plan: right swipes (saves) per day; passes are always free
+  instantWithdrawFeeRate: 0.03,     // 3% commission on instant withdrawals; standard withdrawals are free
+  premium: {
+    name: 'Luma Premium',
+    price: 4.99,
+    period: 'month',
+    // Paste a Stripe Payment Link here to take real payments. Set its success URL to
+    // https://tothemoon0312.github.io/luma/?premium=success so the app unlocks Premium on return.
+    checkoutUrl: ''
+  }
+};
+
 const ICON = {
   x: '<svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>',
   info: '<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 16v-4.5M12 8h.01"/></svg>',
@@ -403,13 +480,24 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-toas
 
 /* ---------- Navigation ---------- */
 let current = null;
-function go(name) {
+const SCREENS = ['explore', 'ask', 'wallet', 'portfolio', 'social'];
+/** US stock market hours (9:30am–4pm ET, Mon–Fri). Holidays aren't included. */
+function marketOpen() {
+  const p = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date()).map(x => [x.type, x.value]));
+  const mins = +p.hour * 60 + +p.minute;
+  return !['Sat', 'Sun'].includes(p.weekday) && mins >= 570 && mins < 960;
+}
+function go(name, fromHistory) {
+  if (!SCREENS.includes(name)) name = 'explore';
   $('welcome').hidden = true;
+  if (sheetOpen) closeSheet();
+  if (!fromHistory && location.hash.slice(1) !== name) history.pushState(null, '', '#' + name);
   current = name;
   document.querySelectorAll('.screen').forEach(s => s.hidden = s.id !== 's-' + name);
-  document.querySelectorAll('#bnav button').forEach(b => b.classList.toggle('on', b.dataset.go === name));
+  document.querySelectorAll('#bnav button').forEach(b => { b.classList.toggle('on', b.dataset.go === name); if (b.dataset.go === name) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
+  if (name === 'ask') $('askDot').hidden = true;
   const right = $('appbarRight');
-  right.innerHTML = name === 'wallet' ? '<span class="pill-open">Market open</span>'
+  right.innerHTML = name === 'wallet' ? (marketOpen() ? '<span class="pill-open">Market open</span>' : '<span class="pill-closed" title="US stocks trade 9:30am–4pm ET on weekdays. Crypto trades 24/7.">Market closed</span>')
     : name === 'social' ? `<button class="avatar-btn" aria-label="Add friend" data-toast="Invites are a demo in this preview">${ICON.addUser}</button>`
     : '<button class="avatar-btn" aria-label="Profile" data-profile>S</button>';
   if (name === 'explore') renderExplore();
@@ -419,11 +507,17 @@ function go(name) {
   if (name === 'ask') { const th = $('thread'); th.scrollTop = th.scrollHeight; }
 }
 document.addEventListener('click', e => { const b = e.target.closest('[data-go]'); if (b) go(b.dataset.go); });
+window.addEventListener('popstate', () => {
+  const h = location.hash.slice(1);
+  if (sheetOpen) closeSheet();
+  if (SCREENS.includes(h)) go(h, true);
+  else { $('welcome').hidden = false; current = null; }
+});
 
 /* ---------- Profile summaries ---------- */
 function profileTags(limit) {
   const out = [];
-  if (S.risk != null) out.push({ text: riskWord(S.risk), kind: 'risk', clear: () => { S.risk = null; } });
+  if (S.risk != null) out.push({ text: `risk ${riskLevel(S.risk)}/5`, kind: 'risk', clear: () => { S.risk = null; S.riskManual = false; } });
   S.mentions.forEach(t => out.push({ text: t, clear: () => { S.mentions = S.mentions.filter(x => x !== t); } }));
   Object.entries(S.weights).filter(([, v]) => v >= 1).sort((a, b) => b[1] - a[1])
     .forEach(([k]) => out.push({ text: labelOf(k), clear: () => { delete S.weights[k]; } }));
@@ -438,9 +532,9 @@ function renderLearned() {
   const l = document.createElement('span'); l.className = 'lbl'; l.textContent = 'Lu picked up'; box.appendChild(l);
   tags.forEach(t => {
     const b = document.createElement('button');
-    b.className = 'tag' + (t.neg ? ' neg' : ''); b.title = 'Tap to remove';
-    b.innerHTML = `<span>${escHTML(t.text)}</span><span class="x">×</span>`;
-    b.onclick = () => { t.clear(); save(); renderLearned(); };
+    b.className = 'tag' + (t.neg ? ' neg' : '') + (t.kind === 'risk' ? ' risk' : ''); b.title = t.kind === 'risk' ? 'Adjust your risk dial' : 'Tap to remove';
+    b.innerHTML = `<span>${escHTML(t.text)}</span><span class="x" ${t.kind === 'risk' ? 'aria-hidden="true">⚙︎' : '>×'}</span>`;
+    b.onclick = () => { if (t.kind === 'risk') { riskSheet(); return; } t.clear(); save(); renderLearned(); };
     box.appendChild(b);
   });
 }
@@ -461,7 +555,13 @@ function renderTuned() {
   const box = $('tuned'); box.innerHTML = '';
   const tags = profileTags(4);
   if (!tags.length) return;
-  tags.forEach(t => { const s = document.createElement('span'); s.className = 'tag' + (t.neg ? ' neg' : ''); s.textContent = t.text; box.appendChild(s); });
+  tags.forEach(t => {
+    const s = document.createElement(t.kind === 'risk' ? 'button' : 'span');
+    s.className = 'tag' + (t.neg ? ' neg' : '') + (t.kind === 'risk' ? ' risk' : ''); s.textContent = t.text + (t.kind === 'risk' ? ' ⚙︎' : '');
+    if (t.kind === 'risk') { s.title = 'Adjust your risk dial'; s.onclick = riskSheet; }
+    box.appendChild(s);
+  });
+  if (S.risk == null) { const r = document.createElement('button'); r.className = 'tag risk'; r.textContent = 'set risk ⚙︎'; r.onclick = riskSheet; box.appendChild(r); }
   const b = document.createElement('button'); b.className = 'tune'; b.textContent = 'tune with Lu'; b.dataset.go = 'ask'; box.appendChild(b);
 }
 
@@ -470,7 +570,10 @@ function renderExplore() {
   deck = buildDeck();
   const stack = $('stack'); stack.innerHTML = ''; stack.style.height = '';
   document.querySelectorAll('#s-explore .under').forEach(u => u.remove());
-  $('exploreSub').textContent = deck.length ? `Based on your chats with Lu · ${deck.length} to swipe` : 'Based on your chats with Lu · swipe to explore';
+  const left = swipesLeft();
+  $('exploreSub').innerHTML = (deck.length ? `Based on your chats with Lu · ${deck.length} to swipe` : 'Based on your chats with Lu · swipe to explore')
+    + (S.premium ? ' <span class="left-pill"><span class="premium-badge">PREMIUM</span>unlimited</span>' : ` <button class="left-pill" id="leftPill">${left} of ${CONFIG.freeRightSwipesPerDay} free saves left</button>`);
+  if ($('leftPill')) $('leftPill').onclick = () => paywall(false);
   if (!deck.length) {
     const swiped = Object.keys(S.swiped).length;
     const hasSignal = Object.keys(S.weights).length || S.mentions.length || S.risk != null;
@@ -488,7 +591,7 @@ function renderExplore() {
     el.style.transform = `translateY(${depth * 12}px) scale(${1 - depth * 0.035})`;
     el.style.opacity = depth > 1 ? 0 : 1;
     const riskTxt = ['', 'Very low risk', 'Low risk', 'Medium risk', 'High risk', 'Very high risk'][s.risk];
-    const kind = s.cap === 'ETF' ? 'Index fund' : s.cap + ' cap';
+    const kind = kindLabel(s);
     const themes = s.themes.filter(k => k !== 'dividends').slice(0, 2).map(labelOf).join(', ');
     el.innerHTML = `
       <div class="stamp pass">PASS</div><div class="stamp save">SAVE</div>
@@ -501,7 +604,7 @@ function renderExplore() {
       <div class="why"><h4 data-label>WHY THIS MATCHES YOU</h4><p data-body>${escHTML(whySentence(s))}</p></div>
       <div class="meta">${s.live
         ? `<span>Risk ${s.risk}/5<button class="q" data-term="volatility" aria-label="How is risk measured?">?</button></span><span>${pct(s.live.vol)} volatility</span><span>1y ${s.live.ret1y >= 0 ? '+' : ''}${pct(s.live.ret1y)}</span>`
-        : `<span>${kind}<button class="q" data-term="${s.cap === 'ETF' ? 'etf' : 'marketcap'}" aria-label="What does ${kind} mean?">?</button></span><span>${escHTML(themes)}</span>`}</div>
+        : `<span>${kind}<button class="q" data-term="${kindTerm(s)}" aria-label="What does ${kind} mean?">?</button></span><span>${escHTML(themes)}</span>`}</div>
       <div class="acts">
         <button data-act="pass" aria-label="Pass">${ICON.x}</button>
         <button data-act="info" aria-label="About ${s.t}">${ICON.info}</button>
@@ -527,7 +630,7 @@ function decideL(s, action) {
   S.swiped[s.t] = like ? 'like' : 'nope';
   S.history.push(s.t);
   s.themes.forEach(k => { if (!S.excluded.includes(k)) S.weights[k] = Math.max(0, (S.weights[k] || 0) + (like ? 0.5 : -0.35)); });
-  if (like && S.risk != null) S.risk += (s.risk - S.risk) * 0.08;
+  if (like) { S.saveRisks = (S.saveRisks || []).concat([[s.t, s.risk]]).slice(-6); maybeRiskNudge(); }
   if (!like) {
     const recent = S.history.slice(-4).filter(t => S.swiped[t] === 'nope').map(t => BY_T[t].themes);
     const common = s.themes.find(k => recent.length >= 3 && recent.every(th => th.includes(k)));
@@ -535,7 +638,22 @@ function decideL(s, action) {
   }
   save(); renderLearned();
 }
+const dayKey = () => new Date().toLocaleDateString('en-CA'); // local YYYY-MM-DD
+function swipesLeft() {
+  if (S.premium) return Infinity;
+  if (S.swipeDay !== dayKey()) { S.swipeDay = dayKey(); S.rightToday = 0; }
+  return Math.max(0, CONFIG.freeRightSwipesPerDay - (S.rightToday || 0));
+}
 function fly(el, action, s) {
+  if (action === 'save' && swipesLeft() <= 0) {
+    el.style.transform = ''; el.querySelectorAll('.stamp').forEach(x => x.style.opacity = 0);
+    paywall(true); return;
+  }
+  if (action === 'save' && !S.premium) {
+    S.rightToday = (S.rightToday || 0) + 1;
+    const left = swipesLeft();
+    setTimeout(() => { if (left === 3 || left === 1) toast(`${left} free save${left === 1 ? '' : 's'} left today`); else if (left === 0) toast('That was your last free save today'); }, 1900);
+  }
   el.querySelector('.stamp.' + action).style.opacity = 1;
   el.style.transition = 'transform .4s ease-in, opacity .4s';
   el.style.transform = `translateX(${action === 'save' ? 140 : -140}%) rotate(${action === 'save' ? 20 : -20}deg)`;
@@ -577,6 +695,10 @@ function bindCard(el, s) {
 function undoSwipe() {
   const t = S.history.pop(); if (!t) return;
   const action = S.swiped[t]; delete S.swiped[t];
+  if (action === 'like') {
+    if (!S.premium && S.swipeDay === dayKey()) S.rightToday = Math.max(0, (S.rightToday || 0) - 1); // undoing a save gives it back
+    S.saveRisks = (S.saveRisks || []).filter(([x]) => x !== t);
+  }
   const delta = action === 'like' ? 0.5 : -0.35;
   BY_T[t].themes.forEach(k => { if (S.weights[k] != null) S.weights[k] = Math.max(0, S.weights[k] - delta); });
   pinTop = t; save(); renderExplore(); toast('Brought back ' + t);
@@ -597,6 +719,15 @@ function addMsg(who, text, opts = {}) {
   el.className = 'msg ' + (who === 'ai' ? 'lu' : 'me');
   el.textContent = text;
   thread.appendChild(el);
+  if (opts.dial !== undefined && opts.dial !== null) {
+    thread.querySelectorAll('.dial').forEach(x => x.remove()); // only the latest dial stays interactive
+    const l = riskLevel(opts.dial);
+    const d = document.createElement('div'); d.className = 'dial'; d.setAttribute('role', 'group'); d.setAttribute('aria-label', `Risk dial, currently ${l} of 5`);
+    d.innerHTML = `<div class="segs">${[1, 2, 3, 4, 5].map(n => `<button class="${n < l ? 'fill' : n === l ? 'cur' : ''}" data-lvl="${n}" aria-label="Set risk to ${n}: ${RISK_LEVELS[n].name}" title="${n}/5 · ${RISK_LEVELS[n].name}"></button>`).join('')}</div>
+      <div class="ends"><span>Steady</span><span>Wild</span></div><div class="cap">${l}/5 · ${RISK_LEVELS[l].name} · tap to change</div>`;
+    d.querySelectorAll('[data-lvl]').forEach(b => b.onclick = () => { if (+b.dataset.lvl !== l) send(`set my risk to ${b.dataset.lvl}`); });
+    thread.appendChild(d);
+  }
   if (opts.ticker && BY_T[opts.ticker]) {
     const c = document.createElement('button'); c.className = 'stockchip'; c.textContent = `View ${opts.ticker} →`;
     c.onclick = () => stockSheet(opts.ticker); thread.appendChild(c);
@@ -612,17 +743,33 @@ function addMsg(who, text, opts = {}) {
     thread.appendChild(b);
   }
   thread.scrollTop = thread.scrollHeight;
-  if (!opts.noLog) { S.log.push({ who, text, cta: !!opts.cta, ticker: opts.ticker, term: opts.term }); save(); }
+  if (!opts.noLog) { S.log.push({ who, text, cta: !!opts.cta, ticker: opts.ticker, term: opts.term, dial: opts.dial }); save(); }
 }
 function renderSparks(list) {
   if (list) { S.sug = list; save(); }
   const box = $('sparks'); box.innerHTML = '';
   const used = new Set(S.log.filter(m => m.who === 'me').map(m => m.text.toLowerCase()));
-  const pool = (S.sug && S.sug.length ? S.sug : SPARKS).filter(x => x === 'show my matches' || !used.has(x.toLowerCase()));
+  const hasCta = !!thread.querySelector('.btn[data-go="explore"]');
+  const pool = (S.sug && S.sug.length ? S.sug : SPARKS).filter(x => x === 'show my matches' ? !hasCta : !used.has(x.toLowerCase()));
   pool.slice(0, 6).forEach(s => {
     const b = document.createElement('button'); b.type = 'button'; b.className = 'spark'; b.textContent = s;
     b.onclick = () => send(s); box.appendChild(b);
   });
+}
+function newsAnswer(text) {
+  const low = text.toLowerCase();
+  if (!/\b(news|headlines?|happening|going on|what'?s up with|why (is|did) .+ (up|down|fall|drop|jump|rise|soar|crash))\b/.test(low)) return null;
+  const t = findStocks(text, low)[0];
+  if (!t) {
+    const m = RISK_DOC && RISK_DOC.market;
+    if (!m) return null;
+    return { text: `Big picture: the S&P 500 was ${m.chg1d >= 0 ? 'up' : 'down'} ${Math.abs(m.chg1d * 100).toFixed(1)}% on ${dayName()}. Your Portfolio tab has a "Personalized for you" feed with updates on the stocks you care about.`, suggestions: ['show my matches', 'what\'s a bear market?'] };
+  }
+  const s = BY_T[t], d = s.live, news = (NEWS_DOC && NEWS_DOC.items[t]) || [];
+  let out = d && d.chg1d != null ? `${s.name} ${d.chg1d >= 0 ? 'rose' : 'fell'} ${Math.abs(d.chg1d * 100).toFixed(1)}% on ${dayName()}. ${moveContext(s)}` : `Here's what I have on ${s.name}.`;
+  if (news.length) out += '\n\nIn the news:\n' + news.slice(0, 2).map(n => `• "${n.title}" (${n.publisher})\n  What it means: ${n.plain}`).join('\n');
+  else out += '\n\nNo major headlines about it this week.';
+  return { ticker: t, text: out, suggestions: [`is ${t} risky?`, `more like ${t}`, 'show my matches'] };
 }
 let busy = false;
 function send(text) {
@@ -631,15 +778,34 @@ function send(text) {
   addMsg('me', text);
   $('input').value = ''; autosize(); $('send').disabled = true;
   S.turns++;
-  // Questions get a plain-English answer and don't change the profile; everything else is profile talk.
-  const ans = answerQuestion(text);
-  const f = ans ? null : understand(text);
-  const ch = ans ? null : apply(f);
+  // 1) Risk dial changes ("a bit safer", "set my risk to 4", "what's my risk level?")
+  // 2) Questions get a plain-English answer and don't change the profile
+  // 3) Everything else is profile talk
+  const ri = riskIntent(text);
+  const deckBefore = buildDeck().slice(0, 3).map(s => s.t);
+  const ans = ri ? null : (newsAnswer(text) || answerQuestion(text));
+  let f = null, ch = null, rk = null;
+  if (!ans && !(ri && ri.type === 'query')) {
+    f = understand(text);
+    if (ri) { f.riskDelta = 0; f.mid = false; f.riskWords = []; f.riskCues = []; f.wantsDeck = false; }
+    ch = apply(f);
+    if (ri) rk = applyRisk(ri);
+  }
   save(); renderLearned();
   const w = document.createElement('div'); w.className = 'msg lu'; w.innerHTML = '<span class="typing"><i></i><i></i><i></i></span>';
   thread.appendChild(w); thread.scrollTop = thread.scrollHeight;
   setTimeout(() => {
     w.remove();
+    if (ri) {
+      if (ri.type === 'query') addMsg('ai', riskQueryReply(), { dial: S.risk });
+      else {
+        const other = ch && (ch.likes.length || ch.dislikes.length || ch.up.length || ch.down.length) ? reply(f, ch).text.split('\n\n')[0] + '\n\n' : '';
+        addMsg('ai', other + riskReply(rk.before, rk.after, deckBefore), { dial: rk.after, cta: buildDeck().length > 0 });
+      }
+      const l = S.risk == null ? 3 : riskLevel(S.risk);
+      renderSparks([l > 1 ? 'a bit safer' : null, l < 5 ? 'a bit riskier' : null, 'show my matches', ri.type === 'query' ? 'reset my risk' : 'what\'s my risk level?'].filter(Boolean));
+      busy = false; return;
+    }
     if (ans) {
       addMsg('ai', ans.text, { ticker: ans.ticker, term: ans.term });
       renderSparks(ans.suggestions); busy = false; return;
@@ -648,7 +814,7 @@ function send(text) {
       addMsg('ai', 'Pulling up your matches now. Come back anytime to tell me more.'); busy = false; setTimeout(() => go('explore'), 500); return;
     }
     const r = reply(f, ch);
-    addMsg('ai', r.text, { cta: r.cta }); renderSparks(nextSuggestions(ch)); busy = false;
+    addMsg('ai', r.text, { cta: r.cta, dial: f.riskWords.length && S.risk != null ? S.risk : undefined }); renderSparks(nextSuggestions(ch)); busy = false;
   }, 450 + Math.min(900, text.length * 12));
 }
 function autosize() { const i = $('input'); i.style.height = 'auto'; i.style.height = Math.min(120, i.scrollHeight) + 'px'; }
@@ -667,8 +833,7 @@ function renderPortfolio() {
   const cards = [];
   if (d.length) cards.push({ h: 'Your matches are ready', p: `Lu found ${d.length} idea${d.length === 1 ? '' : 's'}${topThemes.length ? ' around ' + list(topThemes) : ''}, tuned to ${riskStyle(S.risk)}.`, l: 'Explore matches', go: 'explore' });
   else cards.push({ h: 'Skip the risk survey', p: 'Just tell Lu what you\'re into, and your matches build themselves from the conversation.', l: 'Chat with Lu', go: 'ask' });
-  cards.push({ h: 'Start with index funds', p: 'VTI offers broad market exposure with low fees, perfect for beginners building long-term wealth.', l: 'Explore VTI', vti: true });
-  cards.push({ h: 'Automate your investing', p: 'Set a small weekly auto-invest into your saved picks so you never miss a week.', l: 'Set it up', toast: 'Auto-invest is a demo in this preview' });
+  if (!RISK_DOC) cards.push({ h: 'Start with index funds', p: 'VTI offers broad market exposure with low fees, perfect for beginners building long-term wealth.', l: 'Explore VTI', vti: true });
   const box = $('pfy'); box.innerHTML = '';
   cards.forEach(c => {
     const el = document.createElement('div'); el.className = 'tile pfy';
@@ -679,6 +844,7 @@ function renderPortfolio() {
     if (c.vti) b.onclick = () => { if (!S.mentions.includes('VTI')) S.mentions.push('VTI'); delete S.swiped.VTI; pinTop = 'VTI'; save(); go('explore'); };
     el.appendChild(b); box.appendChild(el);
   });
+  renderFeed(box);
   const sw = $('savedWrap'); sw.innerHTML = '';
   const holdings = Object.entries(S.holdings).filter(([t, v]) => v > 0 && BY_T[t]);
   if (holdings.length) {
@@ -704,7 +870,78 @@ function renderPortfolio() {
   });
 }
 
-/* ---------- Money (demo) ---------- */
+/* ---------- Personalized feed: plain-English updates ---------- */
+let NEWS_DOC = null, feedAll = false;
+const ago = sec => { const m = Math.max(1, Math.round((Date.now() / 1000 - sec) / 60)); return m < 60 ? `${m}m ago` : m < 1440 ? `${Math.round(m / 60)}h ago` : `${Math.round(m / 1440)}d ago`; };
+const dayName = () => RISK_DOC ? new Date(RISK_DOC.asOf + 'T12:00:00Z').toLocaleDateString('en-US', { weekday: 'long', timeZone: 'UTC' }) : '';
+const signed = (x, d = 1) => `${x >= 0 ? '+' : '−'}${Math.abs(x * 100).toFixed(d)}%`;
+function trackedTickers() {
+  const out = [];
+  const add = t => { if (BY_T[t] && !BY_T[t].unavailable && !out.includes(t)) out.push(t); };
+  Object.keys(S.holdings || {}).filter(t => S.holdings[t] > 0).forEach(add);
+  Object.entries(S.swiped).filter(([, v]) => v === 'like').forEach(([t]) => add(t));
+  S.mentions.forEach(add);
+  buildDeck().slice(0, 5).forEach(s => add(s.t));
+  return out.slice(0, 12);
+}
+/** Explains a day's move relative to how much this asset normally moves. */
+function moveContext(s) {
+  const d = s.live; if (!d || d.chg1d == null) return '';
+  const daily = d.vol / Math.sqrt(d.crypto ? 365 : 252);
+  const z = Math.abs(d.chg1d) / daily;
+  const norm = `It usually moves about ${(daily * 100).toFixed(1)}% on a typical day`;
+  return z < 1 ? `${norm}, so this was an ordinary day for it.` : z < 2 ? `${norm}, so this was a bigger-than-usual move.` : `${norm}, so this was an unusually big move. Often news is behind days like this.`;
+}
+function buildFeed() {
+  const items = [];
+  if (RISK_DOC && RISK_DOC.market && RISK_DOC.market.chg1d != null) {
+    const m = RISK_DOC.market, a = Math.abs(m.chg1d);
+    items.push({ kind: 'Market', title: `The stock market was ${m.chg1d >= 0 ? 'up' : 'down'} ${Math.abs(m.chg1d * 100).toFixed(1)}% on ${dayName()}`,
+      body: `That's the S&P 500, the 500 biggest US companies. ${a < 0.005 ? 'A quiet day.' : a < 0.01 ? 'A pretty normal day.' : a < 0.02 ? 'A bigger move than usual.' : 'A big day for the market.'} Over the past year it's ${m.ret1y >= 0 ? 'up' : 'down'} ${Math.abs(m.ret1y * 100).toFixed(0)}%.`,
+      rank: 100 });
+  }
+  const tracked = trackedTickers();
+  tracked.forEach((t, i) => {
+    const s = BY_T[t], d = s.live;
+    const why = S.holdings[t] > 0 ? 'You own this' : S.swiped[t] === 'like' ? 'You saved this' : S.mentions.includes(t) ? 'You mentioned this' : 'In your matches';
+    if (d && d.chg1d != null) {
+      const daily = d.vol / Math.sqrt(d.crypto ? 365 : 252), z = Math.abs(d.chg1d) / daily;
+      let extra = '';
+      if (d.bars && d.bars[d.bars.length - 1] >= 0.98) extra = ' It\'s trading near its highest price of the past year.';
+      else if (d.bars && d.bars[d.bars.length - 1] <= 0.05) extra = ' It\'s near its lowest price of the past year.';
+      if (z >= 1 || S.holdings[t] > 0 || i < 2) items.push({ t, kind: why, title: `${s.name} ${d.chg1d >= 0 ? 'rose' : 'fell'} ${Math.abs(d.chg1d * 100).toFixed(1)}% on ${dayName()}`,
+        body: moveContext(s) + extra, chg: d.chg1d, rank: 50 + z * 10 + (S.holdings[t] > 0 ? 20 : 0) - i });
+    }
+    ((NEWS_DOC && NEWS_DOC.items[t]) || []).slice(0, 2).forEach((n, j) => items.push({
+      t, kind: n.kind === 'news' || n.kind === 'crypto' ? 'News' : n.kind[0].toUpperCase() + n.kind.slice(1), title: n.title, means: n.plain,
+      src: n.publisher, link: n.link, time: n.time, rank: 40 - i * 2 - j * 5 + (Date.now() / 1000 - n.time < 86400 ? 8 : 0)
+    }));
+  });
+  return items.sort((a, b) => b.rank - a.rank);
+}
+function renderFeed(box) {
+  const items = buildFeed();
+  if (!items.length) return;
+  const wrap = document.createElement('div'); wrap.className = 'feed';
+  const shown = feedAll ? items : items.slice(0, 6);
+  wrap.innerHTML = shown.map(it => `<article class="fi">
+      <div class="top">${it.t ? `<button class="tk" data-sheet="${it.t}">${it.t}</button>` : ''}<span class="kind">${escHTML(it.kind)}</span>
+        <span class="when">${it.time ? ago(it.time) : RISK_DOC ? asOfLabel() + ' close' : ''}</span></div>
+      <h3>${escHTML(it.title)}${it.chg != null ? ` <span class="${it.chg >= 0 ? 'chg-up' : 'chg-down'}">${signed(it.chg)}</span>` : ''}</h3>
+      ${it.body ? `<p>${escHTML(it.body)}</p>` : ''}
+      ${it.means ? `<div class="means"><b>What it means:</b> ${escHTML(it.means)}</div>` : ''}
+      ${it.link ? `<div class="src"><span>${escHTML(it.src || '')}</span><a href="${escHTML(it.link)}" target="_blank" rel="noopener noreferrer">Read story ↗</a></div>` : ''}
+    </article>`).join('');
+  box.appendChild(wrap);
+  wrap.querySelectorAll('[data-sheet]').forEach(b => b.onclick = () => stockSheet(b.dataset.sheet));
+  if (items.length > 6) {
+    const more = document.createElement('button'); more.className = 'link'; more.textContent = feedAll ? 'Show less' : `Show ${items.length - 6} more updates`;
+    more.onclick = () => { feedAll = !feedAll; renderPortfolio(); };
+    box.appendChild(more);
+  }
+}
+
+/* ---------- Money ---------- */
 const today = () => new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 const usd = n => '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 if (S.cash == null) S.cash = 250;
@@ -720,51 +957,110 @@ function refreshMoney() {
 }
 function renderWallet() {
   $('bal').textContent = usd(S.cash);
-  const pending = S.activity.filter(a => a.kind === 'deposit' && a.pending).reduce((x, a) => x + a.amt, 0);
-  $('withdrawable').textContent = usd(Math.max(0, S.cash - pending));
+  const pending = pendingDeposits();
+  $('withdrawable').textContent = usd(withdrawable());
   const rows = S.activity.slice(0, showAll ? 50 : 4).map(a => {
-    const dep = a.kind === 'deposit', wd = a.kind === 'withdraw';
-    const icon = dep ? '<path d="M17 7 7 17M17 17H7V7"/>' : '<path d="M7 17 17 7M7 7h10v10"/>';
-    const title = dep ? 'Instant deposit' : wd ? 'Withdrawal' : 'Investment';
-    const sub = dep ? `${a.note} · ${a.pending ? 'Pending clearance' : a.date}` : wd ? `To Chase ••4821 · ${a.date}` : `${a.t} · ${a.date}`;
+    const dep = a.kind === 'deposit', wd = a.kind === 'withdraw', sub_ = a.kind === 'premium';
+    const icon = dep ? '<path d="M17 7 7 17M17 17H7V7"/>' : sub_ ? '<path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/>' : '<path d="M7 17 17 7M7 7h10v10"/>';
+    const title = dep ? 'Instant deposit' : wd ? (a.speed === 'instant' ? 'Instant withdrawal' : 'Withdrawal') : sub_ ? CONFIG.premium.name : 'Investment';
+    const sub = dep ? `${a.note} · ${a.pending ? 'Pending clearance' : a.date}`
+      : wd ? (a.speed === 'instant' ? `To Chase ••4821 · ${usd(a.fee)} fee · ${a.date}` : `To Chase ••4821 · ${a.pending ? 'Arrives in 1–3 business days' : a.date}`)
+      : sub_ ? `Monthly plan · ${a.date}` : `${a.t} · ${a.date}`;
     return `<div class="mv"><div class="c"><svg class="i" viewBox="0 0 24 24" style="width:18px">${icon}</svg></div>
-      <div class="grow"><b>${title}${dep && a.pending ? ' <span class="pend">PENDING</span>' : ''}</b><span class="d">${escHTML(sub)}</span></div>
+      <div class="grow"><b>${title}${(dep || wd) && a.pending ? ' <span class="pend">PENDING</span>' : ''}</b><span class="d">${escHTML(sub)}</span></div>
       <div class="amt${dep ? ' pos' : ''}">${dep ? '+' : '−'}${usd(a.amt)}</div></div>`;
   }).join('');
   $('activity').innerHTML = rows;
-  $('clearBtn').hidden = !pending;
+  $('clearBtn').hidden = !S.activity.some(a => a.pending);
   $('seeAll').textContent = S.activity.length > 4 ? (showAll ? 'Show less' : 'See all') : '';
 }
 let showAll = false;
 $('seeAll').onclick = () => { showAll = !showAll; renderWallet(); };
 $('clearBtn').onclick = () => { S.activity.forEach(a => { if (a.pending) { a.pending = false; a.date = today(); } }); save(); renderWallet(); toast('Transfers marked as cleared'); };
-function amountSheet(title, note, amounts, cta, onGo) {
-  let amt = amounts[Math.min(1, amounts.length - 1)];
-  openSheet(`<h2>${title}</h2><p class="about" style="margin-top:8px">${note}</p>
-    <div class="invest" style="margin-top:16px"><div class="amts">${amounts.map(a => `<button data-amt="${a}" class="${a === amt ? 'on' : ''}">$${a}</button>`).join('')}</div>
-    <button class="btn primary" id="amtGo">${cta(amt)}</button><div class="fine">Demo only. No real money moves.</div></div>`, body => {
-    body.querySelectorAll('[data-amt]').forEach(b => b.onclick = () => {
-      amt = +b.dataset.amt; body.querySelectorAll('[data-amt]').forEach(x => x.classList.toggle('on', x === b)); $('amtGo').textContent = cta(amt);
-    });
-    $('amtGo').onclick = () => onGo(amt);
-  });
+const pendingDeposits = () => S.activity.filter(a => a.kind === 'deposit' && a.pending).reduce((x, a) => x + a.amt, 0);
+const withdrawable = () => Math.max(0, Math.round((S.cash - pendingDeposits()) * 100) / 100);
+const parseAmt = v => { const n = Math.round(parseFloat(String(v).replace(/[$,\s]/g, '')) * 100) / 100; return Number.isFinite(n) ? n : 0; };
+function moneyInput(chips, initial) {
+  return `<div class="amtrow"><span>$</span><input id="amtIn" inputmode="decimal" autocomplete="off" value="${initial}" aria-label="Amount"></div>
+    <div class="amts">${chips.map(c => `<button data-chip="${c.v}">${c.label}</button>`).join('')}</div><div class="err" id="amtErr"></div>`;
 }
-$('depositBtn').onclick = () => amountSheet('Deposit', 'Add money from Chase ••4821. Instant deposits are usable right away and clear in 1–3 business days.', [25, 50, 100], a => `Deposit $${a}`, a => {
-  S.cash += a; S.activity.unshift({ kind: 'deposit', amt: a, note: 'Chase ••4821', pending: true, date: today() });
-  save(); closeSheet(); refreshMoney(); toast(`Deposited $${a} (demo)`);
+function bindMoneyInput(body, onChange) {
+  const inp = body.querySelector('#amtIn');
+  body.querySelectorAll('[data-chip]').forEach(b => b.onclick = () => { inp.value = b.dataset.chip; onChange(); });
+  inp.addEventListener('input', onChange);
+  onChange();
+}
+
+$('depositBtn').onclick = () => openSheet(`<h2>Deposit</h2><p class="about" style="margin-top:8px">From Chase ••4821. Deposits are free and usable right away; they clear in 1–3 business days.</p>
+  <div class="invest" style="margin-top:16px">${moneyInput([{ v: 25, label: '$25' }, { v: 50, label: '$50' }, { v: 100, label: '$100' }], 50)}
+  <button class="btn primary" id="amtGo">Deposit</button><div class="fine">Preview: no bank is connected yet, so no real money moves.</div></div>`, body => {
+  const go_ = $('amtGo');
+  bindMoneyInput(body, () => {
+    const a = parseAmt($('amtIn').value);
+    const bad = a < 1 ? 'Minimum deposit is $1.' : a > 5000 ? 'Maximum instant deposit is $5,000.' : '';
+    $('amtErr').textContent = $('amtIn').value && bad ? bad : '';
+    go_.disabled = !!bad; go_.style.opacity = bad ? .5 : 1; go_.textContent = bad ? 'Deposit' : `Deposit ${usd(a)}`;
+  });
+  go_.onclick = () => {
+    const a = parseAmt($('amtIn').value); if (a < 1 || a > 5000) return;
+    S.cash += a; S.activity.unshift({ kind: 'deposit', amt: a, note: 'Chase ••4821', pending: true, date: today() });
+    save(); closeSheet(); refreshMoney(); toast(`Deposited ${usd(a)}`);
+  };
 });
+
 $('withdrawBtn').onclick = () => {
-  const pending = S.activity.filter(a => a.kind === 'deposit' && a.pending).reduce((x, a) => x + a.amt, 0);
-  const free = Math.max(0, S.cash - pending);
-  if (free < 10) { toast('Nothing withdrawable yet. Deposits need to clear first.'); return; }
-  const opts = [10, 25, 50].filter(a => a <= free);
-  amountSheet('Withdraw', `You can withdraw up to ${usd(free)} to Chase ••4821.`, opts, a => `Withdraw $${a}`, a => {
-    S.cash -= a; S.activity.unshift({ kind: 'withdraw', amt: a, date: today() }); save(); closeSheet(); refreshMoney(); toast(`Withdrew $${a} (demo)`);
+  const max = withdrawable();
+  if (max < 1) {
+    const pend = pendingDeposits();
+    openSheet(`<h2>Nothing to withdraw yet</h2><p class="about">${pend ? `Your ${usd(pend)} deposit is still clearing, which usually takes 1–3 business days. You can invest with it right away, but you can't withdraw it until it clears.` : 'Your wallet is empty. Sell or deposit first.'}</p>
+      <button class="btn primary" id="okWd" style="margin-top:18px">Got it</button>${pend ? '<button class="btn secondary" id="clrWd" style="margin-top:10px">Preview: mark as cleared</button>' : ''}`, () => {
+      $('okWd').onclick = closeSheet;
+      if ($('clrWd')) $('clrWd').onclick = () => { closeSheet(); $('clearBtn').click(); };
+    });
+    return;
+  }
+  const pctLabel = Math.round(CONFIG.instantWithdrawFeeRate * 1000) / 10 + '%';
+  let speed = 'standard';
+  openSheet(`<h2>Withdraw</h2><p class="about" style="margin-top:8px">To Chase ••4821 · ${usd(max)} available</p>
+    <div class="invest" style="margin-top:16px">${moneyInput([{ v: Math.min(25, max), label: '$' + Math.min(25, max) }, { v: Math.min(50, max), label: '$' + Math.min(50, max) }, { v: max, label: 'All' }].filter((c, i, arr) => arr.findIndex(x => x.v === c.v) === i), Math.min(50, max))}
+    <div class="speed" role="radiogroup">
+      <label class="on" data-speed="standard"><input type="radio" name="spd" checked><div><b>Standard</b><small>1–3 business days</small></div><span class="fee">Free</span></label>
+      <label data-speed="instant"><input type="radio" name="spd"><div><b>Instant</b><small>Arrives in minutes</small></div><span class="fee">${pctLabel} fee</span></label>
+    </div>
+    <div class="summary" id="wdSum"></div>
+    <button class="btn primary" id="amtGo">Withdraw</button>
+    <div class="fine">Instant transfers carry a ${pctLabel} Luma fee. Standard withdrawals are always free.<br>Preview: no bank is connected yet, so no real money moves.</div></div>`, body => {
+    const go_ = $('amtGo');
+    const update = () => {
+      const a = parseAmt($('amtIn').value);
+      const fee = speed === 'instant' ? Math.round(a * CONFIG.instantWithdrawFeeRate * 100) / 100 : 0;
+      const bad = a < 1 ? 'Minimum withdrawal is $1.' : a > max ? `You can withdraw up to ${usd(max)}.` : '';
+      $('amtErr').textContent = $('amtIn').value && bad ? bad : '';
+      $('wdSum').innerHTML = `<div><span>Amount</span><span>${usd(a)}</span></div>`
+        + (speed === 'instant' ? `<div><span>Instant fee (${pctLabel})</span><span>−${usd(fee)}</span></div>` : '<div><span>Standard transfer</span><span>Free</span></div>')
+        + `<div class="total"><span>You receive</span><span>${usd(Math.max(0, a - fee))}</span></div>`;
+      go_.disabled = !!bad; go_.style.opacity = bad ? .5 : 1;
+      go_.textContent = bad ? 'Withdraw' : speed === 'instant' ? `Withdraw ${usd(a)} instantly` : `Withdraw ${usd(a)}`;
+    };
+    body.querySelectorAll('[data-speed]').forEach(l => l.onclick = () => {
+      speed = l.dataset.speed; body.querySelectorAll('[data-speed]').forEach(x => { x.classList.toggle('on', x === l); x.querySelector('input').checked = x === l; }); update();
+    });
+    bindMoneyInput(body, update);
+    go_.onclick = () => {
+      const a = parseAmt($('amtIn').value); if (a < 1 || a > max) return;
+      const fee = speed === 'instant' ? Math.round(a * CONFIG.instantWithdrawFeeRate * 100) / 100 : 0;
+      S.cash = Math.round((S.cash - a) * 100) / 100;
+      S.feesPaid = Math.round(((S.feesPaid || 0) + fee) * 100) / 100;
+      S.activity.unshift({ kind: 'withdraw', amt: a, fee, speed, pending: speed === 'standard', date: today() });
+      save(); closeSheet(); refreshMoney();
+      toast(speed === 'instant' ? `${usd(a - fee)} is on its way (${usd(fee)} fee)` : `${usd(a)} arrives in 1–3 business days`);
+    };
   });
 };
 function invest(t, amt) {
+  if (!(amt >= 1)) { toast('Minimum investment is $1.'); return false; }
   if (amt > S.cash) { toast('Not enough in your wallet. Deposit first.'); return false; }
-  S.cash -= amt; S.holdings[t] = (S.holdings[t] || 0) + amt;
+  S.cash = Math.round((S.cash - amt) * 100) / 100; S.holdings[t] = (S.holdings[t] || 0) + amt;
   S.activity.unshift({ kind: 'invest', t, amt, date: today() });
   if (S.swiped[t] !== 'like') { S.swiped[t] = 'like'; S.history.push(t); }
   save(); refreshMoney(); return true;
@@ -785,6 +1081,17 @@ function closeSheet() {
   setTimeout(() => { if (!sheetOpen) { $('sheetBack').hidden = true; $('sheet').hidden = true; } }, 300);
 }
 $('sheetBack').onclick = closeSheet; $('grab').onclick = closeSheet;
+(() => {
+  const sh = $('sheet'); let y0 = null, dy = 0;
+  sh.addEventListener('pointerdown', e => {
+    if (sh.scrollTop > 0 || e.target.closest('button, input, a, textarea, label')) return;
+    if (e.clientY - sh.getBoundingClientRect().top > 90) return;
+    y0 = e.clientY; dy = 0; sh.style.transition = 'none';
+  });
+  sh.addEventListener('pointermove', e => { if (y0 == null) return; dy = Math.max(0, e.clientY - y0); sh.style.transform = `translateY(${dy}px)`; });
+  const end = () => { if (y0 == null) return; y0 = null; sh.style.transition = ''; sh.style.transform = ''; if (dy > 90) closeSheet(); };
+  sh.addEventListener('pointerup', end); sh.addEventListener('pointercancel', end);
+})();
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
 document.addEventListener('click', e => { const q = e.target.closest('[data-term]'); if (q) { e.stopPropagation(); termSheet(q.dataset.term); } }, true);
 
@@ -818,7 +1125,7 @@ function stockSheet(t) {
     ${why !== s.blurb ? `<div class="why"><h4>WHY THIS MATCHES YOU</h4><p>${escHTML(why)}</p></div>` : ''}
     <div class="facts">
       <div class="fact"><span>Risk <button class="q" data-term="volatility" aria-label="What is risk?">?</button></span><b>${RISK_LABEL[s.risk][0].toUpperCase() + RISK_LABEL[s.risk].slice(1)}</b><div class="meter">${meter}</div></div>
-      <div class="fact"><span>Size <button class="q" data-term="${s.cap === 'ETF' ? 'etf' : 'marketcap'}" aria-label="What is this?">?</button></span><b>${s.cap === 'ETF' ? 'ETF' : s.cap + ' cap'}</b></div>
+      <div class="fact"><span>Type <button class="q" data-term="${kindTerm(s)}" aria-label="What is this?">?</button></span><b>${kindLabel(s)}</b></div>
       <div class="fact"><span>Dividend <button class="q" data-term="dividend" aria-label="What is a dividend?">?</button></span><b>${s.div ? 'Yes' : 'No'}</b></div>
     </div>
     ${s.live ? `<div class="facts" style="margin-top:-8px">
@@ -829,26 +1136,96 @@ function stockSheet(t) {
     <p class="fine" style="text-align:left;margin:-6px 0 14px">Risk ${s.risk}/5 is calculated from real daily prices over the past year (${asOfLabel()} close)${s.estRisk != null && s.estRisk !== s.risk ? `. Lu's earlier estimate was ${s.estRisk}/5` : ''}.</p>
     <button class="btn secondary sm" id="tvBtn" style="width:100%;margin-bottom:14px">Show live chart (TradingView)</button>` : ''}
     <div class="invest">
-      <div class="k">Invest from your ${usd(S.cash)} wallet · fractional shares</div>
-      <div class="amts">${[10, 25, 50].map(a => `<button data-amt="${a}" class="${a === amt ? 'on' : ''}">$${a}</button>`).join('')}</div>
+      <div class="k">Invest from your ${usd(S.cash)} wallet · buy any amount</div>
+      <div class="amts">${[10, 25, 50].map(a => `<button data-amt="${a}" class="${a === amt ? 'on' : ''}">$${a}</button>`).join('')}<button data-amt="other">Other</button></div>
+      <div class="amtrow" id="otherRow" hidden><span>$</span><input id="otherIn" inputmode="decimal" placeholder="Amount" aria-label="Custom amount"></div>
       <button class="btn primary" id="investGo">Invest $${amt} in ${s.t}</button>
-      <div class="fine">Demo only. No real money moves. Not financial advice.</div>
+      <div class="fine">Preview: orders aren't sent to a broker yet. Not financial advice.</div>
     </div>
     ${held ? `<div class="held">You have ${usd(held)} in ${s.t}.</div>` : ''}
     <button class="btn secondary" id="askLu" style="margin-top:14px">Ask Lu about ${s.t}</button>`, body => {
     body.querySelectorAll('[data-amt]').forEach(b => b.onclick = () => {
-      amt = +b.dataset.amt; body.querySelectorAll('[data-amt]').forEach(x => x.classList.toggle('on', x === b));
-      $('investGo').textContent = `Invest $${amt} in ${s.t}`;
+      body.querySelectorAll('[data-amt]').forEach(x => x.classList.toggle('on', x === b));
+      const other = b.dataset.amt === 'other';
+      $('otherRow').hidden = !other;
+      if (other) { $('otherIn').focus(); amt = parseAmt($('otherIn').value); } else amt = +b.dataset.amt;
+      $('investGo').textContent = amt >= 1 ? `Invest ${usd(amt)} in ${s.t}` : `Invest in ${s.t}`;
     });
+    $('otherIn').addEventListener('input', () => { amt = parseAmt($('otherIn').value); $('investGo').textContent = amt >= 1 ? `Invest ${usd(amt)} in ${s.t}` : `Invest in ${s.t}`; });
     $('investGo').onclick = () => {
       if (!invest(t, amt)) return;
-      closeSheet(); toast(`Invested $${amt} in ${t} (demo)`);
+      closeSheet(); toast(`Invested ${usd(amt)} in ${t}`);
       if (current === 'explore') renderExplore(); if (current === 'portfolio') renderPortfolio();
     };
     $('askLu').onclick = () => { closeSheet(); go('ask'); setTimeout(() => send(`tell me about ${t}`), 250); };
     if ($('tvBtn')) $('tvBtn').onclick = () => { $('tvBtn').remove(); tradingViewWidget($('tvSlot'), s.t); };
   });
 }
+
+/* ---------- Risk dial sheet + check-ins ---------- */
+function riskSheet() {
+  let pick = S.risk == null ? 3 : riskLevel(S.risk);
+  const rows = () => [1, 2, 3, 4, 5].map(n => {
+    const st = levelStats(n);
+    return `<button class="lvl${n === pick ? ' on' : ''}" data-pick="${n}"><b><i>${n}</i>${RISK_LEVELS[n].name}</b><p>${RISK_LEVELS[n].blurb}</p>${st ? `<small>Real data: swings ~${Math.round(st.vol * 100)}%/yr · typical worst drop ${Math.round(st.dd * 100)}% · e.g. ${st.examples.join(', ')}</small>` : ''}</button>`;
+  }).join('');
+  openSheet(`<div class="eyebrow" style="margin-top:0">Risk dial</div><h2>How much swing can you handle?</h2>
+    <p class="about" style="margin-bottom:14px">${S.risk == null ? 'Lu hasn\'t set this yet. Pick a level, or just tell Lu how you feel about risk.' : `You're at ${riskLevel(S.risk)}/5${S.riskManual ? ', set by you' : ', based on what you told Lu'}. Your matches re-sort instantly when you change it.`}</p>
+    <div id="lvlRows">${rows()}</div>
+    <button class="btn primary" id="lvlSave" style="margin-top:6px">Set to ${pick}/5</button>
+    ${S.risk != null ? '<button class="btn secondary" id="lvlReset" style="margin-top:10px">Let Lu figure it out</button>' : ''}`, body => {
+    const bind = () => body.querySelectorAll('[data-pick]').forEach(b => b.onclick = () => { pick = +b.dataset.pick; $('lvlRows').innerHTML = rows(); bind(); $('lvlSave').textContent = `Set to ${pick}/5`; });
+    bind();
+    $('lvlSave').onclick = () => { closeSheet(); go('ask'); setTimeout(() => send(`set my risk to ${pick}`), 200); };
+    if ($('lvlReset')) $('lvlReset').onclick = () => { closeSheet(); go('ask'); setTimeout(() => send('reset my risk'), 200); };
+  });
+}
+/** If recent saves don't match the stated risk level, Lu asks (instead of silently changing it). */
+function maybeRiskNudge() {
+  const recent = (S.saveRisks || []).slice(-4);
+  if (S.risk == null || recent.length < 4) return;
+  if ((S.lastNudgeAt || -99) > S.history.length - 8) return;
+  const avg = recent.reduce((x, [, r]) => x + r, 0) / recent.length;
+  const cur = riskLevel(S.risk), sug = riskLevel(avg);
+  if (Math.abs(avg - S.risk) < 1.25 || sug === cur) return;
+  S.lastNudgeAt = S.history.length;
+  const names = recent.map(([t]) => t).join(', ');
+  addMsg('ai', `Quick check-in: you told me ${cur}/5, but your last few saves (${names}) average ${avg.toFixed(1)}/5, which is ${avg > S.risk ? 'riskier' : 'calmer'} than that. Want me to move your dial to ${sug}/5?`, { dial: S.risk });
+  renderSparks([`yes, set my risk to ${sug}`, `keep it at ${cur}`, 'what\'s my risk level?']);
+  if (current !== 'ask') { $('askDot').hidden = false; toast('Lu has a quick question about your risk level. See Ask.'); }
+}
+
+/* ---------- Premium ---------- */
+function paywall(hitLimit) {
+  const P = CONFIG.premium;
+  if (S.premium) { toast(`You're on ${P.name}. Swipe away!`); return; }
+  openSheet(`<div class="eyebrow" style="margin-top:0">${P.name}</div>
+    <h2>${hitLimit ? 'You\'ve used today\'s free saves' : 'Swipe without limits'}</h2>
+    <p class="about">Free accounts get ${CONFIG.freeRightSwipesPerDay} right swipes a day. Premium removes the cap so Lu can keep learning what you love.</p>
+    <ul class="perks"><li>Unlimited right swipes, every day</li><li>Lu learns from every save and sharpens your matches</li><li>Cancel anytime</li></ul>
+    <div class="price"><b>$${P.price.toFixed(2)}</b><span>/ ${P.period}</span></div>
+    <button class="btn primary" id="buyPremium">Get Premium</button>
+    <button class="btn secondary" id="notNow" style="margin-top:10px">${hitLimit ? 'Not now' : 'Maybe later'}</button>
+    <p class="fine">${hitLimit ? 'Free saves reset at midnight. Passing on cards is always free.' : 'Passing on cards is always free.'}</p>`, () => {
+    $('notNow').onclick = closeSheet;
+    $('buyPremium').onclick = () => {
+      if (P.checkoutUrl) { location.href = P.checkoutUrl; return; }
+      if (!confirm('Payments aren\'t connected in this preview yet. Turn on Premium for testing?')) return;
+      activatePremium('preview');
+    };
+  });
+}
+function activatePremium(source) {
+  S.premium = { since: today(), source };
+  if (source !== 'preview') S.activity.unshift({ kind: 'premium', amt: CONFIG.premium.price, date: today() });
+  save(); closeSheet(); toast(`Welcome to ${CONFIG.premium.name}! Unlimited swipes are on.`);
+  if (current === 'explore') renderExplore();
+}
+// Returning from Stripe checkout: ?premium=success
+try {
+  const q = new URLSearchParams(location.search);
+  if (q.get('premium') === 'success') { setTimeout(() => activatePremium('stripe'), 300); history.replaceState(null, '', location.pathname); }
+} catch (e) {}
 
 /* ---------- Profile sheet ---------- */
 function profileSheet() {
@@ -857,9 +1234,16 @@ function profileSheet() {
     <div class="eyebrow">What Lu knows about you</div>
     <div class="tuned" style="margin:0">${tags.length ? tags.map(t => `<span class="tag${t.neg ? ' neg' : ''}">${escHTML(t.text)}</span>`).join('') : '<span class="nm">Nothing yet. Chat with Lu to get started.</span>'}</div>
     <p class="nm" style="margin:12px 0 0">Lu learns this from your chats and swipes. No survey, and you can edit it anytime in Ask.</p>
-    <button class="btn secondary" id="resetDemo" style="margin-top:22px">Reset demo</button>`, () => {
+    <div class="eyebrow">Plan</div>
+    <div class="planrow">${S.premium
+      ? `<div><b>${CONFIG.premium.name} <span class="premium-badge">ACTIVE</span></b><small>Unlimited swipes · since ${S.premium.since}</small></div><button class="link" style="margin:0" id="cancelPlan">Cancel</button>`
+      : `<div><b>Free</b><small>${swipesLeft()} of ${CONFIG.freeRightSwipesPerDay} saves left today</small></div><button class="link" style="margin:0" id="upgrade">Upgrade →</button>`}</div>
+    <div class="planrow"><div><b>Fees paid</b><small>Instant withdrawals (${Math.round(CONFIG.instantWithdrawFeeRate * 100)}%)</small></div><span>${usd(S.feesPaid || 0)}</span></div>
+    <button class="btn secondary" id="resetDemo" style="margin-top:22px">Reset app data</button>`, () => {
+    if ($('upgrade')) $('upgrade').onclick = () => paywall(false);
+    if ($('cancelPlan')) $('cancelPlan').onclick = () => { if (!confirm(`Cancel ${CONFIG.premium.name}? You'll go back to ${CONFIG.freeRightSwipesPerDay} free saves a day.`)) return; S.premium = null; save(); closeSheet(); toast('Premium cancelled'); if (current === 'explore') renderExplore(); };
     $('resetDemo').onclick = () => {
-      if (!confirm('Reset Luma? This clears your chat, matches and demo wallet.')) return;
+      if (!confirm('Reset Luma? This clears your chat, matches, wallet history and plan on this device.')) return;
       try { localStorage.removeItem('luma.v2'); } catch (e) {}
       location.reload();
     };
@@ -916,6 +1300,7 @@ async function loadRiskData() {
     if (!res.ok) return;
     const n = applyRiskData(await res.json());
     if (!n) return;
+    try { const nr = await fetch('news.json', { cache: 'no-cache' }); if (nr.ok) NEWS_DOC = await nr.json(); } catch (e) {}
     if (current === 'explore') renderExplore();
     if (current === 'portfolio') renderPortfolio();
   } catch (e) { /* offline or opened from disk: keep Lu's curated estimates */ }
@@ -923,9 +1308,10 @@ async function loadRiskData() {
 
 /* ---------- Boot ---------- */
 if (!S.log.length) addMsg('ai', GREETING);
-else S.log.forEach((m, i) => addMsg(m.who, m.text, { noLog: true, cta: m.cta && i === S.log.length - 1, ticker: m.ticker, term: m.term }));
+else S.log.forEach((m, i) => addMsg(m.who, m.text, { noLog: true, cta: m.cta && i === S.log.length - 1, ticker: m.ticker, term: m.term, dial: m.dial }));
 renderLearned(); renderSparks(); refreshMoney(); loadRiskData();
-window.__luma = { understand, buildDeck, state: () => S, go };
+if (SCREENS.includes(location.hash.slice(1))) go(location.hash.slice(1), true);
+window.__luma = { understand, buildDeck, state: () => S, go, test: { decideL, maybeRiskNudge, swipesLeft } };
 })();
 </script>
 </body>
