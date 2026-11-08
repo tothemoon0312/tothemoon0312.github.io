@@ -212,7 +212,7 @@ function findStocks(clauseRaw, clauseLow) {
 }
 
 function understand(raw) {
-  const found = { likes: [], dislikes: [], stocksUp: [], stocksDown: [], riskDelta: 0, riskWords: [], income: false, moreLike: null, wantsDeck: false, wantsLess: null };
+  const found = { likes: [], dislikes: [], stocksUp: [], stocksDown: [], riskDelta: 0, riskWords: [], riskCues: [], income: false, moreLike: null, wantsDeck: false, wantsLess: null };
   const low = raw.toLowerCase().replace(/[’']/g, '\'');
 
   if (/\b(show|build|make|start|let'?s go|ready|swipe|deck|matches|go)\b/.test(low) && low.length < 40) found.wantsDeck = true;
@@ -260,6 +260,9 @@ function understand(raw) {
     const highHits = RISK_HIGH.filter(w => hasPhrase(c, w));
     const midHits = RISK_MID.filter(w => hasPhrase(c, w));
     // "not too risky", "don't want anything volatile" flip high words to low
+    const cueText = w => { const m = c.match(new RegExp('(?:\\b(?:not|no|nothing|don\'?t|never|avoid|too)\\s+){0,3}' + esc(w))); return m ? m[0] : w; };
+    highHits.forEach(w => found.riskCues.push({ w: cueText(w), dir: isNegated(c, w, carry) ? -1 : 1 }));
+    lowHits.forEach(w => found.riskCues.push({ w: cueText(w), dir: !/lose/.test(w) && isNegated(c, w, carry) ? 1 : -1 }));
     highHits.forEach(w => { if (neg(w)) { found.riskDelta -= 1.2; found.riskWords.push('low'); } else { found.riskDelta += 1.2; found.riskWords.push('high'); } });
     lowHits.forEach(w => { if (!/lose/.test(w) && neg(w)) { found.riskDelta += 0.8; found.riskWords.push('high'); } else { found.riskDelta -= 1; found.riskWords.push('low'); } });
     if (midHits.length) { found.riskWords.push('mid'); found.riskDelta += 0; found.mid = true; }
@@ -269,7 +272,7 @@ function understand(raw) {
       const yrs = +c.match(/\d+/)[0]; found.riskDelta += yrs >= 25 ? 1.5 : yrs <= 10 ? -1 : 0;
     }
     const age = c.match(/\b(i'?m|i am|age)\s*(\d{2})\b/);
-    if (age) { const a = +age[2]; if (a >= 16 && a <= 90) found.riskDelta += a < 30 ? 0.8 : a > 55 ? -1 : 0; }
+    if (age) { const a = +age[2]; if (a >= 16 && a <= 90) { found.riskDelta += a < 30 ? 0.8 : a > 55 ? -1 : 0; if (a < 30 || a > 55) { found.riskCues.push({ w: `you're ${a}`, dir: a < 30 ? 1 : -1 }); found.riskWords.push(a < 30 ? 'high' : 'low'); } } }
     if (THEMES.dividends.words.some(w => hasPhrase(c, w)) && !found.dislikes.includes('dividends')) found.income = true;
     carry = negHere && !POS.test(c.replace(/\b(don'?t|do not|not)\s+(like|love|want)\b/g, ''));
    }
@@ -317,6 +320,11 @@ function apply(f) {
     const base = S.risk == null ? 3 : S.risk;
     S.risk = Math.max(1, Math.min(5, base + f.riskDelta));
     S.riskSignals++;
+  }
+  if (f.riskCues && f.riskCues.length) {
+    const dir = Math.sign(f.riskDelta);
+    f.riskCues = f.riskCues.filter(c => !dir || c.dir === dir);
+    S.riskCues = (S.riskCues || []).concat(f.riskCues.map(c => c.w)).slice(-6);
   }
   if (f.income) S.income = true;
   if (f.dislikes.includes('dividends')) S.income = false;
@@ -411,8 +419,10 @@ function reply(f, ch) {
   if (f.moreLike) parts.push(`Leaning into stocks like ${f.moreLike}.`);
   if (disL.length || ch.down.length) parts.push('Steering clear of ' + list(disL.concat(ch.down)) + '.');
   if (f.riskWords.length) {
-    const w = riskWord(S.risk);
-    parts.push(pick([`Sounds like you're ${w}. I'll tune your matches to fit.`, `Reading you as ${w}, so I'll weight the picks that way.`, `Okay, ${w} it is.`], n));
+    const l = riskLevel(S.risk);
+    const cues = (f.riskCues || []).slice(0, 2).map(c => `"${c.w || c}"`);
+    const because = cues.length ? ` because you said ${list(cues)}` : '';
+    parts.push(pick([`I've set your risk dial to ${l}/5 (${RISK_LEVELS[l].name.toLowerCase()})${because}.`, `Reading you as ${l}/5, ${RISK_LEVELS[l].name.toLowerCase()}${because}.`, `Risk dial: ${l}/5${because}.`], n) + ' Say "riskier" or "safer" anytime to adjust.');
   }
 
   const deck = buildDeck();
@@ -449,6 +459,89 @@ const SPARKS = [
   'More like NVDA but less risky'
 ];
 
+
+/* ================= Risk dial ================= */
+// Users can change their risk tolerance any time, in their own words:
+//   "set my risk to 2", "medium risk please", "a bit riskier", "way safer", "crank it up",
+//   "actually I'm more aggressive now", "what's my risk level?", "reset my risk".
+const RISK_LEVELS = {
+  1: { name: 'Very steady', blurb: 'Index funds, utilities and household names that barely flinch.' },
+  2: { name: 'Safer', blurb: 'Big, established companies with gentle ups and downs.' },
+  3: { name: 'Balanced', blurb: 'A mix of steady names and some growth, with normal market swings.' },
+  4: { name: 'Growth-focused', blurb: 'Bigger swings in exchange for more upside potential.' },
+  5: { name: 'High-risk, high-reward', blurb: 'The wildest rides, including crypto. Big drops are part of the deal.' }
+};
+const NAMED_LEVELS = [
+  [1, /\b(super safe|safest|ultra safe|no risk|zero risk|very conservative|lowest risk|very low risk)\b/],
+  [5, /\b(max(imum)? risk|very aggressive|full send|yolo|degen|highest risk|very high risk|moonshots?)\b/],
+  [2, /\b(conservative|low risk|low-risk|play it safe|safe side|cautious)\b/],
+  [4, /\b(aggressive|high risk|high-risk|growth mode|risk taker)\b/],
+  [3, /\b(moderate|medium risk|medium|balanced|middle ground|in between|in the middle|mid risk)\b/]
+];
+const CHANGE_CUE = /\b(actually|changed? my mind|instead|now|switch|make (it|me|my|things)|set|go|change|update|turn|move|put me|i'?m (more|feeling))\b/;
+function riskIntent(raw) {
+  const low = raw.toLowerCase().replace(/[’']/g, '\'').trim();
+  if (/\b(what'?s|what is|whats|show( me)?|tell me|where'?s)\b.*\bmy\b.*\b(risk|tolerance|dial|level)\b|\bhow risky am i\b|\bwhat risk (level )?(am i|did you)\b/.test(low)) return { type: 'query' };
+  if (/\b(reset|clear|forget|start over|undo)\b.*\b(risk|tolerance|dial)\b/.test(low)) return { type: 'reset' };
+  if (/\b(keep|stay|leave)\b.*\b(it|my risk|risk|dial)\b.*\b(where it is|as is|the same|there)\b/.test(low) && S.risk != null) return { type: 'set', value: riskLevel(S.risk) };
+  const keep = low.match(/\b(?:keep|stay|leave)\b[^0-9]{0,20}\b([1-5])\b/);
+  if (keep) return { type: 'set', value: +keep[1] };
+  const num = low.match(/\b(?:risk|level|tolerance|dial)\b[^0-9]{0,24}\b([1-5])\b(?!\s*%)/) || low.match(/\b([1-5])\s*(?:\/|out of)\s*5\b/);
+  if (num) return { type: 'set', value: +num[1] };
+  for (const [v, re] of NAMED_LEVELS) {
+    const m = low.match(re); if (!m) continue;
+    if (!(CHANGE_CUE.test(low) || /\brisk\b/.test(low) || low.split(/\s+/).length <= 4)) continue;
+    const negated = isNegated(low, m[0], false);
+    return { type: 'set', value: negated ? (v >= 3 ? Math.max(1, v - 2) : Math.min(5, v + 2)) : v, phrase: m[0], negated };
+  }
+  const moreW = /\b(more|higher|riskier|spicier|bolder|wilder|crank|turn (it )?up|increase|raise|bump|amp|level up)\b/.test(low);
+  const lessW = /\b(less|lower|safer|calmer|tone (it )?down|turn (it )?down|decrease|reduce|dial (it )?back|chill(er)?|not as)\b/.test(low);
+  const topic = /\b(risk|risky|riskier|aggressive|volatile|volatility|spicy|spicier|bold|bolder|wild|wilder|safer|calmer|crank|turn it (up|down)|tone it down|dial it back|bump it|amp it|chill|chiller|swings?)\b/.test(low);
+  if (topic && moreW !== lessW && !/\bnot (too|that|very|so)\b/.test(low)) {
+    const mag = /\b(a (little|bit|touch|tad|notch)|slightly|bit|notch)\b/.test(low) ? 0.5 : /\b(way|much|a lot|lots|really|super)\b/.test(low) ? 1.5 : 1;
+    return { type: 'adjust', delta: moreW ? mag : -mag };
+  }
+  return null;
+}
+/** Applies a risk intent to the profile. Returns { before, after } (after null when reset). */
+function applyRisk(ri) {
+  const before = S.risk;
+  if (ri.type === 'reset') { S.risk = null; S.riskManual = false; return { before, after: null }; }
+  const base = S.risk == null ? 3 : S.risk;
+  const after = ri.type === 'set' ? ri.value : Math.max(1, Math.min(5, Math.round((base + ri.delta) * 2) / 2));
+  S.risk = after; S.riskManual = true; S.riskSignals = (S.riskSignals || 0) + 1;
+  return { before, after };
+}
+const riskLevel = r => Math.max(1, Math.min(5, Math.round(r)));
+/** Real-data snapshot for a risk level: typical yearly swing, typical worst drop, example tickers. */
+function levelStats(lvl) {
+  const pool = STOCKS.filter(s => !s.unavailable && s.live && s.risk === lvl);
+  if (!pool.length) return null;
+  const med = a => { const x = [...a].sort((p, q) => p - q); return x[Math.floor(x.length / 2)]; };
+  return { vol: med(pool.map(s => s.live.vol)), dd: med(pool.map(s => s.live.maxDD)), n: pool.length,
+    examples: pool.sort((a, b) => (b.cap === 'Mega') - (a.cap === 'Mega') || a.live.vol - b.live.vol).slice(0, 3).map(s => s.t) };
+}
+function dialLine(r) { const l = riskLevel(r); return `Risk dial: ${l}/5 · ${RISK_LEVELS[l].name}`; }
+/** Lu's reply when the risk dial moves: what changed, what it means in dollars, and what's in the deck now. */
+function riskReply(before, after, deckBefore) {
+  if (after == null) return 'Done. I\'ve cleared your risk setting. Tell me how you\'d feel if your money dropped 20% in a month, and I\'ll read it fresh.';
+  const l = riskLevel(after), st = levelStats(l);
+  const from = before == null ? '' : riskLevel(before) === l ? `Staying at ${l}/5. ` : `Moved your dial from ${riskLevel(before)}/5 to ${l}/5. `;
+  let text = `${from}${dialLine(after)}\n\n${RISK_LEVELS[l].blurb}`;
+  if (st) {
+    const left = Math.round(100 * (1 - st.dd));
+    text += `\n\nWhat that feels like (real data): stocks at this level swung about ${Math.round(st.vol * 100)}% over the past year, and the typical one dropped ${Math.round(st.dd * 100)}% from its high at some point. Put in $100, and at the worst moment you might have seen about $${left}.`;
+  }
+  const now = buildDeck().slice(0, 3).map(s => s.t);
+  if (now.length) text += `\n\nYour top matches now: ${now.join(', ')}` + (deckBefore && deckBefore.length && deckBefore.join() !== now.join() ? ` (was ${deckBefore.join(', ')}).` : '.');
+  text += '\n\nChange it anytime: "a bit safer", "riskier", or "set my risk to 3".';
+  return text;
+}
+function riskQueryReply() {
+  if (S.risk == null) return 'I haven\'t pinned down your risk level yet. Tell me something like "I\'d panic if my money dropped 20%" or "I\'m in it for the long haul, swings don\'t bother me", or just say "set my risk to 3".';
+  const why = (S.riskCues || []).slice(-3);
+  return `Here's where your dial is:\n${dialLine(S.risk)}\n\n${RISK_LEVELS[riskLevel(S.risk)].blurb}` + (why.length ? `\n\nI got there because you said ${why.map(w => `"${w}"`).join(', ')}.` : S.riskManual ? '\n\nYou set this yourself.' : '') + '\n\nWant to change it? Say "a bit riskier", "safer", or a number from 1 to 5.';
+}
 
 /* ================= Why this matches ================= */
 function whySentence(s) {

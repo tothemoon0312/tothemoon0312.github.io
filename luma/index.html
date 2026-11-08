@@ -291,6 +291,28 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
 .fi .src a { color: var(--gold-text); text-decoration: none; font-weight: 500; }
 .chg-up { color: var(--green); } .chg-down { color: var(--red); }
 
+/* ---------- Risk dial ---------- */
+.dial { align-self: flex-start; width: 84%; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 14px 14px 10px; }
+.dial .segs { display: flex; gap: 6px; align-items: flex-end; height: 54px; }
+.dial .segs button { flex: 1; border-radius: 8px; background: var(--line); transition: background .15s, transform .1s; }
+.dial .segs button:nth-child(1) { height: 30%; } .dial .segs button:nth-child(2) { height: 47%; } .dial .segs button:nth-child(3) { height: 64%; } .dial .segs button:nth-child(4) { height: 82%; } .dial .segs button:nth-child(5) { height: 100%; }
+.dial .segs button.fill { background: var(--gold-bar); }
+.dial .segs button.cur { background: var(--gold); }
+.dial .segs button:active { transform: scale(.94); }
+.dial .ends { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-top: 8px; }
+.dial .cap { font-size: 13.5px; color: var(--soft); margin-top: 6px; }
+.lvl { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--bg); border-radius: 16px; padding: 14px 16px; margin-bottom: 8px; }
+.lvl.on { border-color: var(--gold); background: var(--gold-soft); }
+.lvl b { font-weight: 500; font-size: 16px; display: flex; align-items: center; gap: 10px; }
+.lvl b i { font-style: normal; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--card-2); font-size: 13px; }
+.lvl.on b i { background: var(--gold); color: var(--gold-ink); }
+.lvl p { margin: 6px 0 0; color: var(--soft); font-size: 14px; line-height: 1.45; }
+.lvl small { display: block; margin-top: 6px; color: var(--muted); font-size: 12.5px; }
+.bnav .dot { position: absolute; top: -2px; right: 8px; width: 10px; height: 10px; border-radius: 50%; background: var(--red); border: 2px solid var(--bg); }
+.bnav button { position: relative; }
+.pill-closed { background: var(--card-2); color: var(--muted); font-size: 14px; font-weight: 500; padding: 6px 14px; border-radius: 999px; }
+.tag.risk { background: var(--card-2); color: var(--text); border: 1px solid var(--gold); }
+
 /* ---------- Social ---------- */
 .seg { display: grid; grid-template-columns: 1fr 1fr; background: var(--card-2); border-radius: 999px; padding: 5px; margin: 4px 0 18px; }
 .seg button { height: 48px; border-radius: 999px; color: var(--muted); font-size: 16px; }
@@ -411,7 +433,7 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
 
   <nav class="bnav" id="bnav">
     <button data-go="explore"><span class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m15.8 8.2-1.9 5.7-5.7 1.9 1.9-5.7z"/></svg></span>Explore</button>
-    <button data-go="ask"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>Ask</button>
+    <button data-go="ask"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>Ask<span class="dot" id="askDot" hidden></span></button>
     <button data-go="wallet" class="fab"><span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M3.5 13h5l1.5 2h4l1.5-2h5"/></svg></span>$250</button>
     <button data-go="portfolio"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 20v-4M8 20v-7M12 20v-5M16 20v-9M20 20V8"/><path d="m4 11 5-4 4 3 7-6"/></svg></span>Portfolio</button>
     <button data-go="social"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Social</button>
@@ -458,13 +480,24 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-toas
 
 /* ---------- Navigation ---------- */
 let current = null;
-function go(name) {
+const SCREENS = ['explore', 'ask', 'wallet', 'portfolio', 'social'];
+/** US stock market hours (9:30am–4pm ET, Mon–Fri). Holidays aren't included. */
+function marketOpen() {
+  const p = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date()).map(x => [x.type, x.value]));
+  const mins = +p.hour * 60 + +p.minute;
+  return !['Sat', 'Sun'].includes(p.weekday) && mins >= 570 && mins < 960;
+}
+function go(name, fromHistory) {
+  if (!SCREENS.includes(name)) name = 'explore';
   $('welcome').hidden = true;
+  if (sheetOpen) closeSheet();
+  if (!fromHistory && location.hash.slice(1) !== name) history.pushState(null, '', '#' + name);
   current = name;
   document.querySelectorAll('.screen').forEach(s => s.hidden = s.id !== 's-' + name);
-  document.querySelectorAll('#bnav button').forEach(b => b.classList.toggle('on', b.dataset.go === name));
+  document.querySelectorAll('#bnav button').forEach(b => { b.classList.toggle('on', b.dataset.go === name); if (b.dataset.go === name) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
+  if (name === 'ask') $('askDot').hidden = true;
   const right = $('appbarRight');
-  right.innerHTML = name === 'wallet' ? '<span class="pill-open">Market open</span>'
+  right.innerHTML = name === 'wallet' ? (marketOpen() ? '<span class="pill-open">Market open</span>' : '<span class="pill-closed" title="US stocks trade 9:30am–4pm ET on weekdays. Crypto trades 24/7.">Market closed</span>')
     : name === 'social' ? `<button class="avatar-btn" aria-label="Add friend" data-toast="Invites are a demo in this preview">${ICON.addUser}</button>`
     : '<button class="avatar-btn" aria-label="Profile" data-profile>S</button>';
   if (name === 'explore') renderExplore();
@@ -474,11 +507,17 @@ function go(name) {
   if (name === 'ask') { const th = $('thread'); th.scrollTop = th.scrollHeight; }
 }
 document.addEventListener('click', e => { const b = e.target.closest('[data-go]'); if (b) go(b.dataset.go); });
+window.addEventListener('popstate', () => {
+  const h = location.hash.slice(1);
+  if (sheetOpen) closeSheet();
+  if (SCREENS.includes(h)) go(h, true);
+  else { $('welcome').hidden = false; current = null; }
+});
 
 /* ---------- Profile summaries ---------- */
 function profileTags(limit) {
   const out = [];
-  if (S.risk != null) out.push({ text: riskWord(S.risk), kind: 'risk', clear: () => { S.risk = null; } });
+  if (S.risk != null) out.push({ text: `risk ${riskLevel(S.risk)}/5`, kind: 'risk', clear: () => { S.risk = null; S.riskManual = false; } });
   S.mentions.forEach(t => out.push({ text: t, clear: () => { S.mentions = S.mentions.filter(x => x !== t); } }));
   Object.entries(S.weights).filter(([, v]) => v >= 1).sort((a, b) => b[1] - a[1])
     .forEach(([k]) => out.push({ text: labelOf(k), clear: () => { delete S.weights[k]; } }));
@@ -493,9 +532,9 @@ function renderLearned() {
   const l = document.createElement('span'); l.className = 'lbl'; l.textContent = 'Lu picked up'; box.appendChild(l);
   tags.forEach(t => {
     const b = document.createElement('button');
-    b.className = 'tag' + (t.neg ? ' neg' : ''); b.title = 'Tap to remove';
-    b.innerHTML = `<span>${escHTML(t.text)}</span><span class="x">×</span>`;
-    b.onclick = () => { t.clear(); save(); renderLearned(); };
+    b.className = 'tag' + (t.neg ? ' neg' : '') + (t.kind === 'risk' ? ' risk' : ''); b.title = t.kind === 'risk' ? 'Adjust your risk dial' : 'Tap to remove';
+    b.innerHTML = `<span>${escHTML(t.text)}</span><span class="x" ${t.kind === 'risk' ? 'aria-hidden="true">⚙︎' : '>×'}</span>`;
+    b.onclick = () => { if (t.kind === 'risk') { riskSheet(); return; } t.clear(); save(); renderLearned(); };
     box.appendChild(b);
   });
 }
@@ -516,7 +555,13 @@ function renderTuned() {
   const box = $('tuned'); box.innerHTML = '';
   const tags = profileTags(4);
   if (!tags.length) return;
-  tags.forEach(t => { const s = document.createElement('span'); s.className = 'tag' + (t.neg ? ' neg' : ''); s.textContent = t.text; box.appendChild(s); });
+  tags.forEach(t => {
+    const s = document.createElement(t.kind === 'risk' ? 'button' : 'span');
+    s.className = 'tag' + (t.neg ? ' neg' : '') + (t.kind === 'risk' ? ' risk' : ''); s.textContent = t.text + (t.kind === 'risk' ? ' ⚙︎' : '');
+    if (t.kind === 'risk') { s.title = 'Adjust your risk dial'; s.onclick = riskSheet; }
+    box.appendChild(s);
+  });
+  if (S.risk == null) { const r = document.createElement('button'); r.className = 'tag risk'; r.textContent = 'set risk ⚙︎'; r.onclick = riskSheet; box.appendChild(r); }
   const b = document.createElement('button'); b.className = 'tune'; b.textContent = 'tune with Lu'; b.dataset.go = 'ask'; box.appendChild(b);
 }
 
@@ -585,7 +630,7 @@ function decideL(s, action) {
   S.swiped[s.t] = like ? 'like' : 'nope';
   S.history.push(s.t);
   s.themes.forEach(k => { if (!S.excluded.includes(k)) S.weights[k] = Math.max(0, (S.weights[k] || 0) + (like ? 0.5 : -0.35)); });
-  if (like && S.risk != null) S.risk += (s.risk - S.risk) * 0.08;
+  if (like) { S.saveRisks = (S.saveRisks || []).concat([[s.t, s.risk]]).slice(-6); maybeRiskNudge(); }
   if (!like) {
     const recent = S.history.slice(-4).filter(t => S.swiped[t] === 'nope').map(t => BY_T[t].themes);
     const common = s.themes.find(k => recent.length >= 3 && recent.every(th => th.includes(k)));
@@ -650,6 +695,10 @@ function bindCard(el, s) {
 function undoSwipe() {
   const t = S.history.pop(); if (!t) return;
   const action = S.swiped[t]; delete S.swiped[t];
+  if (action === 'like') {
+    if (!S.premium && S.swipeDay === dayKey()) S.rightToday = Math.max(0, (S.rightToday || 0) - 1); // undoing a save gives it back
+    S.saveRisks = (S.saveRisks || []).filter(([x]) => x !== t);
+  }
   const delta = action === 'like' ? 0.5 : -0.35;
   BY_T[t].themes.forEach(k => { if (S.weights[k] != null) S.weights[k] = Math.max(0, S.weights[k] - delta); });
   pinTop = t; save(); renderExplore(); toast('Brought back ' + t);
@@ -670,6 +719,15 @@ function addMsg(who, text, opts = {}) {
   el.className = 'msg ' + (who === 'ai' ? 'lu' : 'me');
   el.textContent = text;
   thread.appendChild(el);
+  if (opts.dial !== undefined && opts.dial !== null) {
+    thread.querySelectorAll('.dial').forEach(x => x.remove()); // only the latest dial stays interactive
+    const l = riskLevel(opts.dial);
+    const d = document.createElement('div'); d.className = 'dial'; d.setAttribute('role', 'group'); d.setAttribute('aria-label', `Risk dial, currently ${l} of 5`);
+    d.innerHTML = `<div class="segs">${[1, 2, 3, 4, 5].map(n => `<button class="${n < l ? 'fill' : n === l ? 'cur' : ''}" data-lvl="${n}" aria-label="Set risk to ${n}: ${RISK_LEVELS[n].name}" title="${n}/5 · ${RISK_LEVELS[n].name}"></button>`).join('')}</div>
+      <div class="ends"><span>Steady</span><span>Wild</span></div><div class="cap">${l}/5 · ${RISK_LEVELS[l].name} · tap to change</div>`;
+    d.querySelectorAll('[data-lvl]').forEach(b => b.onclick = () => { if (+b.dataset.lvl !== l) send(`set my risk to ${b.dataset.lvl}`); });
+    thread.appendChild(d);
+  }
   if (opts.ticker && BY_T[opts.ticker]) {
     const c = document.createElement('button'); c.className = 'stockchip'; c.textContent = `View ${opts.ticker} →`;
     c.onclick = () => stockSheet(opts.ticker); thread.appendChild(c);
@@ -685,13 +743,14 @@ function addMsg(who, text, opts = {}) {
     thread.appendChild(b);
   }
   thread.scrollTop = thread.scrollHeight;
-  if (!opts.noLog) { S.log.push({ who, text, cta: !!opts.cta, ticker: opts.ticker, term: opts.term }); save(); }
+  if (!opts.noLog) { S.log.push({ who, text, cta: !!opts.cta, ticker: opts.ticker, term: opts.term, dial: opts.dial }); save(); }
 }
 function renderSparks(list) {
   if (list) { S.sug = list; save(); }
   const box = $('sparks'); box.innerHTML = '';
   const used = new Set(S.log.filter(m => m.who === 'me').map(m => m.text.toLowerCase()));
-  const pool = (S.sug && S.sug.length ? S.sug : SPARKS).filter(x => x === 'show my matches' || !used.has(x.toLowerCase()));
+  const hasCta = !!thread.querySelector('.btn[data-go="explore"]');
+  const pool = (S.sug && S.sug.length ? S.sug : SPARKS).filter(x => x === 'show my matches' ? !hasCta : !used.has(x.toLowerCase()));
   pool.slice(0, 6).forEach(s => {
     const b = document.createElement('button'); b.type = 'button'; b.className = 'spark'; b.textContent = s;
     b.onclick = () => send(s); box.appendChild(b);
@@ -719,15 +778,34 @@ function send(text) {
   addMsg('me', text);
   $('input').value = ''; autosize(); $('send').disabled = true;
   S.turns++;
-  // Questions get a plain-English answer and don't change the profile; everything else is profile talk.
-  const ans = newsAnswer(text) || answerQuestion(text);
-  const f = ans ? null : understand(text);
-  const ch = ans ? null : apply(f);
+  // 1) Risk dial changes ("a bit safer", "set my risk to 4", "what's my risk level?")
+  // 2) Questions get a plain-English answer and don't change the profile
+  // 3) Everything else is profile talk
+  const ri = riskIntent(text);
+  const deckBefore = buildDeck().slice(0, 3).map(s => s.t);
+  const ans = ri ? null : (newsAnswer(text) || answerQuestion(text));
+  let f = null, ch = null, rk = null;
+  if (!ans && !(ri && ri.type === 'query')) {
+    f = understand(text);
+    if (ri) { f.riskDelta = 0; f.mid = false; f.riskWords = []; f.riskCues = []; f.wantsDeck = false; }
+    ch = apply(f);
+    if (ri) rk = applyRisk(ri);
+  }
   save(); renderLearned();
   const w = document.createElement('div'); w.className = 'msg lu'; w.innerHTML = '<span class="typing"><i></i><i></i><i></i></span>';
   thread.appendChild(w); thread.scrollTop = thread.scrollHeight;
   setTimeout(() => {
     w.remove();
+    if (ri) {
+      if (ri.type === 'query') addMsg('ai', riskQueryReply(), { dial: S.risk });
+      else {
+        const other = ch && (ch.likes.length || ch.dislikes.length || ch.up.length || ch.down.length) ? reply(f, ch).text.split('\n\n')[0] + '\n\n' : '';
+        addMsg('ai', other + riskReply(rk.before, rk.after, deckBefore), { dial: rk.after, cta: buildDeck().length > 0 });
+      }
+      const l = S.risk == null ? 3 : riskLevel(S.risk);
+      renderSparks([l > 1 ? 'a bit safer' : null, l < 5 ? 'a bit riskier' : null, 'show my matches', ri.type === 'query' ? 'reset my risk' : 'what\'s my risk level?'].filter(Boolean));
+      busy = false; return;
+    }
     if (ans) {
       addMsg('ai', ans.text, { ticker: ans.ticker, term: ans.term });
       renderSparks(ans.suggestions); busy = false; return;
@@ -736,7 +814,7 @@ function send(text) {
       addMsg('ai', 'Pulling up your matches now. Come back anytime to tell me more.'); busy = false; setTimeout(() => go('explore'), 500); return;
     }
     const r = reply(f, ch);
-    addMsg('ai', r.text, { cta: r.cta }); renderSparks(nextSuggestions(ch)); busy = false;
+    addMsg('ai', r.text, { cta: r.cta, dial: f.riskWords.length && S.risk != null ? S.risk : undefined }); renderSparks(nextSuggestions(ch)); busy = false;
   }, 450 + Math.min(900, text.length * 12));
 }
 function autosize() { const i = $('input'); i.style.height = 'auto'; i.style.height = Math.min(120, i.scrollHeight) + 'px'; }
@@ -932,7 +1010,15 @@ $('depositBtn').onclick = () => openSheet(`<h2>Deposit</h2><p class="about" styl
 
 $('withdrawBtn').onclick = () => {
   const max = withdrawable();
-  if (max < 1) { toast('Nothing withdrawable yet. Deposits need to clear first.'); return; }
+  if (max < 1) {
+    const pend = pendingDeposits();
+    openSheet(`<h2>Nothing to withdraw yet</h2><p class="about">${pend ? `Your ${usd(pend)} deposit is still clearing, which usually takes 1–3 business days. You can invest with it right away, but you can't withdraw it until it clears.` : 'Your wallet is empty. Sell or deposit first.'}</p>
+      <button class="btn primary" id="okWd" style="margin-top:18px">Got it</button>${pend ? '<button class="btn secondary" id="clrWd" style="margin-top:10px">Preview: mark as cleared</button>' : ''}`, () => {
+      $('okWd').onclick = closeSheet;
+      if ($('clrWd')) $('clrWd').onclick = () => { closeSheet(); $('clearBtn').click(); };
+    });
+    return;
+  }
   const pctLabel = Math.round(CONFIG.instantWithdrawFeeRate * 1000) / 10 + '%';
   let speed = 'standard';
   openSheet(`<h2>Withdraw</h2><p class="about" style="margin-top:8px">To Chase ••4821 · ${usd(max)} available</p>
@@ -995,6 +1081,17 @@ function closeSheet() {
   setTimeout(() => { if (!sheetOpen) { $('sheetBack').hidden = true; $('sheet').hidden = true; } }, 300);
 }
 $('sheetBack').onclick = closeSheet; $('grab').onclick = closeSheet;
+(() => {
+  const sh = $('sheet'); let y0 = null, dy = 0;
+  sh.addEventListener('pointerdown', e => {
+    if (sh.scrollTop > 0 || e.target.closest('button, input, a, textarea, label')) return;
+    if (e.clientY - sh.getBoundingClientRect().top > 90) return;
+    y0 = e.clientY; dy = 0; sh.style.transition = 'none';
+  });
+  sh.addEventListener('pointermove', e => { if (y0 == null) return; dy = Math.max(0, e.clientY - y0); sh.style.transform = `translateY(${dy}px)`; });
+  const end = () => { if (y0 == null) return; y0 = null; sh.style.transition = ''; sh.style.transform = ''; if (dy > 90) closeSheet(); };
+  sh.addEventListener('pointerup', end); sh.addEventListener('pointercancel', end);
+})();
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
 document.addEventListener('click', e => { const q = e.target.closest('[data-term]'); if (q) { e.stopPropagation(); termSheet(q.dataset.term); } }, true);
 
@@ -1063,6 +1160,39 @@ function stockSheet(t) {
     $('askLu').onclick = () => { closeSheet(); go('ask'); setTimeout(() => send(`tell me about ${t}`), 250); };
     if ($('tvBtn')) $('tvBtn').onclick = () => { $('tvBtn').remove(); tradingViewWidget($('tvSlot'), s.t); };
   });
+}
+
+/* ---------- Risk dial sheet + check-ins ---------- */
+function riskSheet() {
+  let pick = S.risk == null ? 3 : riskLevel(S.risk);
+  const rows = () => [1, 2, 3, 4, 5].map(n => {
+    const st = levelStats(n);
+    return `<button class="lvl${n === pick ? ' on' : ''}" data-pick="${n}"><b><i>${n}</i>${RISK_LEVELS[n].name}</b><p>${RISK_LEVELS[n].blurb}</p>${st ? `<small>Real data: swings ~${Math.round(st.vol * 100)}%/yr · typical worst drop ${Math.round(st.dd * 100)}% · e.g. ${st.examples.join(', ')}</small>` : ''}</button>`;
+  }).join('');
+  openSheet(`<div class="eyebrow" style="margin-top:0">Risk dial</div><h2>How much swing can you handle?</h2>
+    <p class="about" style="margin-bottom:14px">${S.risk == null ? 'Lu hasn\'t set this yet. Pick a level, or just tell Lu how you feel about risk.' : `You're at ${riskLevel(S.risk)}/5${S.riskManual ? ', set by you' : ', based on what you told Lu'}. Your matches re-sort instantly when you change it.`}</p>
+    <div id="lvlRows">${rows()}</div>
+    <button class="btn primary" id="lvlSave" style="margin-top:6px">Set to ${pick}/5</button>
+    ${S.risk != null ? '<button class="btn secondary" id="lvlReset" style="margin-top:10px">Let Lu figure it out</button>' : ''}`, body => {
+    const bind = () => body.querySelectorAll('[data-pick]').forEach(b => b.onclick = () => { pick = +b.dataset.pick; $('lvlRows').innerHTML = rows(); bind(); $('lvlSave').textContent = `Set to ${pick}/5`; });
+    bind();
+    $('lvlSave').onclick = () => { closeSheet(); go('ask'); setTimeout(() => send(`set my risk to ${pick}`), 200); };
+    if ($('lvlReset')) $('lvlReset').onclick = () => { closeSheet(); go('ask'); setTimeout(() => send('reset my risk'), 200); };
+  });
+}
+/** If recent saves don't match the stated risk level, Lu asks (instead of silently changing it). */
+function maybeRiskNudge() {
+  const recent = (S.saveRisks || []).slice(-4);
+  if (S.risk == null || recent.length < 4) return;
+  if ((S.lastNudgeAt || -99) > S.history.length - 8) return;
+  const avg = recent.reduce((x, [, r]) => x + r, 0) / recent.length;
+  const cur = riskLevel(S.risk), sug = riskLevel(avg);
+  if (Math.abs(avg - S.risk) < 1.25 || sug === cur) return;
+  S.lastNudgeAt = S.history.length;
+  const names = recent.map(([t]) => t).join(', ');
+  addMsg('ai', `Quick check-in: you told me ${cur}/5, but your last few saves (${names}) average ${avg.toFixed(1)}/5, which is ${avg > S.risk ? 'riskier' : 'calmer'} than that. Want me to move your dial to ${sug}/5?`, { dial: S.risk });
+  renderSparks([`yes, set my risk to ${sug}`, `keep it at ${cur}`, 'what\'s my risk level?']);
+  if (current !== 'ask') { $('askDot').hidden = false; toast('Lu has a quick question about your risk level. See Ask.'); }
 }
 
 /* ---------- Premium ---------- */
@@ -1178,9 +1308,10 @@ async function loadRiskData() {
 
 /* ---------- Boot ---------- */
 if (!S.log.length) addMsg('ai', GREETING);
-else S.log.forEach((m, i) => addMsg(m.who, m.text, { noLog: true, cta: m.cta && i === S.log.length - 1, ticker: m.ticker, term: m.term }));
+else S.log.forEach((m, i) => addMsg(m.who, m.text, { noLog: true, cta: m.cta && i === S.log.length - 1, ticker: m.ticker, term: m.term, dial: m.dial }));
 renderLearned(); renderSparks(); refreshMoney(); loadRiskData();
-window.__luma = { understand, buildDeck, state: () => S, go };
+if (SCREENS.includes(location.hash.slice(1))) go(location.hash.slice(1), true);
+window.__luma = { understand, buildDeck, state: () => S, go, test: { decideL, maybeRiskNudge, swipesLeft } };
 })();
 </script>
 </body>
