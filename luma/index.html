@@ -448,6 +448,7 @@ function renderLearned() {
 /* ---------- Explore ---------- */
 let deck = [];
 function bars(s) {
+  if (s.live && s.live.bars) return s.live.bars.map(v => `<i style="height:${Math.round(18 + v * 82)}%"></i>`).join('');
   let seed = hash(s.t); const rnd = () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296;
   const vals = []; let v = 40;
   for (let i = 0; i < 10; i++) { v += 3 + (rnd() - 0.42) * (4 + s.risk * 5); vals.push(Math.max(8, v)); }
@@ -493,10 +494,14 @@ function renderExplore() {
       <div class="stamp pass">PASS</div><div class="stamp save">SAVE</div>
       <div class="head"><div><div class="tk">${s.t}</div><div class="nm">${escHTML(s.name)}</div></div>
         <span class="mpill">${matchPctL(s.sc, top)}% match</span></div>
-      <div class="big">${riskTxt} ${s.div ? '<small>pays dividend</small>' : '<small class="g">growth</small>'}</div>
+      ${s.live
+        ? `<div class="big">${usd(s.live.price)} ${s.live.chg1d == null ? '' : `<small style="color:${s.live.chg1d >= 0 ? 'var(--green)' : 'var(--red)'}">${s.live.chg1d >= 0 ? '+' : ''}${pct(s.live.chg1d, 2)}</small>`}</div>`
+        : `<div class="big">${riskTxt} ${s.div ? '<small>pays dividend</small>' : '<small class="g">growth</small>'}</div>`}
       <div class="bars" aria-hidden="true">${bars(s)}</div>
       <div class="why"><h4 data-label>WHY THIS MATCHES YOU</h4><p data-body>${escHTML(whySentence(s))}</p></div>
-      <div class="meta"><span>${kind}<button class="q" data-term="${s.cap === 'ETF' ? 'etf' : 'marketcap'}" aria-label="What does ${kind} mean?">?</button></span><span>${escHTML(themes)}</span></div>
+      <div class="meta">${s.live
+        ? `<span>Risk ${s.risk}/5<button class="q" data-term="volatility" aria-label="How is risk measured?">?</button></span><span>${pct(s.live.vol)} volatility</span><span>1y ${s.live.ret1y >= 0 ? '+' : ''}${pct(s.live.ret1y)}</span>`
+        : `<span>${kind}<button class="q" data-term="${s.cap === 'ETF' ? 'etf' : 'marketcap'}" aria-label="What does ${kind} mean?">?</button></span><span>${escHTML(themes)}</span>`}</div>
       <div class="acts">
         <button data-act="pass" aria-label="Pass">${ICON.x}</button>
         <button data-act="info" aria-label="About ${s.t}">${ICON.info}</button>
@@ -510,7 +515,7 @@ function renderExplore() {
   stack.style.height = (topCard.offsetHeight + 28) + 'px';
   stack.querySelector('.under')?.remove();
   const under = document.createElement('div'); under.className = 'under';
-  under.innerHTML = `<span>Demo data · simulated trend · not advice</span>${S.history.length ? '<button id="undo">undo</button>' : ''}`;
+  under.innerHTML = `<span>${RISK_DOC ? `Prices &amp; risk from ${asOfLabel()} close · not advice` : 'Estimated risk · simulated trend · not advice'}</span>${S.history.length ? '<button id="undo">undo</button>' : ''}`;
   stack.after(under);
   if ($('undo')) $('undo').onclick = undoSwipe;
 }
@@ -805,8 +810,10 @@ function stockSheet(t) {
       <div><h2>${s.t}</h2><div class="nm">${escHTML(s.name)}</div></div>
       ${inDeck ? `<span class="mpill">${matchPctL(inDeck.sc, top.sc)}% match</span>` : S.swiped[t] === 'like' ? '<span class="mpill">saved</span>' : ''}
     </div>
-    <div class="bars" style="height:80px;margin-top:20px" aria-hidden="true">${bars(s)}</div>
-    <div class="fine" style="text-align:right;margin-top:6px">simulated trend · not live prices</div>
+    ${s.live ? `<div class="big" style="margin:14px 0 0">${usd(s.live.price)} ${s.live.chg1d == null ? '' : `<small style="color:${s.live.chg1d >= 0 ? 'var(--green)' : 'var(--red)'}">${s.live.chg1d >= 0 ? '+' : ''}${pct(s.live.chg1d, 2)}</small>`}</div>` : ''}
+    <div class="bars" style="height:80px;margin-top:16px" aria-hidden="true">${bars(s)}</div>
+    <div class="fine" style="text-align:right;margin-top:6px">${s.live ? `past 12 months · ${asOfLabel()} close` : 'simulated trend · not live prices'}</div>
+    <div id="tvSlot"></div>
     <p class="about">${escHTML(s.blurb)}</p>
     ${why !== s.blurb ? `<div class="why"><h4>WHY THIS MATCHES YOU</h4><p>${escHTML(why)}</p></div>` : ''}
     <div class="facts">
@@ -814,6 +821,13 @@ function stockSheet(t) {
       <div class="fact"><span>Size <button class="q" data-term="${s.cap === 'ETF' ? 'etf' : 'marketcap'}" aria-label="What is this?">?</button></span><b>${s.cap === 'ETF' ? 'ETF' : s.cap + ' cap'}</b></div>
       <div class="fact"><span>Dividend <button class="q" data-term="dividend" aria-label="What is a dividend?">?</button></span><b>${s.div ? 'Yes' : 'No'}</b></div>
     </div>
+    ${s.live ? `<div class="facts" style="margin-top:-8px">
+      <div class="fact"><span>Volatility</span><b>${pct(s.live.vol)}</b></div>
+      <div class="fact"><span>Worst drop</span><b>−${pct(s.live.maxDD)}</b></div>
+      <div class="fact"><span>Beta <button class="q" data-term="volatility" aria-label="What is beta?">?</button></span><b>${s.live.beta.toFixed(2)}</b></div>
+    </div>
+    <p class="fine" style="text-align:left;margin:-6px 0 14px">Risk ${s.risk}/5 is calculated from real daily prices over the past year (${asOfLabel()} close)${s.estRisk != null && s.estRisk !== s.risk ? `. Lu's earlier estimate was ${s.estRisk}/5` : ''}.</p>
+    <button class="btn secondary sm" id="tvBtn" style="width:100%;margin-bottom:14px">Show live chart (TradingView)</button>` : ''}
     <div class="invest">
       <div class="k">Invest from your ${usd(S.cash)} wallet · fractional shares</div>
       <div class="amts">${[10, 25, 50].map(a => `<button data-amt="${a}" class="${a === amt ? 'on' : ''}">$${a}</button>`).join('')}</div>
@@ -832,6 +846,7 @@ function stockSheet(t) {
       if (current === 'explore') renderExplore(); if (current === 'portfolio') renderPortfolio();
     };
     $('askLu').onclick = () => { closeSheet(); go('ask'); setTimeout(() => send(`tell me about ${t}`), 250); };
+    if ($('tvBtn')) $('tvBtn').onclick = () => { $('tvBtn').remove(); tradingViewWidget($('tvSlot'), s.t); };
   });
 }
 
@@ -882,10 +897,34 @@ document.querySelectorAll('[data-seg]').forEach(b => b.onclick = () => {
   $('friends').hidden = b.dataset.seg !== 'friends'; $('board').hidden = b.dataset.seg !== 'board';
 });
 
+/* ---------- Real market data ---------- */
+// TradingView's free embeddable widget: a real, live chart rendered by TradingView in the user's browser.
+function tradingViewWidget(slot, ticker) {
+  const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+  slot.innerHTML = '<div class="tradingview-widget-container" style="margin-top:12px;border-radius:14px;overflow:hidden;border:1px solid var(--line)"><div class="tradingview-widget-container__widget"></div><div class="fine" style="margin:6px 0">Chart by <a href="https://www.tradingview.com/" target="_blank" rel="noopener" style="color:inherit">TradingView</a></div></div>';
+  const sc = document.createElement('script');
+  sc.src = 'https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js';
+  sc.async = true;
+  sc.textContent = JSON.stringify({ symbol: ticker, width: '100%', height: 200, locale: 'en', dateRange: '12M', colorTheme: dark ? 'dark' : 'light', isTransparent: true, autosize: false, largeChartUrl: '' });
+  sc.onerror = () => { slot.innerHTML = '<p class="fine">Couldn\'t load TradingView right now.</p>'; };
+  slot.querySelector('.tradingview-widget-container').appendChild(sc);
+}
+async function loadRiskData() {
+  if (location.protocol === 'file:') return; // browsers block fetch from disk; keep the curated estimates
+  try {
+    const res = await fetch('risk-data.json', { cache: 'no-cache' });
+    if (!res.ok) return;
+    const n = applyRiskData(await res.json());
+    if (!n) return;
+    if (current === 'explore') renderExplore();
+    if (current === 'portfolio') renderPortfolio();
+  } catch (e) { /* offline or opened from disk: keep Lu's curated estimates */ }
+}
+
 /* ---------- Boot ---------- */
 if (!S.log.length) addMsg('ai', GREETING);
 else S.log.forEach((m, i) => addMsg(m.who, m.text, { noLog: true, cta: m.cta && i === S.log.length - 1, ticker: m.ticker, term: m.term }));
-renderLearned(); renderSparks(); refreshMoney();
+renderLearned(); renderSparks(); refreshMoney(); loadRiskData();
 window.__luma = { understand, buildDeck, state: () => S, go };
 })();
 </script>

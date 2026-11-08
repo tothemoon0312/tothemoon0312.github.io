@@ -317,7 +317,32 @@ function apply(f) {
 }
 
 /* ================= Recommendation ================= */
+/* ================= Real market data ================= */
+// risk-data.json is rebuilt daily from real prices (scripts/build-risk-data.mjs). When it loads,
+// each stock's curated risk guess is replaced by a score computed from its actual 1-year volatility,
+// beta and worst drawdown, so matching follows how the stock really behaves.
+let RISK_DOC = null;
+function applyRiskData(doc) {
+  if (!doc || !doc.stocks) return 0;
+  RISK_DOC = doc;
+  let n = 0;
+  for (const s of STOCKS) {
+    const d = doc.stocks[s.t];
+    if (d) { if (s.estRisk == null) s.estRisk = s.risk; s.risk = d.risk; s.live = d; n++; }
+    else if ((doc.failed || []).includes(s.t)) s.unavailable = true;
+  }
+  return n;
+}
+const pct = (x, d = 0) => (x * 100).toFixed(d) + '%';
+const asOfLabel = () => RISK_DOC ? new Date(RISK_DOC.asOf + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
+function liveRiskLine(s) {
+  const d = s.live; if (!d) return '';
+  const calm = d.vol < 0.2 ? 'calmer than the market as a whole' : d.vol < 0.3 ? 'about average for a single stock' : d.vol < 0.5 ? 'noticeably jumpier than most stocks' : 'one of the wildest rides out there';
+  return `Over the past year it swung about ${pct(d.vol)} a year (${calm}), and its worst drop from a high was ${pct(d.maxDD)}.`;
+}
+
 function score(s) {
+  if (s.unavailable) return -Infinity;
   if (S.banned.includes(s.t)) return -Infinity;
   if (s.themes.some(k => S.excluded.includes(k))) return -Infinity;
   let sc = 0; const why = [];
@@ -405,7 +430,7 @@ function reply(f, ch) {
   return { text: parts.join(' ') + tail, cta: deck.length > 0 };
 }
 
-const GREETING = 'Hey Sofia, I\'m Lu 👋\n\nNo survey here. Just tell me about you: brands you love, what you\'re curious about, what you\'d never put money into, or how you\'d feel if the market dipped. I\'ll turn it into matches you can swipe.';
+const GREETING = 'Hey Sofia, I\'m Lu 👋\n\nNo survey here. Just tell me about you: brands you love, what you\'re curious about, what you\'d never put money into, or how you\'d feel if the market dipped. I\'ll turn it into matches you can swipe, rated by how much each stock has really swung over the past year.';
 const SPARKS = [
   'I use my iPhone and Netflix all day',
   'Into AI and chips, happy to take risks',
@@ -424,7 +449,9 @@ function whySentence(s) {
   if (S.mentions.includes(s.t)) bits.push(`You brought up ${s.name.split(' ')[0]} with Lu.`);
   const th = s.themes.filter(k => S.weights[k] > 0).sort((a, b) => S.weights[b] - S.weights[a]).slice(0, 2).map(k => lc(labelOf(k)));
   if (th.length) bits.push(`${bits.length ? 'It also fits' : 'Fits'} your interest in ${list(th)}.`);
-  if (S.risk != null && Math.abs(s.risk - S.risk) < 1.2) bits.push(S.risk <= 2.4 ? 'Low volatility suits your steady style.' : S.risk >= 3.6 ? 'Bigger swings, in line with the risk you said you\'re okay with.' : 'Sits right in your comfort zone on risk.');
+  if (S.risk != null && Math.abs(s.risk - S.risk) < 1.2) bits.push(s.live
+      ? (S.risk <= 2.4 ? `Only ${pct(s.live.vol)} yearly swings, with a worst drop of ${pct(s.live.maxDD)}, which suits your steady style.` : S.risk >= 3.6 ? `It swung ${pct(s.live.vol)} a year, in line with the risk you said you\'re okay with.` : `Its ${pct(s.live.vol)} yearly swings sit right in your comfort zone.`)
+      : (S.risk <= 2.4 ? 'Low volatility suits your steady style.' : S.risk >= 3.6 ? 'Bigger swings, in line with the risk you said you\'re okay with.' : 'Sits right in your comfort zone on risk.'));
   else if (S.risk != null && s.risk > S.risk) bits.push('Heads up: a bit more volatile than you said you like.');
   if (S.income && s.div) bits.push('Pays a dividend, which you mentioned wanting.');
   return bits.join(' ') || s.blurb;
@@ -474,6 +501,7 @@ const QUESTION = /\?\s*$|^\s*(what|what'?s|whats|how|why|explain|define|meaning|
 const RECO = /\b(good|best|recommend|suggest|should i (buy|get|pick)|what (stock|stocks|etf|etfs) should|give me|find me|show me)\b/;
 
 function stockFacts(s) {
+  if (s.live) return `Risk: ${RISK_LABEL[s.risk]} (${s.risk}/5) from real data · ${pct(s.live.vol)} yearly volatility · worst drop ${pct(s.live.maxDD)} · ${s.div ? 'pays a dividend' : 'no dividend'}`;
   return `Risk: ${RISK_LABEL[s.risk]} (${s.risk}/5) · ${s.cap === 'ETF' ? 'index fund' : s.cap.toLowerCase() + ' cap'} · ${s.div ? 'pays a dividend' : 'no dividend'}`;
 }
 function answerQuestion(raw) {
@@ -490,7 +518,7 @@ function answerQuestion(raw) {
     const s = BY_T[tickers[0]];
     let text;
     if (/\b(risky|risk|safe|safer|volatile|scary)\b/.test(low)) {
-      text = `${s.name} is ${RISK_LABEL[s.risk]} risk (${s.risk}/5). ` + (s.risk >= 4 ? 'Expect big swings: drops of 30%+ in a rough year wouldn\'t be unusual.' : s.risk <= 2 ? 'It tends to move calmly compared with the overall market.' : 'It moves roughly in line with the market: some ups and downs, nothing wild.');
+      text = `${s.name} is ${RISK_LABEL[s.risk]} risk (${s.risk}/5). ` + (s.live ? liveRiskLine(s) + (s.live.beta > 1.3 ? ` It also tends to move ${s.live.beta.toFixed(1)}× as much as the overall market.` : '') : s.risk >= 4 ? 'Expect big swings: drops of 30%+ in a rough year wouldn\'t be unusual.' : s.risk <= 2 ? 'It tends to move calmly compared with the overall market.' : 'It moves roughly in line with the market: some ups and downs, nothing wild.');
       if (S.risk != null) text += Math.abs(s.risk - S.risk) < 1.2 ? ' That lines up with what you told me.' : s.risk > S.risk ? ' That\'s spicier than the comfort level you described.' : ' That\'s calmer than what you said you\'re okay with.';
     } else if (/\bwhy\b/.test(low)) {
       text = `Why ${s.t}? ${whySentence(s)}`;
