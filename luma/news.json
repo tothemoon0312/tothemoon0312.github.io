@@ -1,396 +1,444 @@
 {
- "generatedAt": "2026-11-08T16:32:24.390Z",
+ "generatedAt": "2026-11-10T03:47:32.993Z",
  "source": "Yahoo Finance news search; explainers are rule-based",
  "items": {
   "NVDA": [
    {
-    "title": "Why Nvidia at 13 Times Expected Earnings Still Isn’t Cheap",
-    "publisher": "24/7 Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/why-nvidia-13-times-expected-160800388.html",
-    "time": 1794154080,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+    "title": "Micron, FormFactor, Amkor, Teradyne, and Nvidia shares skyrocket, what you need to know",
+    "publisher": "StockStory",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/micron-formfactor-amkor-teradyne-nvidia-024536276.html",
+    "time": 1794278736,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Nvidia Faces Class Action Suit Over Huang Allegations; Senator Seeks Probe, Analyst Puts CEO Exit Odds At 15%",
+    "publisher": "Stocktwits",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/nvidia-faces-class-action-suit-024448260.html",
+    "time": 1794278688,
+    "kind": "analyst",
+    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
+   },
+   {
+    "title": "Dow Jones Soars 1,132 Points As Amazon, Tesla Rally, But Nvidia Dives; CPI Inflation Report Next",
+    "publisher": "Investor's Business Daily",
+    "link": "https://finance.yahoo.com/m/db2f6d95-b7a5-3274-8193-c767d2b681c1/dow-jones-soars-1%2C132-points.html",
+    "time": 1794277908,
+    "kind": "macro",
+    "plain": "This is big-picture economy news. It tends to move the whole market, not just this one company."
    }
   ],
   "AMD": [
    {
-    "title": "AMD Stock Has More Than Doubled in 2026. Here's How Its Last 8 Doubles Played Out the Next Year.",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/amd-stock-more-doubled-2026-102702733.html",
-    "time": 1794133622,
+    "title": "Amtech, Intel, Applied Materials, AMD, and KLA Corporation shares are soaring, what you need to know",
+    "publisher": "StockStory",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/amtech-intel-applied-materials-amd-023736161.html",
+    "time": 1794278256,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "AMD Is Up 110% in 2026, but Down Sharply From Its High. Time to Sell, or Load Up?",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/amd-110-2026-down-sharply-040552480.html",
-    "time": 1794110752,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "title": "The AI Trade Looks Like It's Falling Apart. AMD's Earnings Delivered a Reality Check.",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/ai-trade-looks-falling-apart-012000305.html",
+    "time": 1794273600,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    },
    {
-    "title": "AMD Stock Just Fell Below the Price I Said I'd Pay for It.",
+    "title": "Stock Market Today, Nov. 9: AMD Jumps on Oppenheimer Upgrade and Google Cloud Chip Selection",
     "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/amd-stock-just-fell-below-005802704.html",
-    "time": 1794099482,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nov-9-223002825.html",
+    "time": 1794263402,
+    "kind": "analyst",
+    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
    }
   ],
   "TSM": [
    {
-    "title": "TSMC Stock And 2 AI Infrastructure Shares Riding The AGI Spending Wave",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/technology/ai/articles/tsmc-stock-2-ai-infrastructure-002240662.html",
-    "time": 1794097360,
+    "title": "Micron Soars 5% as TSMC Sticks to the “Global Logic IC” Industry, Not Memory",
+    "publisher": "TIKR",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/micron-soars-5-tsmc-sticks-193554868.html",
+    "time": 1794252954,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "TSMC Jumped 6% on a Report It Could Make Memory Chips for Nvidia",
+    "title": "TSMC Stocks Rise 4.68% as Taiwan Curbs Short Selling, Deploys Stabilization Fund",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/tsmc-stocks-rise-4-68-185010441.html",
+    "time": 1794250210,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Taiwan Semiconductor Wants to Enter Into Advanced Memory Production",
     "publisher": "24/7 Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/tsmc-jumped-6-report-could-151351522.html",
-    "time": 1794064431,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "Update: Market Chatter: TSMC Mulls Expanding Into Advanced Memory Chip Production",
-    "publisher": "MT Newswires",
-    "link": "https://finance.yahoo.com/technology/articles/market-chatter-tsmc-mulls-expanding-194817754.html",
-    "time": 1793994497,
+    "link": "https://finance.yahoo.com/technology/articles/taiwan-semiconductor-wants-enter-advanced-163506479.html",
+    "time": 1794242106,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "AVGO": [
    {
-    "title": "Broadcom Stock Has Lost Nearly 40% From Its Record. I'd Buy It Now.",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stock-lost-nearly-40-154302022.html",
-    "time": 1794152582,
+    "title": "Allegro MicroSystems, IPG Photonics, Lattice Semiconductor, Entegris, and Broadcom shares skyrocket, what you need to know",
+    "publisher": "StockStory",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/allegro-microsystems-ipg-photonics-lattice-030136618.html",
+    "time": 1794279696,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Broadcom Just Dropped 15% in a Week. Is It Time to Sell, or Load Up?",
+    "title": "The Real Winner of Google’s $135 Billion Chip Forecast: Broadcom",
     "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-just-dropped-15-week-090703801.html",
-    "time": 1794128823,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "link": "https://finance.yahoo.com/technology/ai/articles/real-winner-google-135-billion-204531962.html",
+    "time": 1794257131,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    },
    {
-    "title": "Is Broadcom a Buy After Falling 9% in One Day?",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-buy-falling-9-one-062000310.html",
-    "time": 1794118800,
+    "title": "Broadcom Stock Is Down Over 25% in 3 Months. How to Play the Selloff Here.",
+    "publisher": "Barchart",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stock-down-over-25-195319316.html",
+    "time": 1794253999,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "ASML": [
    {
-    "title": "ASML Stock In Focus As EUV Machine Orders Stretch Into 2030",
+    "title": "ASML (ENXTAM:ASML) Stock May Be Priced For Perfection After 125% Run",
     "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/asml-stock-focus-euv-machine-091813711.html",
-    "time": 1793956693,
+    "link": "https://finance.yahoo.com/markets/stocks/articles/asml-enxtam-asml-stock-may-012112495.html",
+    "time": 1794273672,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "ASML Sinks 8% as Post-Election Chip Rout Deepens",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/asml-sinks-8-post-election-190915456.html",
-    "time": 1793905755,
+    "title": "Top Research Reports for ASML, Alibaba & Intuitive Surgical",
+    "publisher": "Zacks",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/top-research-reports-asml-alibaba-203300260.html",
+    "time": 1794256380,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "ASML Stocks Fall 7.36% as Investors Question the Next Spending Cycle",
-    "publisher": "GuruFocus.com",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/asml-stocks-fall-7-36-185954738.html",
-    "time": 1793905194,
+    "title": "Why ASML Bounced Back Today",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/why-asml-bounced-back-today-193003744.html",
+    "time": 1794252603,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "INTC": [
    {
-    "title": "What Intel Doubters Got Wrong",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/intel-doubters-got-wrong-150828568.html",
-    "time": 1794150508,
+    "title": "Amtech, Intel, Applied Materials, AMD, and KLA Corporation shares are soaring, what you need to know",
+    "publisher": "StockStory",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/amtech-intel-applied-materials-amd-023736161.html",
+    "time": 1794278256,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Intel, Arm, and Marvell Have Each Been Cut in Half Since June. Only 1 Is a Stock I'd Buy Now.",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/intel-arm-marvell-cut-half-085802797.html",
-    "time": 1794128282,
+    "title": "Intel took 25 years to get back to its dot-com peak — and lost it in 6 months: Chart of the Day",
+    "publisher": "Yahoo Finance",
+    "link": "https://finance.yahoo.com/markets/article/intel-took-25-years-to-get-back-to-its-dot-com-peak--and-lost-it-in-6-months-chart-of-the-day-144715722.html",
+    "time": 1794260299,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Here's Where I Think Intel Stock Will Be at the End of 2030",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/heres-where-think-intel-stock-091202181.html",
-    "time": 1794042722,
+    "title": "INTC Stock Down 57% in the Past 6 Months: Should You Exercise Caution?",
+    "publisher": "Zacks",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/intc-stock-down-57-past-141100035.html",
+    "time": 1794233460,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "MSFT": [
    {
-    "title": "Dow Jones Futures Loom With Market Damaged, Big Winners Broken; Apple, Amazon, Microsoft Strong",
-    "publisher": "Investor's Business Daily",
-    "link": "https://finance.yahoo.com/m/283e1bd9-349e-390b-a32b-b4ed9a9034f3/dow-jones-futures-loom-with.html",
-    "time": 1794147295,
+    "title": "‘Big Short’ Investor Steve Eisman Says OpenAI’s Collapse Could Trigger an Immediate Recession",
+    "publisher": "24/7 Wall St.",
+    "link": "https://finance.yahoo.com/news/big-short-investor-steve-eisman-230714187.html",
+    "time": 1794265634,
+    "kind": "macro",
+    "plain": "This is big-picture economy news. It tends to move the whole market, not just this one company."
+   },
+   {
+    "title": "Soprano to Support Organisations Navigating Microsoft Entra MFA Changes",
+    "publisher": "PR Newswire",
+    "link": "https://finance.yahoo.com/technology/articles/soprano-support-organisations-navigating-microsoft-210000722.html",
+    "time": 1794258000,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "GOOGL": [
    {
-    "title": "Josh Brown Warns Alphabet Stock “Could Go Down 50%.” Here’s Where He’d Buy It",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/josh-brown-warns-alphabet-stock-022245383.html",
-    "time": 1794104565,
+    "title": "If I Could Buy Just 1 Stock in November and Hold for 5 Years, It Would Be Alphabet",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/technology/ai/articles/could-buy-just-1-stock-025000882.html",
+    "time": 1794279000,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Alphabet's $15 Billion Investment in Malaysia Data Centers Shows That Midterm Results Won't Stop the AI Boom",
+    "title": "Alphabet Almost Sets a Record No One Wants",
     "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/technology/ai/articles/alphabets-15-billion-investment-malaysia-012000786.html",
-    "time": 1794100800,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+    "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-almost-sets-record-no-004302879.html",
+    "time": 1794271382,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Alphabet (GOOGL) Expands SpaceX Stake to $69 Billion and Deepens AI Ties",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/technology/ai/articles/alphabet-googl-expands-spacex-stake-191144041.html",
-    "time": 1794078704,
-    "kind": "deal",
-    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
+    "title": "Fervo Energy Co (FRVO) (Q3 2026) Earnings Call Highlights: First Geoblock Online, Google PPA ...",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/energy/articles/fervo-energy-co-frvo-q3-230444854.html",
+    "time": 1794265484,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
   ],
   "META": [
    {
-    "title": "Meta’s Bond Sale Shows New Reality for Tech Debt",
-    "publisher": "Bloomberg",
-    "link": "https://finance.yahoo.com/technology/articles/meta-bond-sale-shows-reality-200000968.html",
-    "time": 1794081600,
+    "title": "Meta Platforms Stock: Is it a Steal of a Deal at $650?",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-stock-steal-deal-205801184.html",
+    "time": 1794257881,
+    "kind": "deal",
+    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
+   },
+   {
+    "title": "Instagram makes major AI change for millions of teen users",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/technology/ai/articles/instagram-makes-major-ai-change-184926635.html",
+    "time": 1794250166,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Oklo Is Down 86% From Its High. Will Shares Soar When Meta's Reactor Comes Online?",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/oklo-down-86-high-shares-184300535.html",
+    "time": 1794249780,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "AAPL": [
    {
-    "title": "Dow Jones Futures Loom With Market Damaged, Big Winners Broken; Apple, Amazon, Microsoft Strong",
-    "publisher": "Investor's Business Daily",
-    "link": "https://finance.yahoo.com/m/283e1bd9-349e-390b-a32b-b4ed9a9034f3/dow-jones-futures-loom-with.html",
-    "time": 1794147295,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "title": "Apple Makes Major AI Pricing Move as New Revenue Opportunity Emerges",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/technology/ai/articles/apple-makes-major-ai-pricing-185711619.html",
+    "time": 1794250631,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    },
    {
-    "title": "My Week With Apple’s Beach-Friendly iPad Mini and Amazon’s Upscale Alexa Tablet",
-    "publisher": "The Wall Street Journal",
-    "link": "https://finance.yahoo.com/m/250a52de-9cd7-399e-8d7e-73097bba1ea1/my-week-with-apple%E2%80%99s.html",
-    "time": 1794139200,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "Did Apple Just Get a Boost From Democrats? Data Center Moratoriums Could Benefit the iPhone Maker",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/did-apple-just-boost-democrats-192300731.html",
-    "time": 1794079380,
+    "title": "Singapore Saved Apple $2.7 Billion in Taxes",
+    "publisher": "Moby",
+    "link": "https://finance.yahoo.com/economy/policy/articles/singapore-saved-apple-2-7-173920009.html",
+    "time": 1794245960,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "AMZN": [
    {
-    "title": "Dow Jones Futures Loom With Market Damaged, Big Winners Broken; Apple, Amazon, Microsoft Strong",
+    "title": "Dow Jones Soars 1,132 Points As Amazon, Tesla Rally, But Nvidia Dives; CPI Inflation Report Next",
     "publisher": "Investor's Business Daily",
-    "link": "https://finance.yahoo.com/m/283e1bd9-349e-390b-a32b-b4ed9a9034f3/dow-jones-futures-loom-with.html",
-    "time": 1794147295,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "My Week With Apple’s Beach-Friendly iPad Mini and Amazon’s Upscale Alexa Tablet",
-    "publisher": "The Wall Street Journal",
-    "link": "https://finance.yahoo.com/m/250a52de-9cd7-399e-8d7e-73097bba1ea1/my-week-with-apple%E2%80%99s.html",
-    "time": 1794139200,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "DoorDash Shareholders Aren’t Convinced the Company Can Take On Amazon",
-    "publisher": "The Wall Street Journal",
-    "link": "https://finance.yahoo.com/m/cf51955e-34ad-336e-b62f-404cc3519411/doordash-shareholders-aren%E2%80%99t.html",
-    "time": 1794133800,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "link": "https://finance.yahoo.com/m/db2f6d95-b7a5-3274-8193-c767d2b681c1/dow-jones-soars-1%2C132-points.html",
+    "time": 1794277908,
+    "kind": "macro",
+    "plain": "This is big-picture economy news. It tends to move the whole market, not just this one company."
    }
   ],
   "ORCL": [
    {
-    "title": "Older Nvidia Chips Just Cost Oracle Its Microsoft AI Deal",
-    "publisher": "24/7 Wall St.",
-    "link": "https://finance.yahoo.com/technology/ai/articles/older-nvidia-chips-just-cost-180844578.html",
-    "time": 1794074924,
-    "kind": "deal",
-    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
+    "title": "The Stock Market Is “Petrified of Oracle’s Balance Sheet” as Microsoft Walks Away",
+    "publisher": "TIKR",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-petrified-oracle-balance-194858775.html",
+    "time": 1794253738,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Is Oracle (ORCL) Losing Ground In AI Infrastructure Demand?",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/technology/ai/articles/oracle-orcl-losing-ground-ai-140934525.html",
+    "time": 1794233374,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "CRM": [
    {
-    "title": "CRM or ADSK: Which Is the Better Value Stock Right Now?",
-    "publisher": "Zacks",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/crm-adsk-better-value-stock-154003835.html",
-    "time": 1793979603,
+    "title": "Is Salesforce a Falling Knife Or Is The Worst Over?",
+    "publisher": "24/7 Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/salesforce-falling-knife-worst-over-134508028.html",
+    "time": 1794231908,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Salesforce, Inc. (CRM) is Attracting Investor Attention: Here is What You Should Know",
+    "publisher": "Zacks",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/salesforce-inc-crm-attracting-investor-130004034.html",
+    "time": 1794229204,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Salesforce Stock Outlook: Is Wall Street Bullish or Bearish?",
+    "publisher": "Barchart",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/salesforce-stock-outlook-wall-street-113626840.html",
+    "time": 1794224186,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
   ],
   "ADBE": [
    {
-    "title": "Adobe Is Down 29% This Year. Time to Sell or Buy More?",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/adobe-down-29-time-sell-022218623.html",
-    "time": 1793931738,
+    "title": "Adobe, Disney announce multi-year strategic alliance",
+    "publisher": "TipRanks",
+    "link": "https://finance.yahoo.com/media-advertising/articles/adobe-disney-announce-multi-strategic-220530980.html",
+    "time": 1794261930,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Adobe vs. Okta: Which Technology Stock Is a Better Buy for 2027?",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/adobe-vs-okta-technology-stock-220302083.html",
-    "time": 1793916182,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "title": "How Investors May Respond To Adobe (ADBE) Disney AI Partnership",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/technology/ai/articles/investors-may-respond-adobe-adbe-210957988.html",
+    "time": 1794258597,
+    "kind": "deal",
+    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
    },
    {
-    "title": "Deloitte named a Leader in IDC MarketScape Worldwide AI-enabled Adobe Professional Services 2026 Vendor Assessment",
-    "publisher": "PR Newswire",
-    "link": "https://finance.yahoo.com/technology/ai/articles/deloitte-named-leader-idc-marketscape-160000095.html",
-    "time": 1793894400,
+    "title": "Adobe (ADBE) Expands AI Reach, Is The 25% Discount Too Wide?",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/technology/ai/articles/adobe-adbe-expands-ai-reach-200712841.html",
+    "time": 1794254832,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "PLTR": [
    {
-    "title": "Palantir Technologies (PLTR) Lands Enterprise AI Partnership For Insurance And Retirement Rollout",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/technology/ai/articles/palantir-technologies-pltr-lands-enterprise-111205834.html",
-    "time": 1794136325,
-    "kind": "deal",
-    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
-   },
-   {
-    "title": "Palantir Stock Just Fell 8 Days in a Row. History Says What Followed Its Only 2 Longer Losing Streaks.",
+    "title": "Forget Palantir? This IPO Candidate May Be the New \"Autonomy Giant\" in Defense.",
     "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/palantir-stock-just-fell-8-195602245.html",
-    "time": 1794081362,
+    "link": "https://finance.yahoo.com/markets/stocks/articles/forget-palantir-ipo-candidate-may-005000510.html",
+    "time": 1794271800,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Palantir Stock Investors Just Got Great News From a Wall Street Analyst (Hint: The Stock Could Soar)",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/palantir-stock-investors-just-got-100802677.html",
-    "time": 1794046082,
-    "kind": "analyst",
-    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
+    "title": "Palantir Stocks Rise 5.96% as Former Senator Jon Tester Joins as Adviser",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/palantir-stocks-rise-5-96-183823596.html",
+    "time": 1794249503,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Palantir Rises 5%, Snowflake Up 6% as AI Stocks Rebound After Market Was “Freaking Out”",
+    "publisher": "TIKR",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/palantir-rises-5-snowflake-6-182950732.html",
+    "time": 1794248990,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "SNOW": [
    {
-    "title": "Can Snowflake (SNOW) Justify Its Price After Raised Outlook And AI Updates?",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/snowflake-snow-justify-price-raised-231000794.html",
-    "time": 1794093000,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+    "title": "Palantir Rises 5%, Snowflake Up 6% as AI Stocks Rebound After Market Was “Freaking Out”",
+    "publisher": "TIKR",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/palantir-rises-5-snowflake-6-182950732.html",
+    "time": 1794248990,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "AI Product Rollout Might Change The Case For Investing In Snowflake (SNOW)",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/ai-product-rollout-might-change-221407631.html",
-    "time": 1794089647,
-    "kind": "product",
-    "plain": "New products are how companies grow. The real test is whether people actually buy them over the next few quarters."
+    "title": "Snowflake (SNOW) Could Find a Support Soon, Here's Why You Should Buy the Stock Now",
+    "publisher": "Zacks",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/snowflake-snow-could-support-soon-135502732.html",
+    "time": 1794232502,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "How Much Should This Move Change Your View Of Snowflake Stock?",
-    "publisher": "Trefis",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/much-move-change-view-snowflake-100655492.html",
-    "time": 1794046015,
+    "title": "Palantir vs. Snowflake: The AI Sell-Off Is Exposing a Critical Difference for 2027",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/technology/ai/articles/palantir-vs-snowflake-ai-sell-042002833.html",
+    "time": 1794198002,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "NET": [
    {
-    "title": "What Cloudflare (NET) Said on Its Q3 Earnings Call",
-    "publisher": "MarketBeat",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/cloudflare-net-said-q3-earnings-081426675.html",
-    "time": 1794125666,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
-   },
-   {
-    "title": "Think It's Too Late to Buy Cloudflare Stock? Here's the 1 Reason Why There's Still Time",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/think-too-buy-cloudflare-stock-191300099.html",
-    "time": 1794078780,
-    "kind": "deal",
-    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
-   },
-   {
-    "title": "Cloudflare (NET) Stock Looks Overvalued Following Its 326% Three Year Run",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/cloudflare-net-stock-looks-overvalued-042243597.html",
-    "time": 1794025363,
+    "title": "Why is Cloudflare (NET) stock rocketing higher today",
+    "publisher": "StockStory",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/why-cloudflare-net-stock-rocketing-003736915.html",
+    "time": 1794271056,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Why Cloudflare Stock Soared on Monday",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/why-cloudflare-stock-soared-monday-231955762.html",
+    "time": 1794266395,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Cloudflare's best quarter ever hit with a growing margin challenge",
+    "publisher": "TheStreet",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/cloudflares-best-quarter-ever-hit-223300048.html",
+    "time": 1794263580,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
   ],
   "CRWD": [
    {
-    "title": "Palo Alto Networks and CrowdStrike Sink 17% in a Week, Zscaler 18%: Time to Buy Before Earnings?",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/palo-alto-networks-crowdstrike-sink-235225172.html",
-    "time": 1794095545,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+    "title": "CrowdStrike Holdings (CRWD) Could Be 13% Undervalued Following Saudi Cloud Launch",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-holdings-crwd-could-13-191349239.html",
+    "time": 1794251629,
+    "kind": "product",
+    "plain": "New products are how companies grow. The real test is whether people actually buy them over the next few quarters."
    },
    {
-    "title": "George Kurtz Just Announced Incredible News for CrowdStrike Investors and the Artificial Intelligence (AI) Industry",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/technology/ai/articles/george-kurtz-just-announced-incredible-122900008.html",
-    "time": 1794054540,
+    "title": "Bernstein Stays Cautious on CrowdStrike Despite AI Tailwind",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/technology/ai/articles/bernstein-stays-cautious-crowdstrike-despite-173555937.html",
+    "time": 1794245755,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Crowdstrike Holdings Insider Sold Shares Worth $4,624,045, According to a Recent SEC Filing",
-    "publisher": "MT Newswires",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-holdings-insider-sold-shares-193903828.html",
-    "time": 1793993943,
+    "title": "Can CrowdStrike's Latest AI Integrations Drive Security Growth?",
+    "publisher": "Zacks",
+    "link": "https://finance.yahoo.com/technology/ai/articles/crowdstrikes-latest-ai-integrations-drive-123200438.html",
+    "time": 1794227520,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "PANW": [
+   {
+    "title": "Palo Alto Networks Is Down 27% From Its High: Is It Time to Sell, or Load Up?",
+    "publisher": "TIKR",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/palo-alto-networks-down-27-180753011.html",
+    "time": 1794247673,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
    {
     "title": "Palo Alto Networks and CrowdStrike Sink 17% in a Week, Zscaler 18%: Time to Buy Before Earnings?",
     "publisher": "TIKR",
@@ -406,43 +454,51 @@
     "time": 1794017780,
     "kind": "deal",
     "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
-   },
-   {
-    "title": "CrowdStrike Rebounds 2%, Palo Alto Up 2% as Cloudflare Finds “An Even Higher Gear”",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-rebounds-2-palo-alto-163935311.html",
-    "time": 1793983175,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "TSLA": [
    {
-    "title": "Tesla's FSD (Supervised) Attach Rate Hit 75% on New Vehicles. Here's Why That Single Number Could Matter More Than Robotaxi for the Stock in 2027.",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/teslas-fsd-supervised-attach-rate-151000327.html",
-    "time": 1794150600,
+    "title": "Elon Musk sends strong signal to Tesla stock investors",
+    "publisher": "TheStreet",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-sends-strong-signal-033300738.html",
+    "time": 1794281580,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Cathie Wood Sees Tesla’s Robotaxi Business Taking Off — Says This Is The Moment Investors Have Waited For",
-    "publisher": "Stocktwits",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/cathie-wood-sees-tesla-robotaxi-130930598.html",
-    "time": 1794143370,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "title": "Dow Jones Soars 1,132 Points As Amazon, Tesla Rally, But Nvidia Dives; CPI Inflation Report Next",
+    "publisher": "Investor's Business Daily",
+    "link": "https://finance.yahoo.com/m/db2f6d95-b7a5-3274-8193-c767d2b681c1/dow-jones-soars-1%2C132-points.html",
+    "time": 1794277908,
+    "kind": "macro",
+    "plain": "This is big-picture economy news. It tends to move the whole market, not just this one company."
    },
    {
-    "title": "Elon Musk Says Tesla Will End Cybertruck Production -- Here's Why",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-says-tesla-end-125300480.html",
-    "time": 1794142380,
+    "title": "How much of Elon Musk’s wealth is in Tesla & SpaceX stock?",
+    "publisher": "TheStreet",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/much-elon-musk-wealth-tesla-000537126.html",
+    "time": 1794269137,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "RIVN": [
+   {
+    "title": "Tesla Rises 5% Despite Musk’s Cybertruck Refund Warning, Lucid Jumps 8% Ahead of Earnings; Rivian Climbs 2%",
+    "publisher": "24/7 Wall St.",
+    "link": "https://finance.yahoo.com/news/tesla-rises-5-despite-musk-190434224.html",
+    "time": 1794251074,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+   },
+   {
+    "title": "Volkswagen’s $1 Billion Loan Lifts Rivian’s Liquidity to $7.1 Billion as Uber Money Lands",
+    "publisher": "TIKR",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/volkswagen-1-billion-loan-lifts-175718972.html",
+    "time": 1794247038,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
    {
     "title": "Prediction: Here's What a $1,000 Investment in Rivian Will Be Worth by 2030 if the R2 Ramp Holds",
     "publisher": "Motley Fool",
@@ -450,193 +506,201 @@
     "time": 1794069300,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "Is Rivian Automotive (RIVN) A Bargain As Cash Flow Improves?",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/rivian-automotive-rivn-bargain-cash-191512434.html",
-    "time": 1793992512,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "Who Is Paying For Rivian's Cash Burn?",
-    "publisher": "Trefis",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/paying-rivians-cash-burn-122119256.html",
-    "time": 1793967679,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "F": [
    {
-    "title": "Better Dividend Stock: Ford vs. Genuine Parts",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/better-dividend-stock-ford-vs-215300482.html",
-    "time": 1794001980,
-    "kind": "cash",
-    "plain": "The company is returning cash to shareholders (or splitting its shares). That usually signals management feels confident."
+    "title": "NHTSA Opens Probe Into 1.2 Million Ford Vehicles Over Burn Risk from Airbag",
+    "publisher": "The Wall Street Journal",
+    "link": "https://finance.yahoo.com/m/6e814ca8-d70e-3b7c-97d5-6854856a72ce/nhtsa-opens-probe-into-1.2.html",
+    "time": 1794229860,
+    "kind": "legal",
+    "plain": "Legal or regulatory trouble costs money and attention. It usually only matters long-term if it's big compared with the company."
+   },
+   {
+    "title": "Ford Yields Nearly 5%. GM Is Buying Back $20 Billion in Stock. Which Is Better?",
+    "publisher": "24/7 Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/ford-yields-nearly-5-gm-124716027.html",
+    "time": 1794228436,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "GM": [
    {
-    "title": "General Motors Insider Sold Shares Worth $1,480,225, According to a Recent SEC Filing",
-    "publisher": "MT Newswires",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/general-motors-insider-sold-shares-214202706.html",
-    "time": 1794001322,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "title": "General Motors (GM) Could Be 17% Undervalued After $220 Million OnStar Settlement",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/general-motors-gm-could-17-210907165.html",
+    "time": 1794172147,
+    "kind": "legal",
+    "plain": "Legal or regulatory trouble costs money and attention. It usually only matters long-term if it's big compared with the company."
    }
   ],
   "ENPH": [
    {
-    "title": "Could Enphase Or Centene Stock Double?",
-    "publisher": "Trefis",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/could-enphase-centene-stock-double-131256274.html",
-    "time": 1793884376,
+    "title": "Enphase and Other Solar Stocks Are Up After Democrats Sweep Congress, But I Wouldn’t Chase ENPH Here",
+    "publisher": "Barchart",
+    "link": "https://finance.yahoo.com/energy/articles/enphase-other-solar-stocks-democrats-210608500.html",
+    "time": 1794258368,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Enphase Energy (ENPH) Reaches 800 VDC AI Data Center Power Milestone",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/energy/articles/enphase-energy-enph-reaches-800-181007480.html",
-    "time": 1793815807,
+    "title": "Enphase Energy Reports US Shipments of 8 Million Microinverters",
+    "publisher": "MT Newswires",
+    "link": "https://finance.yahoo.com/energy/articles/enphase-energy-reports-us-shipments-144736564.html",
+    "time": 1794235656,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Why Did Enphase Stock Jump?",
-    "publisher": "Trefis",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/why-did-enphase-stock-jump-175306653.html",
-    "time": 1793814786,
+    "title": "Enphase Energy Announces More Than 8 Million IQ Microinverters and Nearly 500 MWh of IQ Batteries Have Shipped from U.S. Manufacturing Facilities",
+    "publisher": "GlobeNewswire",
+    "link": "https://finance.yahoo.com/energy/articles/enphase-energy-announces-more-8-130000980.html",
+    "time": 1794229200,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "FSLR": [
    {
-    "title": "ZenaTech's Drone as a Service Enters Solar Surveying Market with U.S. School Contract Wins, Targeting $600,000 in Revenue from First Solar Client",
-    "publisher": "GlobeNewswire",
-    "link": "https://finance.yahoo.com/technology/ai/articles/zenatechs-drone-enters-solar-surveying-133000956.html",
-    "time": 1793971800,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
-   },
-   {
-    "title": "First Solar, Inc. (FSLR) is Attracting Investor Attention: Here is What You Should Know",
-    "publisher": "Zacks",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/first-solar-inc-fslr-attracting-130004912.html",
-    "time": 1793970004,
+    "title": "Nvidia, AMD, CoreWeave, Coherent, First Solar, Trade Desk, and More Stocks That Explain Today’s Market",
+    "publisher": "Barrons.com",
+    "link": "https://finance.yahoo.com/m/0de42570-284c-35d9-8b7f-ba44183aff0f/nvidia%2C-amd%2C-coreweave%2C.html",
+    "time": 1794259500,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Can First Solar Stock Fall 30%?",
-    "publisher": "Trefis",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/first-solar-stock-fall-30-122056986.html",
-    "time": 1793967656,
+    "title": "First Solar Stock Is the Worst in the S&P 500 Today. Was Blue Wave Optimism Premature?",
+    "publisher": "Barrons.com",
+    "link": "https://finance.yahoo.com/m/f174c21a-17d1-369a-9229-916e4cda7c30/first-solar-stock-is-the.html",
+    "time": 1794250020,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "ETFs Bought $10.9 Million of First Solar (FSLR) on Thursday",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-10-9-million-110222583.html",
+    "time": 1794222142,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "NEE": [
    {
-    "title": "NextEra Energy to participate in EEI Financial Conference",
-    "publisher": "PR Newswire",
-    "link": "https://finance.yahoo.com/energy/articles/nextera-energy-participate-eei-financial-213000402.html",
-    "time": 1794000600,
+    "title": "State Street Utilities SPDR (XLU) Sells NextEra and Southern on Nov. 5",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/state-street-utilities-spdr-xlu-110534996.html",
+    "time": 1794222334,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "NextEra Energy (NEE) Stock Could Be 14% Above Fair Value On Energy Hub Funding",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/energy/articles/nextera-energy-nee-stock-could-211940016.html",
-    "time": 1793999980,
+    "title": "ETFs Are Net Sellers of NextEra Energy (NEE) on Thursday",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-nextera-energy-110357659.html",
+    "time": 1794222237,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "NextEra Energy Vs. AES Corporation: Utility Scale Energy Production Just Got a Major Blue Boost",
+    "title": "NextEra Energy vs. Southern Company: Which Dividend Stock Is Better for Retirement?",
     "publisher": "24/7 Wall St.",
-    "link": "https://finance.yahoo.com/energy/articles/nextera-energy-vs-aes-corporation-174545387.html",
-    "time": 1793987145,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   }
-  ],
-  "PLUG": [
-   {
-    "title": "What to Note Ahead of Plug Power's Q3 Earnings Release?",
-    "publisher": "Zacks",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/note-ahead-plug-powers-q3-141900437.html",
-    "time": 1793974740,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
-   },
-   {
-    "title": "FuelCell Energy Plunges 17%, Bloom Energy Sinks 14% Despite NTT Data Deal, Plug Power Drops 7%",
-    "publisher": "24/7 Wall St.",
-    "link": "https://finance.yahoo.com/energy/articles/fuelcell-energy-plunges-17-bloom-170728747.html",
-    "time": 1793898448,
-    "kind": "deal",
-    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
-   }
-  ],
-  "XOM": [
-   {
-    "title": "ExxonMobil Is Up 38% in 2026 and Chevron Is Up 39%: Take Profits, or Hold On?",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/exxonmobil-38-2026-chevron-39-234559956.html",
-    "time": 1794095159,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "Exxon (XOM) Reports Q3 Earnings: What Key Metrics Have to Say",
-    "publisher": "Zacks",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/exxon-xom-reports-q3-earnings-220002638.html",
-    "time": 1794002402,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
-   },
-   {
-    "title": "Exxon or Pfizer: The One Dividend Stock I’d Hold for the Next 10 Years",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/exxon-pfizer-one-dividend-stock-215233070.html",
-    "time": 1794001953,
+    "link": "https://finance.yahoo.com/energy/articles/nextera-energy-vs-southern-company-170424659.html",
+    "time": 1794157464,
     "kind": "cash",
     "plain": "The company is returning cash to shareholders (or splitting its shares). That usually signals management feels confident."
    }
   ],
-  "CVX": [
+  "PLUG": [
    {
-    "title": "Chevron’s Refineries Ran at 98%. Its January Report Must Absorb a $4 Billion Hess Charge",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/energy/articles/chevron-refineries-ran-98-january-155014932.html",
-    "time": 1794153014,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "title": "Plug Power Q3 Earnings Call Highlights",
+    "publisher": "MarketBeat",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/plug-power-q3-earnings-call-031435527.html",
+    "time": 1794280475,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    },
    {
-    "title": "ExxonMobil Is Up 38% in 2026 and Chevron Is Up 39%: Take Profits, or Hold On?",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/exxonmobil-38-2026-chevron-39-234559956.html",
-    "time": 1794095159,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "title": "Plug Power (PLUG) Reports Q3 Earnings: What Key Metrics Have to Say",
+    "publisher": "Zacks",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/plug-power-plug-reports-q3-003001527.html",
+    "time": 1794270601,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    },
    {
-    "title": "Chevron (CVX) Q3 Earnings Spotlight Strong Cash Flow And Flat Production",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/energy/articles/chevron-cvx-q3-earnings-spotlight-001411385.html",
-    "time": 1794010451,
+    "title": "Stock Market Today, Nov. 9: Plug Power Rises 3.45% on Positioning Ahead of Q3 Report",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nov-9-222410685.html",
+    "time": 1794263050,
     "kind": "earnings",
     "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
   ],
+  "XOM": [
+   {
+    "title": "Exxon Takes First Step Toward Investing in Venezuela",
+    "publisher": "The Wall Street Journal",
+    "link": "https://finance.yahoo.com/m/e028f0c1-8957-3985-a31c-0fea39c1a92a/exxon-takes-first-step-toward.html",
+    "time": 1794272280,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Exxon and Chevron Are Near Record Highs. Here's What History Says Happens Next.",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/energy/articles/exxon-chevron-near-record-highs-233500920.html",
+    "time": 1794267300,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Exxon Mobil Stocks Move Lower 0.31% as Crude Slides Toward $87",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/energy/articles/exxon-mobil-stocks-move-lower-190037292.html",
+    "time": 1794250837,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   }
+  ],
+  "CVX": [
+   {
+    "title": "Exxon and Chevron Are Near Record Highs. Here's What History Says Happens Next.",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/energy/articles/exxon-chevron-near-record-highs-233500920.html",
+    "time": 1794267300,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "What Mattered Most In Chevron's Latest Quarter?",
+    "publisher": "Trefis",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/mattered-most-chevrons-latest-quarter-124605786.html",
+    "time": 1794228365,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+   },
+   {
+    "title": "Chevron to Sell Stake in Namibia Offshore Exploration Block to QatarEnergy",
+    "publisher": "MT Newswires",
+    "link": "https://finance.yahoo.com/energy/articles/chevron-sell-stake-namibia-offshore-101407840.html",
+    "time": 1794219247,
+    "kind": "deal",
+    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
+   }
+  ],
   "NKE": [
+   {
+    "title": "NIKE Reshapes Its Global Operations: Will Agility Improve?",
+    "publisher": "Zacks",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/nike-reshapes-global-operations-agility-152900183.html",
+    "time": 1794238140,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
    {
     "title": "Nike Is Down 78% From Its Peak. Here's How Much $10,000 Invested Pays in Dividends Now.",
     "publisher": "Motley Fool",
@@ -652,95 +716,103 @@
     "time": 1794086206,
     "kind": "analyst",
     "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
-   },
-   {
-    "title": "GTA 6 sneakers will reportedly cost more than the game",
-    "publisher": "TheStreet",
-    "link": "https://finance.yahoo.com/media-advertising/articles/gta-6-sneakers-reportedly-cost-181700764.html",
-    "time": 1794075420,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "LULU": [
    {
-    "title": "Why Is Lululemon Stock Falling, and Is It a Buying Opportunity? Here's the Answer.",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/why-lululemon-stock-falling-buying-141016074.html",
-    "time": 1794060616,
+    "title": "Lululemon (LULU) Increases Yet Falls Behind Market: What Investors Need to Know",
+    "publisher": "Zacks",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/lululemon-lulu-increases-yet-falls-214502318.html",
+    "time": 1794260702,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Lululemon (LULU) Stock Could Be 26% Above Fair Value After Lawsuit Claims",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/lululemon-lulu-stock-could-26-111440960.html",
-    "time": 1794050080,
-    "kind": "legal",
-    "plain": "Legal or regulatory trouble costs money and attention. It usually only matters long-term if it's big compared with the company."
+    "title": "What U.S. Targeted Value Portfolio (DFAT) Bought: Lululemon Leads on Nov. 5",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/u-targeted-value-portfolio-dfat-110557945.html",
+    "time": 1794222357,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Does Lululemon Stock's Run Make Any Sense Now?",
-    "publisher": "Trefis",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/does-lululemon-stocks-run-sense-100651448.html",
-    "time": 1794046011,
+    "title": "Lululemon Athletica vs. On: Which Consumer Stock Is a Better Buy for 2027?",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/lululemon-athletica-vs-consumer-stock-021502995.html",
+    "time": 1794190502,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "SBUX": [
    {
-    "title": "Starbucks Is Up 28% in 2026 After a 7.2% Comp Quarter: Take Profits, or Buy More?",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/starbucks-28-2026-7-2-154624633.html",
-    "time": 1794152784,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+    "title": "Starbucks Stocks Rise 3.74% as Stifel Resumes With Buy, $115 Target",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/starbucks-stocks-rise-3-74-190432885.html",
+    "time": 1794251072,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Jim Cramer: Starbucks Stock “Goes to 125” After a 54% Earnings Jump",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-starbucks-stock-goes-093143888.html",
-    "time": 1794130303,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+    "title": "Starbucks rises as Stifel resumes coverage with Buy rating and $115 target",
+    "publisher": "Investing.com",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/starbucks-rises-stifel-resumes-coverage-174725638.html",
+    "time": 1794246445,
+    "kind": "analyst",
+    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
    },
    {
-    "title": "Starbucks (SBUX) Stock Looks Rich With A 32% Cash Flow Gap",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/starbucks-sbux-stock-looks-rich-091225093.html",
-    "time": 1794129145,
+    "title": "Starbucks Yields 3 Times as Much as Wingstop. Which Is Better for Retirement?",
+    "publisher": "24/7 Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/starbucks-yields-3-times-much-164702052.html",
+    "time": 1794242822,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "MCD": [
    {
-    "title": "Which fast food burger chain has the best value meal deal?",
-    "publisher": "TheStreet",
-    "link": "https://finance.yahoo.com/small-business/articles/fast-food-value-meals-mcdonalds-161700551.html",
-    "time": 1794068220,
-    "kind": "deal",
-    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
+    "title": "McDonald’s connects loyalty program with Uber",
+    "publisher": "CX Dive",
+    "link": "https://finance.yahoo.com/media-advertising/articles/mcdonald-connects-loyalty-program-uber-191149131.html",
+    "time": 1794251509,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "McDonald's Q3 Earnings Call Highlights",
-    "publisher": "MarketBeat",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/mcdonalds-q3-earnings-call-highlights-151415440.html",
-    "time": 1794064455,
+    "title": "McDonald’s Stock Jumped 7% Last Week. Is Its Earnings Beat Really That Good?",
+    "publisher": "TIKR",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/mcdonald-stock-jumped-7-last-183724532.html",
+    "time": 1794249444,
     "kind": "earnings",
     "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    },
    {
-    "title": "GLP-1 Drugs Are McDonald’s “Most Powerful Threat” in Decades, Investor Warns",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/glp-1-drugs-mcdonald-most-075927418.html",
-    "time": 1794038367,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "title": "MCD Stock Outlook: Wall Street Eyes a Potential Upside Breakout After Q3 Results",
+    "publisher": "24/7 Wall St.",
+    "link": "https://finance.yahoo.com/news/mcd-stock-outlook-wall-street-180305593.html",
+    "time": 1794247385,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
   ],
   "CMG": [
+   {
+    "title": "Colgate vs. Chipotle: Which Is the Better Buy for 2027?",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/colgate-vs-chipotle-better-buy-141402517.html",
+    "time": 1794233642,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "CHIPOTLE BRINGS BACK RECORD-BREAKING \"TATTED LIKE A CHIPOTLE BAG\" BOGO ON FRIDAY, NOVEMBER 13",
+    "publisher": "PR Newswire",
+    "link": "https://finance.yahoo.com/media-advertising/articles/chipotle-brings-back-record-breaking-125300654.html",
+    "time": 1794228780,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
    {
     "title": "Chipotle Soars 16% in a Week as Traffic Grows Again: “Lower Income Cohort Outperformed”",
     "publisher": "TIKR",
@@ -748,178 +820,154 @@
     "time": 1794051616,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "Can Chipotle's Sales Growth Offset Lower Restaurant-Level Margins?",
-    "publisher": "Zacks",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/chipotles-sales-growth-offset-lower-152200516.html",
-    "time": 1793978520,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "Chipotle (CMG) Stock Sees Fair Value Cut As Analysts Turn More Cautious",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/chipotle-cmg-stock-sees-fair-131804832.html",
-    "time": 1793971084,
-    "kind": "analyst",
-    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
    }
   ],
   "KO": [
    {
-    "title": "Coca-Cola (KO) Stock May Be Fully Priced On Its 95% Run",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-ko-stock-may-221059648.html",
-    "time": 1794003059,
+    "title": "Coca Cola Insider Sold Shares Worth $1,968,406, According to a Recent SEC Filing",
+    "publisher": "MT Newswires",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-insider-sold-shares-171308318.html",
+    "time": 1794244388,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Better Dividend Stock: Coca-Cola vs. Kraft Heinz",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/news/better-dividend-stock-coca-cola-215211518.html",
-    "time": 1794001931,
-    "kind": "cash",
-    "plain": "The company is returning cash to shareholders (or splitting its shares). That usually signals management feels confident."
-   },
-   {
-    "title": "Coca-Cola Soars 12% in a Month to a 52-Week High: “Affordability Is Working”",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-soars-12-month-201050924.html",
-    "time": 1793995850,
+    "title": "Coca-Cola India IPO moves forward with draft papers",
+    "publisher": "Just Drinks",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-india-ipo-moves-120724982.html",
+    "time": 1794226044,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "PEP": [
    {
-    "title": "Here's How Many Shares of PepsiCo You'd Need for $500 in Yearly Dividends",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/heres-many-shares-pepsico-youd-172900267.html",
-    "time": 1794072540,
-    "kind": "cash",
-    "plain": "The company is returning cash to shareholders (or splitting its shares). That usually signals management feels confident."
+    "title": "PepsiCo to Cut Some Jobs in North America",
+    "publisher": "MT Newswires",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/pepsico-cut-jobs-north-america-001131284.html",
+    "time": 1794269491,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Better Dividend Stock for Retirees: Pfizer vs. PepsiCo",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/better-dividend-stock-retirees-pfizer-215253571.html",
-    "time": 1794001973,
-    "kind": "cash",
-    "plain": "The company is returning cash to shareholders (or splitting its shares). That usually signals management feels confident."
+    "title": "Market Chatter: PepsiCo Eliminating About 1,000 Jobs Across Food and Beverage Division",
+    "publisher": "MT Newswires",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-pepsico-eliminating-1-192123921.html",
+    "time": 1794252083,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "PepsiCo (PEP) Could Be 29% Undervalued Following Its KFC Deal Renewal",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/pepsico-pep-could-29-undervalued-191920390.html",
-    "time": 1793992760,
-    "kind": "deal",
-    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
+    "title": "PepsiCo Is Cutting Around 1,000 Jobs Across North America",
+    "publisher": "The Wall Street Journal",
+    "link": "https://finance.yahoo.com/m/7bce1ea6-5e5c-3ba8-bbca-864c90d9f9ce/pepsico-is-cutting-around.html",
+    "time": 1794250802,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "COST": [
    {
-    "title": "Costco’s longtime shoppers may not love what comes next",
-    "publisher": "TheStreet",
-    "link": "https://finance.yahoo.com/small-business/articles/costco-longtime-shoppers-may-not-151700605.html",
-    "time": 1794064620,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "Costco (COST) Brings Real Time Health Benefit Checkout To More Than 600 Warehouses",
+    "title": "Costco Wholesale (COST) Gains Grocery Share As Its Valuation Looks Harder To Ignore",
     "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/healthcare/articles/costco-cost-brings-real-time-021059186.html",
-    "time": 1794017459,
+    "link": "https://finance.yahoo.com/markets/stocks/articles/costco-wholesale-cost-gains-grocery-031234033.html",
+    "time": 1794280354,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Costco's October Net Sales Jump 12.6% as Digital Growth Accelerates",
-    "publisher": "Zacks",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/costcos-october-net-sales-jump-150100215.html",
-    "time": 1793977260,
+    "title": "Costco just passed Kroger in a grocery ranking that matters",
+    "publisher": "TheStreet",
+    "link": "https://finance.yahoo.com/small-business/articles/costco-just-passed-kroger-grocery-001700798.html",
+    "time": 1794269820,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "She Plans to Join Costco’s New Medicare Advantage Plan at 65. Once Her 12-Month Trial Right Ends, a Medigap Insurer Could Ask Health Questions and Reject Her Application",
+    "publisher": "24/7 Wall St.",
+    "link": "https://finance.yahoo.com/news/she-plans-join-costco-medicare-200323457.html",
+    "time": 1794254603,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "WMT": [
    {
-    "title": "Walmart Stock And 2 Defensive Plays for a Social Security Squeeze",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/walmart-stock-2-defensive-plays-121109779.html",
-    "time": 1794139869,
+    "title": "Target Trades at a Fraction of Walmart's Valuation. Is the Discount Deserved?",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/target-trades-fraction-walmarts-valuation-191700534.html",
+    "time": 1794251820,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Walmart (WMT) Stock Looks Reasonable After A 171% Five Year Run",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/walmart-wmt-stock-looks-reasonable-002355566.html",
-    "time": 1794097435,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "title": "Unusual Put Options Volume in Walmart Ahead of Earnings Next Week - Is WMT Set to Drop?",
+    "publisher": "Barchart",
+    "link": "https://finance.yahoo.com/markets/options/articles/unusual-put-options-volume-walmart-183003941.html",
+    "time": 1794249003,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    },
    {
-    "title": "Walton Family Gets $100 Billion Richer As Walmart Surges",
-    "publisher": "24/7 Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/walton-family-gets-100-billion-171844543.html",
-    "time": 1794071924,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "title": "Walmart earnings growth potential extends beyond headline sales, UBS argues",
+    "publisher": "Proactive",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/walmart-earnings-growth-potential-extends-174000122.html",
+    "time": 1794246000,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
   ],
   "TGT": [
    {
-    "title": "What Could Target (TGT) Gain From Surcharge Free ATMs In 2,000 Stores?",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/could-target-tgt-gain-surcharge-221138992.html",
-    "time": 1794089498,
+    "title": "Target's Apparel, Home Categories Could Drive Growth, UBS Says",
+    "publisher": "MT Newswires",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/target-apos-apparel-home-categories-195703710.html",
+    "time": 1794254223,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Chewy vs. Target: Which Retailer Stock Is a Better Buy for 2027?",
+    "title": "Target Trades at a Fraction of Walmart's Valuation. Is the Discount Deserved?",
     "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/chewy-vs-target-retailer-stock-125702104.html",
-    "time": 1794056222,
+    "link": "https://finance.yahoo.com/markets/stocks/articles/target-trades-fraction-walmarts-valuation-191700534.html",
+    "time": 1794251820,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "TGT vs. TJX: Which Stock Is the Better Value Option?",
-    "publisher": "Zacks",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/tgt-vs-tjx-stock-better-154002178.html",
-    "time": 1793979602,
+    "title": "Target's Comparable Sales Strength May Not Be Sustainable Into 2027, BofA Says",
+    "publisher": "MT Newswires",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/target-apos-comparable-sales-strength-181610619.html",
+    "time": 1794248170,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "DIS": [
    {
-    "title": "Walt Disney Insider Sold Shares Worth $2,466,240, According to a Recent SEC Filing",
-    "publisher": "MT Newswires",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/walt-disney-insider-sold-shares-224144377.html",
-    "time": 1794004904,
+    "title": "What Could Walt Disney (DIS) AI Push Mean For Its Creative Future?",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/technology/ai/articles/could-walt-disney-dis-ai-021255201.html",
+    "time": 1794276775,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Disney struggles as Netflix pulls away: Time to buy the dip?",
-    "publisher": "Investing.com",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/disney-struggles-netflix-pulls-away-103406881.html",
-    "time": 1793961246,
-    "kind": "deal",
-    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
+    "title": "Adobe, Disney announce multi-year strategic alliance",
+    "publisher": "TipRanks",
+    "link": "https://finance.yahoo.com/media-advertising/articles/adobe-disney-announce-multi-strategic-220530980.html",
+    "time": 1794261930,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "How to Play DIS Stock as Disney Eyes 20% Cost Cuts and Thousands of Layoffs",
-    "publisher": "Barchart",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/play-dis-stock-disney-eyes-161142089.html",
-    "time": 1793895102,
-    "kind": "jobs",
-    "plain": "Layoffs and leadership changes cut costs or change direction. Sometimes that helps profits; sometimes it signals business is slowing."
+    "title": "Here's Why Walt Disney (DIS) Gained But Lagged the Market Today",
+    "publisher": "Zacks",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/heres-why-walt-disney-dis-214502444.html",
+    "time": 1794260702,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "NFLX": [
@@ -949,6 +997,14 @@
    }
   ],
   "SPOT": [
+   {
+    "title": "Is Spotify (SPOT) a Buy as Wall Street Analysts Look Optimistic?",
+    "publisher": "Zacks",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/spotify-spot-buy-wall-street-133003178.html",
+    "time": 1794231003,
+    "kind": "analyst",
+    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
+   },
    {
     "title": "Spotify Just Gained 7% in a Week. What Will It Take to Hit $700?",
     "publisher": "TIKR",
@@ -994,343 +1050,359 @@
   ],
   "TTWO": [
    {
-    "title": "'GTA 6' Preorder Sales Hit $751 Million 2 Weeks Ahead of Release. Are Investors Ignoring Take-Two Stock Opportunity?",
-    "publisher": "Benzinga",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/gta-6-preorder-sales-hit-023006438.html",
-    "time": 1794105006,
-    "kind": "product",
-    "plain": "New products are how companies grow. The real test is whether people actually buy them over the next few quarters."
+    "title": "What Take-Two Interactive Software (TTWO) Said on Its Q2 Earnings Call",
+    "publisher": "MarketBeat",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/two-interactive-software-ttwo-said-031434478.html",
+    "time": 1794280474,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    },
    {
-    "title": "Take-Two Expects 20% Growth From GTA VI. Roblox Guides Its Holiday Bookings Down 15%",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/two-expects-20-growth-gta-145111715.html",
-    "time": 1794063071,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "title": "GTA VI Launches in 10 Days, and Take-Two's Forecast Might Be Too Low. Is the Stock a Buy Before Nov. 19?",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/gta-vi-launches-10-days-223743093.html",
+    "time": 1794263863,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    },
    {
-    "title": "Roth Capital Adjusts Price Target on Take-Two Interactive Software to $272 From $300",
-    "publisher": "MT Newswires",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/roth-capital-adjusts-price-target-115126286.html",
-    "time": 1793965886,
-    "kind": "analyst",
-    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
+    "title": "Take-Two (NASDAQ:TTWO) reports sales below analyst estimates in Q3 CY2026 earnings",
+    "publisher": "StockStory",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/two-nasdaq-ttwo-reports-sales-222639488.html",
+    "time": 1794263199,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
   ],
   "JNJ": [
    {
-    "title": "Johnson & Johnson reports 73% PSA response rate with investigational pasritamig-based immunotherapy combination in advanced prostate cancer",
-    "publisher": "PR Newswire",
-    "link": "https://finance.yahoo.com/healthcare/articles/johnson-johnson-reports-73-psa-160000196.html",
-    "time": 1794153600,
+    "title": "What Is Johnson & Johnson (JNJ) Signaling With Two Key Trial Wins?",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/healthcare/articles/johnson-johnson-jnj-signaling-two-161907221.html",
+    "time": 1794241147,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Johnson & Johnson announces new Phase 2 nipocalimab study data in Sjögren's disease that reveal insights on importance of symptom improvements most valued by patients",
-    "publisher": "PR Newswire",
-    "link": "https://finance.yahoo.com/healthcare/articles/johnson-johnson-announces-phase-2-150300881.html",
-    "time": 1794063780,
+    "title": "Johnson & Johnson Showcases Positive Trial Data For Key Autoimmune Therapies",
+    "publisher": "Benzinga",
+    "link": "https://finance.yahoo.com/healthcare/articles/johnson-johnson-showcases-positive-trial-150415451.html",
+    "time": 1794236655,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Johnson & Johnson announces ICOTYDE® (icotrokinra) delivers significant improvement in psoriatic arthritis disease activity among biologic-naive patients with once-daily targeted oral peptide",
-    "publisher": "PR Newswire",
-    "link": "https://finance.yahoo.com/healthcare/articles/johnson-johnson-announces-icotyde-icotrokinra-150300001.html",
-    "time": 1794063780,
+    "title": "Johnson & Johnson’s ICOTYDE Meets Primary Endpoint in Phase 3 Psoriatic Arthritis Trial",
+    "publisher": "InvestorsHub",
+    "link": "https://finance.yahoo.com/healthcare/articles/johnson-johnson-icotyde-meets-primary-113357664.html",
+    "time": 1794224037,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "LLY": [
    {
-    "title": "Forget Lilly and Novo: Pfizer Is Planning a Wave of Phase 3 Obesity Trials",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/healthcare/articles/forget-lilly-novo-pfizer-planning-213500817.html",
-    "time": 1794087300,
+    "title": "Jim Cramer Says Eli Lilly “Is a $2 Trillion Stock” as It Nears Tesla’s Market Cap",
+    "publisher": "TIKR",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-says-eli-lilly-195109387.html",
+    "time": 1794253869,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Eli Lilly Just Raised Its 2026 Revenue Forecast by $5.5 Billion. Is the Stock Still a Buy?",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/eli-lilly-just-raised-2026-185000009.html",
-    "time": 1794077400,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+    "title": "Eli Lilly’s Weight-Loss Pill Shows Sleep Apnea Benefits. Can It Gain on Novo?",
+    "publisher": "Barrons.com",
+    "link": "https://finance.yahoo.com/m/363c8fec-d17a-3593-8227-dab89791fbc9/eli-lilly%E2%80%99s-weight-loss-pill.html",
+    "time": 1794252420,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Hims & Hers Stock After Lilly Weight Loss Drug Deal Has The Bull Case Changed?",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/healthcare/articles/hims-hers-stock-lilly-weight-181307947.html",
-    "time": 1794075187,
-    "kind": "deal",
-    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
+    "title": "Eli Lilly Stocks Rise 3.40% as Jefferies Sets Street-High $1,700 Target",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/eli-lilly-stocks-rise-3-181701651.html",
+    "time": 1794248221,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "NVO": [
    {
-    "title": "Novo Nordisk Just Delivered Great News for Investors. Is a Comeback Finally Underway?",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/healthcare/articles/novo-nordisk-just-delivered-great-234002697.html",
-    "time": 1794094802,
+    "title": "Eli Lilly’s Weight-Loss Pill Shows Sleep Apnea Benefits. Can It Gain on Novo?",
+    "publisher": "Barrons.com",
+    "link": "https://finance.yahoo.com/m/363c8fec-d17a-3593-8227-dab89791fbc9/eli-lilly%E2%80%99s-weight-loss-pill.html",
+    "time": 1794252420,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Forget Lilly and Novo: Pfizer Is Planning a Wave of Phase 3 Obesity Trials",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/healthcare/articles/forget-lilly-novo-pfizer-planning-213500817.html",
-    "time": 1794087300,
+    "title": "FDA requires vision-loss warning on Novo Nordisk and Eli Lilly GLP-1 drugs",
+    "publisher": "Investing.com",
+    "link": "https://finance.yahoo.com/healthcare/articles/fda-requires-vision-loss-warning-170646867.html",
+    "time": 1794244006,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Novo Nordisk (CPSE:NOVO B) Shares In Focus After Fresh Wegovy MASH Data",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/healthcare/articles/novo-nordisk-cpse-novo-b-091716468.html",
-    "time": 1794043036,
+    "title": "Novo Nordisk Reveals Surprising New Benefit for Wegovy",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/healthcare/articles/novo-nordisk-reveals-surprising-benefit-134137846.html",
+    "time": 1794231697,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "PFE": [
    {
-    "title": "Pfizer And 2 More AI Healthcare Stocks To Watch",
+    "title": "Pfizer (PFE) On A Higher 2026 Outlook Still Looks About Right",
     "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/healthcare/articles/pfizer-2-more-ai-healthcare-011339324.html",
-    "time": 1794100419,
+    "link": "https://finance.yahoo.com/markets/stocks/articles/pfizer-pfe-higher-2026-outlook-221042702.html",
+    "time": 1794262242,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+   },
+   {
+    "title": "Pfizer (PFE) Stock Looks Overvalued On Its 29% One Year Gain",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/pfizer-pfe-stock-looks-overvalued-210922425.html",
+    "time": 1794258562,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Forget Lilly and Novo: Pfizer Is Planning a Wave of Phase 3 Obesity Trials",
+    "title": "Why Pfizer Believes It Can Be a Leader in the GLP-1 Market, Even Though Its Drug May Not Debut Until 2028",
     "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/healthcare/articles/forget-lilly-novo-pfizer-planning-213500817.html",
-    "time": 1794087300,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "Pfizer vs. AbbVie: Higher Yield and Cheaper Valuation Give One the Clear Edge",
-    "publisher": "Barchart",
-    "link": "https://finance.yahoo.com/healthcare/articles/pfizer-vs-abbvie-higher-yield-000005766.html",
-    "time": 1794009605,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "link": "https://finance.yahoo.com/healthcare/articles/why-pfizer-believes-leader-glp-150502034.html",
+    "time": 1794236702,
+    "kind": "product",
+    "plain": "New products are how companies grow. The real test is whether people actually buy them over the next few quarters."
    }
   ],
   "UNH": [
    {
-    "title": "What UnitedHealth Group Stock's Institutional Buying Means For Shareholders",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/unitedhealth-group-stocks-institutional-buying-181629205.html",
-    "time": 1793988989,
+    "title": "Madeline Bell Joins UnitedHealth Group Board of Directors",
+    "publisher": "Business Wire",
+    "link": "https://finance.yahoo.com/healthcare/articles/madeline-bell-joins-unitedhealth-group-212500643.html",
+    "time": 1794259500,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "“We Need to Break Up Big Medicine”: Warren Targets UnitedHealth as Democrats Win Congress",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/healthcare/articles/break-big-medicine-warren-targets-173718181.html",
-    "time": 1793986638,
+    "title": "Market Chatter: Surgery Partners Said to Reject $28/Share Bid From UnitedHealth",
+    "publisher": "MT Newswires",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-surgery-partners-said-162709487.html",
+    "time": 1794241629,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "HUM vs UNH: valuation and profitability compared",
-    "publisher": "Investing.com",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/hum-vs-unh-valuation-profitability-155350642.html",
-    "time": 1793980430,
+    "title": "Leaner and Meaner: Are UNH's Profits Getting Bigger? Buy Now?",
+    "publisher": "Zacks",
+    "link": "https://finance.yahoo.com/healthcare/articles/leaner-meaner-unhs-profits-getting-134000688.html",
+    "time": 1794231600,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "ISRG": [
    {
-    "title": "Why Intuitive Surgical (ISRG) Just Cracked the Top 10 Best Healthcare Stocks List",
-    "publisher": "Insider Monkey",
-    "link": "https://finance.yahoo.com/healthcare/articles/why-intuitive-surgical-isrg-just-153854003.html",
-    "time": 1794152334,
+    "title": "Top Research Reports for ASML, Alibaba & Intuitive Surgical",
+    "publisher": "Zacks",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/top-research-reports-asml-alibaba-203300260.html",
+    "time": 1794256380,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Is Intuitive Surgical's Next Big Thing Already Here?",
-    "publisher": "Trefis",
-    "link": "https://finance.yahoo.com/healthcare/articles/intuitive-surgicals-next-big-thing-100900835.html",
-    "time": 1794046140,
+    "title": "ISRG Gains 7.8% in 6 Months: Will the Share Price Recovery Continue?",
+    "publisher": "Zacks",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/isrg-gains-7-8-6-175600368.html",
+    "time": 1794246960,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Hims & Hers Health vs. Intuitive Surgical: Which Healthcare Stock Is a Better Buy for 2027?",
+    "title": "Intuitive Surgical (ISRG) Just Grew Revenue 22%. Why Is the Stock Still Down This Year?",
     "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/healthcare/articles/hims-hers-health-vs-intuitive-032502261.html",
-    "time": 1794021902,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "link": "https://finance.yahoo.com/markets/stocks/articles/intuitive-surgical-isrg-just-grew-151500307.html",
+    "time": 1794237300,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
   ],
   "MRNA": [
    {
-    "title": "What Is Behind The Rise In Moderna Stock?",
-    "publisher": "Trefis",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/behind-rise-moderna-stock-124952957.html",
-    "time": 1794055792,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "Moderna (MRNA) Stock Climbs As Q3 Earnings Mark Return To Profit",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/moderna-mrna-stock-climbs-q3-001637855.html",
-    "time": 1794010597,
+    "title": "Moderna's Q3 Numbers May Have Seemed Impressive, but They Aren't Enough to Make the Stock a Buy",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/modernas-q3-numbers-may-seemed-202502569.html",
+    "time": 1794255902,
     "kind": "earnings",
     "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    },
    {
-    "title": "Moderna Stock Is Up 700% on Cancer Vaccine Hype. Earnings Reveal That Covid Still Counts.",
-    "publisher": "Barrons.com",
-    "link": "https://finance.yahoo.com/m/2f1768b9-bb2d-3bba-aa6c-e3e43b14f450/moderna-stock-is-up-700%25-on.html",
-    "time": 1794005220,
+    "title": "Is Moderna (MRNA) Priced For Too Much Sales Growth?",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/moderna-mrna-priced-too-much-200801364.html",
+    "time": 1794254881,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Moderna (MRNA) Stock Fair Value Rises After Intismeran Data And Q3 Beat",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/moderna-mrna-stock-fair-value-191304455.html",
+    "time": 1794251584,
     "kind": "earnings",
     "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
   ],
   "JPM": [
    {
-    "title": "JPMorgan vs. Bank of America: Which Dividend Stock Is Better for Retirement?",
+    "title": "Morgan Stanley Climbs 4% on Vinyl Equity Deal to Capture IPO Wealth; Goldman Sachs Rises 5%, JPMorgan Gains 2%",
     "publisher": "24/7 Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-vs-bank-america-dividend-120758336.html",
-    "time": 1794139678,
-    "kind": "cash",
-    "plain": "The company is returning cash to shareholders (or splitting its shares). That usually signals management feels confident."
+    "link": "https://finance.yahoo.com/news/morgan-stanley-climbs-4-vinyl-190218879.html",
+    "time": 1794250938,
+    "kind": "deal",
+    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
    },
    {
-    "title": "JP Morgan Athlete Center of Excellence: athletes need a financial playbook now more than ever",
-    "publisher": "Fortune",
-    "link": "https://finance.yahoo.com/small-business/articles/jp-morgan-athlete-center-excellence-110000713.html",
-    "time": 1794135600,
+    "title": "Meta Stocks Climb 4.82% as JPMorgan Bets on AI-Driven Ad Growth",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/meta-stocks-climb-4-82-180359679.html",
+    "time": 1794247439,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "What Could A Senate Epstein Probe Mean For JPMorgan Chase (JPM)?",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/could-senate-epstein-probe-mean-021323031.html",
-    "time": 1794104003,
-    "kind": "legal",
-    "plain": "Legal or regulatory trouble costs money and attention. It usually only matters long-term if it's big compared with the company."
+    "title": "JPMorgan Just Removed Alphabet From Its Analyst Focus List",
+    "publisher": "24/7 Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-just-removed-alphabet-analyst-164032147.html",
+    "time": 1794242432,
+    "kind": "analyst",
+    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
    }
   ],
   "BAC": [
    {
-    "title": "JPMorgan vs. Bank of America: Which Dividend Stock Is Better for Retirement?",
-    "publisher": "24/7 Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-vs-bank-america-dividend-120758336.html",
-    "time": 1794139678,
-    "kind": "cash",
-    "plain": "The company is returning cash to shareholders (or splitting its shares). That usually signals management feels confident."
+    "title": "Berkshire Hathaway May Have Sold More Bank of America Stock in the Third Quarter",
+    "publisher": "Barrons.com",
+    "link": "https://finance.yahoo.com/m/f199ef30-e7f6-3cf2-aeb5-2a1564162340/berkshire-hathaway-may-have.html",
+    "time": 1794261240,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    },
    {
-    "title": "Buy the dip or wait? BofA maps out 3 scenarios for chip stocks and top picks",
-    "publisher": "Investing.com",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/buy-dip-wait-bofa-maps-115701295.html",
-    "time": 1794139021,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "Bank of America has unexpected advice for tech stock investors after midterms",
+    "title": "Bank of America sends stark warning on Tripadvisor",
     "publisher": "TheStreet",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/bank-america-unexpected-advice-tech-043300594.html",
-    "time": 1794112380,
+    "link": "https://finance.yahoo.com/markets/stocks/articles/bank-america-sends-stark-warning-213300313.html",
+    "time": 1794259980,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "October inflation expected to reinforce Fed rate hike outlook, Bank of America says",
+    "publisher": "Proactive",
+    "link": "https://finance.yahoo.com/economy/policy/articles/october-inflation-expected-reinforce-fed-203000019.html",
+    "time": 1794256200,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
   ],
   "GS": [
    {
-    "title": "Goldman Sachs revamps 2027 gold price target, but signals rebound",
+    "title": "Goldman Sachs sees something Wall Street may be missing on Nvidia",
     "publisher": "TheStreet",
-    "link": "https://finance.yahoo.com/markets/commodities/articles/goldman-sachs-revamps-2027-gold-161700634.html",
-    "time": 1794154620,
-    "kind": "analyst",
-    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
-   },
-   {
-    "title": "Musk “Would Never Lend Money” to Pure AI Clouds. Goldman Is Selling SpaceX’s $40 Billion GPU Debt",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/musk-never-lend-money-pure-021812060.html",
-    "time": 1794104292,
+    "link": "https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-sees-something-wall-000000061.html",
+    "time": 1794268800,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "How Investors Are Reacting To Goldman Sachs Stock After Congress Shift",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/investors-reacting-goldman-sachs-stock-171144829.html",
-    "time": 1794071504,
+    "title": "Cloudflare Tumbled Into Earnings: Why Goldman Sachs Sees 56% Upside",
+    "publisher": "TIKR",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/cloudflare-tumbled-earnings-why-goldman-212122392.html",
+    "time": 1794259282,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+   },
+   {
+    "title": "Goldman CEO says AI infrastructure demand remains strong",
+    "publisher": "Investing.com",
+    "link": "https://finance.yahoo.com/technology/ai/articles/goldman-ceo-says-ai-infrastructure-194353597.html",
+    "time": 1794253433,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "V": [
    {
-    "title": "Visa (V) Q4 Earnings Justified Strong Growth But Left Valuation Questions",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/visa-v-q4-earnings-justified-011321208.html",
-    "time": 1794014001,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+    "title": "Visa Sees 20%‑Plus Services Growth as U.S. Payment Volumes Gain Momentum",
+    "publisher": "MarketBeat",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/visa-sees-20-plus-services-161514026.html",
+    "time": 1794240914,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Mastercard Hit a Record as Visa Raised Its Dividend 16%. Here’s Where Mastercard’s Cash Goes",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/mastercard-hit-record-visa-raised-191630028.html",
-    "time": 1793992590,
-    "kind": "cash",
-    "plain": "The company is returning cash to shareholders (or splitting its shares). That usually signals management feels confident."
+    "title": "Global Payments Adds Visa API to Authentication Platform",
+    "publisher": "MT Newswires",
+    "link": "https://finance.yahoo.com/technology/articles/global-payments-adds-visa-api-152040654.html",
+    "time": 1794237640,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Visa Just Raised Its Dividend 16%. Free Cash Flow Shows Whether the Buybacks Can Keep Pace",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/visa-just-raised-dividend-16-191324601.html",
-    "time": 1793992404,
-    "kind": "cash",
-    "plain": "The company is returning cash to shareholders (or splitting its shares). That usually signals management feels confident."
+    "title": "ETFs Are Net Sellers of Visa (V) on Nov. 5",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-visa-v-110239420.html",
+    "time": 1794222159,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "MA": [
    {
-    "title": "Ackman Calls Mastercard “One of the Greatest Businesses in the World.” The Stock Is Up 33% in Six Months",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/ackman-calls-mastercard-one-greatest-140436590.html",
-    "time": 1794060276,
+    "title": "Mastercard Sees New Growth in AI Payments, Cybersecurity and Digital Assets",
+    "publisher": "MarketBeat",
+    "link": "https://finance.yahoo.com/technology/ai/articles/mastercard-sees-growth-ai-payments-181457787.html",
+    "time": 1794248097,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Should Mastercard (MA) Investors Watch Its AI Bet And Card Rule Risk?",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/technology/ai/articles/mastercard-ma-investors-watch-ai-061706487.html",
-    "time": 1794032226,
+    "title": "BMO Equips Canadian Business Owners with New CashBack® World Elite® Mastercard®, with Market-Leading Cash Back Earn Rates",
+    "publisher": "CNW Group",
+    "link": "https://finance.yahoo.com/small-business/articles/bmo-equips-canadian-business-owners-150000770.html",
+    "time": 1794236400,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Mastercard Hit a Record as Visa Raised Its Dividend 16%. Here’s Where Mastercard’s Cash Goes",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/mastercard-hit-record-visa-raised-191630028.html",
-    "time": 1793992590,
-    "kind": "cash",
-    "plain": "The company is returning cash to shareholders (or splitting its shares). That usually signals management feels confident."
+    "title": "Egypt’s HDB partners with Mastercard to expand card offer",
+    "publisher": "Electronic Payments",
+    "link": "https://finance.yahoo.com/news/egypt-hdb-partners-mastercard-expand-115418745.html",
+    "time": 1794225258,
+    "kind": "deal",
+    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
    }
   ],
   "PYPL": [
+   {
+    "title": "SoFi’s Earnings Shine While PayPal & Boeing’s Earnings Look “Meh”",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/sofi-earnings-shine-while-paypal-221558621.html",
+    "time": 1794262558,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+   },
+   {
+    "title": "PayPal’s (PYPL) Turnaround Still Needs Proof",
+    "publisher": "TipRanks",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/paypal-pypl-turnaround-still-needs-205100874.html",
+    "time": 1794257460,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
    {
     "title": "$10,000 Invested in PayPal 5 Years Ago Is Worth About $2,590 Today. The Company Has Bought Back 8.6% of Its Shares Since January.",
     "publisher": "Motley Fool",
@@ -1338,25 +1410,17 @@
     "time": 1794059460,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "PayPal Holdings (PYPL) Could Be 13% Undervalued On Mixed Third Quarter Earnings",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/paypal-holdings-pypl-could-13-230944526.html",
-    "time": 1794006584,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
-   },
-   {
-    "title": "American Express vs. PayPal: Which Stock Does Wall Street Expect to Grow Faster Through 2027?",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/american-express-vs-paypal-stock-191514881.html",
-    "time": 1793992514,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "XYZ": [
+   {
+    "title": "Pay by Bandana with NAHMIAS and Cash App",
+    "publisher": "Business Wire",
+    "link": "https://finance.yahoo.com/markets/crypto/articles/pay-bandana-nahmias-cash-app-170000622.html",
+    "time": 1794243600,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
    {
     "title": "Block Insider Sold Shares Worth $3,062,500, According to a Recent SEC Filing",
     "publisher": "MT Newswires",
@@ -1372,27 +1436,51 @@
     "time": 1793985310,
     "kind": "analyst",
     "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
-   },
-   {
-    "title": "Block Jumps 11% in Two Days as Q3 Gross Profit Beats Its Own Guide by $110 Million",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/block-jumps-11-two-days-165051595.html",
-    "time": 1793983851,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
   ],
   "SOFI": [
    {
-    "title": "SoFi (SOFI) Stock Looks Above Fair Value After Strong Momentum",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/sofi-sofi-stock-looks-above-031724115.html",
-    "time": 1794021444,
+    "title": "SoFi’s Earnings Shine While PayPal & Boeing’s Earnings Look “Meh”",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/sofi-earnings-shine-while-paypal-221558621.html",
+    "time": 1794262558,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+   },
+   {
+    "title": "Coinbase vs. SoFi: The Recent Market Sell-Off Exposes Two Very Different Fintech Risks for 2027",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/coinbase-vs-sofi-recent-market-205002053.html",
+    "time": 1794257402,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "SoFi CEO Calls Q3 “Exceptional” as 2027 Guide Lands at $0.90 a Share",
+    "publisher": "TIKR",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/sofi-ceo-calls-q3-exceptional-175452500.html",
+    "time": 1794246892,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    }
   ],
   "HOOD": [
+   {
+    "title": "Is Robinhood Stock Too Expensive?",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/robinhood-stock-too-expensive-232702984.html",
+    "time": 1794266822,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Robinhood CEO: Stock Tokens Will Be “the Default Way” to Own U.S. Equities Abroad",
+    "publisher": "TIKR",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/robinhood-ceo-stock-tokens-default-032005167.html",
+    "time": 1794108005,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
    {
     "title": "Robinhood Stock And Other Financial Plays On Rising Cash Balances",
     "publisher": "Simply Wall St.",
@@ -1400,217 +1488,251 @@
     "time": 1794100421,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "Cathie Wood Dumped Robinhood Before a 23% Drop. Now She’s Buying HOOD Stock Again.",
-    "publisher": "Barchart",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/cathie-wood-dumped-robinhood-23-182827820.html",
-    "time": 1793989707,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "COIN": [
    {
-    "title": "Coinbase Just Hit a New 52-Week Low After Losing 16% Since Earnings. Is the Selling Overdone?",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/crypto/articles/coinbase-just-hit-52-week-040353503.html",
-    "time": 1794110633,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
-   },
-   {
-    "title": "Bitcoin Has Traded at a Discount on Coinbase for 61 Straight Days. Have U.S. Investors Stopped Buying BTC?",
-    "publisher": "24/7 Wall St.",
-    "link": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-traded-discount-coinbase-61-212903407.html",
-    "time": 1794086943,
+    "title": "Coinbase vs. SoFi: The Recent Market Sell-Off Exposes Two Very Different Fintech Risks for 2027",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/coinbase-vs-sofi-recent-market-205002053.html",
+    "time": 1794257402,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Coinbase Global (COIN) Loses Bid To Pause State Actions In Prediction Markets Case",
+    "title": "Coinbase Secures Final OCC Approval for Its National Trust Bank",
+    "publisher": "Bankless",
+    "link": "https://finance.yahoo.com/markets/crypto/articles/coinbase-secures-final-occ-approval-201046945.html",
+    "time": 1794255046,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Is Coinbase Global (COIN) A Bargain After Its Federal Trust Charter Approval?",
     "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/crypto/articles/coinbase-global-coin-loses-bid-051432329.html",
-    "time": 1794028472,
+    "link": "https://finance.yahoo.com/markets/crypto/articles/coinbase-global-coin-bargain-federal-191403041.html",
+    "time": 1794251643,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "MSTR": [
    {
-    "title": "Bitcoin Doesn't Need a Bank, Yet MicroStrategy Wants to Become One",
-    "publisher": "BeInCrypto",
-    "link": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-doesnt-bank-yet-microstrategy-163040888.html",
-    "time": 1794069040,
+    "title": "Strategy (MSTR) Is Building A Global Bitcoin Bank",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/markets/crypto/articles/strategy-mstr-building-global-bitcoin-021814783.html",
+    "time": 1794277094,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Crypto Has a New Enemy After Binance Hack, Michael Saylor Warns",
-    "publisher": "BeInCrypto",
-    "link": "https://finance.yahoo.com/markets/crypto/articles/crypto-enemy-binance-hack-michael-220000326.html",
-    "time": 1793916000,
+    "title": "Strategy Makes Biggest Bitcoin Purchase Since September, While Bitmine, Strive Slow Down",
+    "publisher": "Stocktwits",
+    "link": "https://finance.yahoo.com/markets/crypto/articles/strategy-makes-biggest-bitcoin-purchase-162319764.html",
+    "time": 1794241399,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Strategy’s Bitcoin Holdings Top 850,000 Tokens",
+    "publisher": "CryptoProwl",
+    "link": "https://finance.yahoo.com/markets/crypto/articles/strategy-bitcoin-holdings-top-850-151000728.html",
+    "time": 1794237000,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "UBER": [
    {
-    "title": "Billionaire Bill Ackman Has Been All-In on Uber. Is Now the Time to Buy the Stock?",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/billionaire-bill-ackman-uber-now-155000172.html",
-    "time": 1794153000,
-    "kind": "deal",
-    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
-   },
-   {
-    "title": "Amazon Gives Prime Members Uber Eats, Opening a New Front Against DoorDash",
-    "publisher": "TIKR",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-gives-prime-members-uber-074955340.html",
-    "time": 1794037795,
+    "title": "Market Chatter: Uber Engineering Executive Overseeing Robotaxi, Delivery Teams to Leave",
+    "publisher": "MT Newswires",
+    "link": "https://finance.yahoo.com/technology/articles/market-chatter-uber-engineering-executive-002244438.html",
+    "time": 1794270164,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "HMRC demands £2.6bn from Uber",
-    "publisher": "The Telegraph",
-    "link": "https://finance.yahoo.com/economy/policy/articles/hmrc-demands-2-6bn-uber-060000016.html",
-    "time": 1794031200,
+    "title": "Uber Engineering Leader for Robotaxis, Delivery Network to Exit",
+    "publisher": "Bloomberg",
+    "link": "https://finance.yahoo.com/technology/articles/uber-engineering-leader-robotaxis-delivery-214041534.html",
+    "time": 1794260441,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Uber (UBER) Stock Gets Fair Value Trim After Analysts Rework Targets",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/uber-uber-stock-gets-fair-200622703.html",
+    "time": 1794254782,
+    "kind": "analyst",
+    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
    }
   ],
   "ABNB": [
    {
-    "title": "Airbnb's growth spurt comes with a catch",
-    "publisher": "TheStreet",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/airbnbs-growth-spurt-comes-catch-150700881.html",
-    "time": 1794150420,
+    "title": "Why Airbnb (ABNB) stock is up today",
+    "publisher": "StockStory",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/why-airbnb-abnb-stock-today-004536771.html",
+    "time": 1794271536,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Airbnb: 3 Key Takeaways for Long-Term Investors",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/airbnb-3-key-takeaways-long-080852485.html",
-    "time": 1794125332,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "title": "Airbnb Shares Higher After Rothschild & Co Redburn Upgrade",
+    "publisher": "MT Newswires",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/airbnb-shares-higher-rothschild-co-194754479.html",
+    "time": 1794253674,
+    "kind": "analyst",
+    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
    },
    {
-    "title": "Airbnb Just Popped After a Blowout Quarter. Is the Stock Still a Buy?",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/airbnb-just-popped-blowout-quarter-130202441.html",
-    "time": 1794056522,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+    "title": "Buy, Sell, or Hold? Monday’s Top Upgrades and Downgrades: Advanced Micro Devices, Airbnb, DraftKings, L3 Harris Technologies, Molson-Coors, Nvidia,  Take-Two Interactive, Uber Technologies, and More",
+    "publisher": "24/7 Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/buy-sell-hold-monday-top-124017279.html",
+    "time": 1794228017,
+    "kind": "analyst",
+    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
    }
   ],
   "BKNG": [
    {
-    "title": "Booking Holdings (BKNG) Backs New York Launch With Lola VIP Drops And Broader Travel Services",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/small-business/articles/booking-holdings-bkng-backs-york-231508040.html",
-    "time": 1794093308,
-    "kind": "product",
-    "plain": "New products are how companies grow. The real test is whether people actually buy them over the next few quarters."
+    "title": "Agoda's AI Assistant Brings Travel Planning and Booking into One Conversation",
+    "publisher": "PR Newswire",
+    "link": "https://finance.yahoo.com/technology/ai/articles/agodas-ai-assistant-brings-travel-030000371.html",
+    "time": 1794279600,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Booking vs. DoorDash: Does Going Out or Staying In Make One Stock a Better Buy for 2027?",
+    "title": "Booking Holdings: 3 Key Takeaways for Long-Term Investors",
     "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/booking-vs-doordash-does-going-142701807.html",
-    "time": 1794061621,
+    "link": "https://finance.yahoo.com/markets/stocks/articles/booking-holdings-3-key-takeaways-003134552.html",
+    "time": 1794270694,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Is Booking Holdings Stock Worth More Than Its Competitors?",
-    "publisher": "Trefis",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/booking-holdings-stock-worth-more-091910757.html",
-    "time": 1794043150,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "title": "Jefferies Adjusts Price Target on Booking Holdings to $180 From $185",
+    "publisher": "MT Newswires",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/jefferies-adjusts-price-target-booking-105027348.html",
+    "time": 1794221427,
+    "kind": "analyst",
+    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
    }
   ],
   "DAL": [
    {
-    "title": "Unusual Options Activity in Airline Stocks Shows Optimism Building: Go Deeper into the Trades",
-    "publisher": "Barchart",
-    "link": "https://finance.yahoo.com/markets/options/articles/unusual-options-activity-airline-stocks-191127021.html",
-    "time": 1793905887,
+    "title": "Delta Air Lines (DAL) Stock May Be Undervalued After Falling Oil Prices",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/delta-air-lines-dal-stock-231853806.html",
+    "time": 1794266333,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Delta vs. United: Could Falling Oil Prices Set the Stage for an Airline Stock Comeback in 2027?",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/delta-vs-united-could-falling-205002667.html",
-    "time": 1793825402,
+    "title": "Delta Air Lines Stocks Rise 4.68% as Oil Retreats Toward $87",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/delta-air-lines-stocks-rise-190340880.html",
+    "time": 1794251020,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "What Happens To American Airlines Stock If Fuel Stays High?",
-    "publisher": "Trefis",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/happens-american-airlines-stock-fuel-191410048.html",
-    "time": 1793819650,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+    "title": "BofA Adjusts Price Target on Delta Air Lines to $100 From $95",
+    "publisher": "MT Newswires",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/bofa-adjusts-price-target-delta-131352705.html",
+    "time": 1794230032,
+    "kind": "analyst",
+    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
    }
   ],
   "LMT": [
    {
-    "title": "Is Lockheed Martin Stock A Real Bargain?",
-    "publisher": "Trefis",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/lockheed-martin-stock-real-bargain-235404482.html",
-    "time": 1794009244,
+    "title": "What Is Lockheed Martin (LMT) Building With Its Nomad UAV And Counter Drone Push?",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/lockheed-martin-lmt-building-nomad-180952256.html",
+    "time": 1794247792,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "Global Counter-Unmanned Aerial Vehicle (C-UAV) Technologies Market Forecast to 2035 | Capitalize on $15.34B Electronic Defense Demand with Lockheed Martin, RTX and Northrop Grumman",
-    "publisher": "GlobeNewswire",
-    "link": "https://finance.yahoo.com/technology/articles/global-counter-unmanned-aerial-vehicle-161400332.html",
-    "time": 1793981640,
-    "kind": "earnings",
-    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+    "title": "Defense Realignment: Lockheed Martin vs. Palantir",
+    "publisher": "24/7 Wall St.",
+    "link": "https://finance.yahoo.com/news/defense-realignment-lockheed-martin-vs-174551942.html",
+    "time": 1794246351,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    },
    {
-    "title": "LMT Trades at a Discount to the Industry: Right Time to Buy the Stock?",
-    "publisher": "Zacks",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/lmt-trades-discount-industry-time-130700562.html",
-    "time": 1793970420,
-    "kind": "deal",
-    "plain": "A deal or partnership can open new markets, but big deals are expensive and don't always pay off. Investors will watch the price paid."
+    "title": "Is Lockheed Martin (LMT) Cheap After Its $694 Million Hypersonic Contract?",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/lockheed-martin-lmt-cheap-694-172022086.html",
+    "time": 1794244822,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "RKLB": [
    {
-    "title": "Rocket Lab Just Built a Space Robot",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/technology/articles/rocket-lab-just-built-space-122700635.html",
-    "time": 1794054420,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   },
-   {
-    "title": "Ahead of Rocket Lab Earnings, Here's What Barchart Data Says Comes Next for RKLB Stock",
-    "publisher": "Barchart",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/ahead-rocket-lab-earnings-heres-183544231.html",
-    "time": 1793990144,
+    "title": "Rocket Lab Q3 Earnings Call Highlights",
+    "publisher": "MarketBeat",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-q3-earnings-call-031435942.html",
+    "time": 1794280475,
     "kind": "earnings",
     "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    },
    {
-    "title": "SpaceX Rises 4% as Tech Stocks Rebound From Post-Election Rout; AST SpaceMobile Sinks 8%, Rocket Lab Gains 2%",
-    "publisher": "24/7 Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-rises-4-tech-stocks-145622731.html",
-    "time": 1793976982,
+    "title": "RKLB Stock Sinks After-Hours On Q3 Earnings Miss, But Neutron Launches Now Fetch $70M – And New Buyers Face A 2030s Wait",
+    "publisher": "Stocktwits",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/rklb-stock-sinks-hours-q3-023023465.html",
+    "time": 1794277823,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+   },
+   {
+    "title": "Rocket Lab (RKLB) Wins NASA Spot In $10 Billion Lunar Delivery Contracts",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-wins-nasa-001548248.html",
+    "time": 1794269748,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
+  "O": [
+   {
+    "title": "Forget Share Price Hype: This Monthly Dividend Stock Fits Warren Buffett’s 10-Year Test",
+    "publisher": "Insider Monkey",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/forget-share-price-hype-monthly-182715237.html",
+    "time": 1794248835,
+    "kind": "cash",
+    "plain": "The company is returning cash to shareholders (or splitting its shares). That usually signals management feels confident."
+   },
+   {
+    "title": "3 Monthly Dividend Stocks That Could Help Pay Your Retirement Bills",
+    "publisher": "24/7 Wall St.",
+    "link": "https://finance.yahoo.com/news/3-monthly-dividend-stocks-could-174758896.html",
+    "time": 1794246478,
+    "kind": "cash",
+    "plain": "The company is returning cash to shareholders (or splitting its shares). That usually signals management feels confident."
+   },
+   {
+    "title": "BMO Capital Adjusts Price Target on Realty Income to $63 From $61",
+    "publisher": "MT Newswires",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/bmo-capital-adjusts-price-target-113423539.html",
+    "time": 1794224063,
+    "kind": "analyst",
+    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
+   }
+  ],
   "DUK": [
+   {
+    "title": "Are Wall Street Analysts Predicting Duke Energy Stock Will Climb or Sink?",
+    "publisher": "Barchart",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-predicting-duke-110813835.html",
+    "time": 1794222493,
+    "kind": "analyst",
+    "plain": "A Wall Street analyst changed their opinion. That can move the price for a day or two, but analysts are often wrong, so it's one view, not a verdict."
+   },
    {
     "title": "Duke Energy (DUK) Stock Looks Fully Valued Despite Its 62% Run",
     "publisher": "Simply Wall St.",
@@ -1626,30 +1748,22 @@
     "time": 1794021270,
     "kind": "earnings",
     "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
-   },
-   {
-    "title": "Duke Energy to stay course on data center-fueled growth plan after ‘historic’ election",
-    "publisher": "Utility Dive",
-    "link": "https://finance.yahoo.com/energy/articles/duke-energy-stay-course-data-180000944.html",
-    "time": 1793988000,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
   "MO": [
    {
-    "title": "Are Strong Earnings Altering The Investment Case For Altria Stock (MO)?",
-    "publisher": "Simply Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/strong-earnings-altering-investment-case-211514965.html",
-    "time": 1793999714,
+    "title": "Can Altria's 64.5% Smokeable Margin Sustain Profit Growth Ahead?",
+    "publisher": "Zacks",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/altrias-64-5-smokeable-margin-125600647.html",
+    "time": 1794228960,
     "kind": "earnings",
     "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
    },
    {
-    "title": "How Much Passive Income $800,000 in Edison, International Paper, Altria and AT&T Pays Each Year",
-    "publisher": "24/7 Wall St.",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/much-passive-income-800-000-184722430.html",
-    "time": 1793990842,
+    "title": "Here's How Much $10,000 in Altria Stock Pays You Each Year",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/heres-much-10-000-altria-191600678.html",
+    "time": 1794165360,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
@@ -1680,16 +1794,6 @@
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
   ],
-  "VTI": [
-   {
-    "title": "VOO vs. VTI: Which Vanguard Fund Is the Better Buy Right Now?",
-    "publisher": "Motley Fool",
-    "link": "https://finance.yahoo.com/markets/stocks/articles/voo-vs-vti-vanguard-fund-134400510.html",
-    "time": 1793627040,
-    "kind": "news",
-    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
-   }
-  ],
   "VOO": [
    {
     "title": "Should You Buy VOO Before the Market Rebounds?",
@@ -1712,6 +1816,32 @@
     "publisher": "Motley Fool",
     "link": "https://finance.yahoo.com/markets/stocks/articles/voo-down-6-high-over-164000634.html",
     "time": 1793983200,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   }
+  ],
+  "QQQ": [
+   {
+    "title": "He Watches the Nasdaq Plunge 5.5% at 63. Claiming Social Security to Avoid Selling Stocks Could Lock In a Smaller Check for Life",
+    "publisher": "24/7 Wall St.",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/watches-nasdaq-plunge-5-5-020723530.html",
+    "time": 1794276443,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "One Bad Day: A levered-QQQ ETF Case Study",
+    "publisher": "etf.com",
+    "link": "https://finance.yahoo.com/markets/options/articles/one-bad-day-levered-qqq-010317731.html",
+    "time": 1794272597,
+    "kind": "news",
+    "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
+   },
+   {
+    "title": "Invesco QQQ (QQQ) Sells Apple and Nvidia on Nov. 5",
+    "publisher": "GuruFocus.com",
+    "link": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-qqq-sells-apple-110438229.html",
+    "time": 1794222278,
     "kind": "news",
     "plain": "Headlines can move a price for a day, but over years, returns follow how the business actually does."
    }
@@ -1742,6 +1872,32 @@
     "plain": "The company is returning cash to shareholders (or splitting its shares). That usually signals management feels confident."
    }
   ],
+  "BTC": [
+   {
+    "title": "Strategy (MSTR) Is Building A Global Bitcoin Bank",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/markets/crypto/articles/strategy-mstr-building-global-bitcoin-021814783.html",
+    "time": 1794277094,
+    "kind": "crypto",
+    "plain": "Crypto prices react fast to headlines about regulation, big buyers and hype. Big moves either way are normal."
+   },
+   {
+    "title": "This Bearish Bitcoin Trade Aims To Profit After Biggest Crypto Hack In History",
+    "publisher": "Investor's Business Daily",
+    "link": "https://finance.yahoo.com/m/66c71cd9-fbdb-3cbf-b039-60c51aa82dce/this-bearish-bitcoin-trade.html",
+    "time": 1794248294,
+    "kind": "earnings",
+    "plain": "Earnings are the company's report card. The stock usually moves on whether results beat or miss what investors expected, not on whether they were \"good\"."
+   },
+   {
+    "title": "Strategy Makes Biggest Bitcoin Purchase Since September, While Bitmine, Strive Slow Down",
+    "publisher": "Stocktwits",
+    "link": "https://finance.yahoo.com/markets/crypto/articles/strategy-makes-biggest-bitcoin-purchase-162319764.html",
+    "time": 1794241399,
+    "kind": "crypto",
+    "plain": "Crypto prices react fast to headlines about regulation, big buyers and hype. Big moves either way are normal."
+   }
+  ],
   "XRP": [
    {
     "title": "What Will 10,000 XRP Be Worth by 2030?",
@@ -1764,24 +1920,6 @@
     "publisher": "24/7 Wall St.",
     "link": "https://finance.yahoo.com/markets/crypto/articles/asked-chatgpt-claude-grok-ai-211737313.html",
     "time": 1793913457,
-    "kind": "crypto",
-    "plain": "Crypto prices react fast to headlines about regulation, big buyers and hype. Big moves either way are normal."
-   }
-  ],
-  "BTC": [
-   {
-    "title": "Bitcoin Has Traded at a Discount on Coinbase for 61 Straight Days. Have U.S. Investors Stopped Buying BTC?",
-    "publisher": "24/7 Wall St.",
-    "link": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-traded-discount-coinbase-61-212903407.html",
-    "time": 1794086943,
-    "kind": "crypto",
-    "plain": "Crypto prices react fast to headlines about regulation, big buyers and hype. Big moves either way are normal."
-   },
-   {
-    "title": "Bitcoin Doesn't Need a Bank, Yet MicroStrategy Wants to Become One",
-    "publisher": "BeInCrypto",
-    "link": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-doesnt-bank-yet-microstrategy-163040888.html",
-    "time": 1794069040,
     "kind": "crypto",
     "plain": "Crypto prices react fast to headlines about regulation, big buyers and hype. Big moves either way are normal."
    }
