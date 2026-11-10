@@ -313,6 +313,82 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
 .pill-closed { background: var(--card-2); color: var(--muted); font-size: 14px; font-weight: 500; padding: 6px 14px; border-radius: 999px; }
 .tag.risk { background: var(--card-2); color: var(--text); border: 1px solid var(--gold); }
 
+/* ---------- Auth ---------- */
+.device.signed-out .appbar, .device.signed-out .screens, .device.signed-out .bnav { display: none; }
+.auth { position: absolute; inset: 0; z-index: 20; background: var(--bg); overflow-y: auto; padding: 24px 28px 28px; }
+.auth-view { min-height: 100%; display: flex; flex-direction: column; }
+#authLanding { justify-content: space-between; text-align: center; padding-top: 18%; }
+.auth-hero .ring.big { width: 64px; height: 64px; border-width: 18px; margin: 0 auto 18px; }
+.brandname { font-family: 'SF Pro Display', -apple-system, system-ui, sans-serif; font-size: 40px; font-weight: 500; letter-spacing: -.02em; }
+.auth-hero .tagline { color: var(--soft); font-size: 18px; line-height: 1.5; margin: 12px auto 0; max-width: 280px; }
+.auth-actions { display: grid; gap: 12px; }
+.auth h2 { font-size: 28px; margin: 10px 0 6px; }
+.auth .back { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); font-size: 18px; align-self: flex-start; }
+.field { display: block; margin: 12px 0 0; }
+.field > span { display: block; font-size: 13.5px; color: var(--muted); margin-bottom: 6px; }
+.field input { width: 100%; border: 1px solid var(--line); background: var(--card); color: var(--text); border-radius: 14px; padding: 14px 16px; font: inherit; font-size: 16px; outline: none; }
+.field input:focus { border-color: var(--gold); }
+.field input.bad { border-color: var(--red); }
+.field small { display: block; color: var(--muted); font-size: 12.5px; margin-top: 6px; }
+.at, .pw { position: relative; display: flex; align-items: center; }
+.at b { position: absolute; left: 16px; color: var(--muted); font-weight: 400; }
+.at input { padding-left: 34px; }
+.pw .show { position: absolute; right: 10px; font-size: 13px; color: var(--gold-text); padding: 6px; }
+.check { display: flex; gap: 10px; align-items: center; margin: 16px 0 4px; color: var(--soft); font-size: 15px; }
+.check input { accent-color: var(--gold); width: 18px; height: 18px; }
+.auth form .btn { margin-top: 10px; }
+.linkish { color: var(--gold-text); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+.demo-note { margin-top: 14px; background: var(--gold-soft); border: 1px solid var(--gold); color: var(--text); border-radius: 14px; padding: 12px 14px; font-size: 14.5px; line-height: 1.45; }
+.invite { margin: 18px auto 0; display: inline-block; background: var(--green-soft); color: var(--green); padding: 8px 14px; border-radius: 999px; font-size: 14px; }
+
+/* ---------- Overview & holdings ---------- */
+.stat .v small.neg { color: var(--red); }
+.stat .n b { font-weight: 500; color: var(--soft); }
+.tile .act { margin-top: 10px; }
+.hrow { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; padding: 14px 16px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; }
+.hrow .grow { flex: 1; min-width: 0; }
+.hrow .tk { font-weight: 500; font-size: 16px; }
+.hrow .nm { color: var(--muted); font-size: 13.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hrow .val { text-align: right; font-size: 16px; }
+.hrow .val small { display: block; font-size: 13px; }
+.up { color: var(--green); } .down { color: var(--red); }
+.own { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px; margin: 14px 0 0; }
+.own .row { display: flex; justify-content: space-between; font-size: 15px; color: var(--soft); padding: 3px 0; }
+.own .row b { color: var(--text); font-weight: 500; }
+.tvlinks { display: flex; gap: 10px; align-items: center; margin: 0 0 14px; }
+.tvlinks a { color: var(--gold-text); font-weight: 500; text-decoration: none; font-size: 15px; }
+.industry { display: inline-block; margin-top: 10px; font-size: 13px; color: var(--soft); background: var(--card-2); border-radius: 999px; padding: 5px 11px; }
+
+/* ---------- Circle ---------- */
+.seg.three { grid-template-columns: repeat(3, 1fr); }
+.twin { border: 1px solid var(--line); border-radius: 22px; padding: 18px 20px; margin-bottom: 14px; }
+.twin .top { display: flex; align-items: center; gap: 12px; }
+.twin .av { width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; font-weight: 500; color: #2a2a2a; flex: none; }
+.twin .who2 { flex: 1; min-width: 0; }
+.twin .who2 b { display: block; font-weight: 500; font-size: 16.5px; }
+.twin .who2 span { color: var(--muted); font-size: 14px; }
+.twin .pctm { text-align: right; }
+.twin .pctm b { display: block; font-size: 26px; font-weight: 500; color: var(--gold-text); font-family: 'SF Pro Display', -apple-system, system-ui, sans-serif; }
+.twin .pctm span { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.twin p { margin: 12px 0 0; color: var(--soft); font-size: 15px; line-height: 1.5; }
+.twin .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.twin .btns { display: flex; gap: 10px; margin-top: 14px; }
+.twin .btns .btn { height: 42px; font-size: 14.5px; }
+.callcard { border: 1px solid var(--line); border-radius: 22px; padding: 18px 20px; margin-bottom: 14px; }
+.callcard h3 { margin: 0 0 4px; font-size: 18px; font-weight: 500; }
+.callcard .nm { color: var(--muted); font-size: 14px; }
+.callbtns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+.callbtns button { height: 48px; border-radius: 14px; border: 1px solid var(--line); font-size: 15.5px; font-weight: 500; }
+.callbtns button.on.upb { background: var(--green-soft); border-color: var(--green); color: var(--green); }
+.callbtns button.on.downb { background: var(--red-soft); border-color: var(--red); color: var(--red); }
+.friendcalls { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; font-size: 13px; color: var(--muted); }
+.friendcalls span { background: var(--card); border-radius: 999px; padding: 4px 10px; }
+.result { margin-top: 12px; border-radius: 12px; padding: 10px 12px; font-size: 14.5px; }
+.result.win { background: var(--green-soft); color: var(--green); } .result.lose { background: var(--red-soft); color: var(--red); }
+.blendbar { display: flex; align-items: center; gap: 10px; background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 14px; padding: 10px 14px; margin: -4px 0 12px; font-size: 14.5px; }
+.blendbar b { font-weight: 500; }
+.blendbar button { margin-left: auto; color: var(--gold-text); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+
 /* ---------- Social ---------- */
 .seg { display: grid; grid-template-columns: 1fr 1fr; background: var(--card-2); border-radius: 999px; padding: 5px; margin: 4px 0 18px; }
 .seg button { height: 48px; border-radius: 999px; color: var(--muted); font-size: 16px; }
@@ -342,14 +418,45 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
 <div class="device" id="device">
   <div class="status"><span>9:41</span><span class="dots">•••</span></div>
 
-  <!-- Welcome -->
-  <div class="welcome" id="welcome">
-    <div class="ring"></div>
-    <div class="hi">welcome back</div>
-    <h2>Charlotte</h2>
-    <p>Your financial picture is ready. Let's see where you stand.</p>
-    <button class="btn primary" data-go="portfolio">see my overview</button>
-    <button class="btn secondary" data-go="ask">chat with Lu</button>
+  <!-- Auth: landing, create account, sign in -->
+  <div class="auth" id="auth" hidden>
+    <div class="auth-view" id="authLanding">
+      <div class="auth-hero">
+        <div class="ring big"></div>
+        <div class="brandname">luma</div>
+        <p class="tagline">Money, explained. Matched to what you're actually into.</p>
+        <div id="inviteNote" class="invite" hidden></div>
+      </div>
+      <div class="auth-actions">
+        <button class="btn primary" data-auth="signup">Create account</button>
+        <button class="btn secondary" data-auth="signin">Sign in</button>
+        <p class="fine">Demo app · no real money moves · not financial advice</p>
+      </div>
+    </div>
+    <form class="auth-view" id="authSignup" hidden novalidate>
+      <button type="button" class="back" data-auth="landing" aria-label="Back">←</button>
+      <h2>Create your account</h2>
+      <p class="sub" style="margin:0">Takes 20 seconds. No risk survey, promise.</p>
+      <label class="field"><span>First name</span><input id="suName" autocomplete="given-name" maxlength="30"></label>
+      <label class="field"><span>Username</span><div class="at"><b>@</b><input id="suUser" autocomplete="username" autocapitalize="off" spellcheck="false" maxlength="20"></div><small>3–20 letters, numbers or _</small></label>
+      <label class="field"><span>Email</span><input id="suEmail" type="email" autocomplete="email"></label>
+      <label class="field"><span>Password</span><div class="pw"><input id="suPass" type="password" autocomplete="new-password"><button type="button" class="show" data-show="suPass">Show</button></div><small id="pwHint">At least 8 characters, including a number.</small></label>
+      <label class="check"><input type="checkbox" id="suKeep"> Keep me signed in on this device</label>
+      <div class="err" id="suErr" role="alert"></div>
+      <button class="btn primary" type="submit">Create account</button>
+      <p class="fine">Already have an account? <button type="button" class="linkish" data-auth="signin">Sign in</button></p>
+    </form>
+    <form class="auth-view" id="authSignin" hidden novalidate>
+      <button type="button" class="back" data-auth="landing" aria-label="Back">←</button>
+      <h2>Welcome back</h2>
+      <label class="field"><span>Username or email</span><input id="siUser" autocomplete="username" autocapitalize="off" spellcheck="false"></label>
+      <label class="field"><span>Password</span><div class="pw"><input id="siPass" type="password" autocomplete="current-password"><button type="button" class="show" data-show="siPass">Show</button></div></label>
+      <label class="check"><input type="checkbox" id="siKeep"> Keep me signed in</label>
+      <div class="err" id="siErr" role="alert"></div>
+      <button class="btn primary" type="submit">Sign in</button>
+      <div class="demo-note">Demo: leave both fields blank and tap <b>Sign in</b> to explore as <b>Charlotte</b>.</div>
+      <p class="fine">New here? <button type="button" class="linkish" data-auth="signup">Create an account</button></p>
+    </form>
   </div>
 
   <header class="appbar">
@@ -405,13 +512,8 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
     <!-- Portfolio / overview -->
     <section class="screen" id="s-portfolio" hidden>
       <h1>Your overview</h1>
-      <p class="sub">AI-powered insights from Plaid-linked accounts + your chats with Lu</p>
-      <div class="tile stat"><div class="badge"><svg class="i" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg></div>
-        <div><div class="k">Your spending trend</div><div class="v display">$2,341 <small>-12%</small></div><div class="n">vs. last month</div></div></div>
-      <div class="tile stat"><div class="badge"><svg class="i" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <div><div class="k">Available to invest</div><div class="v display">$486 <small>+8%</small></div><div class="n">based on your goals</div></div></div>
-      <div class="tile stat"><div class="badge"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div>
-        <div><div class="k">Savings goal progress</div><div class="v display">67% <small>on track</small></div><div class="n">for 12-month target</div></div></div>
+      <p class="sub" id="ovSub">Your Luma wallet and investments, valued at the latest close.</p>
+      <div id="ovTiles"></div>
       <div class="eyebrow"><svg class="i" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg>Personalized for you</div>
       <div id="pfy"></div>
       <div id="savedWrap"></div>
@@ -419,24 +521,30 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
 
     <!-- Social -->
     <section class="screen" id="s-social" hidden>
-      <div class="eyebrow" style="margin-top:8px">Your circle</div>
-      <h1 style="font-size:30px">Money is better together.</h1>
-      <p class="sub">Share progress, not balances. Your dollar amounts stay private.</p>
-      <div class="seg" role="tablist">
-        <button class="on" data-seg="friends">Friends</button>
-        <button data-seg="board">Leaderboard</button>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+        <div class="eyebrow" style="margin:0">Your circle</div>
+        <button class="link" style="margin:0" id="inviteBtn">Invite friends →</button>
       </div>
-      <div id="friends"></div>
-      <div id="board" hidden></div>
+      <h1 style="font-size:30px">Money is better together.</h1>
+      <p class="sub">Share taste, calls and streaks. Never balances.</p>
+      <div class="seg three" role="tablist">
+        <button class="on" data-seg="twins">Taste twins</button>
+        <button data-seg="calls">Call it</button>
+        <button data-seg="moments">Moments</button>
+      </div>
+      <div id="cTwins"></div>
+      <div id="cCalls" hidden></div>
+      <div id="cMoments" hidden></div>
+      <p class="fine" style="margin-top:6px">Demo friends: Maya, Noah, Camila and Jay are sample profiles.</p>
     </section>
   </div>
 
   <nav class="bnav" id="bnav">
     <button data-go="explore"><span class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m15.8 8.2-1.9 5.7-5.7 1.9 1.9-5.7z"/></svg></span>Explore</button>
     <button data-go="ask"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>Ask<span class="dot" id="askDot" hidden></span></button>
-    <button data-go="wallet" class="fab"><span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M3.5 13h5l1.5 2h4l1.5-2h5"/></svg></span>$250</button>
+    <button data-go="wallet" class="fab"><span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M3.5 13h5l1.5 2h4l1.5-2h5"/></svg></span>$0</button>
     <button data-go="portfolio"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 20v-4M8 20v-7M12 20v-5M16 20v-9M20 20V8"/><path d="m4 11 5-4 4 3 7-6"/></svg></span>Portfolio</button>
-    <button data-go="social"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Social</button>
+    <button data-go="social"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Circle</button>
   </nav>
   <div class="sheet-back" id="sheetBack" hidden></div>
   <div class="sheet" id="sheet" role="dialog" aria-modal="true" hidden><button class="grab" id="grab" aria-label="Close"></button><div id="sheetBody"></div></div>
@@ -489,7 +597,7 @@ function marketOpen() {
 }
 function go(name, fromHistory) {
   if (!SCREENS.includes(name)) name = 'explore';
-  $('welcome').hidden = true;
+  if (!SESSION_USER) return;
   if (sheetOpen) closeSheet();
   if (!fromHistory && location.hash.slice(1) !== name) history.pushState(null, '', '#' + name);
   current = name;
@@ -499,7 +607,7 @@ function go(name, fromHistory) {
   const right = $('appbarRight');
   right.innerHTML = name === 'wallet' ? (marketOpen() ? '<span class="pill-open">Market open</span>' : '<span class="pill-closed" title="US stocks trade 9:30am–4pm ET on weekdays. Crypto trades 24/7.">Market closed</span>')
     : name === 'social' ? `<button class="avatar-btn" aria-label="Add friend" data-toast="Invites are a demo in this preview">${ICON.addUser}</button>`
-    : '<button class="avatar-btn" aria-label="Profile" data-profile>C</button>';
+    : `<button class="avatar-btn" aria-label="Profile" data-profile>${initial()}</button>`;
   if (name === 'explore') renderExplore();
   if (name === 'portfolio') renderPortfolio();
   if (name === 'social') renderSocial();
@@ -511,7 +619,7 @@ window.addEventListener('popstate', () => {
   const h = location.hash.slice(1);
   if (sheetOpen) closeSheet();
   if (SCREENS.includes(h)) go(h, true);
-  else { $('welcome').hidden = false; current = null; }
+  else if (SESSION_USER) go('portfolio', true);
 });
 
 /* ---------- Profile summaries ---------- */
@@ -567,6 +675,12 @@ function renderTuned() {
 
 function renderExplore() {
   renderTuned();
+  const bb = $('blendBar'); if (bb) bb.remove();
+  if (BLEND) {
+    const m = tasteMatch(FBY[S.blend]);
+    $('tuned').insertAdjacentHTML('afterend', `<div class="blendbar" id="blendBar"><span>🔀 Blended with <b>${BLEND.name}</b>${m ? ` · ${m.pct}% taste match` : ''}</span><button id="unblend">Stop</button></div>`);
+    $('unblend').onclick = () => { setBlend(null); renderExplore(); toast('Back to just your taste'); };
+  }
   deck = buildDeck();
   const stack = $('stack'); stack.innerHTML = ''; stack.style.height = '';
   document.querySelectorAll('#s-explore .under').forEach(u => u.remove());
@@ -771,13 +885,9 @@ function newsAnswer(text) {
   else out += '\n\nNo major headlines about it this week.';
   return { ticker: t, text: out, suggestions: [`is ${t} risky?`, `more like ${t}`, 'show my matches'] };
 }
-let busy = false;
-function send(text) {
-  text = (text || '').trim(); if (!text || busy) return;
-  busy = true;
-  addMsg('me', text);
-  $('input').value = ''; autosize(); $('send').disabled = true;
-  S.turns++;
+/** Lu's brain for one message: updates the profile and returns the replies (no DOM work). */
+function respond(text) {
+  const out = { msgs: [], sparks: null, after: null };
   // 1) Risk dial changes ("a bit safer", "set my risk to 4", "what's my risk level?")
   // 2) Questions get a plain-English answer and don't change the profile
   // 3) Everything else is profile talk
@@ -791,30 +901,44 @@ function send(text) {
     ch = apply(f);
     if (ri) rk = applyRisk(ri);
   }
+  if (ri) {
+    if (ri.type === 'query') out.msgs.push([riskQueryReply(), { dial: S.risk }]);
+    else {
+      const other = ch && (ch.likes.length || ch.dislikes.length || ch.up.length || ch.down.length || ch.kw.length) ? reply(f, ch).text.split('\n\n')[0] + '\n\n' : '';
+      out.msgs.push([other + riskReply(rk.before, rk.after, deckBefore), { dial: rk.after, cta: buildDeck().length > 0 }]);
+    }
+    const l = S.risk == null ? 3 : riskLevel(S.risk);
+    out.sparks = [l > 1 ? 'a bit safer' : null, l < 5 ? 'a bit riskier' : null, 'show my matches', ri.type === 'query' ? 'reset my risk' : 'what\'s my risk level?'].filter(Boolean);
+    return out;
+  }
+  if (ans) { out.msgs.push([ans.text, { ticker: ans.ticker, term: ans.term }]); out.sparks = ans.suggestions; return out; }
+  if (f.wantsDeck && buildDeck().length && !ch.likes.length && !ch.up.length && !ch.kw.length) {
+    out.msgs.push(['Pulling up your matches now. Come back anytime to tell me more.', {}]);
+    out.after = () => setTimeout(() => go('explore'), 500);
+    return out;
+  }
+  const r = reply(f, ch);
+  out.msgs.push([r.text, { cta: r.cta, dial: f.riskWords.length && S.risk != null ? S.risk : undefined }]);
+  out.sparks = nextSuggestions(ch);
+  return out;
+}
+let busy = false;
+function send(text) {
+  text = (text || '').trim(); if (!text || busy) return;
+  busy = true;
+  addMsg('me', text);
+  $('input').value = ''; autosize(); $('send').disabled = true;
+  S.turns++;
+  const out = respond(text);
   save(); renderLearned();
   const w = document.createElement('div'); w.className = 'msg lu'; w.innerHTML = '<span class="typing"><i></i><i></i><i></i></span>';
   thread.appendChild(w); thread.scrollTop = thread.scrollHeight;
   setTimeout(() => {
     w.remove();
-    if (ri) {
-      if (ri.type === 'query') addMsg('ai', riskQueryReply(), { dial: S.risk });
-      else {
-        const other = ch && (ch.likes.length || ch.dislikes.length || ch.up.length || ch.down.length) ? reply(f, ch).text.split('\n\n')[0] + '\n\n' : '';
-        addMsg('ai', other + riskReply(rk.before, rk.after, deckBefore), { dial: rk.after, cta: buildDeck().length > 0 });
-      }
-      const l = S.risk == null ? 3 : riskLevel(S.risk);
-      renderSparks([l > 1 ? 'a bit safer' : null, l < 5 ? 'a bit riskier' : null, 'show my matches', ri.type === 'query' ? 'reset my risk' : 'what\'s my risk level?'].filter(Boolean));
-      busy = false; return;
-    }
-    if (ans) {
-      addMsg('ai', ans.text, { ticker: ans.ticker, term: ans.term });
-      renderSparks(ans.suggestions); busy = false; return;
-    }
-    if (f.wantsDeck && buildDeck().length && !ch.likes.length && !ch.up.length) {
-      addMsg('ai', 'Pulling up your matches now. Come back anytime to tell me more.'); busy = false; setTimeout(() => go('explore'), 500); return;
-    }
-    const r = reply(f, ch);
-    addMsg('ai', r.text, { cta: r.cta, dial: f.riskWords.length && S.risk != null ? S.risk : undefined }); renderSparks(nextSuggestions(ch)); busy = false;
+    out.msgs.forEach(([t, o]) => addMsg('ai', t, o));
+    if (out.sparks) renderSparks(out.sparks);
+    busy = false;
+    if (out.after) out.after();
   }, 450 + Math.min(900, text.length * 12));
 }
 function autosize() { const i = $('input'); i.style.height = 'auto'; i.style.height = Math.min(120, i.scrollHeight) + 'px'; }
@@ -828,6 +952,7 @@ function riskStyle(r) {
   return r < 1.8 ? 'a very steady style' : r < 2.6 ? 'a safer style' : r < 3.4 ? 'a balanced style' : r < 4.2 ? 'a growth-focused style' : 'a high-risk, high-reward style';
 }
 function renderPortfolio() {
+  renderOverview();
   const d = buildDeck();
   const topThemes = Object.entries(S.weights).filter(([, v]) => v >= 1).sort((a, b) => b[1] - a[1]).slice(0, 2).map(([k]) => lc(labelOf(k)));
   const cards = [];
@@ -846,14 +971,15 @@ function renderPortfolio() {
   });
   renderFeed(box);
   const sw = $('savedWrap'); sw.innerHTML = '';
-  const holdings = Object.entries(S.holdings).filter(([t, v]) => v > 0 && BY_T[t]);
+  const holdings = Object.keys(S.holdings).filter(t => BY_T[t] && S.holdings[t] && S.holdings[t].cost > 0);
   if (holdings.length) {
-    const total = holdings.reduce((x, [, v]) => x + v, 0);
-    sw.insertAdjacentHTML('beforeend', `<div class="eyebrow">Your picks · ${usd(total)} invested</div><div class="rowlist" id="holdList"></div>`);
-    holdings.sort((a, b) => b[1] - a[1]).forEach(([t, v]) => {
-      const s = BY_T[t];
-      const r = document.createElement('button'); r.className = 'srow'; r.style.textAlign = 'left'; r.style.width = '100%';
-      r.innerHTML = `<div class="grow"><div class="tk">${t}</div><div class="nm">${escHTML(s.name)}</div></div><span style="font-size:16px">${usd(v)}</span>`;
+    const tot = portfolioTotals();
+    sw.insertAdjacentHTML('beforeend', `<div class="eyebrow">Your picks · ${usd(tot.value)}</div><div class="rowlist" id="holdList"></div>`);
+    holdings.sort((a, b) => holdingValue(b) - holdingValue(a)).forEach(t => {
+      const s = BY_T[t], h = S.holdings[t], v = holdingValue(t), g = v - h.cost;
+      const r = document.createElement('button'); r.className = 'hrow';
+      r.innerHTML = `<div class="grow"><div class="tk">${t}</div><div class="nm">${escHTML(s.name)}${h.shares != null ? ` · ${fmtShares(h.shares)} sh` : ''}</div></div>
+        <div class="val">${usd(v)}<small class="${g >= 0 ? 'up' : 'down'}">${signedUsd(g)} (${signedPct(h.cost ? g / h.cost : 0)})</small></div>`;
       r.onclick = () => stockSheet(t);
       $('holdList').appendChild(r);
     });
@@ -870,6 +996,51 @@ function renderPortfolio() {
   });
 }
 
+/* ---------- Overview: every number comes from the ledger or the linked bank ---------- */
+const BANK_TEMPLATE = { institution: 'Chase', mask: '4821', income: 3200, spendThis: 2341, spendLast: 2660, toSavings: 373, goal: 6000, saved: 4020, goalStart: '2026-03-01', goalMonths: 12 };
+function bankMath(b) {
+  const now = new Date(), start = new Date(b.goalStart + 'T12:00:00');
+  const months = Math.max(0, Math.min(b.goalMonths, (now.getFullYear() - start.getFullYear()) * 12 + now.getMonth() - start.getMonth()));
+  const expected = b.goal * months / b.goalMonths;
+  return {
+    available: b.income - b.spendThis - b.toSavings,
+    spendChange: (b.spendThis - b.spendLast) / b.spendLast,
+    progress: b.saved / b.goal, months, expected, onTrack: b.saved >= expected * 0.97
+  };
+}
+function tile(icon, k, v, small, smallCls, n, extra = '') {
+  return `<div class="tile stat"><div class="badge"><svg class="i" viewBox="0 0 24 24">${icon}</svg></div><div style="flex:1;min-width:0"><div class="k">${k}</div><div class="v display">${v}${small ? ` <small class="${smallCls || ''}">${small}</small>` : ''}</div><div class="n">${n}</div>${extra}</div></div>`;
+}
+const IC = {
+  wallet: '<rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17"/>',
+  trend: '<path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/>',
+  dollar: '<path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',
+  target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
+  bank: '<path d="M3 10h18L12 4zM5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/>'
+};
+function renderOverview() {
+  const T = portfolioTotals();
+  const html = [];
+  html.push(tile(IC.wallet, 'Total on Luma', usd(T.total), null, null, `<b>${usd(T.cash)}</b> cash + <b>${usd(T.value)}</b> invested`));
+  if (T.cost > 0) html.push(tile(IC.trend, 'Your investments', usd(T.value), signedPct(T.gain / T.cost), T.gain >= 0 ? '' : 'neg',
+    `${signedUsd(T.gain)} all-time on ${usd(T.cost)} put in · ${RISK_DOC ? `${asOfLabel()} close` : 'cost basis'}`));
+  if (S.bank) {
+    const b = S.bank, m = bankMath(b);
+    html.push(tile(IC.dollar, 'Spending this month', usd0(b.spendThis), signedPct(m.spendChange), m.spendChange <= 0 ? '' : 'neg', `vs ${usd0(b.spendLast)} last month · ${bankLabel()}`));
+    html.push(tile(IC.trend, 'Available to invest', usd0(m.available), 'this month', '', `${usd0(b.income)} income − ${usd0(b.spendThis)} spending − ${usd0(b.toSavings)} to savings`,
+      `<button class="link act" data-go="wallet">Move some to Luma →</button>`));
+    html.push(tile(IC.target, 'Savings goal', `${Math.round(m.progress * 100)}%`, m.onTrack ? 'on track' : 'behind', m.onTrack ? '' : 'neg',
+      `${usd0(b.saved)} of ${usd0(b.goal)} · month ${m.months} of ${b.goalMonths} (target by now: ${usd0(m.expected)})`));
+    $('ovSub').textContent = `Live from your Luma wallet + ${bankLabel()} via Plaid (demo data).`;
+  } else {
+    html.push(tile(IC.bank, 'Connect your bank', 'Not linked', null, null, 'See spending, what you can afford to invest and savings progress.',
+      `<button class="link act" id="linkBank">Connect with Plaid (demo) →</button>`));
+    $('ovSub').textContent = 'Your Luma wallet and investments, valued at the latest close.';
+  }
+  $('ovTiles').innerHTML = html.join('');
+  if ($('linkBank')) $('linkBank').onclick = () => { S.bank = Object.assign({}, BANK_TEMPLATE); save(); renderPortfolio(); toast('Demo bank connected (sample numbers)'); };
+}
+
 /* ---------- Personalized feed: plain-English updates ---------- */
 let NEWS_DOC = null, feedAll = false;
 const ago = sec => { const m = Math.max(1, Math.round((Date.now() / 1000 - sec) / 60)); return m < 60 ? `${m}m ago` : m < 1440 ? `${Math.round(m / 60)}h ago` : `${Math.round(m / 1440)}d ago`; };
@@ -878,7 +1049,7 @@ const signed = (x, d = 1) => `${x >= 0 ? '+' : '−'}${Math.abs(x * 100).toFixed
 function trackedTickers() {
   const out = [];
   const add = t => { if (BY_T[t] && !BY_T[t].unavailable && !out.includes(t)) out.push(t); };
-  Object.keys(S.holdings || {}).filter(t => S.holdings[t] > 0).forEach(add);
+  Object.keys(S.holdings || {}).filter(t => S.holdings[t] && S.holdings[t].cost > 0).forEach(add);
   Object.entries(S.swiped).filter(([, v]) => v === 'like').forEach(([t]) => add(t));
   S.mentions.forEach(add);
   buildDeck().slice(0, 5).forEach(s => add(s.t));
@@ -903,14 +1074,14 @@ function buildFeed() {
   const tracked = trackedTickers();
   tracked.forEach((t, i) => {
     const s = BY_T[t], d = s.live;
-    const why = S.holdings[t] > 0 ? 'You own this' : S.swiped[t] === 'like' ? 'You saved this' : S.mentions.includes(t) ? 'You mentioned this' : 'In your matches';
+    const why = S.holdings[t] ? 'You own this' : S.swiped[t] === 'like' ? 'You saved this' : S.mentions.includes(t) ? 'You mentioned this' : 'In your matches';
     if (d && d.chg1d != null) {
       const daily = d.vol / Math.sqrt(d.crypto ? 365 : 252), z = Math.abs(d.chg1d) / daily;
       let extra = '';
       if (d.bars && d.bars[d.bars.length - 1] >= 0.98) extra = ' It\'s trading near its highest price of the past year.';
       else if (d.bars && d.bars[d.bars.length - 1] <= 0.05) extra = ' It\'s near its lowest price of the past year.';
-      if (z >= 1 || S.holdings[t] > 0 || i < 2) items.push({ t, kind: why, title: `${s.name} ${d.chg1d >= 0 ? 'rose' : 'fell'} ${Math.abs(d.chg1d * 100).toFixed(1)}% on ${dayName()}`,
-        body: moveContext(s) + extra, chg: d.chg1d, rank: 50 + z * 10 + (S.holdings[t] > 0 ? 20 : 0) - i });
+      if (z >= 1 || S.holdings[t] || i < 2) items.push({ t, kind: why, title: `${s.name} ${d.chg1d >= 0 ? 'rose' : 'fell'} ${Math.abs(d.chg1d * 100).toFixed(1)}% on ${dayName()}`,
+        body: moveContext(s) + extra, chg: d.chg1d, rank: 50 + z * 10 + (S.holdings[t] ? 20 : 0) - i });
     }
     ((NEWS_DOC && NEWS_DOC.items[t]) || []).slice(0, 2).forEach((n, j) => items.push({
       t, kind: n.kind === 'news' || n.kind === 'crypto' ? 'News' : n.kind[0].toUpperCase() + n.kind.slice(1), title: n.title, means: n.plain,
@@ -942,14 +1113,41 @@ function renderFeed(box) {
 }
 
 /* ---------- Money ---------- */
-const today = () => new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-const usd = n => '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-if (S.cash == null) S.cash = 250;
-if (!S.holdings) S.holdings = { VTI: 50 };
-if (!S.activity) S.activity = [
-  { kind: 'deposit', amt: 250, note: 'Chase ••4821', pending: true, date: 'May 18' },
-  { kind: 'invest', t: 'VTI', amt: 50, date: 'May 16' }
-];
+// One ledger drives every number: cash = deposits − buys + sells − withdrawals.
+// Holdings are shares bought at the real price of the day, valued at the latest close.
+const today = () => new Date().toLocaleDateString('en-CA'); // YYYY-MM-DD
+const fmtDate = d => /^\d{4}-\d{2}-\d{2}$/.test(d || '') ? new Date(d + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : (d || '');
+const usd = n => (n < 0 ? '−' : '') + '$' + Math.abs(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+const usd0 = n => (n < 0 ? '−' : '') + '$' + Math.round(Math.abs(n)).toLocaleString('en-US');
+const signedUsd = n => (n >= 0 ? '+' : '−') + '$' + Math.abs(n).toFixed(2);
+const signedPct = x => (x >= 0 ? '+' : '−') + Math.abs(x * 100).toFixed(1) + '%';
+const fmtShares = n => n >= 1 ? n.toFixed(3) : n.toFixed(4);
+const r2 = n => Math.round(n * 100) / 100;
+function ensureMoney() {
+  if (S.cash == null) S.cash = 0;
+  if (!S.holdings) S.holdings = {};
+  if (!S.activity) S.activity = [];
+  // older saves stored dollars per ticker; convert to { shares, cost }
+  for (const [t, v] of Object.entries(S.holdings)) if (typeof v === 'number') S.holdings[t] = { shares: null, cost: v };
+}
+const livePrice = t => (BY_T[t] && BY_T[t].live) ? BY_T[t].live.price : null;
+/** Real close for a past date: the month-end close of that month from the daily data file. */
+function priceOn(t, iso) {
+  const h = BY_T[t] && BY_T[t].live && BY_T[t].live.hist;
+  if (!h || !h.length) return livePrice(t);
+  const hit = h.find(([d]) => d >= iso);
+  return hit ? hit[1] : livePrice(t);
+}
+function holdingValue(t) {
+  const h = S.holdings[t]; if (!h) return 0;
+  const p = livePrice(t);
+  return h.shares != null && p ? h.shares * p : h.cost;
+}
+function portfolioTotals() {
+  let value = 0, cost = 0;
+  for (const t of Object.keys(S.holdings)) { value += holdingValue(t); cost += S.holdings[t].cost; }
+  return { value, cost, gain: value - cost, cash: S.cash, total: value + S.cash };
+}
 function refreshMoney() {
   const label = document.querySelector('#bnav .fab');
   label.lastChild.textContent = '$' + Math.round(S.cash);
@@ -960,17 +1158,18 @@ function renderWallet() {
   const pending = pendingDeposits();
   $('withdrawable').textContent = usd(withdrawable());
   const rows = S.activity.slice(0, showAll ? 50 : 4).map(a => {
-    const dep = a.kind === 'deposit', wd = a.kind === 'withdraw', sub_ = a.kind === 'premium';
-    const icon = dep ? '<path d="M17 7 7 17M17 17H7V7"/>' : sub_ ? '<path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/>' : '<path d="M7 17 17 7M7 7h10v10"/>';
-    const title = dep ? 'Instant deposit' : wd ? (a.speed === 'instant' ? 'Instant withdrawal' : 'Withdrawal') : sub_ ? CONFIG.premium.name : 'Investment';
-    const sub = dep ? `${a.note} · ${a.pending ? 'Pending clearance' : a.date}`
-      : wd ? (a.speed === 'instant' ? `To Chase ••4821 · ${usd(a.fee)} fee · ${a.date}` : `To Chase ••4821 · ${a.pending ? 'Arrives in 1–3 business days' : a.date}`)
-      : sub_ ? `Monthly plan · ${a.date}` : `${a.t} · ${a.date}`;
+    const dep = a.kind === 'deposit', wd = a.kind === 'withdraw', sub_ = a.kind === 'premium', sell = a.kind === 'sell';
+    const icon = dep || sell ? '<path d="M17 7 7 17M17 17H7V7"/>' : sub_ ? '<path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/>' : '<path d="M7 17 17 7M7 7h10v10"/>';
+    const title = dep ? 'Instant deposit' : wd ? (a.speed === 'instant' ? 'Instant withdrawal' : 'Withdrawal') : sub_ ? CONFIG.premium.name : sell ? `Sold ${a.t}` : `Bought ${a.t}`;
+    const trade = a.shares != null && a.price ? ` · ${fmtShares(a.shares)} sh @ ${usd(a.price)}` : '';
+    const sub = dep ? `${a.note} · ${a.pending ? 'Pending clearance' : fmtDate(a.date)}`
+      : wd ? (a.speed === 'instant' ? `To ${bankLabel()} · ${usd(a.fee)} fee · ${fmtDate(a.date)}` : `To ${bankLabel()} · ${a.pending ? 'Arrives in 1–3 business days' : fmtDate(a.date)}`)
+      : sub_ ? `Monthly plan · charged to card · ${fmtDate(a.date)}` : `${fmtDate(a.date)}${trade}`;
     return `<div class="mv"><div class="c"><svg class="i" viewBox="0 0 24 24" style="width:18px">${icon}</svg></div>
       <div class="grow"><b>${title}${(dep || wd) && a.pending ? ' <span class="pend">PENDING</span>' : ''}</b><span class="d">${escHTML(sub)}</span></div>
-      <div class="amt${dep ? ' pos' : ''}">${dep ? '+' : '−'}${usd(a.amt)}</div></div>`;
+      <div class="amt${dep || sell ? ' pos' : ''}">${sub_ ? '' : dep || sell ? '+' : '−'}${sub_ ? usd(a.amt) : usd(a.amt)}</div></div>`;
   }).join('');
-  $('activity').innerHTML = rows;
+  $('activity').innerHTML = rows || '<p class="sub" style="padding:14px 0">No money moves yet. Deposit to get started.</p>';
   $('clearBtn').hidden = !S.activity.some(a => a.pending);
   $('seeAll').textContent = S.activity.length > 4 ? (showAll ? 'Show less' : 'See all') : '';
 }
@@ -991,7 +1190,7 @@ function bindMoneyInput(body, onChange) {
   onChange();
 }
 
-$('depositBtn').onclick = () => openSheet(`<h2>Deposit</h2><p class="about" style="margin-top:8px">From Chase ••4821. Deposits are free and usable right away; they clear in 1–3 business days.</p>
+$('depositBtn').onclick = () => openSheet(`<h2>Deposit</h2><p class="about" style="margin-top:8px">From ${bankLabel()}. Deposits are free and usable right away; they clear in 1–3 business days.</p>
   <div class="invest" style="margin-top:16px">${moneyInput([{ v: 25, label: '$25' }, { v: 50, label: '$50' }, { v: 100, label: '$100' }], 50)}
   <button class="btn primary" id="amtGo">Deposit</button><div class="fine">Preview: no bank is connected yet, so no real money moves.</div></div>`, body => {
   const go_ = $('amtGo');
@@ -1003,7 +1202,7 @@ $('depositBtn').onclick = () => openSheet(`<h2>Deposit</h2><p class="about" styl
   });
   go_.onclick = () => {
     const a = parseAmt($('amtIn').value); if (a < 1 || a > 5000) return;
-    S.cash += a; S.activity.unshift({ kind: 'deposit', amt: a, note: 'Chase ••4821', pending: true, date: today() });
+    S.cash = r2(S.cash + a); S.activity.unshift({ kind: 'deposit', amt: a, note: bankLabel(), pending: true, date: today() });
     save(); closeSheet(); refreshMoney(); toast(`Deposited ${usd(a)}`);
   };
 });
@@ -1021,7 +1220,7 @@ $('withdrawBtn').onclick = () => {
   }
   const pctLabel = Math.round(CONFIG.instantWithdrawFeeRate * 1000) / 10 + '%';
   let speed = 'standard';
-  openSheet(`<h2>Withdraw</h2><p class="about" style="margin-top:8px">To Chase ••4821 · ${usd(max)} available</p>
+  openSheet(`<h2>Withdraw</h2><p class="about" style="margin-top:8px">To ${bankLabel()} · ${usd(max)} available</p>
     <div class="invest" style="margin-top:16px">${moneyInput([{ v: Math.min(25, max), label: '$' + Math.min(25, max) }, { v: Math.min(50, max), label: '$' + Math.min(50, max) }, { v: max, label: 'All' }].filter((c, i, arr) => arr.findIndex(x => x.v === c.v) === i), Math.min(50, max))}
     <div class="speed" role="radiogroup">
       <label class="on" data-speed="standard"><input type="radio" name="spd" checked><div><b>Standard</b><small>1–3 business days</small></div><span class="fee">Free</span></label>
@@ -1057,14 +1256,34 @@ $('withdrawBtn').onclick = () => {
     };
   });
 };
-function invest(t, amt) {
+function invest(t, amt, date) {
   if (!(amt >= 1)) { toast('Minimum investment is $1.'); return false; }
-  if (amt > S.cash) { toast('Not enough in your wallet. Deposit first.'); return false; }
-  S.cash = Math.round((S.cash - amt) * 100) / 100; S.holdings[t] = (S.holdings[t] || 0) + amt;
-  S.activity.unshift({ kind: 'invest', t, amt, date: today() });
+  if (amt > S.cash + 1e-9) { toast('Not enough in your wallet. Deposit first.'); return false; }
+  const price = date ? priceOn(t, date) : livePrice(t);
+  const shares = price ? amt / price : null;
+  const h = S.holdings[t] || { shares: 0, cost: 0 };
+  S.holdings[t] = { shares: shares != null && h.shares != null ? h.shares + shares : null, cost: r2(h.cost + amt) };
+  S.cash = r2(S.cash - amt);
+  S.activity.unshift({ kind: 'buy', t, amt, shares, price, date: date || today() });
   if (S.swiped[t] !== 'like') { S.swiped[t] = 'like'; S.history.push(t); }
   save(); refreshMoney(); return true;
 }
+function sell(t, amt) {
+  const h = S.holdings[t]; if (!h) return false;
+  const value = holdingValue(t);
+  if (!(amt >= 1) && amt < value) { toast('Minimum sale is $1.'); return false; }
+  if (amt > value + 0.005) { toast(`You only have ${usd(value)} in ${t}.`); return false; }
+  const all = amt >= value - 0.005, frac = all ? 1 : amt / value;
+  const price = livePrice(t);
+  const sharesSold = h.shares != null ? h.shares * frac : null;
+  if (all) delete S.holdings[t];
+  else S.holdings[t] = { shares: h.shares != null ? h.shares - sharesSold : null, cost: r2(h.cost * (1 - frac)) };
+  const proceeds = r2(all ? value : amt);
+  S.cash = r2(S.cash + proceeds);
+  S.activity.unshift({ kind: 'sell', t, amt: proceeds, shares: sharesSold, price, date: today() });
+  save(); refreshMoney(); return true;
+}
+const bankLabel = () => S.bank ? `${S.bank.institution} ••${S.bank.mask}` : 'your bank';
 
 /* ---------- Sheet ---------- */
 let sheetOpen = false;
@@ -1111,6 +1330,8 @@ function stockSheet(t) {
   const meter = [1,2,3,4,5].map(i => `<i class="${i <= s.risk ? 'on' : ''}"></i>`).join('');
   const why = whySentence(s);
   const held = S.holdings[t];
+  const hv = held ? holdingValue(t) : 0, hg = held ? hv - held.cost : 0;
+  const tv = (s.live && s.live.tv) || s.t;
   let amt = 25;
   openSheet(`
     <div class="head" style="display:flex;justify-content:space-between;align-items:flex-start">
@@ -1122,6 +1343,7 @@ function stockSheet(t) {
     <div class="fine" style="text-align:right;margin-top:6px">${s.live ? `past 12 months · ${asOfLabel()} close` : 'simulated trend · not live prices'}</div>
     <div id="tvSlot"></div>
     <p class="about">${escHTML(s.blurb)}</p>
+    ${s.industry ? `<span class="industry">${escHTML(s.sector ? s.sector + ' · ' : '')}${escHTML(s.industry)}</span>` : ''}
     ${why !== s.blurb ? `<div class="why"><h4>WHY THIS MATCHES YOU</h4><p>${escHTML(why)}</p></div>` : ''}
     <div class="facts">
       <div class="fact"><span>Risk <button class="q" data-term="volatility" aria-label="What is risk?">?</button></span><b>${RISK_LABEL[s.risk][0].toUpperCase() + RISK_LABEL[s.risk].slice(1)}</b><div class="meter">${meter}</div></div>
@@ -1134,7 +1356,8 @@ function stockSheet(t) {
       <div class="fact"><span>Beta <button class="q" data-term="volatility" aria-label="What is beta?">?</button></span><b>${s.live.beta.toFixed(2)}</b></div>
     </div>
     <p class="fine" style="text-align:left;margin:-6px 0 14px">Risk ${s.risk}/5 is calculated from real daily prices over the past year (${asOfLabel()} close)${s.estRisk != null && s.estRisk !== s.risk ? `. Lu's earlier estimate was ${s.estRisk}/5` : ''}.</p>
-    <button class="btn secondary sm" id="tvBtn" style="width:100%;margin-bottom:14px">Show live chart (TradingView)</button>` : ''}
+    <button class="btn secondary sm" id="tvBtn" style="width:100%;margin-bottom:10px">Live chart + company profile (TradingView)</button>` : ''}
+    <div class="tvlinks"><a href="https://www.tradingview.com/symbols/${escHTML(tv.replace(':', '-'))}/" target="_blank" rel="noopener noreferrer">Open ${escHTML(tv)} on TradingView ↗</a></div>
     <div class="invest">
       <div class="k">Invest from your ${usd(S.cash)} wallet · buy any amount</div>
       <div class="amts">${[10, 25, 50].map(a => `<button data-amt="${a}" class="${a === amt ? 'on' : ''}">$${a}</button>`).join('')}<button data-amt="other">Other</button></div>
@@ -1142,7 +1365,11 @@ function stockSheet(t) {
       <button class="btn primary" id="investGo">Invest $${amt} in ${s.t}</button>
       <div class="fine">Preview: orders aren't sent to a broker yet. Not financial advice.</div>
     </div>
-    ${held ? `<div class="held">You have ${usd(held)} in ${s.t}.</div>` : ''}
+    ${held ? `<div class="own"><div class="row"><span>You own</span><b>${held.shares != null ? fmtShares(held.shares) + ' shares' : s.t}</b></div>
+      <div class="row"><span>Worth now</span><b>${usd(hv)}</b></div>
+      <div class="row"><span>You put in</span><b>${usd(held.cost)}</b></div>
+      <div class="row"><span>Gain / loss</span><b class="${hg >= 0 ? 'up' : 'down'}">${signedUsd(hg)} (${signedPct(held.cost ? hg / held.cost : 0)})</b></div>
+      <div class="amts" style="margin-top:10px">${[10, 25].filter(a => a < hv).map(a => `<button data-sell="${a}">Sell $${a}</button>`).join('')}<button data-sell="all">Sell all</button></div></div>` : ''}
     <button class="btn secondary" id="askLu" style="margin-top:14px">Ask Lu about ${s.t}</button>`, body => {
     body.querySelectorAll('[data-amt]').forEach(b => b.onclick = () => {
       body.querySelectorAll('[data-amt]').forEach(x => x.classList.toggle('on', x === b));
@@ -1158,7 +1385,14 @@ function stockSheet(t) {
       if (current === 'explore') renderExplore(); if (current === 'portfolio') renderPortfolio();
     };
     $('askLu').onclick = () => { closeSheet(); go('ask'); setTimeout(() => send(`tell me about ${t}`), 250); };
-    if ($('tvBtn')) $('tvBtn').onclick = () => { $('tvBtn').remove(); tradingViewWidget($('tvSlot'), s.t); };
+    if ($('tvBtn')) $('tvBtn').onclick = () => { $('tvBtn').remove(); tradingViewWidget($('tvSlot'), tv); };
+    body.querySelectorAll('[data-sell]').forEach(b => b.onclick = () => {
+      const v = holdingValue(t), a = b.dataset.sell === 'all' ? v : +b.dataset.sell;
+      if (b.dataset.sell === 'all' && !confirm(`Sell all of your ${t} for about ${usd(v)}?`)) return;
+      if (!sell(t, a)) return;
+      closeSheet(); toast(`Sold ${usd(Math.min(a, v))} of ${t}. Cash is in your wallet.`);
+      if (current === 'portfolio') renderPortfolio(); if (current === 'explore') renderExplore();
+    });
   });
 }
 
@@ -1230,68 +1464,188 @@ try {
 /* ---------- Profile sheet ---------- */
 function profileSheet() {
   const tags = profileTags();
-  openSheet(`<div style="display:flex;align-items:center;gap:14px"><div class="avatar-btn" style="width:56px;height:56px;font-size:20px">C</div><div><h2 style="font-size:22px">Charlotte</h2><div class="nm">Plaid: Chase ••4821 linked</div></div></div>
+  const P = S.profile || {};
+  openSheet(`<div style="display:flex;align-items:center;gap:14px"><div class="avatar-btn" style="width:56px;height:56px;font-size:20px">${initial()}</div><div><h2 style="font-size:22px">${escHTML(P.name || '')}</h2><div class="nm">@${escHTML(P.username || '')}${P.demo ? ' · demo account' : ''} · ${S.bank ? `${bankLabel()} linked` : 'no bank linked'}</div></div></div>
     <div class="eyebrow">What Lu knows about you</div>
     <div class="tuned" style="margin:0">${tags.length ? tags.map(t => `<span class="tag${t.neg ? ' neg' : ''}">${escHTML(t.text)}</span>`).join('') : '<span class="nm">Nothing yet. Chat with Lu to get started.</span>'}</div>
     <p class="nm" style="margin:12px 0 0">Lu learns this from your chats and swipes. No survey, and you can edit it anytime in Ask.</p>
     <div class="eyebrow">Plan</div>
     <div class="planrow">${S.premium
-      ? `<div><b>${CONFIG.premium.name} <span class="premium-badge">ACTIVE</span></b><small>Unlimited swipes · since ${S.premium.since}</small></div><button class="link" style="margin:0" id="cancelPlan">Cancel</button>`
+      ? `<div><b>${CONFIG.premium.name} <span class="premium-badge">ACTIVE</span></b><small>Unlimited swipes · since ${fmtDate(S.premium.since)}</small></div><button class="link" style="margin:0" id="cancelPlan">Cancel</button>`
       : `<div><b>Free</b><small>${swipesLeft()} of ${CONFIG.freeRightSwipesPerDay} saves left today</small></div><button class="link" style="margin:0" id="upgrade">Upgrade →</button>`}</div>
     <div class="planrow"><div><b>Fees paid</b><small>Instant withdrawals (${Math.round(CONFIG.instantWithdrawFeeRate * 100)}%)</small></div><span>${usd(S.feesPaid || 0)}</span></div>
-    <button class="btn secondary" id="resetDemo" style="margin-top:22px">Reset app data</button>`, () => {
+    <button class="btn primary" id="signOut" style="margin-top:22px">Sign out</button>
+    <button class="btn secondary" id="resetDemo" style="margin-top:10px">${P.demo ? 'Reset demo account' : 'Reset my data'}</button>`, () => {
+    $('signOut').onclick = signOut;
     if ($('upgrade')) $('upgrade').onclick = () => paywall(false);
     if ($('cancelPlan')) $('cancelPlan').onclick = () => { if (!confirm(`Cancel ${CONFIG.premium.name}? You'll go back to ${CONFIG.freeRightSwipesPerDay} free saves a day.`)) return; S.premium = null; save(); closeSheet(); toast('Premium cancelled'); if (current === 'explore') renderExplore(); };
     $('resetDemo').onclick = () => {
-      if (!confirm('Reset Luma? This clears your chat, matches, wallet history and plan on this device.')) return;
-      try { localStorage.removeItem('luma.v2'); } catch (e) {}
+      if (!confirm(P.demo ? 'Reset the demo? Charlotte goes back to her starting point.' : 'Reset your Luma data? This clears your chat, matches, wallet history and plan on this device.')) return;
+      try { localStorage.removeItem(STORE_KEY); } catch (e) {}
       location.reload();
     };
   });
 }
 document.addEventListener('click', e => { if (e.target.closest('[data-profile]')) profileSheet(); });
 
-/* ---------- Social ---------- */
+/* ---------- Circle: taste twins, blends, call it, moments ---------- */
+// Demo friends with Lu-style taste profiles. Nothing here ever shows dollar amounts.
 const FRIENDS = [
-  { n: 'Maya Chen', i: 'MC', c: '#e2dcf7', t: '12m ago', g: '+8.4%', a: 'added VTI to her picks' },
-  { n: 'Noah Williams', i: 'NW', c: '#d9ece4', t: '1h ago', g: '+5.7%', a: 'hit a 12-week investing streak' },
-  { n: 'Camila Torres', i: 'CT', c: '#f9e3cf', t: '3h ago', g: '+12.1%', a: 'saved a new AI match: NVDA' }
+  { id: 'maya', n: 'Maya Chen', i: 'MC', c: '#e2dcf7', pr: 'her', risk: 4, w: { ai: 3, sneakers: 2, semis: 2, fashion: 1 }, saves: ['NVDA', 'ONON', 'AMD', 'CROX'], streak: 9, record: [6, 10] },
+  { id: 'noah', n: 'Noah Williams', i: 'NW', c: '#d9ece4', pr: 'his', risk: 2, w: { dividends: 3, index: 3, food: 1, consumer: 1 }, saves: ['VTI', 'SCHD', 'KO', 'COST'], streak: 12, record: [7, 10] },
+  { id: 'camila', n: 'Camila Torres', i: 'CT', c: '#f9e3cf', pr: 'her', risk: 4.5, w: { beauty: 3, travel: 2, crypto: 2, luxury: 1 }, saves: ['ELF', 'ULTA', 'ABNB', 'BTC'], streak: 5, record: [5, 10] },
+  { id: 'jay', n: 'Jay Patel', i: 'JP', c: '#dbe8f7', pr: 'his', risk: 3, w: { gaming: 3, anime: 3, music: 1, streaming: 1 }, saves: ['NTDOY', 'SONY', 'RBLX', 'SPOT'], streak: 7, record: [6, 9] }
 ];
-const cheered = new Set();
-function renderSocial() {
-  const latest = [...S.history].reverse().find(t => S.swiped[t] === 'like');
-  const feed = (latest ? [{ n: 'You', i: 'C', c: '#f1ebdb', t: 'just now', g: null, a: `saved a new match from Lu: ${latest}` }] : []).concat(FRIENDS);
-  const box = $('friends'); box.innerHTML = '';
-  feed.forEach(f => {
-    const p = document.createElement('div'); p.className = 'post';
-    p.innerHTML = `<div class="top"><div class="av" style="background:${f.c}">${f.i}</div><div class="who2"><b>${f.n}</b><span>${f.t}</span></div>${f.g ? `<span class="gain">${f.g}</span>` : ''}</div>
-      <p>${escHTML(f.a)}</p>
-      <div class="bar"><button data-cheer="${f.n}" class="${cheered.has(f.n) ? 'on' : ''}">${ICON.heart}Cheer</button><button data-toast="Replies are a demo in this preview">${ICON.reply}Reply</button></div>`;
-    box.appendChild(p);
-  });
-  box.querySelectorAll('[data-cheer]').forEach(b => b.onclick = () => {
-    const n = b.dataset.cheer; cheered.has(n) ? cheered.delete(n) : cheered.add(n); b.classList.toggle('on');
-  });
-  const board = [['Camila Torres','CT','#f9e3cf','12-week streak'],['Maya Chen','MC','#e2dcf7','9-week streak'],['You','C','#f1ebdb', `${Object.values(S.swiped).filter(v => v === 'like').length} matches saved`],['Noah Williams','NW','#d9ece4','12-week streak']];
-  $('board').innerHTML = board.map((r, i) => `<div class="lb${r[0] === 'You' ? ' me' : ''}"><span class="rk">${i + 1}</span><div class="av" style="background:${r[2]}">${r[1]}</div><div class="grow">${r[0]}</div><span style="color:var(--muted);font-size:14px">${r[3]}</span></div>`).join('')
-    + '<p class="foot">Ranked by consistency, never by dollar amounts.</p>';
+const FBY = Object.fromEntries(FRIENDS.map(f => [f.id, f]));
+/** Taste match: how similar your Lu profile is to a friend's (themes 75%, risk 25%). */
+function tasteMatch(f) {
+  const keys = new Set([...Object.keys(S.weights).filter(k => S.weights[k] > 0), ...Object.keys(f.w)]);
+  let dot = 0, a = 0, b = 0;
+  keys.forEach(k => { const x = S.weights[k] > 0 ? S.weights[k] : 0, y = f.w[k] || 0; dot += x * y; a += x * x; b += y * y; });
+  if (!a) return null;
+  const cos = dot / Math.sqrt(a * b);
+  const rc = 1 - Math.abs((S.risk == null ? 3 : S.risk) - f.risk) / 4;
+  const shared = [...keys].filter(k => S.weights[k] > 0 && f.w[k]).sort((p, q) => (f.w[q] + S.weights[q]) - (f.w[p] + S.weights[p])).slice(0, 2);
+  return { pct: Math.round(100 * (0.75 * cos + 0.25 * rc)), shared };
 }
-document.querySelectorAll('[data-seg]').forEach(b => b.onclick = () => {
-  document.querySelectorAll('[data-seg]').forEach(x => x.classList.toggle('on', x === b));
-  $('friends').hidden = b.dataset.seg !== 'friends'; $('board').hidden = b.dataset.seg !== 'board';
-});
+function setBlend(id) {
+  const f = id && FBY[id];
+  S.blend = f ? id : null;
+  BLEND = f ? { name: f.n.split(' ')[0], w: f.w, risk: f.risk, saves: f.saves } : null;
+  save();
+}
+function renderTwins() {
+  const box = $('cTwins');
+  const rows = FRIENDS.map(f => ({ f, m: tasteMatch(f) })).sort((x, y) => (y.m ? y.m.pct : -1) - (x.m ? x.m.pct : -1));
+  const mine = new Set(Object.entries(S.swiped).filter(([, v]) => v === 'like').map(([t]) => t));
+  box.innerHTML = (rows[0].m ? '' : '<div class="tile pfy"><h3>Unlock taste twins</h3><p>Tell Lu what you\'re into and you\'ll see which friends invest like you.</p><button class="link" data-go="ask">Chat with Lu →</button></div>')
+    + rows.map(({ f, m }) => {
+      const first = f.n.split(' ')[0], my = S.risk == null ? 3 : riskLevel(S.risk), theirs = riskLevel(f.risk);
+      const both = f.saves.filter(t => mine.has(t));
+      const line = m ? `${m.shared.length ? `You both like ${list(m.shared.map(k => lc(labelOf(k))))}.` : 'Different tastes, which is great for discovering new stuff.'} ${theirs > my ? `${first} plays it riskier (${theirs}/5 vs your ${my}/5).` : theirs < my ? `${first} plays it safer (${theirs}/5 vs your ${my}/5).` : `Same risk level (${my}/5).`}` : `${first} is into ${list(Object.keys(f.w).slice(0, 2).map(k => lc(labelOf(k))))}.`;
+      return `<div class="twin"><div class="top"><div class="av" style="background:${f.c}">${f.i}</div><div class="who2"><b>${f.n}</b><span>@${f.id} · ${f.streak}-week streak</span></div>
+        <div class="pctm">${m ? `<b>${m.pct}%</b><span>taste match</span>` : ''}</div></div>
+        <p>${escHTML(line)}</p>
+        ${both.length ? `<div class="chips">${both.map(t => `<span class="tag">You both saved ${t}</span>`).join('')}</div>` : ''}
+        <div class="btns"><button class="btn primary" data-blend="${f.id}">${S.blend === f.id ? 'Blending ✓' : 'Blend decks'}</button><button class="btn secondary" data-picks="${f.id}">${first}'s picks</button></div></div>`;
+    }).join('');
+  box.querySelectorAll('[data-blend]').forEach(b => b.onclick = () => {
+    const id = b.dataset.blend;
+    setBlend(S.blend === id ? null : id);
+    if (S.blend) { go('explore'); toast(`Blended your deck with ${FBY[id].n.split(' ')[0]}'s taste`); } else renderTwins();
+  });
+  box.querySelectorAll('[data-picks]').forEach(b => b.onclick = () => {
+    const f = FBY[b.dataset.picks];
+    openSheet(`<div class="eyebrow" style="margin-top:0">${f.n.split(' ')[0]}'s picks</div><h2>What ${f.n.split(' ')[0]} saved</h2>
+      <p class="about" style="margin-bottom:12px">Tap one to see why it might fit you too. Amounts are always private.</p>
+      <div class="rowlist">${f.saves.filter(t => BY_T[t]).map(t => `<button class="hrow" data-sheet="${t}"><div class="grow"><div class="tk">${t}</div><div class="nm">${escHTML(BY_T[t].name)}</div></div><div class="val">${BY_T[t].live ? usd(BY_T[t].live.price) : ''}<small class="${BY_T[t].live && BY_T[t].live.chg1d >= 0 ? 'up' : 'down'}">${BY_T[t].live && BY_T[t].live.chg1d != null ? signedPct(BY_T[t].live.chg1d) : ''}</small></div></button>`).join('')}</div>`, body => {
+      body.querySelectorAll('[data-sheet]').forEach(x => x.onclick = () => { closeSheet(); setTimeout(() => stockSheet(x.dataset.sheet), 320); });
+    });
+  });
+}
+/* Call it: a weekly up/down prediction on stocks you care about. Scored on accuracy, never money. */
+function nextFriday(iso) {
+  const d = new Date((iso || today()) + 'T12:00:00');
+  d.setDate(d.getDate() + ((5 - d.getDay() + 7) % 7 || 7));
+  return d.toLocaleDateString('en-CA');
+}
+function callPicks() {
+  const t = trackedTickers().filter(x => BY_T[x].live).slice(0, 3);
+  for (const x of ['VTI', 'NVDA', 'AAPL']) if (t.length < 3 && !t.includes(x) && BY_T[x] && BY_T[x].live) t.push(x);
+  return t;
+}
+function resolveCalls() {
+  if (!RISK_DOC) return;
+  (S.calls || []).forEach(c => {
+    if (c.result || RISK_DOC.asOf < c.by) return;
+    const p = livePrice(c.t); if (!p) return;
+    c.end = p; c.result = (p > c.start) === (c.dir === 'up') ? 'win' : 'lose';
+  });
+}
+function renderCalls() {
+  S.calls = S.calls || [];
+  resolveCalls();
+  const by = nextFriday(RISK_DOC ? RISK_DOC.asOf : today());
+  const box = $('cCalls');
+  const picks = RISK_DOC ? callPicks() : [];
+  const done = S.calls.filter(c => c.result), wins = done.filter(c => c.result === 'win').length;
+  const cards = picks.map(t => {
+    const s = BY_T[t], mine = S.calls.find(c => c.t === t && c.by === by);
+    const fc = FRIENDS.map(f => `<span>${f.n.split(' ')[0]}: ${hash(f.id + t + by) % 2 ? '▲ higher' : '▼ lower'}</span>`).join('');
+    return `<div class="callcard"><h3>Will ${t} close higher by ${fmtDate(by)}?</h3><div class="nm">${escHTML(s.name)} · now ${usd(s.live.price)} (${asOfLabel()} close)</div>
+      <div class="callbtns"><button class="upb${mine && mine.dir === 'up' ? ' on' : ''}" data-call="${t}" data-dir="up">▲ Higher</button><button class="downb${mine && mine.dir === 'down' ? ' on' : ''}" data-call="${t}" data-dir="down">▼ Lower</button></div>
+      ${mine ? `<div class="friendcalls">${fc}</div>` : '<div class="friendcalls"><span>Make your call to see your friends\' calls</span></div>'}</div>`;
+  }).join('');
+  const past = done.slice(-3).reverse().map(c => `<div class="result ${c.result}">${c.result === 'win' ? '✓ Called it' : '✗ Missed'}: ${c.t} went ${c.end > c.start ? 'up' : 'down'} from ${usd(c.start)} to ${usd(c.end)} (you said ${c.dir === 'up' ? 'higher' : 'lower'}).</div>`).join('');
+  const board = FRIENDS.map(f => ({ n: f.n, i: f.i, c: f.c, w: f.record[0], t: f.record[1] }))
+    .concat([{ n: 'You', i: initial(), c: '#f1ebdb', w: wins, t: done.length, me: true }])
+    .sort((a, b) => (b.t ? b.w / b.t : -1) - (a.t ? a.w / a.t : -1));
+  box.innerHTML = `<p class="about" style="margin:0 0 12px">Each week, call whether a few of your stocks finish higher or lower. Results use real closing prices. No money involved.</p>
+    ${picks.length ? cards : '<p class="sub">Market data is loading…</p>'}${past}
+    <div class="eyebrow">This month's best callers</div>
+    ${board.map((r, k) => `<div class="lb${r.me ? ' me' : ''}"><span class="rk">${k + 1}</span><div class="av" style="background:${r.c}">${r.i}</div><div class="grow">${r.n}</div><span style="color:var(--muted);font-size:14px">${r.t ? `${r.w}/${r.t} right` : 'no calls yet'}</span></div>`).join('')}
+    <p class="foot">Ranked by how often you call it right. Never by money.</p>`;
+  box.querySelectorAll('[data-call]').forEach(b => b.onclick = () => {
+    const t = b.dataset.call;
+    S.calls = S.calls.filter(c => !(c.t === t && c.by === by));
+    S.calls.push({ t, dir: b.dataset.dir, start: livePrice(t), from: RISK_DOC.asOf, by });
+    save(); renderCalls(); toast(`Locked in: ${t} ${b.dataset.dir === 'up' ? 'higher' : 'lower'} by ${fmtDate(by)}`);
+  });
+}
+const cheered = new Set();
+function renderMoments() {
+  const mine = [];
+  const firstBuy = [...S.activity].reverse().find(a => a.kind === 'buy' || a.kind === 'invest');
+  const latest = [...S.history].reverse().find(t => S.swiped[t] === 'like');
+  if (latest) mine.push({ n: 'You', i: initial(), c: '#f1ebdb', t: 'recently', a: `saved a new match from Lu: ${latest}` });
+  if ((S.calls || []).length) mine.push({ n: 'You', i: initial(), c: '#f1ebdb', t: 'this week', a: `made ${S.calls.length} call${S.calls.length === 1 ? '' : 's'} in Call it` });
+  if (firstBuy) mine.push({ n: 'You', i: initial(), c: '#f1ebdb', t: fmtDate(firstBuy.date), a: `made your first investment: ${firstBuy.t}` });
+  const theirs = [
+    { n: 'Maya Chen', i: 'MC', c: '#e2dcf7', t: '12m ago', a: 'saved a new match: ONON' },
+    { n: 'Noah Williams', i: 'NW', c: '#d9ece4', t: '1h ago', a: 'hit a 12-week investing streak 🔥' },
+    { n: 'Jay Patel', i: 'JP', c: '#dbe8f7', t: '2h ago', a: 'called NTDOY higher and got it right' },
+    { n: 'Camila Torres', i: 'CT', c: '#f9e3cf', t: '3h ago', a: 'blended decks with Maya and found ELF' }
+  ];
+  const box = $('cMoments');
+  box.innerHTML = mine.concat(theirs).map(f => `<div class="post"><div class="top"><div class="av" style="background:${f.c}">${f.i}</div><div class="who2"><b>${f.n}</b><span>${f.t}</span></div></div>
+      <p>${escHTML(f.a)}</p><div class="bar"><button data-cheer="${f.n + f.a}" class="${cheered.has(f.n + f.a) ? 'on' : ''}">${ICON.heart}Cheer</button></div></div>`).join('');
+  box.querySelectorAll('[data-cheer]').forEach(b => b.onclick = () => { const n = b.dataset.cheer; cheered.has(n) ? cheered.delete(n) : cheered.add(n); b.classList.toggle('on'); });
+}
+let circleTab = 'twins';
+function renderSocial() {
+  document.querySelectorAll('[data-seg]').forEach(x => x.classList.toggle('on', x.dataset.seg === circleTab));
+  $('cTwins').hidden = circleTab !== 'twins'; $('cCalls').hidden = circleTab !== 'calls'; $('cMoments').hidden = circleTab !== 'moments';
+  if (circleTab === 'twins') renderTwins(); else if (circleTab === 'calls') renderCalls(); else renderMoments();
+}
+document.querySelectorAll('[data-seg]').forEach(b => b.onclick = () => { circleTab = b.dataset.seg; renderSocial(); });
+$('inviteBtn').onclick = async () => {
+  const url = `${location.origin}${location.pathname}?invite=${encodeURIComponent((S.profile && S.profile.username) || '')}`;
+  const text = 'Join me on Luma: it matches stocks to what you\'re actually into.';
+  try { if (navigator.share) { await navigator.share({ title: 'Luma', text, url }); return; } } catch (e) { return; }
+  try { await navigator.clipboard.writeText(url); toast('Invite link copied'); } catch (e) { prompt('Copy your invite link:', url); }
+};
 
 /* ---------- Real market data ---------- */
 // TradingView's free embeddable widget: a real, live chart rendered by TradingView in the user's browser.
-function tradingViewWidget(slot, ticker) {
+function tradingViewWidget(slot, symbol) {
   const dark = matchMedia('(prefers-color-scheme: dark)').matches;
-  slot.innerHTML = '<div class="tradingview-widget-container" style="margin-top:12px;border-radius:14px;overflow:hidden;border:1px solid var(--line)"><div class="tradingview-widget-container__widget"></div><div class="fine" style="margin:6px 0">Chart by <a href="https://www.tradingview.com/" target="_blank" rel="noopener" style="color:inherit">TradingView</a></div></div>';
-  const sc = document.createElement('script');
-  sc.src = 'https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js';
-  sc.async = true;
-  sc.textContent = JSON.stringify({ symbol: ticker, width: '100%', height: 200, locale: 'en', dateRange: '12M', colorTheme: dark ? 'dark' : 'light', isTransparent: true, autosize: false, largeChartUrl: '' });
-  sc.onerror = () => { slot.innerHTML = '<p class="fine">Couldn\'t load TradingView right now.</p>'; };
-  slot.querySelector('.tradingview-widget-container').appendChild(sc);
+  const make = (src, cfg, h) => {
+    const box = document.createElement('div');
+    box.className = 'tradingview-widget-container';
+    box.style.cssText = `margin-top:12px;border-radius:14px;overflow:hidden;border:1px solid var(--line);min-height:${h}px`;
+    box.innerHTML = '<div class="tradingview-widget-container__widget"></div>';
+    const sc = document.createElement('script');
+    sc.src = 'https://s3.tradingview.com/external-embedding/' + src; sc.async = true;
+    sc.textContent = JSON.stringify(cfg);
+    sc.onerror = () => { box.innerHTML = '<p class="fine" style="padding:12px">Couldn\'t reach TradingView right now.</p>'; };
+    box.appendChild(sc); return box;
+  };
+  slot.innerHTML = '';
+  slot.appendChild(make('embed-widget-mini-symbol-overview.js', { symbol, width: '100%', height: 200, locale: 'en', dateRange: '12M', colorTheme: dark ? 'dark' : 'light', isTransparent: true, autosize: false, largeChartUrl: '' }, 200));
+  slot.appendChild(make('embed-widget-symbol-profile.js', { symbol, width: '100%', height: 320, locale: 'en', colorTheme: dark ? 'dark' : 'light', isTransparent: true }, 320));
+  const credit = document.createElement('div'); credit.className = 'fine';
+  credit.innerHTML = `Chart and company profile by <a href="https://www.tradingview.com/symbols/${symbol.replace(':', '-')}/" target="_blank" rel="noopener" style="color:inherit">TradingView</a>`;
+  slot.appendChild(credit);
 }
 async function loadRiskData() {
   if (location.protocol === 'file:') return; // browsers block fetch from disk; keep the curated estimates
@@ -1303,17 +1657,139 @@ async function loadRiskData() {
     try { const nr = await fetch('news.json', { cache: 'no-cache' }); if (nr.ok) NEWS_DOC = await nr.json(); } catch (e) {}
     if (current === 'explore') renderExplore();
     if (current === 'portfolio') renderPortfolio();
+    refreshMoney();
   } catch (e) { /* offline or opened from disk: keep Lu's curated estimates */ }
 }
 
+/* ---------- Accounts ---------- */
+// Accounts live on this device only (no server yet). Passwords are stored as a salted SHA-256 hash,
+// never in plain text. "Sign in" with blank fields opens the Charlotte demo account.
+const ACCTS_KEY = 'luma.accounts';
+const accounts = () => { try { return JSON.parse(localStorage.getItem(ACCTS_KEY) || '{}'); } catch (e) { return {}; } };
+const saveAccounts = a => { try { localStorage.setItem(ACCTS_KEY, JSON.stringify(a)); } catch (e) {} };
+const initial = () => ((S.profile && S.profile.name) || '?').trim().charAt(0).toUpperCase();
+async function hashPw(pw, salt) {
+  try {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(salt + ':' + pw));
+    return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+  } catch (e) { return 'h' + hash(salt + ':' + pw); }
+}
+function startSession(username, keep, landing) {
+  try {
+    sessionStorage.setItem('luma.session', username);
+    if (keep) localStorage.setItem('luma.session', username); else localStorage.removeItem('luma.session');
+    sessionStorage.setItem('luma.landing', landing);
+  } catch (e) {}
+  history.replaceState(null, '', location.pathname + '#' + landing);
+  location.reload();
+}
+function signOut() {
+  try { sessionStorage.removeItem('luma.session'); localStorage.removeItem('luma.session'); } catch (e) {}
+  history.replaceState(null, '', location.pathname);
+  location.reload();
+}
+function showAuth(view) {
+  $('device').classList.add('signed-out'); $('auth').hidden = false;
+  ['landing', 'signup', 'signin'].forEach(v => $('auth' + v[0].toUpperCase() + v.slice(1)).hidden = v !== view);
+  const first = { signup: 'suName', signin: 'siUser' }[view];
+  if (first) setTimeout(() => $(first).focus(), 50);
+}
+document.querySelectorAll('[data-auth]').forEach(b => b.onclick = () => showAuth(b.dataset.auth));
+document.querySelectorAll('[data-show]').forEach(b => b.onclick = () => { const i = $(b.dataset.show); i.type = i.type === 'password' ? 'text' : 'password'; b.textContent = i.type === 'password' ? 'Show' : 'Hide'; });
+$('suPass').addEventListener('input', () => {
+  const v = $('suPass').value, ok = v.length >= 8 && /\d/.test(v);
+  $('pwHint').textContent = !v ? 'At least 8 characters, including a number.' : ok ? 'Strong enough ✓' : `${v.length < 8 ? `${8 - v.length} more character${8 - v.length === 1 ? '' : 's'}` : ''}${v.length < 8 && !/\d/.test(v) ? ' and ' : ''}${!/\d/.test(v) ? 'a number' : ''} to go`;
+});
+$('authSignup').addEventListener('submit', async e => {
+  e.preventDefault();
+  const name = $('suName').value.trim(), user = $('suUser').value.trim().toLowerCase().replace(/^@/, ''), email = $('suEmail').value.trim().toLowerCase(), pw = $('suPass').value;
+  const accts = accounts();
+  const errs = [
+    [!/^[\p{L}][\p{L} '-]{0,29}$/u.test(name), 'suName', 'Add your first name.'],
+    [!/^[a-z0-9_]{3,20}$/.test(user), 'suUser', 'Usernames are 3–20 letters, numbers or _.'],
+    [user === 'charlotte' || !!accts[user], 'suUser', `@${user} is taken. Try another.`],
+    [!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email), 'suEmail', 'Enter a valid email.'],
+    [Object.values(accts).some(a => a.email === email), 'suEmail', 'That email already has an account. Sign in instead.'],
+    [pw.length < 8 || !/\d/.test(pw), 'suPass', 'Password needs at least 8 characters and a number.']
+  ];
+  document.querySelectorAll('#authSignup input').forEach(i => i.classList.remove('bad'));
+  const bad = errs.find(x => x[0]);
+  if (bad) { $(bad[1]).classList.add('bad'); $('suErr').textContent = bad[2]; $(bad[1]).focus(); return; }
+  const salt = Math.random().toString(36).slice(2) + Date.now().toString(36);
+  accts[user] = { name, username: user, email, salt, hash: await hashPw(pw, salt), created: today() };
+  saveAccounts(accts);
+  startSession(user, $('suKeep').checked, 'ask');
+});
+$('authSignin').addEventListener('submit', async e => {
+  e.preventDefault();
+  const id = $('siUser').value.trim().toLowerCase().replace(/^@/, ''), pw = $('siPass').value;
+  if (!id && !pw) { startSession('charlotte', $('siKeep').checked, 'portfolio'); return; }
+  if (id === 'charlotte' || id === 'charlotte@example.com') { startSession('charlotte', $('siKeep').checked, 'portfolio'); return; }
+  const a = Object.values(accounts()).find(x => x.username === id || x.email === id);
+  if (!a) { $('siErr').textContent = 'No account with that username or email on this device. Tip: leave both blank to try the demo.'; return; }
+  if (await hashPw(pw, a.salt) !== a.hash) { $('siErr').textContent = 'That password doesn\'t match.'; $('siPass').classList.add('bad'); return; }
+  startSession(a.username, $('siKeep').checked, 'portfolio');
+});
+
+/* Charlotte's demo account: every number is produced by the same code paths a real user goes through. */
+function seedCharlotte() {
+  S = blank();
+  S.profile = { name: 'Charlotte', username: 'charlotte', email: 'charlotte@example.com', joined: '2026-06-03', demo: true };
+  S.bank = Object.assign({}, BANK_TEMPLATE);
+  S.log = [{ who: 'ai', text: greeting('Charlotte') }];
+  for (const m of ['I\'m 24, I basically live in my Lululemon leggings, I drink way too much matcha and I\'m really into AI. I\'d be nervous if my money dropped a lot though',
+                   'no crypto or tobacco']) {
+    S.log.push({ who: 'me', text: m }); S.turns++;
+    const out = respond(m);
+    out.msgs.forEach(([t, o]) => S.log.push({ who: 'ai', text: t, cta: !!o.cta, ticker: o.ticker, term: o.term, dial: o.dial }));
+    if (out.sparks) S.sug = out.sparks;
+  }
+  ensureMoney();
+  const dep = (amt, date, pending) => { S.cash = r2(S.cash + amt); S.activity.unshift({ kind: 'deposit', amt, note: bankLabel(), pending: !!pending, date }); };
+  dep(500, '2026-06-03');
+  invest('VTI', 200, '2026-06-03');
+  invest('AAPL', 75, '2026-07-15');
+  invest('LULU', 60, '2026-08-20');
+  invest('NVDA', 50, '2026-09-02');
+  S.cash = r2(S.cash - 40); S.feesPaid = 1.2;
+  S.activity.unshift({ kind: 'withdraw', amt: 40, fee: 1.2, speed: 'instant', date: '2026-10-20' });
+  dep(250, '2026-11-07', true);
+  ['ELF', 'COST', 'MSFT'].forEach(t => { S.swiped[t] = 'like'; S.history.push(t); });
+  ['TSLA', 'COIN'].forEach(t => { S.swiped[t] = 'nope'; S.history.push(t); });
+  S.calls = [];
+  save();
+}
+function initAccount(a) {
+  S = blank();
+  S.profile = { name: a.name, username: a.username, email: a.email, joined: a.created };
+  S.log = [{ who: 'ai', text: greeting(a.name) }];
+  ensureMoney(); save();
+}
+
 /* ---------- Boot ---------- */
-// Chats saved before the rename still greet the old name; update them.
-S.log.forEach(m => { if (m.text) m.text = m.text.replace(/\bSofia\b/g, 'Charlotte'); });
-if (!S.log.length) addMsg('ai', GREETING);
-else S.log.forEach((m, i) => addMsg(m.who, m.text, { noLog: true, cta: m.cta && i === S.log.length - 1, ticker: m.ticker, term: m.term, dial: m.dial }));
-renderLearned(); renderSparks(); refreshMoney(); loadRiskData();
-if (SCREENS.includes(location.hash.slice(1))) go(location.hash.slice(1), true);
-window.__luma = { understand, buildDeck, state: () => S, go, test: { decideL, maybeRiskNudge, swipesLeft } };
+(async function boot() {
+  try {
+    const inv = new URLSearchParams(location.search).get('invite');
+    if (inv && /^[a-z0-9_]{3,20}$/.test(inv)) { $('inviteNote').textContent = `@${inv} invited you to Luma 👋`; $('inviteNote').hidden = false; }
+  } catch (e) {}
+  if (!SESSION_USER) { showAuth('landing'); return; }
+  $('device').classList.remove('signed-out'); $('auth').hidden = true;
+  await loadRiskData();
+  if (!S.profile) {
+    if (SESSION_USER === 'charlotte') seedCharlotte();
+    else { const a = accounts()[SESSION_USER]; if (!a) { signOut(); return; } initAccount(a); }
+  }
+  ensureMoney();
+  if (S.blend) setBlend(S.blend);
+  S.log.forEach((m, i) => addMsg(m.who, m.text, { noLog: true, cta: m.cta && i === S.log.length - 1, ticker: m.ticker, term: m.term, dial: m.dial }));
+  renderLearned(); renderSparks(); refreshMoney();
+  let landing = null;
+  try { landing = sessionStorage.getItem('luma.landing'); sessionStorage.removeItem('luma.landing'); } catch (e) {}
+  const h = location.hash.slice(1);
+  go(SCREENS.includes(h) ? h : (landing || 'portfolio'), true);
+  if (landing) setTimeout(() => toast(landing === 'ask' ? `Welcome to Luma, ${S.profile.name}! Say hi to Lu.` : `Welcome back, ${S.profile.name}`), 300);
+})();
+window.__luma = { understand, buildDeck, state: () => S, go, test: { decideL, maybeRiskNudge, swipesLeft, portfolioTotals, holdingValue, bankMath, tasteMatch, resolveCalls, priceOn } };
 })();
 </script>
 </body>
