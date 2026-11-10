@@ -817,7 +817,10 @@ function answerQuestion(raw) {
     return { ticker: s.t, text, suggestions: sug.filter(Boolean) };
   }
   if (/\bhow much\b.*\b(invest|start|put|need)\b|\bhow (do|should|can) i (start|begin)\b|\bwhere (do|should) i start\b/.test(low)) {
-    return { text: 'From your linked accounts, you have about $486 a month available to invest and $250 ready in your Luma wallet. A common starting move: keep your emergency fund intact, then auto-invest a small fixed amount (even $10–25 a week) into a broad index fund like VTI, and add individual picks you\'ve saved as a smaller slice.\n\nThis is education, not personal financial advice.',
+    const money = n => '$' + Math.round(n).toLocaleString('en-US');
+    const avail = S.bank ? S.bank.income - S.bank.spendThis - S.bank.toSavings : null;
+    const have = (avail != null ? `From your linked bank, you have about ${money(avail)} this month available to invest` : 'Once you connect your bank (Portfolio tab), I can tell you how much you can afford to invest each month') + `, and ${money(S.cash || 0)} is in your Vesta wallet right now.`;
+    return { text: have + ' A common starting move: keep your emergency fund intact, then auto-invest a small fixed amount (even $10–25 a week) into a broad index fund like VTI, and add individual picks you\'ve saved as a smaller slice.\n\nThis is education, not personal financial advice.',
       suggestions: ['what\'s an emergency fund?', 'what\'s dollar-cost averaging?', 'tell me about VTI'] };
   }
   const key = findTerm(low);

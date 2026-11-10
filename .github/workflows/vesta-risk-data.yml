@@ -1,6 +1,6 @@
-name: Luma risk data
+name: Vesta risk data
 
-# Rebuilds luma/risk-data.json (real daily prices) and luma/news.json (headlines) after each US market close,
+# Rebuilds vesta/risk-data.json (real daily prices) and vesta/news.json (headlines) after each US market close,
 # so Lu's matches and risk scores follow how stocks actually behave.
 on:
   schedule:
@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: luma-risk-data
+  group: vesta-risk-data
   cancel-in-progress: true
 
 jobs:
@@ -26,16 +26,16 @@ jobs:
           node-version: 22
 
       - name: Build risk data and news
-        run: node luma/scripts/build-risk-data.mjs
+        run: node vesta/scripts/build-risk-data.mjs
 
       - name: Commit if changed
         run: |
-          if git diff --quiet -- luma/risk-data.json luma/news.json; then
+          if git diff --quiet -- vesta/risk-data.json vesta/news.json; then
             echo "No changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add luma/risk-data.json luma/news.json
-          git commit -m "Update Luma risk data and news"
+          git add vesta/risk-data.json vesta/news.json
+          git commit -m "Update Vesta risk data and news"
           git push

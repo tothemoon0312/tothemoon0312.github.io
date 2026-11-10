@@ -1,8 +1,8 @@
-# Luma
+# Vesta
 
 Money app for Gen Z. Users chat with **Lu** instead of filling out a risk survey, Lu builds a swipeable deck of stock, ETF and crypto matches, and the Portfolio tab explains the market in plain English.
 
-Live: https://tothemoon0312.github.io/luma/
+Live: https://tothemoon0312.github.io/vesta/
 
 ## What's real today
 
@@ -33,9 +33,9 @@ premium: { price: 4.99, period: 'month', checkoutUrl: '' }
 
 ### Turn on real Premium payments (Stripe Payment Link, no server needed)
 
-1. In Stripe, create a product "Luma Premium" with a recurring monthly price.
+1. In Stripe, create a product "Vesta Premium" with a recurring monthly price.
 2. Create a **Payment Link** for it. Under *After payment*, redirect to
-   `https://tothemoon0312.github.io/luma/?premium=success`.
+   `https://tothemoon0312.github.io/vesta/?premium=success`.
 3. Paste the link into `CONFIG.premium.checkoutUrl`.
 
 This works for launch, but anyone who knows the success URL could unlock Premium. To lock it down you need a small backend that verifies the Stripe webhook and stores the subscription on the user's account.
@@ -53,8 +53,8 @@ Moving real money and placing real trades can't be done from a static site. It n
 ## Data pipeline
 
 `scripts/build-risk-data.mjs` → writes `risk-data.json` and `news.json`.
-Runs weekdays after market close via `.github/workflows/luma-risk-data.yml`, or manually:
+Runs weekdays after market close via `.github/workflows/vesta-risk-data.yml`, or manually:
 
 ```bash
-node luma/scripts/build-risk-data.mjs
+node vesta/scripts/build-risk-data.mjs
 ```
