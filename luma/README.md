@@ -9,6 +9,10 @@ Live: https://tothemoon0312.github.io/luma/
 | Area | Status |
 |---|---|
 | Lu chat: interests, brands, exclusions, risk tone | Real. Runs in the browser (`lu-engine.js`), rule-based |
+| Interest matching | Real. 168 hand-described companies, funds and coins; any word a user says ("skincare", "matcha", "nuclear") is matched against names, brands, descriptions and each company's real industry |
+| TradingView | Real widgets: live chart and company profile in every stock sheet, using the exact exchange symbol (e.g. `NASDAQ:AAPL`), plus a link to the symbol page. TradingView has no data API and forbids scraping, so matching uses Yahoo data instead |
+| Accounts | Sign up / sign in / sign out with validation. Stored on the user's device only (passwords as salted SHA-256 hashes). Blank sign-in opens the Charlotte demo |
+| Circle (social) | Taste twins (match % from Lu profiles), blended decks, weekly "Call it" predictions scored with real closes, moments. Never shows dollar amounts. Friends are demo profiles |
 | Lu answers questions (ETF, P/E, "is TSLA risky?", news) | Real. Rule-based explanations |
 | Prices, day change, 12-month trend | Real. Daily close data (Yahoo Finance), refreshed each weekday |
 | Risk scores (1–5) | Real. Computed from 1-year volatility, beta vs S&P 500, worst drawdown |
@@ -16,8 +20,8 @@ Live: https://tothemoon0312.github.io/luma/
 | News + "What it means" | Real headlines; explanations are rule-based by headline type |
 | 10 free right swipes/day, Premium unlock | Real logic. Payment needs a Stripe Payment Link (below) |
 | 3% instant-withdrawal fee, free standard withdrawals | Real logic and math. No bank is connected, so no money moves |
-| Deposits, investing, balances, activity | Simulated. Stored on the user's device only |
-| Accounts, login, Plaid-linked spending stats, Social feed | Placeholder data from the Figma design |
+| Deposits, investing, selling, balances, activity | Simulated, but consistent: one ledger drives everything (cash = deposits − buys + sells − withdrawals). Holdings are shares bought at the real price of that day, valued at the latest close |
+| Plaid-linked bank numbers | Sample data, but it adds up: $3,200 income − $2,341 spending − $373 to savings = $486 available; $4,020 of $6,000 saved = 67%, on track for month 8 of 12 |
 
 ## Pricing (edit in `index.html` → `CONFIG`)
 

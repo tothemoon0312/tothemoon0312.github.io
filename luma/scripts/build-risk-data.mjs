@@ -17,6 +17,10 @@
  *
  * Crypto (BTC, ETH, …) is priced as BTC-USD etc. and annualized over 365 days because it trades daily.
  *
+ * Per ticker it also stores the company's real sector and industry, its exchange (for the matching
+ * TradingView symbol, e.g. NASDAQ:AAPL) and month-end closes, so the app can value purchases made
+ * on past dates at the real price of that day.
+ *
  * Runs daily in GitHub Actions (.github/workflows/luma-risk-data.yml). Requires Node 18+.
  */
 import { readFile, writeFile } from 'node:fs/promises';
@@ -64,6 +68,33 @@ async function fetchCloses(sym) {
     } catch (e) { lastErr = e; await sleep(400); }
   }
   throw lastErr;
+}
+
+// ---- company metadata: sector, industry, exchange (Yahoo search) ----
+const TV_EXCHANGE = { NMS: 'NASDAQ', NGM: 'NASDAQ', NCM: 'NASDAQ', NAS: 'NASDAQ', NYQ: 'NYSE', NYS: 'NYSE', PCX: 'AMEX', ASE: 'AMEX', BTS: 'CBOE', PNK: 'OTC', OQX: 'OTC', OQB: 'OTC', OEM: 'OTC' };
+export function tradingViewSymbol(asset, exchange) {
+  if (asset.crypto) return `COINBASE:${asset.t}USD`;
+  const ex = TV_EXCHANGE[exchange];
+  return ex ? `${ex}:${asset.t.replace('-', '.')}` : asset.t;
+}
+async function fetchMeta(asset) {
+  const sym = yahooSymbol(asset);
+  const url = `https://query1.finance.yahoo.com/v1/finance/search?q=${encodeURIComponent(sym)}&quotesCount=6&newsCount=0`;
+  const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/json' } });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const q = ((await res.json()).quotes || []).find(x => x.symbol === sym);
+  if (!q) return {};
+  return { sector: q.sector || q.sectorDisp || '', industry: q.industry || q.industryDisp || '', exchange: q.exchange || '' };
+}
+/** Month-end closes ([YYYY-MM-DD, close]) for valuing purchases made on past dates. */
+export function monthEnds(rows) {
+  const out = [];
+  for (let i = 0; i < rows.length; i++) {
+    const d = new Date(rows[i][0] * 1000).toISOString().slice(0, 10);
+    const next = rows[i + 1] ? new Date(rows[i + 1][0] * 1000).toISOString().slice(0, 7) : null;
+    if (next !== d.slice(0, 7)) out.push([d, +rows[i][1].toFixed(4)]);
+  }
+  return out;
 }
 
 // ---- metrics (exported for tests) ----
@@ -175,6 +206,7 @@ async function main() {
         price: +d.price.toFixed(2),
         chg1d: d.prevClose ? r4(d.price / d.prevClose - 1) : null,
         bars: trendBars(closes),
+        hist: monthEnds(d.rows),
         days: closes.length,
         ...(a.crypto ? { crypto: true } : {})
       };
@@ -183,6 +215,12 @@ async function main() {
       failed.push(t); console.warn(`  ${t.padEnd(5)} FAILED: ${e.message}`);
     }
     if (out[t]) {
+      try {
+        const m = a.crypto ? {} : await fetchMeta(a);
+        if (m.sector) out[t].sector = m.sector;
+        if (m.industry) out[t].industry = m.industry;
+        out[t].tv = tradingViewSymbol(a, m.exchange);
+      } catch (e) { out[t].tv = tradingViewSymbol(a, ''); console.warn(`  ${t.padEnd(5)} profile skipped: ${e.message}`); }
       try { const n = await fetchNews(a); if (n.length) news[t] = n; } catch (e) { console.warn(`  ${t.padEnd(5)} news skipped: ${e.message}`); }
     }
     await sleep(250);

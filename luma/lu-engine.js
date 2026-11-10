@@ -88,7 +88,107 @@ const RAW = [
   ['ETH','Ethereum','#627eea',5,false,'Crypto',['crypto'],['ethereum','ether','eth'],'The blockchain that most crypto apps, NFTs and stablecoins run on.'],
   ['SOL','Solana','#9945ff',5,false,'Crypto',['crypto'],['solana'],'A fast, low-fee blockchain popular for trading apps and memecoins.'],
   ['XRP','XRP','#23292f',5,false,'Crypto',['crypto','payments'],['ripple','xrp'],'A token designed for moving money across borders quickly and cheaply.'],
-  ['DOGE','Dogecoin','#c2a633',5,false,'Crypto',['crypto','memes'],['dogecoin','doge'],'Started as a joke, now the biggest memecoin. Moves on hype and social media.']
+  ['DOGE','Dogecoin','#c2a633',5,false,'Crypto',['crypto','memes'],['dogecoin','doge'],'Started as a joke, now the biggest memecoin. Moves on hype and social media.'],
+  // Beauty
+  ['ELF','e.l.f. Beauty','#1a1a1a',4,false,'Mid',['beauty','consumer'],['e.l.f.','elf cosmetics','elf beauty'],'Affordable makeup and skincare that went viral with Gen Z.'],
+  ['ULTA','Ulta Beauty','#f26c4f',3,false,'Large',['beauty','retail'],['ulta','ulta beauty'],'The biggest US beauty store chain, from drugstore brands to luxury.'],
+  ['EL','Estee Lauder','#0a1f44',4,true,'Large',['beauty','luxury'],['estee lauder','estée lauder','clinique','mac cosmetics','la mer'],'Prestige beauty brands like Clinique, MAC and La Mer.'],
+  ['COTY','Coty','#1d1d1b',4,false,'Mid',['beauty'],['coty','covergirl','kylie cosmetics'],'Fragrances and makeup, including CoverGirl and designer perfumes.'],
+  // Sneakers, fashion, sports
+  ['ONON','On Holding','#1a1a1a',4,false,'Large',['sneakers','sports','fashion'],['on running','on cloud','on shoes','cloudmonster'],'Swiss running-shoe brand with the cloud-like soles.'],
+  ['DECK','Deckers Brands','#2d2a26',4,false,'Large',['sneakers','fashion'],['deckers','hoka','ugg','uggs'],'Owner of HOKA running shoes and UGG boots.'],
+  ['CROX','Crocs','#00a651',4,false,'Mid',['sneakers','fashion'],['crocs','jibbitz','heydude'],'Crocs clogs, Jibbitz charms and HEYDUDE shoes.'],
+  ['ANF','Abercrombie & Fitch','#1b2a41',5,false,'Mid',['fashion','retail'],['abercrombie','hollister','gilly hicks'],'Abercrombie and Hollister, a big comeback story in young-adult fashion.'],
+  ['DKS','Dick\'s Sporting Goods','#0b6e4f',3,true,'Large',['sports','retail'],['dicks sporting goods','dick\'s sporting goods'],'The largest US sporting goods retailer.'],
+  ['TPR','Tapestry','#000000',3,true,'Large',['luxury','fashion'],['tapestry','coach','kate spade'],'Coach and Kate Spade handbags and accessories.'],
+  ['RL','Ralph Lauren','#041e42',3,true,'Large',['luxury','fashion'],['ralph lauren','polo ralph lauren'],'Classic American luxury fashion and the Polo brand.'],
+  ['MANU','Manchester United','#da291c',3,false,'Small',['sports'],['manchester united','man utd','man united','premier league'],'The Premier League soccer club, listed on the New York Stock Exchange.'],
+  // Drinks and food
+  ['CELH','Celsius Holdings','#d0103a',5,false,'Mid',['drinks','sports'],['celsius'],'Fitness energy drinks that took off on campuses and in gyms.'],
+  ['MNST','Monster Beverage','#78be20',2,false,'Large',['drinks'],['monster energy','monster beverage'],'Monster Energy, one of the world\'s biggest energy drink brands.'],
+  ['KDP','Keurig Dr Pepper','#6c1d45',2,true,'Large',['drinks','food'],['keurig','dr pepper','k-cups','snapple'],'Dr Pepper, Snapple and Keurig coffee machines.'],
+  ['STZ','Constellation Brands','#8b1e3f',3,true,'Large',['drinks','alcohol'],['constellation brands','corona','modelo'],'Corona and Modelo beers in the US.'],
+  ['CAVA','CAVA Group','#c04a1d',5,false,'Mid',['food'],['cava'],'Fast-growing Mediterranean bowls chain.'],
+  ['WING','Wingstop','#006341',4,false,'Mid',['food'],['wingstop','chicken wings'],'Chicken wing chain known for heavy digital ordering.'],
+  ['DPZ','Domino\'s Pizza','#006491',2,true,'Large',['food'],['dominos','domino\'s','pizza'],'The world\'s biggest pizza delivery chain.'],
+  ['YUM','Yum! Brands','#c8102e',2,true,'Large',['food'],['taco bell','kfc','pizza hut','yum brands'],'Owner of Taco Bell, KFC and Pizza Hut.'],
+  ['BROS','Dutch Bros','#0b3a68',5,false,'Mid',['food'],['dutch bros'],'Drive-thru coffee chain with a cult following.'],
+  // Social, apps, online shopping
+  ['SNAP','Snap','#fffc00',5,false,'Mid',['social'],['snapchat','spectacles'],'Snapchat, the camera-first messaging app.'],
+  ['PINS','Pinterest','#e60023',4,false,'Mid',['social','ecommerce'],['pinterest'],'Visual search and inspiration boards, increasingly shoppable.'],
+  ['RDDT','Reddit','#ff4500',5,false,'Large',['social','ai'],['reddit','subreddit','subreddits'],'Online communities, plus licensing its data to train AI.'],
+  ['MTCH','Match Group','#ff5864',4,true,'Mid',['dating','social'],['tinder','hinge','match group'],'Tinder and Hinge, the biggest names in dating apps.'],
+  ['DUOL','Duolingo','#58cc02',5,false,'Mid',['edtech','gaming'],['duolingo','language learning'],'The green owl app for learning languages, built like a game.'],
+  ['SHOP','Shopify','#95bf47',5,false,'Large',['ecommerce','software'],['shopify'],'Powers millions of online stores, from side hustles to big brands.'],
+  ['ETSY','Etsy','#f1641e',5,false,'Mid',['ecommerce','creative'],['etsy','handmade'],'Marketplace for handmade, vintage and one-of-a-kind items.'],
+  ['EBAY','eBay','#0064d2',3,true,'Large',['ecommerce'],['ebay'],'Online marketplace, big in resale, collectibles and sneakers.'],
+  ['ROKU','Roku','#662d91',5,false,'Mid',['streaming'],['roku'],'TV streaming platform and devices.'],
+  // Games, anime, music, live events, betting
+  ['SONY','Sony Group','#000000',3,true,'Mega',['gaming','music','entertainment','anime'],['sony','playstation','ps5','crunchyroll'],'PlayStation, Sony Music, Spider-Man movies and Crunchyroll anime.'],
+  ['NTDOY','Nintendo','#e60012',3,true,'Large',['gaming','anime'],['nintendo','nintendo switch','mario','zelda','pokemon','pokémon'],'Mario, Zelda, Pokémon and the Switch.'],
+  ['U','Unity Software','#222c37',5,false,'Mid',['gaming','software'],['unity software','unity engine','game engine'],'The engine behind a huge share of mobile games.'],
+  ['LYV','Live Nation Entertainment','#e21836',3,false,'Large',['concerts','music','entertainment'],['live nation','ticketmaster'],'Ticketmaster and the world\'s biggest concert promoter.'],
+  ['WMG','Warner Music Group','#000000',3,true,'Mid',['music'],['warner music','atlantic records'],'One of the three major record labels.'],
+  ['DKNG','DraftKings','#53d337',5,false,'Large',['betting','sports'],['draftkings'],'Sports betting and daily fantasy sports app.'],
+  // Pets and health
+  ['CHWY','Chewy','#1c49c2',4,false,'Mid',['pets','ecommerce'],['chewy'],'Online pet store with autoship for food and meds.'],
+  ['ZTS','Zoetis','#f26b21',2,true,'Large',['pets','health'],['zoetis','animal health'],'The biggest maker of medicines and vaccines for pets and farm animals.'],
+  ['FRPT','Freshpet','#00a3ad',5,false,'Small',['pets','food'],['freshpet'],'Fresh, refrigerated pet food sold in grocery stores.'],
+  ['HIMS','Hims & Hers Health','#a17d6b',5,false,'Mid',['telehealth','health'],['hims','hims and hers','hims & hers'],'Online doctor visits and prescriptions shipped to your door.'],
+  ['DXCM','DexCom','#59a618',4,false,'Large',['health','medtech'],['dexcom','glucose monitor'],'Wearable glucose monitors for diabetes.'],
+  ['ABT','Abbott Laboratories','#008fc5',2,true,'Mega',['health','medtech'],['abbott','freestyle libre'],'Medical devices, diagnostics and nutrition drinks like Ensure.'],
+  ['VRTX','Vertex Pharmaceuticals','#5a2a82',3,false,'Large',['health','biotech'],['vertex pharmaceuticals'],'Biotech leader in cystic fibrosis treatments and gene editing.'],
+  // Fintech
+  ['AFRM','Affirm','#4a4af4',5,false,'Mid',['fintech','payments'],['affirm','buy now pay later','bnpl'],'Buy now, pay later loans at checkout.'],
+  ['NU','Nu Holdings','#820ad1',5,false,'Large',['fintech','banks'],['nubank'],'Latin America\'s biggest digital bank.'],
+  ['AXP','American Express','#016fd0',3,true,'Mega',['payments','banks'],['amex','american express'],'Premium credit cards and travel perks.'],
+  ['SCHW','Charles Schwab','#00a0df',3,true,'Large',['banks','fintech'],['schwab','charles schwab'],'One of the largest brokerages for everyday investors.'],
+  // AI, chips, quantum, cloud
+  ['ARM','Arm Holdings','#0091bd',5,false,'Large',['semis','ai'],['arm holdings'],'Designs the chip blueprints inside almost every smartphone.'],
+  ['MU','Micron Technology','#0062a6',5,false,'Large',['semis','ai'],['micron','memory chips'],'Memory chips that AI servers need lots of.'],
+  ['QCOM','Qualcomm','#3253dc',4,true,'Large',['semis'],['qualcomm','snapdragon'],'Snapdragon chips for phones, laptops and cars.'],
+  ['SMCI','Super Micro Computer','#004890',5,false,'Mid',['ai','semis'],['supermicro','super micro'],'Builds the servers that run AI data centers.'],
+  ['SOUN','SoundHound AI','#ff4b00',5,false,'Small',['ai'],['soundhound'],'Voice AI for cars, restaurants and customer service.'],
+  ['IONQ','IonQ','#3f2ab3',5,false,'Mid',['quantum','ai'],['ionq'],'Builds quantum computers using trapped ions.'],
+  ['RGTI','Rigetti Computing','#7a5af8',5,false,'Small',['quantum'],['rigetti'],'Small, speculative quantum computing company.'],
+  ['ZS','Zscaler','#0076be',4,false,'Large',['cyber','cloud'],['zscaler'],'Cloud security that protects company networks.'],
+  ['DDOG','Datadog','#632ca6',5,false,'Large',['cloud','software','ai'],['datadog'],'Monitoring software that tells companies when their apps break.'],
+  // Energy and nuclear
+  ['CEG','Constellation Energy','#00a3e0',4,true,'Large',['nuclear','clean','utilities'],['constellation energy'],'Largest US nuclear power fleet, selling clean power to data centers.'],
+  ['VST','Vistra','#f37021',4,true,'Large',['nuclear','energy','utilities'],['vistra'],'Power producer with nuclear and gas plants feeding AI demand.'],
+  ['OKLO','Oklo','#000000',5,false,'Mid',['nuclear','clean'],['oklo'],'Startup building small nuclear reactors to power data centers.'],
+  ['SMR','NuScale Power','#00843d',5,false,'Mid',['nuclear','clean'],['nuscale'],'Designs small modular nuclear reactors.'],
+  ['CCJ','Cameco','#005eb8',4,true,'Large',['nuclear','energy'],['cameco'],'One of the world\'s biggest uranium miners.'],
+  // Space, flying cars, defense
+  ['ASTS','AST SpaceMobile','#00205b',5,false,'Mid',['space'],['ast spacemobile','spacemobile'],'Satellites designed to connect directly to normal phones.'],
+  ['LUNR','Intuitive Machines','#000000',5,false,'Small',['space'],['intuitive machines','moon lander'],'Builds lunar landers for NASA missions to the Moon.'],
+  ['JOBY','Joby Aviation','#0b2a4a',5,false,'Mid',['evtol','travel'],['joby'],'Electric air taxis meant to fly short city trips.'],
+  ['ACHR','Archer Aviation','#000000',5,false,'Mid',['evtol'],['archer aviation'],'Electric air taxi startup partnered with United Airlines.'],
+  ['AXON','Axon Enterprise','#ffd100',4,false,'Large',['defense','software'],['axon','taser','body cameras'],'Tasers, police body cameras and the software behind them.'],
+  ['RTX','RTX','#e4002b',2,true,'Mega',['defense','space'],['raytheon','pratt & whitney'],'Raytheon missiles, Pratt & Whitney jet engines and aerospace parts.'],
+  // EVs
+  ['LCID','Lucid Group','#000000',5,false,'Mid',['ev'],['lucid','lucid air','lucid motors'],'Luxury electric sedans and SUVs.'],
+  ['NIO','NIO','#00b2a9',5,false,'Mid',['ev'],['nio'],'Chinese electric car maker with battery-swap stations.'],
+  // Travel
+  ['MAR','Marriott International','#8b0000',3,true,'Large',['travel'],['marriott','bonvoy','ritz-carlton'],'The world\'s biggest hotel company.'],
+  ['RCL','Royal Caribbean','#0073bb',4,true,'Large',['travel','cruises'],['royal caribbean'],'Cruise line with the largest ships at sea.'],
+  ['CCL','Carnival','#00205b',5,false,'Large',['travel','cruises'],['carnival cruise','carnival corp'],'The world\'s largest cruise company.'],
+  ['UAL','United Airlines','#002244',5,false,'Large',['travel','airlines'],['united airlines'],'One of the big three US airlines.'],
+  // Home, retail, outdoors
+  ['HD','Home Depot','#f96302',2,true,'Mega',['home','retail'],['home depot'],'The biggest home improvement store chain.'],
+  ['LOW','Lowe\'s','#004990',2,true,'Large',['home','retail'],['lowes','lowe\'s'],'Home improvement chain, Home Depot\'s main rival.'],
+  ['TJX','TJX Companies','#a6192e',2,true,'Large',['retail','fashion'],['tjx','tj maxx','t.j. maxx','marshalls','homegoods'],'TJ Maxx, Marshalls and HomeGoods off-price stores.'],
+  ['BBY','Best Buy','#0046be',3,true,'Mid',['retail','bigtech'],['best buy'],'Electronics store chain.'],
+  ['YETI','YETI Holdings','#1f2a44',4,false,'Small',['outdoors'],['yeti'],'Premium coolers, tumblers and outdoor gear.'],
+  // Cannabis, gold, funds
+  ['TLRY','Tilray Brands','#002855',5,false,'Small',['cannabis','alcohol'],['tilray'],'Cannabis producer that also owns craft beer brands.'],
+  ['NEM','Newmont','#ffb81c',3,true,'Large',['gold'],['newmont'],'The world\'s largest gold miner.'],
+  ['GLD','SPDR Gold Shares','#d4af37',2,false,'ETF',['gold','index'],['gld','gold etf'],'A fund that tracks the price of gold bars held in vaults.'],
+  ['IBIT','iShares Bitcoin Trust','#000000',4,false,'ETF',['crypto','index'],['ibit','bitcoin etf'],'A regular stock-market fund that holds bitcoin.'],
+  ['ARKK','ARK Innovation ETF','#000000',5,false,'ETF',['index','ai','robotics'],['arkk','ark invest','cathie wood'],'Cathie Wood\'s high-risk fund of disruptive tech stocks.'],
+  ['SMH','VanEck Semiconductor ETF','#00539b',4,false,'ETF',['index','semis','ai'],['smh','chip etf','semiconductor etf'],'One fund holding the biggest chip makers, like NVIDIA and TSMC.'],
+  ['ICLN','iShares Global Clean Energy ETF','#00a651',4,true,'ETF',['index','clean','solar'],['icln','clean energy etf'],'A basket of solar, wind and other clean energy companies.'],
+  ['BND','Vanguard Total Bond Market ETF','#96151d',1,true,'ETF',['bonds','index','dividends'],['bnd','bond fund'],'Thousands of US bonds in one fund. Steadier than stocks, and it pays interest.']
 ];
 const STOCKS = RAW.map(r => ({ t:r[0], name:r[1], color:r[2], risk:r[3], div:r[4], cap:r[5], themes:r[6], aliases:r[7], blurb:r[8] }));
 const BY_T = Object.fromEntries(STOCKS.map(s => [s.t, s]));
@@ -143,7 +243,29 @@ const THEMES = {
   insurance: { label:'Insurance', words:['insurance'] },
   turnaround:{ label:'Comebacks', words:['turnaround','comeback','underdog','beaten down','undervalued','cheap stocks'] },
   gig:       { label:'Gig economy', words:['gig','rideshare','delivery'] },
-  memes:     { label:'Memecoins', words:['meme','memes','memecoin','memecoins','meme coin','meme coins'] }
+  memes:     { label:'Memecoins', words:['meme','memes','memecoin','memecoins','meme coin','meme coins'] },
+  beauty:    { label:'Beauty', words:['beauty','makeup','make up','skincare','skin care','cosmetics','lipstick','fragrance','perfume','sephora'] },
+  sneakers:  { label:'Sneakers', words:['sneakers','sneaker','sneakerhead','running shoes','kicks','footwear','trainers','shoes'] },
+  pets:      { label:'Pets', words:['pet','pets','dog','dogs','cat','cats','puppy','kitten','vet','pet food'] },
+  anime:     { label:'Anime & games from Japan', words:['anime','manga','japan','japanese','pokemon','pokémon'] },
+  concerts:  { label:'Concerts & live events', words:['concert','concerts','festival','festivals','live music','tickets','touring'] },
+  betting:   { label:'Sports betting', words:['sports betting','fantasy football','fantasy sports','parlay','parlays','sportsbook'] },
+  drinks:    { label:'Drinks', words:['energy drink','energy drinks','soda','beverages','matcha','boba','celsius'] },
+  alcohol:   { label:'Alcohol', words:['alcohol','beer','liquor','booze','drinking','wine','spirits'] },
+  nuclear:   { label:'Nuclear power', words:['nuclear','uranium','reactor','reactors'] },
+  quantum:   { label:'Quantum computing', words:['quantum','quantum computing','qubits'] },
+  evtol:     { label:'Flying cars', words:['flying car','flying cars','air taxi','air taxis','evtol','drone','drones'] },
+  cannabis:  { label:'Cannabis', words:['cannabis','weed','marijuana'] },
+  gold:      { label:'Gold', words:['gold','precious metals','silver bullion'] },
+  telehealth:{ label:'Telehealth', words:['telehealth','telemedicine','online doctor','online pharmacy'] },
+  dating:    { label:'Dating apps', words:['dating','dating app','dating apps','tinder','hinge','bumble'] },
+  edtech:    { label:'Learning apps', words:['edtech','education','language learning','learning apps','studying','learn languages'] },
+  ecommerce: { label:'Online shopping', words:['ecommerce','e-commerce','online shopping','shopping online','online store','side hustle','reselling','thrifting','resale'] },
+  home:      { label:'Home & DIY', words:['home improvement','diy','home decor','renovating','interior design'] },
+  outdoors:  { label:'Outdoors', words:['outdoors','camping','hiking','fishing','outdoor gear'] },
+  luxury:    { label:'Luxury', words:['luxury','designer','handbags','high fashion'] },
+  cruises:   { label:'Cruises', words:['cruise','cruises','cruise ship'] },
+  bonds:     { label:'Bonds', words:['bond','bonds','treasuries','fixed income'] }
 };
 
 const RISK_LOW = ['safe','safer','safety','stable','steady','conservative','retire','retirement','retiring','sleep at night','low risk','low-risk','protect','careful','cautious','nervous','scared','afraid','worried','preserve','boring','blue chip','blue-chip','don\'t want to lose','dont want to lose','can\'t afford to lose','cant afford to lose','emergency fund','kids','college fund','reliable','defensive'];
@@ -165,15 +287,25 @@ const blank = () => ({
   swiped: {},       // ticker -> 'like'|'nope'|'star'
   history: [],      // undo stack of tickers
   log: [],          // chat transcript [{who, text}]
-  turns: 0
+  turns: 0,
+  profile: null,    // { name, username, email }
+  keywords: {}      // free-text interests: word -> times mentioned
 });
+// Each account keeps its own data under luma.u.<username>. The signed-in username lives in
+// sessionStorage (this tab) or localStorage ("keep me signed in").
+function sessionUser() {
+  try { return sessionStorage.getItem('luma.session') || localStorage.getItem('luma.session') || null; } catch (e) { return null; }
+}
+const SESSION_USER = sessionUser();
+const STORE_KEY = SESSION_USER ? 'luma.u.' + SESSION_USER : null;
 let S = load() || blank();
 
 function load() {
-  try { const raw = localStorage.getItem('luma.v2'); return raw ? Object.assign(blank(), JSON.parse(raw)) : null; }
+  if (!STORE_KEY) return null;
+  try { const raw = localStorage.getItem(STORE_KEY); return raw ? Object.assign(blank(), JSON.parse(raw)) : null; }
   catch (e) { return null; }
 }
-function save() { try { localStorage.setItem('luma.v2', JSON.stringify(S)); } catch (e) {} }
+function save() { if (!STORE_KEY) return; try { localStorage.setItem(STORE_KEY, JSON.stringify(S)); } catch (e) {} }
 
 /* ================= Text understanding ================= */
 const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -199,6 +331,29 @@ function isNegated(seg, phrase, carry) {
 }
 function segments(clause) { return clause.split(/,|\/|\s+&\s+/).map(x => x.trim()).filter(Boolean); }
 
+// Words that carry no interest signal. Anything else a user says (e.g. "matcha", "sneakers",
+// "skincare", "horror movies") is matched against company names, brands, descriptions and industries.
+const STOPWORDS = new Set(('a about above actually after again all also am an and any anything are around as at be because been before being below both but by can cant could did do does doing dont down during each else even every few for from further get gets getting go going gonna good got had has have having he her here hers him his how i id ill im into is it its itself just keep kind kinda know let lets like likes liking little lot lots love loved loves loving make makes making me might more most much my myself need needs new nice no nor not nothing now of off ok okay on once one only or other our out over own pretty probably put quite rather really right same see she should so some something still stuff such sure take than that thats the their them then there these they thing things think this those though through to too try trying under until up us use used using very want wanted wants was way we well were what whats when where which while who why will with without would yeah yes you your yours ' +
+  'invest investing investment investments investor money stock stocks share shares company companies market markets buy buying sell selling fund funds portfolio cash dollars dollar price prices year years month months day days week weeks time today ' +
+  'risk risky safe safer steady growth aggressive conservative balanced medium high low higher lower big bigger small smaller best better great cool fun awesome interested interest interests obsessed fan huge favorite favourite usually always sometimes maybe lately recently currently mostly especially ' +
+  'also mean means guess feel feeling idea ideas able life live living work working job school college people person friends family old young age matches match deck show tell give').split(/\s+/));
+function interestWords(clauseLow) {
+  return (clauseLow.match(/[a-z][a-z'&.-]{3,}/g) || [])
+    .map(w => w.replace(/^[^a-z]+|[^a-z]+$/g, '').replace(/'s$/, ''))
+    .filter(w => w.length >= 4 && !STOPWORDS.has(w));
+}
+function stockHaystack(s) {
+  if (!s._hay) s._hay = ' ' + [s.name, s.t, ...s.aliases, s.blurb, ...s.themes.map(k => THEMES[k] ? THEMES[k].label : k), s.industry || '', s.sector || ''].join(' ').toLowerCase().replace(/[^a-z0-9&]+/g, ' ') + ' ';
+  return s._hay;
+}
+/** Does this stock's text mention the user's word (with simple plural/stem handling)? */
+function hayHas(s, w) {
+  const hay = stockHaystack(s);
+  const forms = new Set([w, w.replace(/ies$/, 'y'), w.replace(/es$/, ''), w.replace(/s$/, ''), w + 's']);
+  for (const f of forms) if (f.length >= 4 && hay.includes(' ' + f + ' ')) return true;
+  return false;
+}
+
 function findStocks(clauseRaw, clauseLow) {
   const hits = new Set();
   // explicit tickers: $NVDA anywhere, or ALL-CAPS word that is a ticker and not a common word
@@ -212,7 +367,7 @@ function findStocks(clauseRaw, clauseLow) {
 }
 
 function understand(raw) {
-  const found = { likes: [], dislikes: [], stocksUp: [], stocksDown: [], riskDelta: 0, riskWords: [], riskCues: [], income: false, moreLike: null, wantsDeck: false, wantsLess: null };
+  const found = { likes: [], dislikes: [], stocksUp: [], stocksDown: [], keywordsUp: [], keywordsDown: [], riskDelta: 0, riskWords: [], riskCues: [], income: false, moreLike: null, wantsDeck: false, wantsLess: null };
   const low = raw.toLowerCase().replace(/[’']/g, '\'');
 
   if (/\b(show|build|make|start|let'?s go|ready|swipe|deck|matches|go)\b/.test(low) && low.length < 40) found.wantsDeck = true;
@@ -274,6 +429,11 @@ function understand(raw) {
     const age = c.match(/\b(i'?m|i am|age)\s*(\d{2})\b/);
     if (age) { const a = +age[2]; if (a >= 16 && a <= 90) { found.riskDelta += a < 30 ? 0.8 : a > 55 ? -1 : 0; if (a < 30 || a > 55) { found.riskCues.push({ w: `you're ${a}`, dir: a < 30 ? 1 : -1 }); found.riskWords.push(a < 30 ? 'high' : 'low'); } } }
     if (THEMES.dividends.words.some(w => hasPhrase(c, w)) && !found.dislikes.includes('dividends')) found.income = true;
+    // free-text interests: keep words that actually appear in at least one company's description
+    for (const w of interestWords(c)) {
+      if (!STOCKS.some(st => hayHas(st, w))) continue;
+      (neg(w) ? found.keywordsDown : found.keywordsUp).push(w);
+    }
     carry = negHere && !POS.test(c.replace(/\b(don'?t|do not|not)\s+(like|love|want)\b/g, ''));
    }
   }
@@ -283,13 +443,18 @@ function understand(raw) {
   found.likes = [...new Set(found.likes)].filter(k => !found.dislikes.includes(k));
   found.stocksDown = [...new Set(found.stocksDown)];
   found.stocksUp = [...new Set(found.stocksUp)].filter(t => !found.stocksDown.includes(t));
+  found.keywordsDown = [...new Set(found.keywordsDown)];
+  found.keywordsUp = [...new Set(found.keywordsUp)].filter(w => !found.keywordsDown.includes(w));
   // stocks named directly shouldn't also add theme noise like "energy" from "Duke Energy"
   if (found.stocksUp.length && found.likes.includes('energy') && found.stocksUp.some(t => /energy/i.test(BY_T[t].name))) found.likes = found.likes.filter(k => k !== 'energy');
   return found;
 }
 
 function apply(f) {
-  const changes = { likes: [], dislikes: [], up: [], down: [], riskBefore: S.risk };
+  const changes = { likes: [], dislikes: [], up: [], down: [], kw: [], riskBefore: S.risk };
+  S.keywords = S.keywords || {};
+  for (const w of f.keywordsUp || []) { S.keywords[w] = (S.keywords[w] || 0) + 1; changes.kw.push(w); }
+  for (const w of f.keywordsDown || []) delete S.keywords[w];
   for (const k of f.likes) {
     S.weights[k] = (S.weights[k] || 0) + 2;
     if (S.excluded.includes(k)) S.excluded = S.excluded.filter(x => x !== k);
@@ -343,7 +508,7 @@ function applyRiskData(doc) {
   let n = 0;
   for (const s of STOCKS) {
     const d = doc.stocks[s.t];
-    if (d) { if (s.estRisk == null) s.estRisk = s.risk; s.risk = d.risk; s.live = d; n++; }
+    if (d) { if (s.estRisk == null) s.estRisk = s.risk; s.risk = d.risk; s.live = d; s.industry = d.industry || ''; s.sector = d.sector || ''; s._hay = null; n++; }
     else if ((doc.failed || []).includes(s.t)) s.unavailable = true;
   }
   return n;
@@ -356,33 +521,43 @@ function liveRiskLine(s) {
   return `Over the past year it swung about ${pct(d.vol)} a year (${calm}), and its worst drop from a high was ${pct(d.maxDD)}.`;
 }
 
+// Blend: mix a friend's tastes into the deck (Circle → Taste twins → Blend decks).
+let BLEND = null; // { name, w: { theme: weight }, risk, saves: [tickers] }
+const W = k => (S.weights[k] || 0) + (BLEND ? (BLEND.w[k] || 0) * 1.2 : 0);
+const targetRisk = () => BLEND ? ((S.risk == null ? 3 : S.risk) + BLEND.risk) / 2 : S.risk;
+
 function score(s) {
   if (s.unavailable) return -Infinity;
   if (S.banned.includes(s.t)) return -Infinity;
   if (s.themes.some(k => S.excluded.includes(k))) return -Infinity;
   let sc = 0; const why = [];
   if (S.mentions.includes(s.t)) { sc += 12; why.push('You mentioned it'); }
-  const matched = s.themes.filter(k => S.weights[k] > 0).sort((a, b) => S.weights[b] - S.weights[a]);
-  matched.forEach(k => sc += S.weights[k] * 1.6);
+  const kwHits = Object.keys(S.keywords || {}).filter(w => hayHas(s, w));
+  kwHits.forEach(w => sc += 3 + Math.min(3, S.keywords[w]));
+  kwHits.slice(0, 2).forEach(w => why.push(`You said “${w}”`));
+  const matched = s.themes.filter(k => W(k) > 0).sort((a, b) => W(b) - W(a));
+  matched.forEach(k => sc += W(k) * 1.6);
+  if (BLEND && BLEND.saves.includes(s.t)) { sc += 4; why.push(`${BLEND.name} saved this`); }
   matched.slice(0, 2).forEach(k => why.push(THEMES[k].label));
-  if (S.risk != null) {
-    const gap = Math.abs(s.risk - S.risk);
+  const tr = targetRisk();
+  if (tr != null) {
+    const gap = Math.abs(s.risk - tr);
     sc += (2 - gap) * 1.8;
-    if (gap < 1) why.push(S.risk <= 2 ? 'Fits a steady style' : S.risk >= 4 ? 'Fits your appetite for risk' : 'Balanced risk');
+    if (gap < 1) why.push(tr <= 2 ? 'Fits a steady style' : tr >= 4 ? 'Fits your appetite for risk' : 'Balanced risk');
   }
   if (S.income && s.div) { sc += 2.5; if (!matched.includes('dividends')) why.push('Pays a dividend'); }
   // tiny deterministic jitter to keep decks from feeling identical
   sc += (hash(s.t) % 100) / 400;
-  return { sc, why: [...new Set(why)].slice(0, 3), matched };
+  return { sc, why: [...new Set(why)].slice(0, 3), matched, kwHits };
 }
 
 function buildDeck() {
-  const hasSignal = Object.keys(S.weights).length || S.mentions.length || S.risk != null;
+  const hasSignal = Object.keys(S.weights).length || S.mentions.length || S.risk != null || Object.keys(S.keywords || {}).length || BLEND;
   if (!hasSignal) return [];
   return STOCKS
     .filter(s => !S.swiped[s.t])
     .map(s => ({ s, r: score(s) }))
-    .filter(x => x.r !== -Infinity && (x.r.matched.length || S.mentions.includes(x.s.t) || (S.risk != null && Math.abs(x.s.risk - S.risk) < 1 && !Object.keys(S.weights).length)))
+    .filter(x => x.r !== -Infinity && (x.r.matched.length || x.r.kwHits.length || S.mentions.includes(x.s.t) || (BLEND && BLEND.saves.includes(x.s.t)) || (S.risk != null && Math.abs(x.s.risk - S.risk) < 1 && !Object.keys(S.weights).length)))
     .sort((a, b) => b.r.sc - a.r.sc)
     .map(x => ({ ...x.s, why: x.r.why, sc: x.r.sc }))
     .sort((a, b) => (b.t === pinTop) - (a.t === pinTop));
@@ -414,6 +589,10 @@ function reply(f, ch) {
 
   if (ch.up.length) {
     parts.push(pick(['Nice picks', 'Love it', 'Got it', 'Noted'], n) + ': ' + list(ch.up.map(t => `${BY_T[t].name} (${t})`)) + '. I\'ll add ' + (ch.up.length > 1 ? 'them' : 'it') + ' to your matches and find similar names.');
+  }
+  if (ch.kw && ch.kw.length) {
+    const hits = ch.kw.map(w => [w, STOCKS.filter(st => !st.unavailable && hayHas(st, w)).slice(0, 3).map(st => st.t)]).filter(([, t]) => t.length);
+    if (hits.length) parts.push('I looked for companies tied to ' + list(hits.map(([w, t]) => `“${w}” (${t.join(', ')})`)) + '.');
   }
   if (likeL.length) parts.push((ch.up.length ? 'And I' : 'Got it, I') + ' hear ' + list(likeL) + (likeL.length > 1 ? ' are' : ' is') + ' your thing.');
   if (f.moreLike) parts.push(`Leaning into stocks like ${f.moreLike}.`);
@@ -447,7 +626,7 @@ function reply(f, ch) {
   return { text: parts.join(' ') + tail, cta: deck.length > 0 };
 }
 
-const GREETING = 'Hey Charlotte, I\'m Lu 👋\n\nNo survey here. Just tell me about you: brands you love, what you\'re curious about, what you\'d never put money into, or how you\'d feel if the market dipped. I\'ll turn it into matches you can swipe, rated by how much each stock has really swung over the past year.';
+const greeting = name => `Hey ${name || 'there'}, I'm Lu 👋\n\nNo survey here. Just tell me about you: brands you love, what you're into (sneakers, skincare, AI, anime, anything), what you'd never put money into, or how you'd feel if the market dipped. I'll turn it into matches you can swipe, rated by how much each stock has really swung over the past year.`;
 const SPARKS = [
   'I use my iPhone and Netflix all day',
   'Into AI and chips, happy to take risks',
@@ -546,6 +725,8 @@ function riskQueryReply() {
 /* ================= Why this matches ================= */
 function whySentence(s) {
   const bits = [];
+  const kw = Object.keys(S.keywords || {}).filter(w => hayHas(s, w));
+  if (kw.length && !S.mentions.includes(s.t)) bits.push(`You said “${kw[0]}”, and ${s.name.split(/[ ,]/)[0]} is ${s.industry ? `in ${s.industry.replace(/—/g, ' – ')}` : 'tied to it'}.`);
   if (S.mentions.includes(s.t)) bits.push(`You brought up ${s.name.split(' ')[0]} with Lu.`);
   const th = s.themes.filter(k => S.weights[k] > 0).sort((a, b) => S.weights[b] - S.weights[a]).slice(0, 2).map(k => lc(labelOf(k)));
   if (th.length) bits.push(`${bits.length ? 'It also fits' : 'Fits'} your interest in ${list(th)}.`);
