@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Builds luma/risk-data.json: real risk metrics for every ticker in Lu's universe.
+ * Builds vesta/risk-data.json: real risk metrics for every ticker in Lu's universe.
  *
- *   node luma/scripts/build-risk-data.mjs
+ *   node vesta/scripts/build-risk-data.mjs
  *
  * For each ticker it pulls ~1 year of daily closes (Yahoo Finance chart API, no key needed),
  * then computes:
@@ -12,7 +12,7 @@
  *   ret1y  1-year price return
  * and turns those into a 1-5 risk score that the app uses for matching.
  *
- * It also writes luma/news.json: recent headlines per ticker, each tagged with a plain-English
+ * It also writes vesta/news.json: recent headlines per ticker, each tagged with a plain-English
  * "what this means" line so the Personalized feed stays easy to understand.
  *
  * Crypto (BTC, ETH, …) is priced as BTC-USD etc. and annualized over 365 days because it trades daily.
@@ -29,7 +29,7 @@ import { fileURLToPath } from 'node:url';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const LUMA = join(here, '..');
-const UA = 'Mozilla/5.0 (compatible; LumaRiskData/1.0)';
+const UA = 'Mozilla/5.0 (compatible; VestaRiskData/1.0)';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 // ---- universe: read tickers straight from the engine so the two never drift apart ----
@@ -243,7 +243,7 @@ async function main() {
   const doc = {
     asOf: dayKey(spy.rows.at(-1)[0]),
     generatedAt: new Date().toISOString(),
-    source: 'Yahoo Finance daily closes (1y), metrics computed by luma/scripts/build-risk-data.mjs',
+    source: 'Yahoo Finance daily closes (1y), metrics computed by vesta/scripts/build-risk-data.mjs',
     method: 'risk 1-5 from annualized volatility (<18% / <26% / <36% / <52% / higher), +1 if max drawdown > 45% or beta > 1.7',
     market: { ticker: 'SPY', vol: r4(annualVol(spy.rows.map(r => r[1]))), price: +spy.price.toFixed(2), chg1d: spy.prevClose ? r4(spy.price / spy.prevClose - 1) : null, ret1y: r4(spy.rows.at(-1)[1] / spy.rows[0][1] - 1) },
     failed,
