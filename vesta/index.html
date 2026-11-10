@@ -4,6 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Vesta</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 64'%3E%3Ccircle cx='36' cy='32' r='26' fill='none' stroke='%23c9a23a' stroke-width='5'/%3E%3Ccircle cx='64' cy='32' r='26' fill='none' stroke='%23c9a23a' stroke-width='5'/%3E%3Cpath d='M50 10.1A26 26 0 0 1 50 53.9A26 26 0 0 1 50 10.1Z' fill='%23c9a23a'/%3E%3C/svg%3E" />
+<meta name="theme-color" content="#c9a23a" />
 <meta name="description" content="Personalized money insights for Gen Z. Chat with Lu and swipe through investment matches built from what you say." />
 <style>
 @font-face { font-family: 'SF Pro Display'; src: local('SF Pro Display'), local('system-ui'), local('-apple-system'); font-weight: 400 700; font-display: swap; }
@@ -18,11 +20,11 @@
   --text: #1b1a17;
   --soft: #5f5c55;
   --muted: #8d8a82;
-  --gold: #ad8b37;
+  --gold: #c9a23a;          /* Vesta brand gold, from the logo */
   --gold-ink: #1b1a17;
-  --gold-text: #9a7a2c;
-  --gold-soft: #f1ebdb;
-  --gold-bar: #cfb987;
+  --gold-text: #7f6112;     /* deeper gold for text: 4.5:1+ on white, cards and gold chips */
+  --gold-soft: #f6eed8;
+  --gold-bar: #e3cf97;
   --green: #3b8655;
   --green-soft: #e6f3ea;
   --red: #c4473f;
@@ -34,16 +36,16 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --page: #0f0e0c; --bg: #171613; --card: #201f1b; --card-2: #2a2924; --line: #33312b;
-    --text: #f3f1ea; --soft: #c2bfb6; --muted: #8f8b81; --gold: #c9a44c; --gold-ink: #1b1a17;
-    --gold-text: #d6b462; --gold-soft: #332c1b; --gold-bar: #6e5c33; --green: #6cc28a; --green-soft: #1d3326;
+    --text: #f3f1ea; --soft: #c2bfb6; --muted: #8f8b81; --gold: #c9a23a; --gold-ink: #1b1a17;
+    --gold-text: #dcb85c; --gold-soft: #33291a; --gold-bar: #75602c; --green: #6cc28a; --green-soft: #1d3326;
     --red: #ef7c72; --red-soft: #3a201d; --pending: #3a321a; --pending-ink: #e9c766;
     --shadow: 0 30px 60px rgba(0,0,0,.5), 0 6px 16px rgba(0,0,0,.4);
   }
 }
 :root[data-theme="dark"] {
   --page: #0f0e0c; --bg: #171613; --card: #201f1b; --card-2: #2a2924; --line: #33312b;
-  --text: #f3f1ea; --soft: #c2bfb6; --muted: #8f8b81; --gold: #c9a44c; --gold-ink: #1b1a17;
-  --gold-text: #d6b462; --gold-soft: #332c1b; --gold-bar: #6e5c33; --green: #6cc28a; --green-soft: #1d3326;
+  --text: #f3f1ea; --soft: #c2bfb6; --muted: #8f8b81; --gold: #c9a23a; --gold-ink: #1b1a17;
+  --gold-text: #dcb85c; --gold-soft: #33291a; --gold-bar: #75602c; --green: #6cc28a; --green-soft: #1d3326;
   --red: #ef7c72; --red-soft: #3a201d; --pending: #3a321a; --pending-ink: #e9c766;
   --shadow: 0 30px 60px rgba(0,0,0,.5), 0 6px 16px rgba(0,0,0,.4);
 }
@@ -78,7 +80,7 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
 
 .appbar { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px 6px; flex: none; }
 .logo { display: flex; align-items: center; gap: 8px; font-size: 21px; font-weight: 500; }
-.ring { width: 26px; height: 26px; border-radius: 50%; border: 7px solid var(--gold); flex: none; }
+.ring { width: 41px; height: 26px; flex: none; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 64'%3E%3Ccircle cx='36' cy='32' r='26' fill='none' stroke='%23c9a23a' stroke-width='5'/%3E%3Ccircle cx='64' cy='32' r='26' fill='none' stroke='%23c9a23a' stroke-width='5'/%3E%3Cpath d='M50 10.1A26 26 0 0 1 50 53.9A26 26 0 0 1 50 10.1Z' fill='%23c9a23a'/%3E%3C/svg%3E") center / contain no-repeat; }
 .avatar-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--card); display: grid; place-items: center; font-size: 15px; color: var(--soft); }
 .pill-open { background: var(--green-soft); color: var(--green); font-size: 14px; font-weight: 500; padding: 6px 14px; border-radius: 999px; }
 
@@ -112,7 +114,7 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
 
 /* ---------- Welcome ---------- */
 .welcome { position: absolute; inset: 0; background: var(--bg); z-index: 20; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 36px 60px; }
-.welcome .ring { width: 54px; height: 54px; border-width: 15px; margin-bottom: 12px; }
+.welcome .ring { width: 84px; height: 54px; margin-bottom: 12px; }
 .welcome .hi { color: var(--muted); font-size: 17px; letter-spacing: .03em; }
 .welcome h2 { font-size: 32px; margin: 14px 0 12px; }
 .welcome p { color: var(--soft); font-size: 17px; line-height: 1.55; margin: 0 0 30px; letter-spacing: .02em; }
@@ -173,7 +175,7 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
 .under { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; font-size: 13px; color: var(--muted); }
 .under button { text-decoration: underline; text-underline-offset: 3px; }
 .empty { text-align: center; padding: 50px 10px 0; }
-.empty .ring { width: 46px; height: 46px; border-width: 12px; margin: 0 auto 18px; }
+.empty .ring { width: 72px; height: 46px; margin: 0 auto 18px; }
 .empty h3 { font-size: 21px; font-weight: 500; margin: 0 0 8px; }
 .empty p { color: var(--soft); line-height: 1.55; margin: 0 0 22px; font-size: 15.5px; }
 
@@ -191,7 +193,7 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
 .msg.lu { background: var(--card); border: 1px solid var(--line); border-bottom-left-radius: 6px; align-self: flex-start; color: var(--text); }
 .msg.me { background: var(--gold); color: var(--gold-ink); border-bottom-right-radius: 6px; align-self: flex-end; }
 .who { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--muted); margin-bottom: -6px; }
-.who .ring { width: 16px; height: 16px; border-width: 4.5px; }
+.who .ring { width: 25px; height: 16px; }
 .typing { display: inline-flex; gap: 4px; padding: 4px 0; }
 .typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: blink 1s infinite; }
 .typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
@@ -318,7 +320,7 @@ svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-widt
 .auth { position: absolute; inset: 0; z-index: 20; background: var(--bg); overflow-y: auto; padding: 24px 28px 28px; }
 .auth-view { min-height: 100%; display: flex; flex-direction: column; }
 #authLanding { justify-content: space-between; text-align: center; padding-top: 18%; }
-.auth-hero .ring.big { width: 64px; height: 64px; border-width: 18px; margin: 0 auto 18px; }
+.auth-hero .ring.big { width: 125px; height: 80px; margin: 0 auto 18px; }
 .brandname { font-family: 'SF Pro Display', -apple-system, system-ui, sans-serif; font-size: 40px; font-weight: 500; letter-spacing: -.02em; }
 .auth-hero .tagline { color: var(--soft); font-size: 18px; line-height: 1.5; margin: 12px auto 0; max-width: 280px; }
 .auth-actions { display: grid; gap: 12px; }
