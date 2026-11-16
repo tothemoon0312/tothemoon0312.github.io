@@ -28,6 +28,7 @@ Live: https://tothemoon0312.github.io/vesta/
 ```js
 freeRightSwipesPerDay: 10,     // passes are always free
 instantWithdrawFeeRate: 0.03,  // 3% commission; standard withdrawals free
+minWithdrawal: 10,             // smallest withdrawal, standard or instant
 premium: { price: 4.99, period: 'month', checkoutUrl: '' }
 ```
 

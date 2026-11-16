@@ -563,6 +563,7 @@ const $ = id => document.getElementById(id);
 const CONFIG = {
   freeRightSwipesPerDay: 10,        // free plan: right swipes (saves) per day; passes are always free
   instantWithdrawFeeRate: 0.03,     // 3% commission on instant withdrawals; standard withdrawals are free
+  minWithdrawal: 10,                // smallest amount a user can withdraw (standard or instant)
   premium: {
     name: 'Vesta Premium',
     price: 4.99,
@@ -1210,10 +1211,14 @@ $('depositBtn').onclick = () => openSheet(`<h2>Deposit</h2><p class="about" styl
 });
 
 $('withdrawBtn').onclick = () => {
-  const max = withdrawable();
-  if (max < 1) {
+  const max = withdrawable(), MIN = CONFIG.minWithdrawal;
+  if (max < MIN) {
     const pend = pendingDeposits();
-    openSheet(`<h2>Nothing to withdraw yet</h2><p class="about">${pend ? `Your ${usd(pend)} deposit is still clearing, which usually takes 1–3 business days. You can invest with it right away, but you can't withdraw it until it clears.` : 'Your wallet is empty. Sell or deposit first.'}</p>
+    const parts = [];
+    if (max > 0) parts.push(`Withdrawals start at ${usd0(MIN)}, and you have ${usd(max)} available to withdraw right now.`);
+    if (pend) parts.push(`Your ${usd(pend)} deposit is still clearing, which usually takes 1–3 business days. You can invest with it right away, and withdraw it once it clears.`);
+    if (!parts.length) parts.push('Your wallet is empty. Sell or deposit first.');
+    openSheet(`<h2>${max > 0 ? 'Not enough to withdraw yet' : 'Nothing to withdraw yet'}</h2><p class="about">${parts.join(' ')}</p>
       <button class="btn primary" id="okWd" style="margin-top:18px">Got it</button>${pend ? '<button class="btn secondary" id="clrWd" style="margin-top:10px">Preview: mark as cleared</button>' : ''}`, () => {
       $('okWd').onclick = closeSheet;
       if ($('clrWd')) $('clrWd').onclick = () => { closeSheet(); $('clearBtn').click(); };
@@ -1222,20 +1227,21 @@ $('withdrawBtn').onclick = () => {
   }
   const pctLabel = Math.round(CONFIG.instantWithdrawFeeRate * 1000) / 10 + '%';
   let speed = 'standard';
-  openSheet(`<h2>Withdraw</h2><p class="about" style="margin-top:8px">To ${bankLabel()} · ${usd(max)} available</p>
-    <div class="invest" style="margin-top:16px">${moneyInput([{ v: Math.min(25, max), label: '$' + Math.min(25, max) }, { v: Math.min(50, max), label: '$' + Math.min(50, max) }, { v: max, label: 'All' }].filter((c, i, arr) => arr.findIndex(x => x.v === c.v) === i), Math.min(50, max))}
+  const chips = [MIN, 25, 50].filter(v => v < max).slice(-2).map(v => ({ v, label: '$' + v })).concat([{ v: max, label: 'All' }]);
+  openSheet(`<h2>Withdraw</h2><p class="about" style="margin-top:8px">To ${bankLabel()} · ${usd(max)} available · minimum ${usd0(MIN)}</p>
+    <div class="invest" style="margin-top:16px">${moneyInput(chips, Math.min(50, max))}
     <div class="speed" role="radiogroup">
       <label class="on" data-speed="standard"><input type="radio" name="spd" checked><div><b>Standard</b><small>1–3 business days</small></div><span class="fee">Free</span></label>
       <label data-speed="instant"><input type="radio" name="spd"><div><b>Instant</b><small>Arrives in minutes</small></div><span class="fee">${pctLabel} fee</span></label>
     </div>
     <div class="summary" id="wdSum"></div>
     <button class="btn primary" id="amtGo">Withdraw</button>
-    <div class="fine">Instant transfers carry a ${pctLabel} Vesta fee. Standard withdrawals are always free.<br>Preview: no bank is connected yet, so no real money moves.</div></div>`, body => {
+    <div class="fine">Minimum withdrawal ${usd0(MIN)}. Instant transfers carry a ${pctLabel} Vesta fee; standard withdrawals are always free.<br>Preview: no bank is connected yet, so no real money moves.</div></div>`, body => {
     const go_ = $('amtGo');
     const update = () => {
       const a = parseAmt($('amtIn').value);
       const fee = speed === 'instant' ? Math.round(a * CONFIG.instantWithdrawFeeRate * 100) / 100 : 0;
-      const bad = a < 1 ? 'Minimum withdrawal is $1.' : a > max ? `You can withdraw up to ${usd(max)}.` : '';
+      const bad = a < MIN ? `Minimum withdrawal is ${usd0(MIN)}.` : a > max ? `You can withdraw up to ${usd(max)}.` : '';
       $('amtErr').textContent = $('amtIn').value && bad ? bad : '';
       $('wdSum').innerHTML = `<div><span>Amount</span><span>${usd(a)}</span></div>`
         + (speed === 'instant' ? `<div><span>Instant fee (${pctLabel})</span><span>−${usd(fee)}</span></div>` : '<div><span>Standard transfer</span><span>Free</span></div>')
@@ -1248,7 +1254,7 @@ $('withdrawBtn').onclick = () => {
     });
     bindMoneyInput(body, update);
     go_.onclick = () => {
-      const a = parseAmt($('amtIn').value); if (a < 1 || a > max) return;
+      const a = parseAmt($('amtIn').value); if (a < MIN || a > max) return;
       const fee = speed === 'instant' ? Math.round(a * CONFIG.instantWithdrawFeeRate * 100) / 100 : 0;
       S.cash = Math.round((S.cash - a) * 100) / 100;
       S.feesPaid = Math.round(((S.feesPaid || 0) + fee) * 100) / 100;
